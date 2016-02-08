@@ -1,0 +1,54 @@
+#+TITLE:     Series of Webinars on Reproducible Research
+#+AUTHOR:    Arnaud Legrand
+#+DATE: 2016
+#+STARTUP: overview indent
+
+This website gather documents and information related to the series of
+webinars on reproducible research organized with several colleagues
+with the support of ANR, CNRS, Inria, University of Grenoble, ...
+
+* Table of Contents                                                     :TOC:
+ - [[#general-information][General information]]
+ - [[#agenda][Agenda]]
+ - [[#speakers][Speakers]]
+
+* General information
+The aim of each of these webinars is to introduce the audience to one
+particular aspect of reproducible research and to illustrate how this
+aspect can be addressed with state-of-the-art tools. These webinars
+will take place on the first *Monday or Tuesday afternoon
+(1:30PM-4:30PM) of each month* and will generally consist of two parts.
+1. Part 1: A 1-hour talk followed by a short Q&A session.
+2. Part 2: Ideally, a hands-on session if the topic allows. 2-3
+   shorter specialized talks otherwise.
+
+This website is still under construction and needs your help. It is
+written in org-mode and benefits from github's pretty printing
+capability. If you're logged on github, you can edit all files (like
+in a wiki) and send me the modifications via a pull request. Just try
+it, it's easy. Any comment and suggestion is welcome.
+* Agenda
+1. <2016-03-07 Mon.> [[file:1_replicable_article_laboratory_notebook/index.org][Introduction (reproducible research, challenges, ethic,
+   ...). Producing replicable articles and managing a laboratory
+   notebook]].
+2. <2016-04-05 Tue.> Controling your environment (docker, VM, ...)
+3. <2016-05-03 Tue.> Numerical reproducibility
+4. <2016-06-07 Tue.> To be announced
+
+Other topics planned:
+1. Provenance tracking of experimental data
+2. Large scale experimental platforms
+3. Code and Data archiving
+4. Workflows
+5. Online journals, companion websites
+6. Evaluation campaign/challenges/benchmarks
+7. ...
+
+
+
+* Speakers
+- Arnaud Legrand, CNRS/LIG Inria/Polaris, University of Grenoble.
+- Nathalie Revol, Inria/AriC, École Normale Supérieure de Lyon
+- Philippe Langlois, University of Perpignan, DALI
+- Stef Graillat, University Pierre et Marie Curie
+- ...

@@ -1,0 +1,57 @@
+#+TITLE:     Introduction, producing replicable articles and managing an laboratory notebook
+#+AUTHOR:    Arnaud Legrand
+#+DATE: March 7, 2016
+#+STARTUP: overview indent
+
+* Table of Contents                                                     :TOC:
+ - [[#practical-information][Practical information]]
+     - [[#webcast][Webcast]]
+     - [[#persons-in-charge][Persons in charge]]
+     - [[#locations][Locations]]
+ - [[#keynote][Keynote]]
+ - [[#practical-session-requirements][Practical Session Requirements]]
+     - [[#emacs][Emacs]]
+     - [[#org-mode][Org-mode]]
+     - [[#reproducible-research-configuration][Reproducible research configuration]]
+     - [[#other-tools][Other tools]]
+
+* Practical information
+** Webcast
+   - [[https://mi2s.imag.fr/pm/direct][Screencast]] 
+   - [[https://pad.inria.fr/p/9mSyf4BhzZ9soDE9][Pad]]
+   - Video archive (soon)
+** Persons in charge
+   - Arnaud Legrand (Grenoble)
+   - Luka Stanisic (Bordeaux)
+** Locations
+   - Grenoble: MJK
+   - Lyon: 
+   - Bordeaux:
+   - Rennes:
+   - ...
+* Keynote
+  Arnaud Legrand will provide a [[https://github.com/alegrand/SMPE/raw/master/lectures/talk_16_02_03_Grenoble_G5K.pdf][general introduction on reproducible
+  research]].
+* Practical Session Requirements
+  We will explain the audience how to create and manage replicable
+  articles and give advice on how to manage a laboratory notebook on a
+  daily basis.
+
+  To benefit from this presentation, we recommand the audience to
+  install the following software
+** Emacs
+   We want a recent version of emacs with ESS (for R) and AucTeX (for
+   LaTeX).
+*** Linux
+*** Mac OS X
+*** Windows
+** Org-mode
+*** Linux
+*** Mac OS X
+*** Windows
+** Reproducible research configuration
+*** Linux
+*** Mac OS X
+*** Windows
+** Other tools
+   Please make sure you have a working LaTeX environment.
