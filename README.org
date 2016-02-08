@@ -18,9 +18,15 @@ particular aspect of reproducible research and to illustrate how this
 aspect can be addressed with state-of-the-art tools. These webinars
 will take place on the first *Monday or Tuesday afternoon
 (1:30PM-4:30PM) of each month* and will generally consist of two parts.
-1. Part 1: A 1-hour talk followed by a short Q&A session.
-2. Part 2: Ideally, a hands-on session if the topic allows. 2-3
-   shorter specialized talks otherwise.
+- Part 1: A 1-hour talk followed by a short Q&A session.
+- Part 2: Ideally, a hands-on session if the topic allows. 2-3
+  shorter specialized talks otherwise.
+
+These presentations are screencast by [[https://mi2s.imag.fr/][MI2S]] and interactions during the
+presentations take place through an other channel (pad, hangout, ...).
+The resulting videos are then edited within a few days for a better
+exploitation by people that would not have been able to attend the
+event.
 
 This website is still under construction and needs your help. It is
 written in org-mode and benefits from github's pretty printing
@@ -43,8 +49,6 @@ Other topics planned:
 5. Online journals, companion websites
 6. Evaluation campaign/challenges/benchmarks
 7. ...
-
-
 
 * Speakers
 - Arnaud Legrand, CNRS/LIG Inria/Polaris, University of Grenoble.
