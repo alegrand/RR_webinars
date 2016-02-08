@@ -8,9 +8,9 @@ webinars on reproducible research organized with several colleagues
 with the support of ANR, CNRS, Inria, University of Grenoble, ...
 
 #+BEGIN_CENTER
-*Next event*: Monday 7 March, 2016. [[file:1_replicable_article_laboratory_notebook/index.org][Introduction (reproducible research,
-challenges, ethic, ...). Producing replicable articles and managing a
-laboratory notebook]].
+*Next event*: Monday 7 March @ 1:30PM, 2016. [[file:1_replicable_article_laboratory_notebook/index.org][Introduction (reproducible
+research, challenges, ethic, ...). Producing replicable articles and
+managing a laboratory notebook]].
 #+END_CENTER
 
 * Table of Contents                                                     :TOC:
