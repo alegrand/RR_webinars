@@ -30,7 +30,7 @@
    - Rennes:
    - ...
 * Keynote
-  Arnaud Legrand will provide a [[https://github.com/alegrand/SMPE/raw/master/lectures/talk_16_02_03_Grenoble_G5K.pdf][general introduction on reproducible
+  [[https://team.inria.fr/polaris/members/arnaud-legrand/][Arnaud Legrand]] will provide a [[https://github.com/alegrand/SMPE/raw/master/lectures/talk_16_02_03_Grenoble_G5K.pdf][general introduction on reproducible
   research]].
 * Practical Session Requirements
   We will explain the audience how to create and manage replicable

@@ -16,16 +16,17 @@ managing a laboratory notebook]].
 * Table of Contents                                                     :TOC:
  - [[#general-information][General information]]
  - [[#agenda][Agenda]]
- - [[#speakers][Speakers]]
+ - [[#speakerscontributors][Speakers/contributors]]
 
 * General information
 The aim of each of these webinars is to introduce the audience to one
 particular aspect of reproducible research and to illustrate how this
 aspect can be addressed with state-of-the-art tools. These webinars
-will take place on the first *Monday or Tuesday afternoon
-(1:30PM-4:30PM) of each month* and will generally consist of two parts.
-- Part 1: A 1-hour talk followed by a short Q&A session.
-- Part 2: Ideally, a hands-on session if the topic allows. 2-3
+are in English (probably with a strong French accent ;-) to widen the
+audience and take place on the first *Monday or Tuesday afternoon
+(1:30PM-4:30PM UTC+1) of each month.* They generally consist of two parts:
+- Part 1. A 1-hour talk followed by a short Q&A session.
+- Part 2. Ideally, a hands-on session if the topic allows. 2-3
   shorter specialized talks otherwise.
 
 These presentations are screencast by [[https://mi2s.imag.fr/][MI2S]] and interactions during the
@@ -56,9 +57,9 @@ Other topics planned:
 6. Evaluation campaign/challenges/benchmarks
 7. ...
 
-* Speakers
-- Arnaud Legrand, CNRS/LIG Inria/Polaris, University of Grenoble.
-- Nathalie Revol, Inria/AriC, École Normale Supérieure de Lyon
-- Philippe Langlois, University of Perpignan, DALI
-- Stef Graillat, University Pierre et Marie Curie
+* Speakers/contributors
+- [[http://www-pequan.lip6.fr/~graillat/][Stef Graillat]], University Pierre et Marie Curie
+- [[http://perso.univ-perp.fr/philippe.langlois/][Philippe Langlois]], University of Perpignan, DALI
+- [[https://team.inria.fr/polaris/members/arnaud-legrand/][Arnaud Legrand]], CNRS/LIG Inria/Polaris, University of Grenoble.
+- [[http://perso.ens-lyon.fr/nathalie.revol/][Nathalie Revol]], Inria/AriC, École Normale Supérieure de Lyon
 - ...
