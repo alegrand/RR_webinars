@@ -19,12 +19,27 @@ managing a laboratory notebook]].
  - [[#speakerscontributors][Speakers/contributors]]
 
 * General information
+[[http://en.wikipedia.org/wiki/Reproducibility][Reproducibility]] of experiments and analysis by others is one of the
+pillars of modern science. Yet, the description of experimental
+protocols, software, and analysis is often lacunar and rarely allows a
+third party to reproduce a study.  Such inaccuracies has become more
+and more problematic and are probably the cause of the [[http://www.nature.com/news/2011/111005/full/478026a.html][increasing
+number of article withdrawal even in prestigious journals]] and the
+realization by both the scientific community and the general public
+that [[http://www.plosmedicine.org/article/info:doi/10.1371/journal.pmed.0020124][many research results and studies were actually flawed and wrong]].
+[[http://en.wikipedia.org/wiki/Open_science][Open science]] is the umbrella term of the movement to make scientific
+research, data and dissemination accessible to all levels of an
+inquiring society.
+
+
 The aim of each of these webinars is to introduce the audience to one
 particular aspect of reproducible research and to illustrate how this
 aspect can be addressed with state-of-the-art tools. These webinars
-are in English (probably with a strong French accent ;-) to widen the
-audience and take place on the first *Monday or Tuesday afternoon
-(1:30PM-4:30PM UTC+1) of each month.* They generally consist of two parts:
+are open to anyone (PhD students, post-doc, engineers, researchers,
+...) and are in English (probably with a strong French accent
+;-). They will take place on the first *Monday or Tuesday
+afternoon (1:30PM-4:30PM UTC+1) of each month.* They generally consist
+of two parts:
 - Part 1. A 1-hour talk followed by a short Q&A session.
 - Part 2. Ideally, a hands-on session if the topic allows. 2-3
   shorter specialized talks otherwise.
