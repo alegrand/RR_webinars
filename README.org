@@ -10,7 +10,7 @@ with the support of ANR, CNRS, Inria, University of Grenoble, ...
 #+BEGIN_CENTER
 *Next event*: Monday 7 March @ 1:30PM, 2016. [[file:1_replicable_article_laboratory_notebook/index.org][Introduction (reproducible
 research, challenges, ethic, ...). Producing replicable articles and
-managing a laboratory notebook]] (The screencast is [[https://mi2s.imag.fr/pm/direct][*here*]]).
+managing a laboratory notebook]] (The screencast is *[[https://mi2s.imag.fr/pm/direct][here]]*).
 #+END_CENTER
 
 * Table of Contents                                                     :TOC:
