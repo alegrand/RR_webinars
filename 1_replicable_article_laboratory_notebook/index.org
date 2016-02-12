@@ -27,12 +27,13 @@ required in the practical session.*
    - [[https://pad.inria.fr/p/9mSyf4BhzZ9soDE9][Pad]]
    - Video archive (soon)
 ** Persons in charge
-   - Arnaud Legrand (Grenoble)
-   - Luka Stanisic (Bordeaux)
+   - Grenoble: Arnaud Legrand, Frédéric Desprez
+   - Bordeaux: Luka Stanisic, Emmanuel Agullo, Nicolas P. Rougier,
+     Ludovic Courtès
 ** Locations
    - Grenoble: [[https://www.google.com/maps/d/u/0/viewer?mid=zYJixSyqUx3w.kZRnKm__28GY&hl=fr][MJK]] (Arnaud Legrand), GIANT (Frédéric Desprez), Inria A103, ...
    - Lyon: 
-   - Bordeaux: (Ludovic Courtès)
+   - Bordeaux: Ada Lovelace room (Ludovic Courtès)
    - Rennes:
    - ...
 * Keynote
