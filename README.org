@@ -7,6 +7,10 @@ This website gather documents and information related to the series of
 webinars on reproducible research organized with several colleagues
 with the support of ANR, CNRS, Inria, University of Grenoble, ...
 
+*This website is under construction, so please check it regularly,
+especially a few days before the webinar to install the software
+required in the practical session.*
+
 #+BEGIN_CENTER
 *Next event*: Monday 7 March @ 1:30PM, 2016. [[file:1_replicable_article_laboratory_notebook/index.org][Introduction (reproducible
 research, challenges, ethic, ...). Producing replicable articles and

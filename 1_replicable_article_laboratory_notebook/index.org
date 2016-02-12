@@ -3,6 +3,12 @@
 #+DATE: March 7, 2016
 #+STARTUP: overview indent
 
+
+*This page is under construction, so please check it regularly,
+especially a few days before the webinar to install the software
+required in the practical session.*
+
+
 * Table of Contents                                                     :TOC:
  - [[#practical-information][Practical information]]
      - [[#webcast][Webcast]]
