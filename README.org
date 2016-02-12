@@ -7,8 +7,7 @@ This website gather documents and information related to the series of
 webinars on reproducible research organized with several colleagues
 with the support of ANR, CNRS, Inria, University of Grenoble, ...
 
-*This website is under construction, so please check it regularly,
-especially a few days before the webinar to install the software
+*This website is under construction, so please check it regularly, especially a few days before the webinar to install the software
 required in the practical session.*
 
 #+BEGIN_CENTER
