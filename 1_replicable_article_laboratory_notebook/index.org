@@ -15,10 +15,10 @@ required in the practical session.*
      - [[#locations][Locations]]
  - [[#keynote][Keynote]]
  - [[#practical-session-requirements][Practical Session Requirements]]
-     - [[#emacs][Emacs]]
-     - [[#org-mode][Org-mode]]
-     - [[#reproducible-research-configuration][Reproducible research configuration]]
-     - [[#other-tools][Other tools]]
+     - [[#mac-osx][Mac OsX]]
+     - [[#windows][Windows]]
+     - [[#linux][Linux]]
+     - [[#reproducible-research-emacs-configuration][Reproducible research emacs configuration]]
 
 * Practical information
 ** Webcast
@@ -52,20 +52,114 @@ required in the practical session.*
   daily basis.
 
   To benefit from this presentation, we recommand the audience to
-  install the following software
-** Emacs
-   We want a recent version of emacs with ESS (for R) and AucTeX (for
-   LaTeX).
-*** Linux
-*** Mac OS X
-*** Windows
-** Org-mode
-*** Linux
-*** Mac OS X
-*** Windows
-** Reproducible research configuration
-*** Linux
-*** Mac OS X
-*** Windows
-** Other tools
-   Please make sure you have a working LaTeX environment.
+  install the software described in each section. In particular, we
+  want a recent version of emacs with ESS (for R) and AucTeX (for
+  LaTeX). Finally, you will need a working LaTeX environment to build
+  a replicable article.
+  #+BEGIN_CENTER
+  *Once you're done with the software installation that are specific to
+  your operating system, go to this [[*Reproducible research emacs configuration][section]]*.
+  #+END_CENTER
+** Mac OsX
+- Option 1: If you already use =brew=, simply do the following
+  #+begin_src sh :results output :exports both
+  brew update
+  brew install emacs [--with-cocoa]
+  brew linkapps emacs
+  brew tap homebrew/science
+  brew install ess
+  brew install auctex # Actually the name is slightly more complicated here
+  #+end_src
+- Option 2: Install the =.dmg= file from
+  http://vgoulet.act.ulaval.ca/en/emacs/mac/. In that case you may
+  have several versions of emacs installed on your machine and
+  launching emacs from a terminal may not run the one you just
+  installed. If anyone know how to get rid of this...
+** Windows
+Install the =.exe= file from
+http://vgoulet.act.ulaval.ca/emacs/windows/.
+** Linux
+If you're running a debian system, simply do (as root):
+#+begin_src sh :results output :exports both
+apt-get update
+apt-get install emacs org-mode ess r-base auctex
+#+end_src
+
+Then make sure you have a sufficiently recent version
+#+begin_src sh :results output :exports both
+emacs --version
+#+end_src
+
+#+RESULTS:
+: GNU Emacs 24.5.1
+: Copyright (C) 2015 Free Software Foundation, Inc.
+: GNU Emacs comes with ABSOLUTELY NO WARRANTY.
+: You may redistribute copies of Emacs
+: under the terms of the GNU General Public License.
+: For more information about these matters, see the file named COPYING.
+
+I'd say you want at least an emacs 24.4 (October 2014) or 24.5
+(April 2015) to be out of troubles. Emacs 24.3 was released in March
+2013, i.e., three years ago, which is quite old. 
+
+Likewise, you'll want to check you have a recent version of org-mode:
+#+begin_src sh :results output :exports both
+emacs -batch --funcall "org-version" 2>&1 | grep version
+#+end_src
+
+#+RESULTS:
+: Org-mode version 8.3.1 (8.3.1-dist @ /usr/share/emacs24/site-lisp/org-mode/)
+
+The current latest version is actually 8.3.3 but you'll want at least
+a version 8.2. 
+** Reproducible research emacs configuration
+*** Step 0: Prepare your journal
+Create an =org/= directory in the top of your home:
+#+begin_src sh :results output :exports both
+cd ~
+mkdir -p org/
+#+end_src
+Then copy [[./journal.org][this file]] in this =org/= directory. This file will be your
+laboratory notebook and all the notes you will capture with =C-c c= (this
+will be explained in the tutorial) will go automatically go in this
+file. I populated the first entry of this notebook with many emacs
+shortcuts that I will demonstrate.
+*** Step 1: Set up Emacs configuration
+- Option 1: Backup you own =.emacs= if you have one and replace it with
+  [[file:init.el][the content of this file]].
+- Option 2: Get [[file:init.el][this file]] and launch emacs with this specific
+  configuration by typing:
+  #+begin_src sh :results output :exports both
+  emacs -q -l init.el
+  #+end_src
+*** Step 2: Check whether the installation is working or not
+Open a new instance of Emacs and open a =foo.org= file. Copy in this
+file the following:
+#+BEGIN_EXAMPLE
+#+begin_src sh :session foo :results output :exports both
+ls -la  
+#+end_src
+#+END_EXAMPLE
+
+Put your cursor inside this code block and execute it with the
+following command: =C-c C-c= (If you are not familiar with Emacs
+commands, this one means '=Ctrl + C=' twice)
+
+A Result block with the result of the command should appear if it
+worked. 
+
+In the tutorial we will show you the main features and shortcuts of
+emacs/org-mode that will help you maintain your laboratory notebook
+(the =journal.org=) and benefit from literate programming. The list of
+features we will demonstrate is in the [[file:journal.org::*Emacs%20shortcuts][first entry of your labbook]].
+
+*** TODO Step 3: A replicable article
+Download [[./replicable.tgz][this archive]] and untar it:
+#+begin_src sh :results output :exports both
+tar zxf replicable.tgz
+#+end_src
+
+- Open file:replicable/article.org and accept to execute local
+  emacs-lisp commands
+- Export the document
+
