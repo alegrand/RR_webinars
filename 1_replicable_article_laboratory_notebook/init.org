@@ -1,0 +1,512 @@
+# -*- mode: org -*-
+#+TITLE:      Emacs init file written in org-mode
+#+AUTHOR:    Arnaud Legrand
+#+EMAIL:     arnaud.legrand@imag.fr
+#+STARTUP: indent
+#+LANGUAGE:   en
+
+This is a "minimal" =.emacs= configuration file. For this configuration
+to work, you'll need:
+- emacs24 (>24.3) (this way installing through elpa will save you some
+  time) and emacs-goodies (e.g., for color themes)
+- org-mode > 8.2 (there has been a major compatibility breakage so
+  need to stay away from old versions)
+- ess and R
+- texlive and auctex
+
+* Installation Instructions
+Backup you own =.emacs= if you have one and replace it with [[file:init.el][the content
+of this file]]. If you ever want to regenerate if from this org
+document, simply =M-x org-babel-tangle=.
+* Loading files:  
+** Loading babel: 						     :ARNAUD:
+#+begin_src emacs-lisp :tangle init.el
+(require 'org-install)
+(require 'org)
+#+end_src
+* Emacs aesthetics:
+** Remove splash screen:						:WEB:
+#+begin_src emacs-lisp :tangle init.el
+(setq inhibit-splash-screen t)
+#+end_src
+** Change frame name of emacs:					   :LUKA:WEB:
+#+begin_src emacs-lisp :tangle init.el
+(setq frame-title-format
+  '("Emacs - " (buffer-file-name "%f"
+    (dired-directory dired-directory "%b"))))
+#+end_src
+** Text coloring						     :ARNAUD:
+#+begin_src emacs-lisp :tangle init.el
+  (global-font-lock-mode t)
+  (custom-set-faces
+    '(flyspell-incorrect ((t (:inverse-video t)))))
+#+end_src
+** Line and column numbering					     :ARNAUD:
+#+begin_src emacs-lisp :tangle init.el
+(line-number-mode 1)
+(column-number-mode 1)
+#+end_src
+** Parenthesis                                                       :ARNAUD:
+#+begin_src emacs-lisp :tangle init.el
+(load-library "paren")
+(show-paren-mode 1)
+(transient-mark-mode t)
+(require 'paren)
+#+end_src
+* Shortcuts:
+** UTF 8 by default                                                 :ARNAUD:
+#+begin_src emacs-lisp :tangle init.el
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+#+end_src
+** Keyboard fix for Mac OS X users...                               :ADRIEN:
+Thanks to Adrien Lebre for providing me with this
+=ns-use-mac-modifier-symbols= thing. Unfortunately, this is broken at
+the moment (I tried to wrap the command around the cond but it should
+fail on mac). 
+#+begin_src emacs-lisp :tangle init.el
+(cond
+ ((string-equal system-type "darwin")   ; Mac OS X
+  (progn
+    (setq
+     ns-command-modifier 'meta         ; Apple/Command key is Meta
+	 ns-alternate-modifier nil         ; Option is the Mac Option key
+	 ns-use-mac-modifier-symbols  nil  ; display standard Emacs (and not standard Mac) modifier symbols
+	 ))
+  )
+ )
+#+end_src
+** CUA mode a.k.a =C-x, C-c, C-v= 
+Yuck! Many people like this but I hate it as it conflicts with some of
+my other shortcuts (e.g., the ones for spelling a region).
+#+begin_src emacs-lisp :tangle init.el
+(cua-mode t)
+#+end_src
+** Navigate back in text 					     :ARNAUD:
+#+begin_src emacs-lisp :tangle init.el
+(defun jump-mark ()
+  (interactive)
+  (set-mark-command (point)))
+(defun beginning-of-defun-and-mark ()
+  (interactive)
+  (push-mark (point))
+  (beginning-of-defun))
+(defun end-of-defun-and-mark ()
+  (interactive)
+  (push-mark (point))
+  (end-of-defun))
+
+(global-set-key "\^c\^b" 'beginning-of-defun-and-mark)
+(global-set-key "\^c\^e" 'end-of-defun-and-mark)
+(global-set-key "\^c\^j" 'jump-mark)
+(global-set-key [S-f6] 'jump-mark)		;; jump from mark to mark
+#+end_src
+** Goto line							     :ARNAUD:
+#+begin_src emacs-lisp :tangle init.el
+(global-set-key "\M-g" 'goto-line)
+#+end_src
+** Use X clipboard (cut'n paste) 					:WEB:
+   Since I switched to emacs 24, cutting and pasting to emacs has
+   become burdensome. For example, I had to do S-C-c after selecting
+   terminals areas before being able to copy in emacs. With the
+   following commants, I don't have to do this anymore. I wish it
+   would have eased interactions when running emacs in a terminal
+   (i.e., with =-nw=) but it does not. :( http://stackoverflow.com/questions/13036155/how-to-to-combine-emacs-primary-clipboard-copy-and-paste-behavior-on-ms-windows
+#+begin_src emacs-lisp :tangle init.el
+(setq select-active-regions nil)
+(setq x-select-enable-primary t)
+(setq x-select-enable-clipboard t)
+(setq mouse-drag-copy-region t)
+#+end_src
+** Increase/decrease text size in emacs                                :WEB:
+#+begin_src emacs-lisp :tangle init.el
+(global-set-key (kbd "C-+") 'text-scale-increase)
+(global-set-key (kbd "C--") 'text-scale-decrease)
+;; C-x C-0 restores the default font size
+#+end_src
+[11:26:47; 18.04.2014]
+** Add spell checker to the file                                       :WEB:
+#+begin_src emacs-lisp :tangle init.el
+;; Inspired from http://tex.stackexchange.com/questions/166681/changing-language-of-flyspell-emacs-with-a-shortcut
+;; (defun spell (choice)
+;;    "Switch between language dictionaries."
+;;    (interactive "cChoose:  (a) American | (f) Francais")
+;;     (cond ((eq choice ?1)
+;;            (setq flyspell-default-dictionary "american")
+;;            (setq ispell-dictionary "american")
+;;            (ispell-kill-ispell))
+;;           ((eq choice ?2)
+;;            (setq flyspell-default-dictionary "francais")
+;;            (setq ispell-dictionary "francais")
+;;            (ispell-kill-ispell))
+;;           (t (message "No changes have been made."))) )
+
+(define-key global-map (kbd "C-c s a") (lambda () (interactive) (ispell-change-dictionary "american")))
+(define-key global-map (kbd "C-c s f") (lambda () (interactive) (ispell-change-dictionary "francais")))
+(define-key global-map (kbd "C-c s r") 'flyspell-region)
+(define-key global-map (kbd "C-c s b") 'flyspell-buffer)
+(define-key global-map (kbd "C-c s s") 'flyspell-mode)
+#+end_src
+* Small fixes:
+** PDF with LaTeX by default                                        :ARNAUD:
+#+begin_src emacs-lisp :tangle init.el
+(defun auto-fill-mode-on () (TeX-PDF-mode 1))
+(add-hook 'tex-mode-hook 'TeX-PDF-mode-on)
+(add-hook 'latex-mode-hook 'TeX-PDF-mode-on)
+(setq TeX-PDF-mode t)
+#+end_src
+** Auto-fill-mode
+#+begin_src emacs-lisp :tangle init.el
+(defun auto-fill-mode-on () (auto-fill-mode 1))
+(add-hook 'text-mode-hook 'auto-fill-mode-on)
+(add-hook 'emacs-lisp-mode 'auto-fill-mode-on)
+(add-hook 'tex-mode-hook 'auto-fill-mode-on)
+(add-hook 'latex-mode-hook 'auto-fill-mode-on)
+#+end_src
+** Asking for confirmation concisely: 					:WEB:
+Link: http://org.ryuslash.org/dotfiles/emacs/init.html#sec-7-1 Being
+asked to type in yes explicitly all the time gets very tedious. I
+understand that it is safer since y is much easier to type in
+accidentally than yes and so the potential to say yes to things you
+don't want is there, but I haven't had any such problems yet.
+
+#+begin_src emacs-lisp :tangle init.el
+(defalias 'yes-or-no-p 'y-or-n-p)
+#+end_src
+* Org-mode convenient configuration
+** Default directory
+#+begin_src emacs-lisp :tangle init.el
+(setq org-directory "~/org/")
+#+end_src
+** Cosmetics
+#+begin_src emacs-lisp :tangle init.el
+(setq org-hide-leading-stars t)
+(setq org-alphabetical-lists t)
+(setq org-src-fontify-natively t)  ;; you want this to activate coloring in blocks
+(setq org-src-tab-acts-natively t) ;; you want this to have completion in blocks
+(setq org-hide-emphasis-markers t) ;; to hide the *,=, or / markers
+(setq org-pretty-entities t)       ;; to have \alpha, \to and others display as utf8 http://orgmode.org/manual/Special-symbols.html
+#+end_src
+** Agenda
+*** Add short cut keys for the org-agenda			     :ARNAUD:
+#+begin_src emacs-lisp :tangle init.el
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-cc" 'org-capture)
+(global-set-key (kbd "C-c a") 'org-agenda)
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map (kbd "C-c a") 'org-agenda)
+(global-set-key "\C-cb" 'org-iswitchb)
+(setq org-default-notes-file "~/org/notes.org")
+     (define-key global-map "\C-cd" 'org-capture)
+(setq org-capture-templates (quote (("t" "Todo" entry (file+headline "~/org/liste.org" "Tasks") "* TODO %?
+  %i
+  %a" :prepend t) ("j" "Journal" entry (file+datetree "~/org/journal.org") "* %?
+Entered on %U
+  %i
+  %a"))))
+#+end_src
+
+#+RESULTS:
+| t | Todo    | entry | (file+headline ~/org/liste.org Tasks) | * TODO %?\n  %i\n  %a           | :prepend | t |
+| j | Journal | entry | (file+datetree ~/org/journal.org)     | * %?\nEntered on %U\n  %i\n  %a |          |   |
+
+*** Agenda config						     :ARNAUD:
+#+begin_src emacs-lisp :tangle init.el
+(setq org-agenda-include-all-todo t)
+(setq org-agenda-include-diary t)
+#+end_src
+** Heading is DONE when all checkboxes are checked:           :WEB:noexport:
+Mark heading done when all checkboxes are checked.
+
+An item consists of a list with checkboxes. When all of the checkboxes are checked, the item should be considered complete and its TODO state should be automatically changed to DONE. The code below does that. This version is slightly enhanced over the one in the mailing list (see http://thread.gmane.org/gmane.emacs.orgmode/42715/focus=42721) to reset the state back to TODO if a checkbox is unchecked.
+
+Note that the code requires that a checkbox statistics cookie (the [/] or [%] thingie in the headline - see the Checkboxes section in the manual) be present in order for it to work. Note also that it is too dumb to figure out whether the item has a TODO state in the first place: if there is a statistics cookie, a TODO/DONE state will be added willy-nilly any time that the statistics cookie is changed.
+
+#+begin_src emacs-lisp :tangle init.el
+;; see http://thread.gmane.org/gmane.emacs.orgmode/42715
+(eval-after-load 'org-list
+  '(add-hook 'org-checkbox-statistics-hook (function ndk/checkbox-list-complete)))
+
+(defun ndk/checkbox-list-complete ()
+  (save-excursion
+    (org-back-to-heading t)
+    (let ((beg (point)) end)
+      (end-of-line)
+      (setq end (point))
+      (goto-char beg)
+      (if (re-search-forward "\\[\\([0-9]*%\\)\\]\\|\\[\\([0-9]*\\)/\\([0-9]*\\)\\]" end t)
+            (if (match-end 1)
+                (if (equal (match-string 1) "100%")
+                    ;; all done - do the state change
+                    (org-todo 'done)
+                  (org-todo 'todo))
+              (if (and (> (match-end 2) (match-beginning 2))
+                       (equal (match-string 2) (match-string 3)))
+                  (org-todo 'done)
+                (org-todo 'todo)))))))
+#+end_src
+
+#+RESULTS:
+: ndk/checkbox-list-complete
+
+[16:27:59; 24.04.2013]
+
+* Org-mode shortcuts
+** Adding date with brackets with command "C-c d":		       :LUKA:
+#+begin_src emacs-lisp :tangle init.el
+(global-set-key (kbd "C-c d") 'insert-date)
+(defun insert-date (prefix)
+    "Insert the current date. With prefix-argument, use ISO format. With
+   two prefix arguments, write out the day and month name."
+    (interactive "P")
+    (let ((format (cond
+                   ((not prefix) "** %Y-%m-%d")
+                   ((equal prefix '(4)) "[%Y-%m-%d]"))))
+      (insert (format-time-string format))))
+#+end_src
+[16:34:01; 24.04.2013]
+
+** Adding date with command "C-c t":				       :LUKA:
+#+begin_src emacs-lisp :tangle init.el
+(global-set-key (kbd "C-c t") 'insert-time-date)
+(defun insert-time-date (prefix)
+    "Insert the current date. With prefix-argument, use ISO format. With
+   two prefix arguments, write out the day and month name."
+    (interactive "P")
+    (let ((format (cond
+                   ((not prefix) "[%H:%M:%S; %d.%m.%Y]")
+                   ((equal prefix '(4)) "[%H:%M:%S; %Y-%m-%d]"))))
+      (insert (format-time-string format))))
+#+end_src
+[16:34:15; 24.04.2013]
+** Org-store-link:                                                  :ARNAUD:
+#+begin_src emacs-lisp :tangle init.el
+(global-set-key (kbd "C-c l") 'org-store-link)
+#+end_src
+** Navigating through org-mode:
+Additional shortcuts for navigating through org-mode documents:
+#+begin_src emacs-lisp :tangle init.el
+(global-set-key (kbd "C-c <up>") 'outline-up-heading)
+(global-set-key (kbd "C-c <left>") 'outline-previous-visible-heading)
+(global-set-key (kbd "C-c <right>") 'outline-next-visible-heading)
+#+end_src
+* Org-mode + babel:
+** Seamless use of babel (no confirmation, lazy export)              :ARNAUD:
+#+begin_src emacs-lisp :tangle init.el
+(setq org-export-babel-evaluate nil)
+(setq org-confirm-babel-evaluate nil)
+#+end_src
+** Some initial languages we want org-babel to support:             :ARNAUD:
+#+begin_src emacs-lisp :tangle init.el
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '(
+     (sh . t)
+     (python . t)
+     (R . t)
+     (ruby . t)
+     (ocaml . t)
+     (ditaa . t)
+     (dot . t)
+     (octave . t)
+     (sqlite . t)
+     (perl . t)
+     (screen . t)
+     (plantuml . t)
+     (lilypond . t)
+     (org . t)
+     (makefile . t)
+     ))
+  (setq org-src-preserve-indentation t)
+#+end_src
+
+#+RESULTS:
+
+** Adding source code blocks: 					       :LUKA:
+*** With capital letters:
+   To use this type <S and then TAB
+#+begin_src emacs-lisp :tangle init.el
+(add-to-list 'org-structure-template-alist
+        '("S" "#+begin_src ?\n\n#+end_src" "<src lang=\"?\">\n\n</src>"))
+#+end_src
+
+#+RESULTS:
+| B | #+begin_src sh\n\n#+end_src         | <src lang="sh">\n\n</src>              |
+| b | #+begin_src sh\n\n#+end_src         | <src lang="sh">\n\n</src>              |
+| R | #+BEGIN_SRC R :session\n\n#+END_SRC | <src lang="R">\n\n</src>               |
+| r | #+begin_src R :session\n\n#+end_src | <src lang="R">\n\n</src>               |
+| m | #+begin_src emacs-lisp :tangle init.el\n\n#+end_src | <src lang="emacs-lisp">\n\n</src>      |
+| S | #+BEGIN_SRC ?\n\n#+END_SRC          | <src lang="?">\n\n</src>               |
+| s | #+BEGIN_SRC ?\n\n#+END_SRC          | <src lang="?">\n\n</src>               |
+| e | #+BEGIN_EXAMPLE\n?\n#+END_EXAMPLE   | <example>\n?\n</example>               |
+| q | #+BEGIN_QUOTE\n?\n#+END_QUOTE       | <quote>\n?\n</quote>                   |
+| v | #+BEGIN_VERSE\n?\n#+END_VERSE       | <verse>\n?\n</verse>                   |
+| V | #+BEGIN_VERBATIM\n?\n#+END_VERBATIM | <verbatim>\n?\n</verbatim>             |
+| c | #+BEGIN_CENTER\n?\n#+END_CENTER     | <center>\n?\n</center>                 |
+| l | #+BEGIN_LaTeX\n?\n#+END_LaTeX       | <literal style="latex">\n?\n</literal> |
+| L | #+LaTeX:                            | <literal style="latex">?</literal>     |
+| h | #+BEGIN_HTML\n?\n#+END_HTML         | <literal style="html">\n?\n</literal>  |
+| H | #+HTML:                             | <literal style="html">?</literal>      |
+| a | #+BEGIN_ASCII\n?\n#+END_ASCII       |                                        |
+| A | #+ASCII:                            |                                        |
+| i | #+INDEX: ?                          | #+INDEX: ?                             |
+| I | #+INCLUDE: %file ?                  | <include file=%file markup="?">        |
+
+*** Emacs-elisp code:
+   To use this type <m and then TAB
+#+begin_src emacs-lisp :tangle init.el
+(add-to-list 'org-structure-template-alist
+        '("m" "#+begin_src emacs-lisp :tangle init.el\n\n#+end_src" "<src lang=\"emacs-lisp\">\n\n</src>"))
+#+end_src
+
+#+RESULTS:
+| B | #+begin_src sh\n\n#+end_src         | <src lang="sh">\n\n</src>              |
+| b | #+begin_src sh\n\n#+end_src         | <src lang="sh">\n\n</src>              |
+| R | #+BEGIN_SRC R :session\n\n#+END_SRC | <src lang="R">\n\n</src>               |
+| r | #+begin_src R :session\n\n#+end_src | <src lang="R">\n\n</src>               |
+| m | #+begin_src emacs-lisp :tangle init.el\n\n#+end_src | <src lang="emacs-lisp">\n\n</src>      |
+| S | #+BEGIN_SRC ?\n\n#+END_SRC          | <src lang="?">\n\n</src>               |
+| s | #+BEGIN_SRC ?\n\n#+END_SRC          | <src lang="?">\n\n</src>               |
+| e | #+BEGIN_EXAMPLE\n?\n#+END_EXAMPLE   | <example>\n?\n</example>               |
+| q | #+BEGIN_QUOTE\n?\n#+END_QUOTE       | <quote>\n?\n</quote>                   |
+| v | #+BEGIN_VERSE\n?\n#+END_VERSE       | <verse>\n?\n</verse>                   |
+| V | #+BEGIN_VERBATIM\n?\n#+END_VERBATIM | <verbatim>\n?\n</verbatim>             |
+| c | #+BEGIN_CENTER\n?\n#+END_CENTER     | <center>\n?\n</center>                 |
+| l | #+BEGIN_LaTeX\n?\n#+END_LaTeX       | <literal style="latex">\n?\n</literal> |
+| L | #+LaTeX:                            | <literal style="latex">?</literal>     |
+| h | #+BEGIN_HTML\n?\n#+END_HTML         | <literal style="html">\n?\n</literal>  |
+| H | #+HTML:                             | <literal style="html">?</literal>      |
+| a | #+BEGIN_ASCII\n?\n#+END_ASCII       |                                        |
+| A | #+ASCII:                            |                                        |
+| i | #+INDEX: ?                          | #+INDEX: ?                             |
+| I | #+INCLUDE: %file ?                  | <include file=%file markup="?">        |
+
+*** R code:
+To use this type <r and then TAB
+#+begin_src emacs-lisp :tangle init.el
+(add-to-list 'org-structure-template-alist
+        '("r" "#+begin_src R :results output :session :exports both\n\n#+end_src" "<src lang=\"R\">\n\n</src>"))
+#+end_src
+
+#+RESULTS:
+| B | #+begin_src sh\n\n#+end_src         | <src lang="sh">\n\n</src>              |
+| b | #+begin_src sh\n\n#+end_src         | <src lang="sh">\n\n</src>              |
+| R | #+BEGIN_SRC R :session\n\n#+END_SRC | <src lang="R">\n\n</src>               |
+| r | #+begin_src R :session\n\n#+end_src | <src lang="R">\n\n</src>               |
+| m | #+begin_src emacs-lisp :tangle init.el\n\n#+end_src | <src lang="emacs-lisp">\n\n</src>      |
+| S | #+BEGIN_SRC ?\n\n#+END_SRC          | <src lang="?">\n\n</src>               |
+| s | #+BEGIN_SRC ?\n\n#+END_SRC          | <src lang="?">\n\n</src>               |
+| e | #+BEGIN_EXAMPLE\n?\n#+END_EXAMPLE   | <example>\n?\n</example>               |
+| q | #+BEGIN_QUOTE\n?\n#+END_QUOTE       | <quote>\n?\n</quote>                   |
+| v | #+BEGIN_VERSE\n?\n#+END_VERSE       | <verse>\n?\n</verse>                   |
+| V | #+BEGIN_VERBATIM\n?\n#+END_VERBATIM | <verbatim>\n?\n</verbatim>             |
+| c | #+BEGIN_CENTER\n?\n#+END_CENTER     | <center>\n?\n</center>                 |
+| l | #+BEGIN_LaTeX\n?\n#+END_LaTeX       | <literal style="latex">\n?\n</literal> |
+| L | #+LaTeX:                            | <literal style="latex">?</literal>     |
+| h | #+BEGIN_HTML\n?\n#+END_HTML         | <literal style="html">\n?\n</literal>  |
+| H | #+HTML:                             | <literal style="html">?</literal>      |
+| a | #+BEGIN_ASCII\n?\n#+END_ASCII       |                                        |
+| A | #+ASCII:                            |                                        |
+| i | #+INDEX: ?                          | #+INDEX: ?                             |
+| I | #+INCLUDE: %file ?                  | <include file=%file markup="?">        |
+
+   To use this type <R and then TAB
+#+begin_src emacs-lisp :tangle init.el
+(add-to-list 'org-structure-template-alist
+        '("R" "#+begin_src R :results output graphics :file (org-babel-temp-file \"figure\" \".png\") :exports both :width 600 :height 400 :session\n\n#+end_src" "<src lang=\"R\">\n\n</src>"))
+#+end_src
+
+#+RESULTS:
+| B | #+begin_src sh\n\n#+end_src         | <src lang="sh">\n\n</src>              |
+| b | #+begin_src sh\n\n#+end_src         | <src lang="sh">\n\n</src>              |
+| R | #+BEGIN_SRC R :session\n\n#+END_SRC | <src lang="R">\n\n</src>               |
+| r | #+begin_src R :session\n\n#+end_src | <src lang="R">\n\n</src>               |
+| m | #+begin_src emacs-lisp :tangle init.el\n\n#+end_src | <src lang="emacs-lisp">\n\n</src>      |
+| S | #+BEGIN_SRC ?\n\n#+END_SRC          | <src lang="?">\n\n</src>               |
+| s | #+BEGIN_SRC ?\n\n#+END_SRC          | <src lang="?">\n\n</src>               |
+| e | #+BEGIN_EXAMPLE\n?\n#+END_EXAMPLE   | <example>\n?\n</example>               |
+| q | #+BEGIN_QUOTE\n?\n#+END_QUOTE       | <quote>\n?\n</quote>                   |
+| v | #+BEGIN_VERSE\n?\n#+END_VERSE       | <verse>\n?\n</verse>                   |
+| V | #+BEGIN_VERBATIM\n?\n#+END_VERBATIM | <verbatim>\n?\n</verbatim>             |
+| c | #+BEGIN_CENTER\n?\n#+END_CENTER     | <center>\n?\n</center>                 |
+| l | #+BEGIN_LaTeX\n?\n#+END_LaTeX       | <literal style="latex">\n?\n</literal> |
+| L | #+LaTeX:                            | <literal style="latex">?</literal>     |
+| h | #+BEGIN_HTML\n?\n#+END_HTML         | <literal style="html">\n?\n</literal>  |
+| H | #+HTML:                             | <literal style="html">?</literal>      |
+| a | #+BEGIN_ASCII\n?\n#+END_ASCII       |                                        |
+| A | #+ASCII:                            |                                        |
+| i | #+INDEX: ?                          | #+INDEX: ?                             |
+| I | #+INCLUDE: %file ?                  | <include file=%file markup="?">        |
+
+*** Python code:
+   To use this type <p and then TAB
+#+begin_src emacs-lisp :tangle init.el
+(add-to-list 'org-structure-template-alist
+        '("p" "#+begin_src python :results output raw :exports both\n\n#+end_src" "<src lang=\"python\">\n\n</src>"))
+#+end_src
+*** Bash "sh" code:
+To use this type <b and then TAB
+#+begin_src emacs-lisp :tangle init.el
+(add-to-list 'org-structure-template-alist
+        '("b" "#+begin_src sh :results output :exports both\n\n#+end_src" "<src lang=\"sh\">\n\n</src>"))
+#+end_src
+
+#+RESULTS:
+| B | #+begin_src sh\n\n#+end_src         | <src lang="sh">\n\n</src>              |
+| b | #+begin_src sh\n\n#+end_src         | <src lang="sh">\n\n</src>              |
+| R | #+BEGIN_SRC R :session\n\n#+END_SRC | <src lang="R">\n\n</src>               |
+| r | #+begin_src R :session\n\n#+end_src | <src lang="R">\n\n</src>               |
+| m | #+begin_src emacs-lisp :tangle init.el\n\n#+end_src | <src lang="emacs-lisp">\n\n</src>      |
+| S | #+BEGIN_SRC ?\n\n#+END_SRC          | <src lang="?">\n\n</src>               |
+| s | #+BEGIN_SRC ?\n\n#+END_SRC          | <src lang="?">\n\n</src>               |
+| e | #+BEGIN_EXAMPLE\n?\n#+END_EXAMPLE   | <example>\n?\n</example>               |
+| q | #+BEGIN_QUOTE\n?\n#+END_QUOTE       | <quote>\n?\n</quote>                   |
+| v | #+BEGIN_VERSE\n?\n#+END_VERSE       | <verse>\n?\n</verse>                   |
+| V | #+BEGIN_VERBATIM\n?\n#+END_VERBATIM | <verbatim>\n?\n</verbatim>             |
+| c | #+BEGIN_CENTER\n?\n#+END_CENTER     | <center>\n?\n</center>                 |
+| l | #+BEGIN_LaTeX\n?\n#+END_LaTeX       | <literal style="latex">\n?\n</literal> |
+| L | #+LaTeX:                            | <literal style="latex">?</literal>     |
+| h | #+BEGIN_HTML\n?\n#+END_HTML         | <literal style="html">\n?\n</literal>  |
+| H | #+HTML:                             | <literal style="html">?</literal>      |
+| a | #+BEGIN_ASCII\n?\n#+END_ASCII       |                                        |
+| A | #+ASCII:                            |                                        |
+| i | #+INDEX: ?                          | #+INDEX: ?                             |
+| I | #+INCLUDE: %file ?                  | <include file=%file markup="?">        |
+
+To use this type <B and then TAB. This comes with a session argument
+(e.g., in case you want to keep ssh connexions open).
+#+begin_src emacs-lisp :tangle init.el
+(add-to-list 'org-structure-template-alist
+        '("B" "#+begin_src sh :session foo :results output :exports both \n\n#+end_src" "<src lang=\"sh\">\n\n</src>"))
+#+end_src
+
+#+RESULTS:
+| B | #+begin_src sh\n\n#+end_src         | <src lang="sh">\n\n</src>              |
+| b | #+begin_src sh\n\n#+end_src         | <src lang="sh">\n\n</src>              |
+| R | #+BEGIN_SRC R :session\n\n#+END_SRC | <src lang="R">\n\n</src>               |
+| r | #+begin_src R :session\n\n#+end_src | <src lang="R">\n\n</src>               |
+| m | #+begin_src emacs-lisp :tangle init.el\n\n#+end_src | <src lang="emacs-lisp">\n\n</src>      |
+| S | #+BEGIN_SRC ?\n\n#+END_SRC          | <src lang="?">\n\n</src>               |
+| s | #+BEGIN_SRC ?\n\n#+END_SRC          | <src lang="?">\n\n</src>               |
+| e | #+BEGIN_EXAMPLE\n?\n#+END_EXAMPLE   | <example>\n?\n</example>               |
+| q | #+BEGIN_QUOTE\n?\n#+END_QUOTE       | <quote>\n?\n</quote>                   |
+| v | #+BEGIN_VERSE\n?\n#+END_VERSE       | <verse>\n?\n</verse>                   |
+| V | #+BEGIN_VERBATIM\n?\n#+END_VERBATIM | <verbatim>\n?\n</verbatim>             |
+| c | #+BEGIN_CENTER\n?\n#+END_CENTER     | <center>\n?\n</center>                 |
+| l | #+BEGIN_LaTeX\n?\n#+END_LaTeX       | <literal style="latex">\n?\n</literal> |
+| L | #+LaTeX:                            | <literal style="latex">?</literal>     |
+| h | #+BEGIN_HTML\n?\n#+END_HTML         | <literal style="html">\n?\n</literal>  |
+| H | #+HTML:                             | <literal style="html">?</literal>      |
+| a | #+BEGIN_ASCII\n?\n#+END_ASCII       |                                        |
+| A | #+ASCII:                            |                                        |
+| i | #+INDEX: ?                          | #+INDEX: ?                             |
+| I | #+INCLUDE: %file ?                  | <include file=%file markup="?">        |
+
+[18:23:44; 21.06.2013]
+** Display images                                                   :ARNAUD:
+#+begin_src emacs-lisp :tangle init.el
+(add-hook 'org-babel-after-execute-hook 'org-display-inline-images) 
+(add-hook 'org-mode-hook 'org-display-inline-images)
+(add-hook 'org-mode-hook 'org-babel-result-hide-all)
+#+end_src
