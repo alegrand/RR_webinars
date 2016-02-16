@@ -1,0 +1,89 @@
+# -*- mode: org -*-
+# -*- coding: utf-8 -*-
+#+STARTUP: overview indent inlineimages logdrawer
+#+TITLE:       Journal
+#+AUTHOR:      Put your name here
+#+LANGUAGE:    en
+#+TAGS: POLARIS(P) LIG(L) HOME(H) Europe(E) Blog(B) noexport(n) Stats(S)
+#+TAGS: Epistemology(E) Vulgarization(V) Teaching(T) R(R) OrgMode(O)
+#+EXPORT_SELECT_TAGS: Blog
+#+OPTIONS:   H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+COLUMNS: %25ITEM %TODO %3PRIORITY %TAGS
+#+SEQ_TODO: TODO(t!) STARTED(s!) WAITING(w!) APPT(a!) | DONE(d!) CANCELLED(c!) DEFERRED(f!)
+
+* 2016
+** 2016-03 March
+*** 2016-03-07 Monday
+**** Webinar on reproducible research
+     https://github.com/alegrand/RR_webinars/blob/master/1_replicable_article_laboratory_notebook/index.org
+***** Emacs shortcuts
+  Here are a few convenient emacs shortcuts for those that have never
+  used emacs. Note that you may want to use two hours to follow the
+  emacs tutorial (=C-h t=).  
+  - =C-x C-c= exit
+  - =C-x C-s= save buffer
+  - =C-g= panic mode ;) type this whenever you want to exit an awful
+    series of shortcuts
+  - =C-a= jump to beginning of the line
+  - =C-e= jump to end of the line
+  - =C-Space= start selection marker
+  - =C-l= reposition the screen
+  - =C-_= undo
+  - =C-s= search
+  - =M-%= replace
+  - =C-x C-h= get the list of emacs shortcuts
+  - =C-c C-h= get the list of emacs shortcuts considering the mode you are
+    currently using (e.g., C, Lisp, org, ...)
+  There are a bunch of cheatsheets also available out there.
+***** Org-mode
+  Many emacs shortcuts start by =C-x=. Org-mode's shortcuts generaly
+  start with =C-c=:
+  - =Tab= fold/unfold
+  - =C-c C-c= do something useful here (tag, execute, ...)
+  - =C-c c= capture (finish capturing with =C-c C-c=, this is explained on
+    the top of the buffer that just opened)
+  - =C-c C-o= open link
+  - =C-c C-t= switch todo
+  - =C-c C-e= export
+  - =M-Enter= new item/section
+  - =C-c a= agenda (try the =L= option)
+  - =C-c C-a= attach files
+  - =C-c C-d= set a deadl1ine (use =S-arrows= to navigate in the dates)
+  - =A-arrows= move subtree (add shift for the whole subtree)
+***** Org-mode Babel (for litterate programming)
+  - =<s + tab= template for source bloc. You'll get this:
+    #+BEGIN_EXAMPLE
+  #+BEGIN_SRC sh
+  ls
+  #+END_SRC
+    #+END_EXAMPLE
+    Now if you =C-c C-c=, it will execute the block
+    #+BEGIN_EXAMPLE
+  #+RESULTS:
+  | #journal.org# |
+  | journal.html  |
+  | journal.org   |
+  | journal.org~  |
+    #+END_EXAMPLE
+  
+  - Source blocks have many options (formatting, arguments, names,
+    sessions,...), which is why I have my own shortcuts =<b + tab= bash
+    block (or =B= for sessions)
+    #+BEGIN_EXAMPLE 
+  #+begin_src sh :results output :exports both
+  ls /tmp/*201*.pdf
+  #+end_src
+
+  #+RESULTS:
+  : /tmp/2015_02_bordeaux_otl_tutorial.pdf
+  : /tmp/2015-ASPLOS.pdf
+  : /tmp/2015-Europar-Threadmap.pdf
+  : /tmp/europar2016-1.pdf
+  : /tmp/europar2016.pdf
+  : /tmp/M2-PDES-planning-examens-janvier2016.pdf
+    #+END_EXAMPLE
+  - I have defined many such templates in my configuration. You can give
+    a try to =<h,<l,<e,<p,<m,<r,<R=,...
