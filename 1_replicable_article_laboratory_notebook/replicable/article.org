@@ -1,0 +1,233 @@
+# -*- coding: utf-8 -*-
+# -*- mode: org -*-
+
+#+TITLE:
+#+LANGUAGE:  en
+#+OPTIONS: H:5 author:nil email:nil creator:nil timestamp:nil skip:nil toc:nil
+#+TAGS: noexport(n) deprecated(d)
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LATEX_CLASS: IEEEtran
+#+LATEX_HEADER: \usepackage[T1]{fontenc}
+#+LATEX_HEADER: \usepackage[utf8]{inputenc}
+#+LATEX_HEADER: \usepackage{graphicx}
+#+LATEX_HEADER: \usepackage{xspace,ifthen}
+#+LATEX_HEADER: \usepackage{amsmath,amssymb}
+#+LATEX_HEADER: \usepackage[american]{babel}
+#+LATEX_HEADER: \usepackage{url} \urlstyle{sf}
+
+#+BEGIN_LaTeX
+\let\oldcite=\cite
+\renewcommand\cite[2][]{~\ifthenelse{\equal{#1}{}}{\oldcite{#2}}{\oldcite[#1]{#2}}\xspace}
+\let\oldref=\ref
+\def\ref#1{~\oldref{#1}\xspace}
+\sloppy
+#+END_LaTeX
+
+#+BEGIN_LaTeX  
+  \title{Org Mode Template for an IEEE Conference Article}
+  %\subtitle{}
+
+  \author{%
+    \IEEEauthorblockN{%
+      John Doe\IEEEauthorrefmark{1}, 
+      John Smith\IEEEauthorrefmark{2},
+      Jane Doe\IEEEauthorrefmark{1},
+    }\smallskip
+%    \\
+    \IEEEauthorblockA{
+      \IEEEauthorrefmark{1}University of Middle-of-Nowhere; \url{firstname.lastname@doe.org}}
+    \IEEEauthorblockA{
+      \IEEEauthorrefmark{2}Institute of Whatever; \url{firstname.lastname@smith.com}}
+  }
+
+  \maketitle
+#+END_LaTeX
+
+
+#+BEGIN_abstract
+  Reproducible research has become increasingly important, just like
+  parallel architectures so we propose a novel experimental study of a
+  parallel implementation of the quicksort algorithm that builds on
+  reproducible research technology.
+#+END_abstract
+* Getting the LaTeX						   :noexport:
+#+begin_src sh :results output :exports both
+wget -O IEEEtran.cls http://mirror.ibcp.fr/pub/CTAN/macros/latex/contrib/IEEEtran/IEEEtran.cls
+wget -O IEEEtran.bst http://mirrors.ctan.org/macros/latex/contrib/IEEEtran/bibtex/IEEEtran.bst
+#+end_src
+
+* Getting the data                                                 :noexport:
+#+begin_src sh :results output :exports both
+wget -O measurements.txt https://raw.githubusercontent.com/alegrand/M2R-ParallelQuicksort/master/data/sama_2014-10-13/measurements_03%3A47.txt
+#+end_src
+
+* Extracting traces from data files				   :noexport:
+
+#+begin_src perl :results output raw :exports both :var input="measurements.txt" output="data.csv"
+use strict;
+open INPUT, $input;
+open OUTPUT, "> $output";
+
+my($line);
+my($size);
+my($seq,$par,$libc);
+
+print OUTPUT "Size, Seq, Par, Libc\n" ;
+while($line=<INPUT>) {
+    chomp $line;
+    if($line =~/^Size: ([\d\.]*)$/) {
+        $size = $1;
+        next;
+    } 
+    if($line =~/^Sequential quicksort.*: ([\d\.]*) sec.$/) {
+        $seq=$1; next;
+    } 
+    if($line =~/^Parallel quicksort.*: ([\d\.]*) sec.$/) {
+        $par=$1; next;
+    } 
+    if($line =~/^Built-in quicksort.*: ([\d\.]*) sec.$/) {
+        $libc=$1; 
+        print OUTPUT "$size, $seq, $par, $libc\n";
+        next;
+    }
+}
+print "file:$output"
+#+end_src
+
+* R functions							   :noexport:
+Initialization and reading of the data.
+#+begin_src R :results output :session R :exports both
+df=read.csv("data.csv",strip.white=T,header=T)
+#+end_src
+
+#+RESULTS:
+
+Let's compute some (crappy) statistics.
+#+begin_src R :results output :session R :exports both
+sdf = data.frame()
+for(size in unique(df$Size)) {
+    seq = mean(df[df$Size == size,]$Seq)
+    par = mean(df[df$Size == size,]$Par)
+    libc = mean(df[df$Size == size,]$Libc)
+    sdf = rbind(sdf,data.frame(Size=size,Seq=seq,Par=par,Libc=libc))
+}
+#+end_src
+
+#+RESULTS:
+
+* Introduction
+  With the advent of parallel architecture, it is tempting to propose
+  parallel implementations of classical operations. In this wonderful
+  article, we report the performance gain of the well known quicksort
+  algorithm, whose parallelization seems natural.
+* Context
+  Quicksort (sometimes called partition-exchange sort) is an efficient
+  sorting algorithm, serving as a systematic method for placing the
+  elements of an array in order. Developed by Tony Hoare in 1959 with
+  his work published in 1961\cite{qsort}, it is still a commonly used
+  algorithm for sorting.  Quicksort is a divide and conquer
+  algorithm. Quicksort first divides a large array into two smaller
+  sub-arrays: the low elements and the high elements. Quicksort can
+  then recursively sort the sub-arrays. We propose to sort the
+  sub-arrays in parallel on two threads and to bound the recursion
+  level.
+* Related Work
+  \label{sec.rel}
+
+  Well, this is such a brilliant and novel idea that none has worked
+  on this cutting-edge topic. Parallel architecture barely existed in
+  1959, when Hoare proposed the sequential version of this
+  algorithm\cite{qsort}. Some colleagues mentioned some obscure
+  parallelization of the partitioning phase but it is too complex to
+  implement and certainly too costly to provide any performance gain.
+* Methodology
+  We used a Dell Latitude 6430u with 16Gb of RAM running a Debian with
+  Linux 3.14.15. The CPU is an Intel(R) Core(TM) i7-3687U CPU @
+  2.10GHz comprising two physical cores and hyperthreading. The
+  =performance= frequency governor was used. We used FCC 5.3.1 with the
+  following compilation flags: =-g -Wall -O2 -pthread -lrt=. Since we
+  care a lot about reproducibility of our research, all the sources
+  and detailed information regarding our experiments are provided on
+  [[https://github.com/alegrand/M2R-ParallelQuicksort/blob/master/journal.org][Github]]
+  #+LaTeX:\footnote{Or figshare, or zenodo, or whatever platform you prefer!}.
+
+  We used the wonderful Org-mode
+  format\cite{schulte11:_activ_docum_org_mode} to both document our
+  experiments and create a replicable article that can be obtained on
+  [[https://github.com/alegrand/RR_webinars/blob/master/1_replicable_article_laboratory_notebook/replicable/article.org][Github]] as well. We could have used the Ipython
+  approach\cite{PER-GRA:2007} but we dishonestly ruled it out because
+  we wanted to be in full control of our C experimental setup and did
+  not know how to properly use it to write a replicable article.
+
+  Finally, it is important to explain that each measurement was
+  repeated five times and the set of experiments was absolutely not
+  randomized, which may compromise the validity of our observations
+  and conclusions.
+* Experimental results
+  #+begin_src R :results graphics :file "figure.pdf" :exports none :width 6 :height 4 :session R
+  # This code will not appear. It is just here to generate a nice figure to include later on.
+  linetype <- c(1:3)
+  plotchar <- c(1:3)
+
+  plot(sdf$Size,sdf$Seq,log="x", type="b", lty=linetype[1],  pch=plotchar[1])
+  legend( x="topleft", 
+        legend=c("Sequential execution","Parallel execution", "Default Libc execution"),
+         lwd=1, lty=linetype, pch=plotchar)
+  lines(sdf$Size,sdf$Par, type="b", lty=linetype[2],  pch=plotchar[2])
+  lines(sdf$Size,sdf$Libc, type="b", lty=linetype[3],  pch=plotchar[3])
+  #+end_src
+
+  #+RESULTS:
+  [[file:figure.pdf]]
+
+  As we can see in Figure\ref{fig.comparison}, to benefit from the parallel
+  version of our quicksort implementation, significantly large arrays
+  (over a million entry) are required. Of course, it is difficult to
+  conclude from so few measurements and a better experiment design
+  would be useful.
+  \vspace{-1cm}
+
+  #+CAPTION: Comparing performances of several implementation of the quicksort algorithm\label{fig.comparison}
+  #+ATTR_LaTeX: :width .8\linewidth 
+  file:figure.pdf
+  \vspace{-.3cm}
+
+* Conclusion
+\label{sec.ccl}
+
+Exploiting parallel machine can be quite difficult and tedious. From
+our experience, such architecture are useful only when processing
+sufficiently large data sets. As a future work, we intend to
+consolidate our study with more experiments.
+
+#+Latex:\section*{Acknowledgments}
+This work is partially supported by the FOO and BAR
+projects. Experiments presented in this paper were carried out using
+our own experimental testbed with support of our university.
+
+#+LaTeX: \nocite{*}
+#+LaTeX: \def\raggedright{}
+\bibliographystyle{IEEEtran}
+\bibliography{biblio}
+
+* Emacs Setup 							   :noexport:
+  This document has local variables in its postembule, which should
+  allow Org-mode to work seamlessly without any setup. If you're
+  uncomfortable using such variables, you can safely ignore them at
+  startup. Exporting may require that you copy them in your .emacs.
+
+# Local Variables:
+# eval:    (require 'org-install)
+# eval:    (org-babel-do-load-languages 'org-babel-load-languages '((sh . t) (R . t)  (perl . t) (python . t) ))
+# eval:    (setq org-confirm-babel-evaluate nil)
+# eval:    (unless (boundp 'org-latex-classes) (setq org-latex-classes nil))
+# eval:    (add-to-list 'org-latex-classes '("IEEEtran"
+# "\\documentclass[conference, 10pt, compsocconf]{IEEEtran}\n \[NO-DEFAULT-PACKAGES]\n \[EXTRA]\n  \\usepackage{graphicx}\n  \\usepackage{hyperref}"  ("\\section{%s}" . "\\section*{%s}") ("\\subsection{%s}" . "\\subsection*{%s}")                       ("\\subsubsection{%s}" . "\\subsubsection*{%s}")                       ("\\paragraph{%s}" . "\\paragraph*{%s}")                       ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+# eval:    (setq org-alphabetical-lists t)
+# eval:    (setq org-src-fontify-natively t)
+# eval:    (setq ess-ask-for-ess-directory nil)
+# eval:   ;; (setq org-export-babel-evaluate nil)
+# eval:   (setq ispell-local-dictionary "american")
+# eval:   (eval (flyspell-mode t))
+# End:
