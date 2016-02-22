@@ -46,7 +46,7 @@
 * Practical Session Requirements
   We will explain the audience how to create and manage replicable
   articles and give advice on how to manage a laboratory notebook on a
-  daily basis.
+  daily basis. 
 
   To benefit from this presentation, we recommand the audience to
   install the software described in each section. In particular, we
@@ -124,9 +124,9 @@ and export it to pdf with the following shortcut: =C-c C-e l o=
 When you'll be tired of always reexecuting all the source code when
 exporting, simply add the following line in the end of the [[file:replicable/article.org][article.org]]
 document.
-#+begin_src sh :results output :exports both
-eval:    (setq org-export-babel-evaluate nil)
-#+end_src
+#+BEGIN_EXAMPLE
+# eval:    (setq org-export-babel-evaluate nil)
+#+END_EXAMPLE
 ** Reproducible research emacs configuration for maintaining your laboratory notebook
 *** Step 1: Prepare your journal
 Create an =org/= directory in the top of your home:
@@ -147,8 +147,8 @@ shortcuts that I will demonstrate.
   command: =emacs -q -l init.el=
 
 *** Step 3: Check whether the installation is working or not
-Open a new instance of Emacs and open a =foo.org= file. Copy in this
-file the following:
+Open a new instance of Emacs and open a =foo.org= file. Copy the
+following lines in this file:
    : #+begin_src sh :session foo :results output :exports both
    : ls -la
    : #+end_src
