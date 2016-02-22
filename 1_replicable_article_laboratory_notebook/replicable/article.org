@@ -227,7 +227,6 @@ our own experimental testbed with support of our university.
 # eval:    (setq org-alphabetical-lists t)
 # eval:    (setq org-src-fontify-natively t)
 # eval:    (setq ess-ask-for-ess-directory nil)
-# eval:   ;; (setq org-export-babel-evaluate nil)
 # eval:   (setq ispell-local-dictionary "american")
 # eval:   (eval (flyspell-mode t))
 # End:
