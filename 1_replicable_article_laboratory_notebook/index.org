@@ -112,13 +112,15 @@ emacs -batch --funcall "org-version" 2>&1 | grep version
 The current latest version is actually 8.3.3 but you'll want at least
 a version 8.2. 
 ** A stub of replicable article
-Download [[https://github.com/alegrand/RR_webinars/raw/master/1_replicable_article_laboratory_notebook/replicable/replicable.tgz][this archive]] and untar it:
+Download the archive, untar it and simply make to generate the article. You should then be able to open the [[file:replicable/article.pdf][resulting article]].
+
 #+begin_src sh :results output :exports both
+wget -O replicable.tgz https://github.com/alegrand/RR_webinars/raw/master/1_replicable_article_laboratory_notebook/replicable/replicable.tgz
 tar zxf replicable.tgz;
 cd replicable
 make 
+evince article.pdf
 #+end_src
-You should now be able to open the [[file:replicable/article.pdf][resulting article]].
 
 If the =make= command fails (especially on Mac), it may be because emacs
 or something else is not correctly installed. In that case, open the
