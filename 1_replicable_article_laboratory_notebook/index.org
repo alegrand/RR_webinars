@@ -112,13 +112,13 @@ emacs -batch --funcall "org-version" 2>&1 | grep version
 The current latest version is actually 8.3.3 but you'll want at least
 a version 8.2. 
 ** A stub of replicable article
-Download [[./replicable/replicable.tgz][this archive]] and untar it:
+Download [[https://github.com/alegrand/RR_webinars/raw/master/1_replicable_article_laboratory_notebook/replicable/replicable.tgz][this archive]] and untar it:
 #+begin_src sh :results output :exports both
 tar zxf replicable.tgz;
 cd replicable
 make 
 #+end_src
-You should now be able to open the [[file:repliable/article.pdf][resulting article]].
+You should now be able to open the [[file:replicable/article.pdf][resulting article]].
 
 If the =make= command fails (especially on Mac), it may be because emacs
 or something else is not correctly installed. In that case, open the
@@ -130,7 +130,7 @@ emacs -q --eval "(setq enable-local-eval t)" --eval "(setq enable-local-variable
 and export it to pdf with the following shortcut: =C-c C-e l o=
 
 When you'll be tired of always reexecuting all the source code when
-exporting, simply add the following line in the end of the =article.org=
+exporting, simply add the following line in the end of the [[file:replicable/article.org][article.org]]
 document.
 #+begin_src sh :results output :exports both
 eval:    (setq org-export-babel-evaluate nil)
@@ -142,7 +142,7 @@ Create an =org/= directory in the top of your home:
 cd ~
 mkdir -p org/
 #+end_src
-Then copy [[./journal.org][this file]] in this =org/= directory. This file will be your
+Then copy [[https://raw.githubusercontent.com/alegrand/RR_webinars/master/1_replicable_article_laboratory_notebook/journal.org][this file]] in this =org/= directory. This file will be your
 laboratory notebook and all the notes you will capture with =C-c c= (this
 will be explained in the tutorial) will go automatically go in this
 file. I populated the first entry of this notebook with many emacs
@@ -150,8 +150,8 @@ shortcuts that I will demonstrate.
 *** Step 2: Set up Emacs configuration
 - *Option 1* (if you're convinced and want my configuration for the rest
   of your life): Backup you own =.emacs= (who knows what may happen?) if
-  you have one and replace it with [[file:init.el][the content of this file]].
-- *Option 2* (if you only want to give a try for today): Get [[file:init.el][this file]]
+  you have one and replace it with the content of [[https://raw.githubusercontent.com/alegrand/RR_webinars/master/1_replicable_article_laboratory_notebook/init.el][this file]].
+- *Option 2* (if you only want to give a try for today): Get [[https://raw.githubusercontent.com/alegrand/RR_webinars/master/1_replicable_article_laboratory_notebook/init.el][this file]]
   and launch emacs with this specific configuration with the following
   command:
   #+begin_src sh :results output :exports both
