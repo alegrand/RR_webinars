@@ -55,10 +55,10 @@
   a replicable article*.
   #+BEGIN_CENTER
   *Once you're done with the software installation that are specific to
-  your operating system, go to this [[*Reproducible research emacs configuration][section]]*.
+  your operating system, go to this [[*Reproducible research emacs configuration for maintaining your laboratory notebook][section]].
   #+END_CENTER
 ** Installing emacs, ess, auctex, ...
-*** Mac OsX
+*** Mac OS X
 - *Option 1*: If you already use =brew=, simply do the following
   #+begin_src sh :results output :exports both
   brew update
@@ -169,7 +169,7 @@ Put your cursor inside this code block and execute it with the
 following command: =C-c C-c= (If you are not familiar with Emacs
 commands, this one means '=Ctrl + C=' twice)
 
-A Result block with the result of the command should appear if it
+A =#+RESULTS:= block with the result of the command should appear if it
 worked. 
 
 In the tutorial we will show you the main features and shortcuts of

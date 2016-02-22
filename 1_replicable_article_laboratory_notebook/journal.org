@@ -12,7 +12,7 @@
 #+EXPORT_SELECT_TAGS: export
 #+EXPORT_EXCLUDE_TAGS: noexport
 #+COLUMNS: %25ITEM %TODO %3PRIORITY %TAGS
-#+SEQ_TODO: TODO(t!) STARTED(s!) WAITING(w!) APPT(a!) | DONE(d!) CANCELLED(c!) DEFERRED(f!)
+#+SEQ_TODO: TODO(t!) STARTED(s!) WAITING(w@) APPT(a!) | DONE(d!) CANCELLED(c!) DEFERRED(f!)
 
 * 2016
 ** 2016-03 March
@@ -20,27 +20,29 @@
 **** Webinar on reproducible research
      https://github.com/alegrand/RR_webinars/blob/master/1_replicable_article_laboratory_notebook/index.org
 ***** Emacs shortcuts
-  Here are a few convenient emacs shortcuts for those that have never
-  used emacs. Note that you may want to use two hours to follow the
-  emacs tutorial (=C-h t=).  
+Here are a few convenient emacs shortcuts for those that have never
+used emacs. In all of the emacs shortcuts, =C=Ctrl=, =M=Alt/Esc= and
+=S=Shift=.  Note that you may want to use two hours to follow the emacs
+tutorial (=C-h t=). In the configuration file CUA keys have been
+activated and allow you to use classical copy/paste (=C-c/C-v=)
+shortcuts. This can be changed from the Options menu.
   - =C-x C-c= exit
   - =C-x C-s= save buffer
   - =C-g= panic mode ;) type this whenever you want to exit an awful
     series of shortcuts
-  - =C-a= jump to beginning of the line
-  - =C-e= jump to end of the line
   - =C-Space= start selection marker
   - =C-l= reposition the screen
-  - =C-_= undo
+  - =C-_= (or =C-z= if CUA keys have been activated)
   - =C-s= search
   - =M-%= replace
   - =C-x C-h= get the list of emacs shortcuts
   - =C-c C-h= get the list of emacs shortcuts considering the mode you are
     currently using (e.g., C, Lisp, org, ...)
-  There are a bunch of cheatsheets also available out there.
+  There are a bunch of cheatsheets also available out there (e.g.,
+  [[http://www.shortcutworld.com/en/linux/Emacs_23.2.1.html][this one for emacs]] and [[http://orgmode.org/orgcard.txt][this one for org-mode]] or this [[http://sachachua.com/blog/wp-content/uploads/2013/05/How-to-Learn-Emacs-v2-Large.png][graphical one]]).
 ***** Org-mode
   Many emacs shortcuts start by =C-x=. Org-mode's shortcuts generaly
-  start with =C-c=:
+  start with =C-c=.
   - =Tab= fold/unfold
   - =C-c C-c= do something useful here (tag, execute, ...)
   - =C-c c= capture (finish capturing with =C-c C-c=, this is explained on
@@ -53,14 +55,12 @@
   - =C-c C-a= attach files
   - =C-c C-d= set a deadl1ine (use =S-arrows= to navigate in the dates)
   - =A-arrows= move subtree (add shift for the whole subtree)
-***** Org-mode Babel (for litterate programming)
-  - =<s + tab= template for source bloc. You'll get this:
-    #+BEGIN_EXAMPLE
-  #+BEGIN_SRC sh
-  ls
-  #+END_SRC
-    #+END_EXAMPLE
-    Now if you =C-c C-c=, it will execute the block
+***** Org-mode Babel (for literate programming)
+  - =<s + tab= template for source bloc. You can easily adapt it to get this:
+      : #+BEGIN_SRC sh
+      : ls
+      : #+END_SRC
+    Now if you =C-c C-c=, it will execute the block.
     #+BEGIN_EXAMPLE
   #+RESULTS:
   | #journal.org# |
@@ -71,7 +71,7 @@
   
   - Source blocks have many options (formatting, arguments, names,
     sessions,...), which is why I have my own shortcuts =<b + tab= bash
-    block (or =B= for sessions)
+    block (or =B= for sessions).
     #+BEGIN_EXAMPLE 
   #+begin_src sh :results output :exports both
   ls /tmp/*201*.pdf
