@@ -1,4 +1,5 @@
 ARCHIVE=replicable
+ARCHIVE_FILES=$(shell git ls-tree -r master --name-only | grep -v -e 'article.pdf')
 
 all: article.pdf
 
@@ -12,5 +13,5 @@ all: article.pdf
 	pdflatex $^
 	pdflatex $^
 
-$(ARCHIVE).tgz:
-	tar --xform "s|^|$(ARCHIVE)/|" -zcf $@ `git ls-tree -r master --name-only | grep -v -e 'article.pdf'`
+$(ARCHIVE).tgz: $(ARCHIVE_FILES)
+	tar --xform "s|^|$(ARCHIVE)/|" -zcf $@ $^
