@@ -67,7 +67,7 @@
   brew linkapps emacs
   brew tap homebrew/science
   brew install ess
-  brew install auctex # Actually the name is slightly more complicated here
+  brew install auctex # The name may be slightly more complicated here
   brew install wget
   #+end_src
 - *Option 2*: Install the =.dmg= file from
@@ -165,3 +165,20 @@ cd replicable
 make 
 #+end_src
 You should now be able to open the [[file:repliable/article.pdf][resulting article]].
+
+If the =make= command fails (especially on Mac), it may be because emacs
+or something else is not correctly installed. In that case, open the
+article directly with the following command:
+#+begin_src sh :results output :exports both
+emacs -q -batch --eval "(setq enable-local-eval t)" --eval "(setq enable-local-variables t)" \
+	   --eval "(setq org-export-babel-evaluate t)" article.org
+#+end_src
+and export it to pdf with the following shortcut: =C-c C-e l o=
+
+When you'll be tired of always reexecuting all the source code when
+exporting, simply add the following line in the end of the =article.org=
+document.
+#+begin_src sh :results output :exports both
+eval:    (setq org-export-babel-evaluate nil)
+#+end_src
+
