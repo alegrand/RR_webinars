@@ -23,16 +23,11 @@
 (set-keyboard-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 
-(cond
- ((string-equal system-type "darwin")   ; Mac OS X
-  (progn
     (setq
      ns-command-modifier 'meta         ; Apple/Command key is Meta
 	 ns-alternate-modifier nil         ; Option is the Mac Option key
 	 ns-use-mac-modifier-symbols  nil  ; display standard Emacs (and not standard Mac) modifier symbols
-	 ))
-  )
- )
+	 )
 
 (cua-mode t)
 

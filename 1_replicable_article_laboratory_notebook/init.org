@@ -66,16 +66,11 @@ Thanks to Adrien Lebre for providing me with this
 the moment (I tried to wrap the command around the cond but it should
 fail on mac). 
 #+begin_src emacs-lisp :tangle init.el
-(cond
- ((string-equal system-type "darwin")   ; Mac OS X
-  (progn
     (setq
      ns-command-modifier 'meta         ; Apple/Command key is Meta
 	 ns-alternate-modifier nil         ; Option is the Mac Option key
 	 ns-use-mac-modifier-symbols  nil  ; display standard Emacs (and not standard Mac) modifier symbols
-	 ))
-  )
- )
+	 )
 #+end_src
 ** CUA mode a.k.a =C-x, C-c, C-v= 
 Yuck! Many people like this but I hate it as it conflicts with some of
@@ -147,6 +142,10 @@ my other shortcuts (e.g., the ones for spelling a region).
 (define-key global-map (kbd "C-c s r") 'flyspell-region)
 (define-key global-map (kbd "C-c s b") 'flyspell-buffer)
 (define-key global-map (kbd "C-c s s") 'flyspell-mode)
+#+end_src
+** Reload buffer                                                     :ARNAUD:
+#+begin_src emacs-lisp
+(global-set-key [f5] '(lambda () (interactive) (revert-buffer nil t nil)))
 #+end_src
 * Small fixes:
 ** PDF with LaTeX by default                                        :ARNAUD:
