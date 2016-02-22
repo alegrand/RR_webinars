@@ -55,7 +55,7 @@
   a replicable article*.
   #+BEGIN_CENTER
   *Once you're done with the software installation that are specific to
-  your operating system, go to this [[*Reproducible research emacs configuration for maintaining your laboratory notebook][section]].
+  your operating system, go to this [[#reproducible-research-emacs-configuration-for-maintaining-your-laboratory-notebook][section]].*
   #+END_CENTER
 ** Installing emacs, ess, auctex, ...
 *** Mac OS X
