@@ -1,11 +1,10 @@
-#+TITLE:     Introduction, producing replicable articles and managing an laboratory notebook
+#+TITLE:     Introduction, producing replicable articles and managing a laboratory notebook with emacs/org-mode
 #+AUTHOR:    Arnaud Legrand
 #+DATE: March 7, 2016
 #+STARTUP: overview indent
 
 
 *This page is under construction, so please check it regularly, especially a few days before the webinar to [[file:index.org#practical-session-requirements][install the software required in the practical session]].*
-
 
 * Table of Contents                                                     :TOC:
  - [[#practical-information][Practical information]]
@@ -18,6 +17,7 @@
      - [[#windows][Windows]]
      - [[#linux][Linux]]
      - [[#reproducible-research-emacs-configuration][Reproducible research emacs configuration]]
+     - [[#a-replicable-article][A replicable article]]
 
 * Practical information
 ** Webcast
@@ -53,14 +53,14 @@
   To benefit from this presentation, we recommand the audience to
   install the software described in each section. In particular, we
   want a recent version of emacs with ESS (for R) and AucTeX (for
-  LaTeX). Finally, you will need a working LaTeX environment to build
-  a replicable article.
+  LaTeX). Finally, *you will need a working LaTeX environment to build
+  a replicable article*.
   #+BEGIN_CENTER
   *Once you're done with the software installation that are specific to
   your operating system, go to this [[*Reproducible research emacs configuration][section]]*.
   #+END_CENTER
 ** Mac OsX
-- Option 1: If you already use =brew=, simply do the following
+- *Option 1*: If you already use =brew=, simply do the following
   #+begin_src sh :results output :exports both
   brew update
   brew install emacs [--with-cocoa]
@@ -68,8 +68,9 @@
   brew tap homebrew/science
   brew install ess
   brew install auctex # Actually the name is slightly more complicated here
+  brew install wget
   #+end_src
-- Option 2: Install the =.dmg= file from
+- *Option 2*: Install the =.dmg= file from
   http://vgoulet.act.ulaval.ca/en/emacs/mac/. In that case you may
   have several versions of emacs installed on your machine and
   launching emacs from a terminal may not run the one you just
@@ -112,7 +113,7 @@ emacs -batch --funcall "org-version" 2>&1 | grep version
 The current latest version is actually 8.3.3 but you'll want at least
 a version 8.2. 
 ** Reproducible research emacs configuration
-*** Step 0: Prepare your journal
+*** Step 1: Prepare your journal
 Create an =org/= directory in the top of your home:
 #+begin_src sh :results output :exports both
 cd ~
@@ -123,15 +124,17 @@ laboratory notebook and all the notes you will capture with =C-c c= (this
 will be explained in the tutorial) will go automatically go in this
 file. I populated the first entry of this notebook with many emacs
 shortcuts that I will demonstrate.
-*** Step 1: Set up Emacs configuration
-- Option 1: Backup you own =.emacs= if you have one and replace it with
-  [[file:init.el][the content of this file]].
-- Option 2: Get [[file:init.el][this file]] and launch emacs with this specific
-  configuration by typing:
+*** Step 2: Set up Emacs configuration
+- *Option 1* (if you're convinced and want my configuration for the rest
+  of your life): Backup you own =.emacs= (who knows what may happen?) if
+  you have one and replace it with [[file:init.el][the content of this file]].
+- *Option 2* (if you only want to give a try for today): Get [[file:init.el][this file]]
+  and launch emacs with this specific configuration with the following
+  command:
   #+begin_src sh :results output :exports both
   emacs -q -l init.el
   #+end_src
-*** Step 2: Check whether the installation is working or not
+*** Step 3: Check whether the installation is working or not
 Open a new instance of Emacs and open a =foo.org= file. Copy in this
 file the following:
 #+begin_quote
@@ -154,13 +157,11 @@ emacs/org-mode that will help you maintain your laboratory notebook
 (the =journal.org=) and benefit from literate programming. The list of
 features we will demonstrate is in the [[file:journal.org::*Emacs%20shortcuts][first entry of your labbook]].
 
-*** TODO Step 3: A replicable article
-Download [[./replicable.tgz][this archive]] and untar it:
+** A replicable article
+Download [[./replicable/replicable.tgz][this archive]] and untar it:
 #+begin_src sh :results output :exports both
-tar zxf replicable.tgz
+tar zxf replicable.tgz;
+cd replicable
+make 
 #+end_src
-
-- Open file:replicable/article.org and accept to execute local
-  emacs-lisp commands
-- Export the document
-
+You should now be able to open the [[file:repliable/article.pdf][resulting article]].
