@@ -136,9 +136,9 @@ shortcuts that I will demonstrate.
 Open a new instance of Emacs and open a =foo.org= file. Copy in this
 file the following:
 #+BEGIN_EXAMPLE
-   #+begin_src sh :session foo :results output :exports both
-   ls -la  
-   #+end_src
+   =#+begin_src sh :session foo :results output :exports both=
+   =ls -la=
+   =+end_src=
 #+END_EXAMPLE
 
 Put your cursor inside this code block and execute it with the
