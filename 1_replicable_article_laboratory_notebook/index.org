@@ -13,11 +13,9 @@
      - [[#locations][Locations]]
  - [[#keynote][Keynote]]
  - [[#practical-session-requirements][Practical Session Requirements]]
-     - [[#mac-osx][Mac OsX]]
-     - [[#windows][Windows]]
-     - [[#linux][Linux]]
-     - [[#reproducible-research-emacs-configuration][Reproducible research emacs configuration]]
-     - [[#a-replicable-article][A replicable article]]
+     - [[#installing-emacs-ess-auctex-][Installing emacs, ess, auctex, ...]]
+     - [[#a-stub-of-replicable-article][A stub of replicable article]]
+     - [[#reproducible-research-emacs-configuration-for-maintaining-your-laboratory-notebook][Reproducible research emacs configuration for maintaining your laboratory notebook]]
 
 * Practical information
 ** Webcast
@@ -59,7 +57,8 @@
   *Once you're done with the software installation that are specific to
   your operating system, go to this [[*Reproducible research emacs configuration][section]]*.
   #+END_CENTER
-** Mac OsX
+** Installing emacs, ess, auctex, ...
+*** Mac OsX
 - *Option 1*: If you already use =brew=, simply do the following
   #+begin_src sh :results output :exports both
   brew update
@@ -75,10 +74,10 @@
   have several versions of emacs installed on your machine and
   launching emacs from a terminal may not run the one you just
   installed. If anyone know how to get rid of this...
-** Windows
+*** Windows
 Install the =.exe= file from
 http://vgoulet.act.ulaval.ca/emacs/windows/.
-** Linux
+*** Linux
 If you're running a debian system, simply do (as root):
 #+begin_src sh :results output :exports both
 apt-get update
@@ -112,7 +111,31 @@ emacs -batch --funcall "org-version" 2>&1 | grep version
 
 The current latest version is actually 8.3.3 but you'll want at least
 a version 8.2. 
-** Reproducible research emacs configuration
+** A stub of replicable article
+Download [[./replicable/replicable.tgz][this archive]] and untar it:
+#+begin_src sh :results output :exports both
+tar zxf replicable.tgz;
+cd replicable
+make 
+#+end_src
+You should now be able to open the [[file:repliable/article.pdf][resulting article]].
+
+If the =make= command fails (especially on Mac), it may be because emacs
+or something else is not correctly installed. In that case, open the
+article directly with the following command:
+#+begin_src sh :results output :exports both
+emacs -q --eval "(setq enable-local-eval t)" --eval "(setq enable-local-variables t)" \
+	   --eval "(setq org-export-babel-evaluate t)" article.org
+#+end_src
+and export it to pdf with the following shortcut: =C-c C-e l o=
+
+When you'll be tired of always reexecuting all the source code when
+exporting, simply add the following line in the end of the =article.org=
+document.
+#+begin_src sh :results output :exports both
+eval:    (setq org-export-babel-evaluate nil)
+#+end_src
+** Reproducible research emacs configuration for maintaining your laboratory notebook
 *** Step 1: Prepare your journal
 Create an =org/= directory in the top of your home:
 #+begin_src sh :results output :exports both
@@ -152,29 +175,4 @@ In the tutorial we will show you the main features and shortcuts of
 emacs/org-mode that will help you maintain your laboratory notebook
 (the =journal.org=) and benefit from literate programming. The list of
 features we will demonstrate is in the [[file:journal.org::*Emacs%20shortcuts][first entry of your labbook]].
-
-** A replicable article
-Download [[./replicable/replicable.tgz][this archive]] and untar it:
-#+begin_src sh :results output :exports both
-tar zxf replicable.tgz;
-cd replicable
-make 
-#+end_src
-You should now be able to open the [[file:repliable/article.pdf][resulting article]].
-
-If the =make= command fails (especially on Mac), it may be because emacs
-or something else is not correctly installed. In that case, open the
-article directly with the following command:
-#+begin_src sh :results output :exports both
-emacs -q --eval "(setq enable-local-eval t)" --eval "(setq enable-local-variables t)" \
-	   --eval "(setq org-export-babel-evaluate t)" article.org
-#+end_src
-and export it to pdf with the following shortcut: =C-c C-e l o=
-
-When you'll be tired of always reexecuting all the source code when
-exporting, simply add the following line in the end of the =article.org=
-document.
-#+begin_src sh :results output :exports both
-eval:    (setq org-export-babel-evaluate nil)
-#+end_src
 
