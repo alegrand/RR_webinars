@@ -79,6 +79,8 @@
 (define-key global-map (kbd "C-c s b") 'flyspell-buffer)
 (define-key global-map (kbd "C-c s s") 'flyspell-mode)
 
+(global-set-key [f5] '(lambda () (interactive) (revert-buffer nil t nil)))
+
 (defun auto-fill-mode-on () (TeX-PDF-mode 1))
 (add-hook 'tex-mode-hook 'TeX-PDF-mode-on)
 (add-hook 'latex-mode-hook 'TeX-PDF-mode-on)
