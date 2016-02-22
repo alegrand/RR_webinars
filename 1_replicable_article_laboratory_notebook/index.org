@@ -23,7 +23,7 @@
      [[https://mi2s.imag.fr/pm/direct][Screencast]]. From what we know, you mostly need javascript to be
      activated for this to work. You can check on this [[https://mi2s.imag.fr/pm/videos-en-ligne][page]] whether
      you manage to see some other videos. If so, you should be fine. 
-   - To interact during the presentation, the easier will be to have
+   - To interact during the presentation, the easier will be to 
      use this [[https://pad.inria.fr/p/9mSyf4BhzZ9soDE9][pad]]. Write your questions, comments here and we'll try
      to address them during the presentation. If they cannot be
      addressed, leave them and we'll try to answer them later in some
