@@ -1,6 +1,6 @@
 ARCHIVE=replicable
-ARCHIVE_FILES=$(shell git ls-tree -r master --name-only | grep -v -e 'article.pdf')
-
+# ARCHIVE_FILES=$(shell git ls-tree -r master --name-only | grep -v -e 'article.pdf')
+ARCHIVE_FILES=article.org biblio.bib Makefile
 all: article.pdf
 
 %.tex: %.org
