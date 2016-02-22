@@ -80,22 +80,16 @@ http://vgoulet.act.ulaval.ca/emacs/windows/.
 *** Linux
 If you're running a debian system, simply do (as root):
 #+begin_src sh :results output :exports both
-apt-get update
-apt-get install emacs org-mode ess r-base auctex
+apt-get update ; apt-get install emacs org-mode ess r-base auctex
 #+end_src
 
 Then make sure you have a sufficiently recent version
 #+begin_src sh :results output :exports both
-emacs --version
+emacs --version 2>&1 | head -n 1
 #+end_src
 
 #+RESULTS:
 : GNU Emacs 24.5.1
-: Copyright (C) 2015 Free Software Foundation, Inc.
-: GNU Emacs comes with ABSOLUTELY NO WARRANTY.
-: You may redistribute copies of Emacs
-: under the terms of the GNU General Public License.
-: For more information about these matters, see the file named COPYING.
 
 I'd say you want at least an emacs 24.4 (October 2014) or 24.5
 (April 2015) to be out of troubles. Emacs 24.3 was released in March
@@ -116,10 +110,7 @@ Download the archive, untar it and simply make to generate the article. You shou
 
 #+begin_src sh :results output :exports both
 wget -O replicable.tgz https://github.com/alegrand/RR_webinars/raw/master/1_replicable_article_laboratory_notebook/replicable/replicable.tgz
-tar zxf replicable.tgz;
-cd replicable
-make 
-evince article.pdf
+tar zxf replicable.tgz; cd replicable; make ; evince article.pdf
 #+end_src
 
 If the =make= command fails (especially on Mac), it may be because emacs
