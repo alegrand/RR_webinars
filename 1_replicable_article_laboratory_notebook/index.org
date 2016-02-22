@@ -131,10 +131,9 @@ eval:    (setq org-export-babel-evaluate nil)
 *** Step 1: Prepare your journal
 Create an =org/= directory in the top of your home:
 #+begin_src sh :results output :exports both
-cd ~
-mkdir -p org/
+mkdir -p ~/org/
 #+end_src
-Then copy [[https://raw.githubusercontent.com/alegrand/RR_webinars/master/1_replicable_article_laboratory_notebook/journal.org][this file]] in this =org/= directory. This file will be your
+Then copy [[https://raw.githubusercontent.com/alegrand/RR_webinars/master/1_replicable_article_laboratory_notebook/journal.org][this file]] in the =~/org/= directory. This file will be your
 laboratory notebook and all the notes you will capture with =C-c c= (this
 will be explained in the tutorial) will go automatically go in this
 file. I populated the first entry of this notebook with many emacs
@@ -145,10 +144,8 @@ shortcuts that I will demonstrate.
   you have one and replace it with the content of [[https://raw.githubusercontent.com/alegrand/RR_webinars/master/1_replicable_article_laboratory_notebook/init.el][this file]].
 - *Option 2* (if you only want to give a try for today): Get [[https://raw.githubusercontent.com/alegrand/RR_webinars/master/1_replicable_article_laboratory_notebook/init.el][this file]]
   and launch emacs with this specific configuration with the following
-  command:
-  #+begin_src sh :results output :exports both
-  emacs -q -l init.el
-  #+end_src
+  command: =emacs -q -l init.el=
+
 *** Step 3: Check whether the installation is working or not
 Open a new instance of Emacs and open a =foo.org= file. Copy in this
 file the following:
