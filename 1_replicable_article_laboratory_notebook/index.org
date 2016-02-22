@@ -137,7 +137,9 @@ Open a new instance of Emacs and open a =foo.org= file. Copy in this
 file the following:
 #+begin_quote
 =#+begin_src sh :session foo :results output :exports both=
+
 =ls -la=
+
 =#+end_src=
 #+end_quote
 
