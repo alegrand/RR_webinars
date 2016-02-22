@@ -126,8 +126,7 @@ If the =make= command fails (especially on Mac), it may be because emacs
 or something else is not correctly installed. In that case, open the
 article directly with the following command:
 #+begin_src sh :results output :exports both
-emacs -q --eval "(setq enable-local-eval t)" --eval "(setq enable-local-variables t)" \
-	   --eval "(setq org-export-babel-evaluate t)" article.org
+emacs -q --eval "(setq enable-local-eval t)" --eval "(setq enable-local-variables t)" --eval "(setq org-export-babel-evaluate t)" article.org
 #+end_src
 and export it to pdf with the following shortcut: =C-c C-e l o=
 
