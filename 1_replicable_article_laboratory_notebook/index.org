@@ -135,11 +135,11 @@ shortcuts that I will demonstrate.
 *** Step 2: Check whether the installation is working or not
 Open a new instance of Emacs and open a =foo.org= file. Copy in this
 file the following:
-#+begin_example
+```
    #+begin_src sh :session foo :results output :exports both
    ls -la
    #+end_src
-#+end_example
+```
 
 Put your cursor inside this code block and execute it with the
 following command: =C-c C-c= (If you are not familiar with Emacs
