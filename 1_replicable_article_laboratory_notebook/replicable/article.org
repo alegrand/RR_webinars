@@ -98,14 +98,14 @@ print "file:$output"
 
 * R functions							   :noexport:
 Initialization and reading of the data.
-#+begin_src R :results output :session R :exports both
+#+begin_src R :results output :session *R* :exports both
 df=read.csv("data.csv",strip.white=T,header=T)
 #+end_src
 
 #+RESULTS:
 
 Let's compute some (crappy) statistics.
-#+begin_src R :results output :session R :exports both
+#+begin_src R :results output :session *R* :exports both
 sdf = data.frame()
 for(size in unique(df$Size)) {
     seq = mean(df[df$Size == size,]$Seq)
@@ -166,7 +166,7 @@ for(size in unique(df$Size)) {
   randomized, which may compromise the validity of our observations
   and conclusions.
 * Experimental results
-  #+begin_src R :results graphics :file "figure.pdf" :exports none :width 6 :height 4 :session R
+  #+begin_src R :results graphics :file "figure.pdf" :exports none :width 6 :height 4 :session *R*
   # This code will not appear. It is just here to generate a nice figure to include later on.
   linetype <- c(1:3)
   plotchar <- c(1:3)
