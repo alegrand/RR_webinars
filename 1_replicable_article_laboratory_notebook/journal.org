@@ -30,7 +30,8 @@ shortcuts. This can be changed from the Options menu.
   - =C-x C-s= save buffer
   - =C-g= panic mode ;) type this whenever you want to exit an awful
     series of shortcuts
-  - =C-Space= start selection marker
+  - =C-Space= start selection marker although selection with shift and
+    arrows should work as well
   - =C-l= reposition the screen
   - =C-_= (or =C-z= if CUA keys have been activated)
   - =C-s= search

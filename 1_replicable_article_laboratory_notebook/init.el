@@ -143,6 +143,97 @@ Entered on %U
                   (org-todo 'done)
                 (org-todo 'todo)))))))
 
+(defun org-cua-dwim-turn-on-org-cua-mode-partial-support ()
+  "This turns on org-mode cua-mode partial support; Assumes
+shift-selection-mode is available."
+  (interactive)
+  (set (make-local-variable 'org-support-shift-select) t)
+  (cua-mode 1)
+  (add-hook 'pre-command-hook 'cua--pre-command-handler nil t)
+  (add-hook 'post-command-hook 'cua--post-command-handler nil t)
+  (set (make-local-variable 'cua-mode) t)
+  (set (make-local-variable 'org-cua-dwim-was-move) nil)
+  (set (make-local-variable 'shift-select-mode) nil))
+
+;;;###autoload
+(add-hook 'org-mode-hook 'org-cua-dwim-turn-on-org-cua-mode-partial-support)
+
+(defvar org-cua-dwim-was-move nil)
+(defvar org-cua-dwim-debug nil)
+(defvar org-cua-dwim t)
+
+(defadvice handle-shift-selection (around org-cua-dwim)
+  (let ((is-org-mode (and (not (minibufferp))
+                          (eq major-mode 'org-mode)))
+        (do-it t))
+    (setq org-cua-dwim-shift-translated this-command-keys-shift-translated)
+    (when (and org-cua-dwim
+               is-org-mode this-command-keys-shift-translated
+               (not org-cua-dwim-was-move))
+      (when org-cua-dwim-debug
+        (message "Turn ON shift-select-mode & delete-selection-mode"))
+      (delete-selection-mode 1)
+      (set (make-local-variable 'org-cua-dwim-was-move) t)
+      (set (make-local-variable 'cua--last-region-shifted) t)
+      (set (make-local-variable 'cua--explicit-region-start) nil)
+      (set (make-local-variable 'shift-select-mode) t)
+      (set (make-local-variable 'cua-mode) nil))
+    (when (and org-cua-dwim
+               is-org-mode (not this-command-keys-shift-translated)
+               org-cua-dwim-was-move)
+      (when org-cua-dwim-debug
+        (message "Turn Off shift-select-mode & delete-selection-mode"))
+      (delete-selection-mode -1)
+      (set (make-local-variable 'shift-select-mode) nil)
+      (set (make-local-variable 'cua-mode) t)
+      (set (make-local-variable 'org-cua-dwim-was-move) nil))
+    (when do-it
+      ad-do-it)
+    (when (and org-cua-dwim
+               is-org-mode
+               mark-active)
+      (cua--select-keymaps))))
+
+(defmacro org-cua-dwim-fix-cua-command (cmd)
+  "Defines advice for a CUA-command that will turn on CUA mode
+before runnind ant hen run the `cua--precommand-handler'"
+  `(progn
+     (defadvice ,(intern cmd) (around org-cua-dwim)
+     "Try to fix the org copy and paste problem."
+     (when (and (not (minibufferp)) (not cua-mode)
+                (eq major-mode 'org-mode))
+       (when org-cua-dwim-debug
+         (message "Turn Off shift-select-mode & delete-selection-mode  (CUA command)"))
+       (delete-selection-mode -1)
+       (set (make-local-variable 'shift-select-mode) nil)
+       (set (make-local-variable 'cua-mode) t)
+       (set (make-local-variable 'org-cua-dwim-was-move) nil)
+       (cua--pre-command-handler))
+     ad-do-it)
+     (ad-activate ',(intern cmd))))
+
+;; Advise all CUA commands active when selection is active
+(org-cua-dwim-fix-cua-command "cua--prefix-override-handler")
+(org-cua-dwim-fix-cua-command "cua-repeat-replace-region")
+(org-cua-dwim-fix-cua-command "cua--shift-control-c-prefix")
+(org-cua-dwim-fix-cua-command "cua--shift-control-x-prefix")
+(org-cua-dwim-fix-cua-command "cua-toggle-rectangle-mark")
+(org-cua-dwim-fix-cua-command "cua-delete-region")
+(org-cua-dwim-fix-cua-command "cua-cut-region")
+(org-cua-dwim-fix-cua-command "cua-copy-region")
+(org-cua-dwim-fix-cua-command "cua-cancel")
+(org-cua-dwim-fix-cua-command "cua-toggle-global-mark")
+(org-cua-dwim-fix-cua-command "cua-paste")
+(org-cua-dwim-fix-cua-command "cua-exchange-point-and-mark")
+(org-cua-dwim-fix-cua-command "cua-scroll-down")
+(org-cua-dwim-fix-cua-command "cua-scroll-up")
+(org-cua-dwim-fix-cua-command "cua-set-mark")
+(org-cua-dwim-fix-cua-command "cua-paste-pop")
+
+
+
+(ad-activate 'handle-shift-selection)
+
 (global-set-key (kbd "C-c d") 'insert-date)
 (defun insert-date (prefix)
     "Insert the current date. With prefix-argument, use ISO format. With
