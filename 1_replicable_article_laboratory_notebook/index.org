@@ -51,8 +51,8 @@
   To benefit from this presentation, we recommand the audience to
   install the software described in each section. In particular, we
   want a recent version of emacs with ESS (for R) and AucTeX (for
-  LaTeX). Finally, *you will need a working LaTeX environment to build
-  a replicable article*.
+  LaTeX). Finally, *you will need a working LaTeX and R environment to
+  build a replicable article*.
   #+BEGIN_CENTER
   *Once you're done with the software installation that are specific to
   your operating system, go to this [[#reproducible-research-emacs-configuration-for-maintaining-your-laboratory-notebook][section]].*
@@ -106,7 +106,13 @@ emacs -batch --funcall "org-version" 2>&1 | grep version
 The current latest version is actually 8.3.3 but you'll want at least
 a version 8.2. 
 ** A stub of replicable article
-Download the archive, untar it and simply make to generate the article. You should then be able to open the [[file:replicable/article.pdf][resulting article]].
+Remember, you need a working LaTeX and R environment. If you can't
+open a terminal and run the commands =R= and =pdflatex=, you will not be
+able to generate this document. You may still read the source
+([[file:replicable/article.org][article.org]]) and understand how it works though.
+
+Download the archive, untar it and simply make to generate the
+article. You should then be able to open the [[file:replicable/article.pdf][resulting article]].
 
 #+begin_src sh :results output :exports both
 wget -O replicable.tgz https://github.com/alegrand/RR_webinars/raw/master/1_replicable_article_laboratory_notebook/replicable/replicable.tgz
