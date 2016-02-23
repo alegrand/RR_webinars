@@ -133,8 +133,8 @@ system-wide. In that case, try to remove the =-q= in the previous
 command line to load your personnal emacs configuration.
 
 Finally, when you'll be tired of always reexecuting all the source
-code when exporting, simply move the last line of 
-[[file:replicable/article.org][article.org]] a few lines up.
+code when exporting, simply modify the last eval line of [[file:replicable/article.org][article.org]]
+according to the comment.
 
 ** Reproducible research emacs configuration for maintaining your laboratory notebook
 *** Step 1: Prepare your journal

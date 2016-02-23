@@ -226,7 +226,7 @@ our own experimental testbed with support of our university.
 # eval:   (setq ess-ask-for-ess-directory nil)
 # eval:   (setq ispell-local-dictionary "american")
 # eval:   (eval (flyspell-mode t))
+# eval:   (setq org-export-babel-evaluate t) ;;; Change the t to nil to avoid running all source blocks every time you export
 # End:
-# eval:   (setq org-export-babel-evaluate nil) ;;; Move this line before the "End:" to avoid running all source blocks every time you export
 
 
