@@ -19,3 +19,9 @@ all: article.pdf
 
 $(ARCHIVE).tgz: $(ARCHIVE_FILES)
 	tar --xform "s|^|$(ARCHIVE)/|" -zcf $@ $^
+
+clean:
+	rm -f article.aux article.bbl article.blg article.log article.out *~
+
+distclean: clean
+	rm -f article.html article.tex article.pdf figure.pdf data.csv measurements.txt IEEEtran.bst IEEEtran.cls \#article.org\#
