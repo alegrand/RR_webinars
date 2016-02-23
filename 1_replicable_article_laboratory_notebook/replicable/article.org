@@ -36,9 +36,9 @@
     }\smallskip
 %    \\
     \IEEEauthorblockA{
-      \IEEEauthorrefmark{1}University of Middle-of-Nowhere; \url{firstname.lastname@doe.org}}
+      \IEEEauthorrefmark{1}University of Middle-of-Nowhere; \url{firstname.lastname@mon.edu}}
     \IEEEauthorblockA{
-      \IEEEauthorrefmark{2}Institute of Whatever; \url{firstname.lastname@smith.com}}
+      \IEEEauthorrefmark{2}Institute of Whatever; \url{firstname.lastname@smith.org}}
   }
 
   \maketitle
@@ -134,8 +134,6 @@ for(size in unique(df$Size)) {
   sub-arrays in parallel on two threads and to bound the recursion
   level.
 * Related Work
-  \label{sec.rel}
-
   Well, this is such a brilliant and novel idea that none has worked
   on this cutting-edge topic. Parallel architecture barely existed in
   1959, when Hoare proposed the sequential version of this
@@ -187,16 +185,14 @@ for(size in unique(df$Size)) {
   (over a million entry) are required. Of course, it is difficult to
   conclude from so few measurements and a better experiment design
   would be useful.
-  \vspace{-1cm}
+  #+LaTeX: \vspace{-1cm}
 
   #+CAPTION: Comparing performances of several implementation of the quicksort algorithm\label{fig.comparison}
   #+ATTR_LaTeX: :width .8\linewidth 
   file:figure.pdf
-  \vspace{-.3cm}
+  #+LaTeX: \vspace{-.3cm}
 
 * Conclusion
-\label{sec.ccl}
-
 Exploiting parallel machine can be quite difficult and tedious. From
 our experience, such architecture are useful only when processing
 sufficiently large data sets. As a future work, we intend to
@@ -209,8 +205,8 @@ our own experimental testbed with support of our university.
 
 #+LaTeX: \nocite{*}
 #+LaTeX: \def\raggedright{}
-\bibliographystyle{IEEEtran}
-\bibliography{biblio}
+#+LaTeX: \bibliographystyle{IEEEtran}
+#+LaTeX: \bibliography{biblio}
 
 * Emacs Setup 							   :noexport:
   This document has local variables in its postembule, which should
