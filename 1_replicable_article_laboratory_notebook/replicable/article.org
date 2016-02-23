@@ -58,8 +58,9 @@ wget -O IEEEtran.bst http://mirrors.ctan.org/macros/latex/contrib/IEEEtran/bibte
 #+end_src
 
 * Getting the data                                                 :noexport:
-#+begin_src sh :results output :exports both
+#+begin_src sh :results output raw :exports both
 wget -O measurements.txt https://raw.githubusercontent.com/alegrand/M2R-ParallelQuicksort/master/data/sama_2014-10-13/measurements_03%3A47.txt
+echo 'file:measurements.txt'
 #+end_src
 
 * Extracting traces from data files				   :noexport:
