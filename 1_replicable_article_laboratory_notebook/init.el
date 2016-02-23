@@ -200,10 +200,10 @@ Entered on %U
         '("m" "#+begin_src emacs-lisp :tangle init.el\n\n#+end_src" "<src lang=\"emacs-lisp\">\n\n</src>"))
 
 (add-to-list 'org-structure-template-alist
-        '("r" "#+begin_src R :results output :session :exports both\n\n#+end_src" "<src lang=\"R\">\n\n</src>"))
+        '("r" "#+begin_src R :results output :session *R* :exports both\n\n#+end_src" "<src lang=\"R\">\n\n</src>"))
 
 (add-to-list 'org-structure-template-alist
-        '("R" "#+begin_src R :results output graphics :file (org-babel-temp-file \"figure\" \".png\") :exports both :width 600 :height 400 :session\n\n#+end_src" "<src lang=\"R\">\n\n</src>"))
+        '("R" "#+begin_src R :results output graphics :file (org-babel-temp-file \"figure\" \".png\") :exports both :width 600 :height 400 :session *R* \n\n#+end_src" "<src lang=\"R\">\n\n</src>"))
 
 (add-to-list 'org-structure-template-alist
         '("p" "#+begin_src python :results output raw :exports both\n\n#+end_src" "<src lang=\"python\">\n\n</src>"))

@@ -320,123 +320,33 @@ Additional shortcuts for navigating through org-mode documents:
   (setq org-src-preserve-indentation t)
 #+end_src
 
-#+RESULTS:
-
 ** Adding source code blocks: 					       :LUKA:
 *** With capital letters:
-   To use this type <S and then TAB
+To use this type <S and then TAB
 #+begin_src emacs-lisp :tangle init.el
 (add-to-list 'org-structure-template-alist
         '("S" "#+begin_src ?\n\n#+end_src" "<src lang=\"?\">\n\n</src>"))
 #+end_src
 
-#+RESULTS:
-| B | #+begin_src sh\n\n#+end_src         | <src lang="sh">\n\n</src>              |
-| b | #+begin_src sh\n\n#+end_src         | <src lang="sh">\n\n</src>              |
-| R | #+BEGIN_SRC R :session\n\n#+END_SRC | <src lang="R">\n\n</src>               |
-| r | #+begin_src R :session\n\n#+end_src | <src lang="R">\n\n</src>               |
-| m | #+begin_src emacs-lisp :tangle init.el\n\n#+end_src | <src lang="emacs-lisp">\n\n</src>      |
-| S | #+BEGIN_SRC ?\n\n#+END_SRC          | <src lang="?">\n\n</src>               |
-| s | #+BEGIN_SRC ?\n\n#+END_SRC          | <src lang="?">\n\n</src>               |
-| e | #+BEGIN_EXAMPLE\n?\n#+END_EXAMPLE   | <example>\n?\n</example>               |
-| q | #+BEGIN_QUOTE\n?\n#+END_QUOTE       | <quote>\n?\n</quote>                   |
-| v | #+BEGIN_VERSE\n?\n#+END_VERSE       | <verse>\n?\n</verse>                   |
-| V | #+BEGIN_VERBATIM\n?\n#+END_VERBATIM | <verbatim>\n?\n</verbatim>             |
-| c | #+BEGIN_CENTER\n?\n#+END_CENTER     | <center>\n?\n</center>                 |
-| l | #+BEGIN_LaTeX\n?\n#+END_LaTeX       | <literal style="latex">\n?\n</literal> |
-| L | #+LaTeX:                            | <literal style="latex">?</literal>     |
-| h | #+BEGIN_HTML\n?\n#+END_HTML         | <literal style="html">\n?\n</literal>  |
-| H | #+HTML:                             | <literal style="html">?</literal>      |
-| a | #+BEGIN_ASCII\n?\n#+END_ASCII       |                                        |
-| A | #+ASCII:                            |                                        |
-| i | #+INDEX: ?                          | #+INDEX: ?                             |
-| I | #+INCLUDE: %file ?                  | <include file=%file markup="?">        |
-
 *** Emacs-elisp code:
-   To use this type <m and then TAB
+To use this type <m and then TAB
 #+begin_src emacs-lisp :tangle init.el
 (add-to-list 'org-structure-template-alist
         '("m" "#+begin_src emacs-lisp :tangle init.el\n\n#+end_src" "<src lang=\"emacs-lisp\">\n\n</src>"))
 #+end_src
 
-#+RESULTS:
-| B | #+begin_src sh\n\n#+end_src         | <src lang="sh">\n\n</src>              |
-| b | #+begin_src sh\n\n#+end_src         | <src lang="sh">\n\n</src>              |
-| R | #+BEGIN_SRC R :session\n\n#+END_SRC | <src lang="R">\n\n</src>               |
-| r | #+begin_src R :session\n\n#+end_src | <src lang="R">\n\n</src>               |
-| m | #+begin_src emacs-lisp :tangle init.el\n\n#+end_src | <src lang="emacs-lisp">\n\n</src>      |
-| S | #+BEGIN_SRC ?\n\n#+END_SRC          | <src lang="?">\n\n</src>               |
-| s | #+BEGIN_SRC ?\n\n#+END_SRC          | <src lang="?">\n\n</src>               |
-| e | #+BEGIN_EXAMPLE\n?\n#+END_EXAMPLE   | <example>\n?\n</example>               |
-| q | #+BEGIN_QUOTE\n?\n#+END_QUOTE       | <quote>\n?\n</quote>                   |
-| v | #+BEGIN_VERSE\n?\n#+END_VERSE       | <verse>\n?\n</verse>                   |
-| V | #+BEGIN_VERBATIM\n?\n#+END_VERBATIM | <verbatim>\n?\n</verbatim>             |
-| c | #+BEGIN_CENTER\n?\n#+END_CENTER     | <center>\n?\n</center>                 |
-| l | #+BEGIN_LaTeX\n?\n#+END_LaTeX       | <literal style="latex">\n?\n</literal> |
-| L | #+LaTeX:                            | <literal style="latex">?</literal>     |
-| h | #+BEGIN_HTML\n?\n#+END_HTML         | <literal style="html">\n?\n</literal>  |
-| H | #+HTML:                             | <literal style="html">?</literal>      |
-| a | #+BEGIN_ASCII\n?\n#+END_ASCII       |                                        |
-| A | #+ASCII:                            |                                        |
-| i | #+INDEX: ?                          | #+INDEX: ?                             |
-| I | #+INCLUDE: %file ?                  | <include file=%file markup="?">        |
-
 *** R code:
 To use this type <r and then TAB
 #+begin_src emacs-lisp :tangle init.el
 (add-to-list 'org-structure-template-alist
-        '("r" "#+begin_src R :results output :session :exports both\n\n#+end_src" "<src lang=\"R\">\n\n</src>"))
+        '("r" "#+begin_src R :results output :session *R* :exports both\n\n#+end_src" "<src lang=\"R\">\n\n</src>"))
 #+end_src
 
-#+RESULTS:
-| B | #+begin_src sh\n\n#+end_src         | <src lang="sh">\n\n</src>              |
-| b | #+begin_src sh\n\n#+end_src         | <src lang="sh">\n\n</src>              |
-| R | #+BEGIN_SRC R :session\n\n#+END_SRC | <src lang="R">\n\n</src>               |
-| r | #+begin_src R :session\n\n#+end_src | <src lang="R">\n\n</src>               |
-| m | #+begin_src emacs-lisp :tangle init.el\n\n#+end_src | <src lang="emacs-lisp">\n\n</src>      |
-| S | #+BEGIN_SRC ?\n\n#+END_SRC          | <src lang="?">\n\n</src>               |
-| s | #+BEGIN_SRC ?\n\n#+END_SRC          | <src lang="?">\n\n</src>               |
-| e | #+BEGIN_EXAMPLE\n?\n#+END_EXAMPLE   | <example>\n?\n</example>               |
-| q | #+BEGIN_QUOTE\n?\n#+END_QUOTE       | <quote>\n?\n</quote>                   |
-| v | #+BEGIN_VERSE\n?\n#+END_VERSE       | <verse>\n?\n</verse>                   |
-| V | #+BEGIN_VERBATIM\n?\n#+END_VERBATIM | <verbatim>\n?\n</verbatim>             |
-| c | #+BEGIN_CENTER\n?\n#+END_CENTER     | <center>\n?\n</center>                 |
-| l | #+BEGIN_LaTeX\n?\n#+END_LaTeX       | <literal style="latex">\n?\n</literal> |
-| L | #+LaTeX:                            | <literal style="latex">?</literal>     |
-| h | #+BEGIN_HTML\n?\n#+END_HTML         | <literal style="html">\n?\n</literal>  |
-| H | #+HTML:                             | <literal style="html">?</literal>      |
-| a | #+BEGIN_ASCII\n?\n#+END_ASCII       |                                        |
-| A | #+ASCII:                            |                                        |
-| i | #+INDEX: ?                          | #+INDEX: ?                             |
-| I | #+INCLUDE: %file ?                  | <include file=%file markup="?">        |
-
-   To use this type <R and then TAB
+To use this type <R and then TAB
 #+begin_src emacs-lisp :tangle init.el
 (add-to-list 'org-structure-template-alist
-        '("R" "#+begin_src R :results output graphics :file (org-babel-temp-file \"figure\" \".png\") :exports both :width 600 :height 400 :session\n\n#+end_src" "<src lang=\"R\">\n\n</src>"))
+        '("R" "#+begin_src R :results output graphics :file (org-babel-temp-file \"figure\" \".png\") :exports both :width 600 :height 400 :session *R* \n\n#+end_src" "<src lang=\"R\">\n\n</src>"))
 #+end_src
-
-#+RESULTS:
-| B | #+begin_src sh\n\n#+end_src         | <src lang="sh">\n\n</src>              |
-| b | #+begin_src sh\n\n#+end_src         | <src lang="sh">\n\n</src>              |
-| R | #+BEGIN_SRC R :session\n\n#+END_SRC | <src lang="R">\n\n</src>               |
-| r | #+begin_src R :session\n\n#+end_src | <src lang="R">\n\n</src>               |
-| m | #+begin_src emacs-lisp :tangle init.el\n\n#+end_src | <src lang="emacs-lisp">\n\n</src>      |
-| S | #+BEGIN_SRC ?\n\n#+END_SRC          | <src lang="?">\n\n</src>               |
-| s | #+BEGIN_SRC ?\n\n#+END_SRC          | <src lang="?">\n\n</src>               |
-| e | #+BEGIN_EXAMPLE\n?\n#+END_EXAMPLE   | <example>\n?\n</example>               |
-| q | #+BEGIN_QUOTE\n?\n#+END_QUOTE       | <quote>\n?\n</quote>                   |
-| v | #+BEGIN_VERSE\n?\n#+END_VERSE       | <verse>\n?\n</verse>                   |
-| V | #+BEGIN_VERBATIM\n?\n#+END_VERBATIM | <verbatim>\n?\n</verbatim>             |
-| c | #+BEGIN_CENTER\n?\n#+END_CENTER     | <center>\n?\n</center>                 |
-| l | #+BEGIN_LaTeX\n?\n#+END_LaTeX       | <literal style="latex">\n?\n</literal> |
-| L | #+LaTeX:                            | <literal style="latex">?</literal>     |
-| h | #+BEGIN_HTML\n?\n#+END_HTML         | <literal style="html">\n?\n</literal>  |
-| H | #+HTML:                             | <literal style="html">?</literal>      |
-| a | #+BEGIN_ASCII\n?\n#+END_ASCII       |                                        |
-| A | #+ASCII:                            |                                        |
-| i | #+INDEX: ?                          | #+INDEX: ?                             |
-| I | #+INCLUDE: %file ?                  | <include file=%file markup="?">        |
 
 *** Python code:
    To use this type <p and then TAB
@@ -450,28 +360,6 @@ To use this type <b and then TAB
 (add-to-list 'org-structure-template-alist
         '("b" "#+begin_src sh :results output :exports both\n\n#+end_src" "<src lang=\"sh\">\n\n</src>"))
 #+end_src
-
-#+RESULTS:
-| B | #+begin_src sh\n\n#+end_src         | <src lang="sh">\n\n</src>              |
-| b | #+begin_src sh\n\n#+end_src         | <src lang="sh">\n\n</src>              |
-| R | #+BEGIN_SRC R :session\n\n#+END_SRC | <src lang="R">\n\n</src>               |
-| r | #+begin_src R :session\n\n#+end_src | <src lang="R">\n\n</src>               |
-| m | #+begin_src emacs-lisp :tangle init.el\n\n#+end_src | <src lang="emacs-lisp">\n\n</src>      |
-| S | #+BEGIN_SRC ?\n\n#+END_SRC          | <src lang="?">\n\n</src>               |
-| s | #+BEGIN_SRC ?\n\n#+END_SRC          | <src lang="?">\n\n</src>               |
-| e | #+BEGIN_EXAMPLE\n?\n#+END_EXAMPLE   | <example>\n?\n</example>               |
-| q | #+BEGIN_QUOTE\n?\n#+END_QUOTE       | <quote>\n?\n</quote>                   |
-| v | #+BEGIN_VERSE\n?\n#+END_VERSE       | <verse>\n?\n</verse>                   |
-| V | #+BEGIN_VERBATIM\n?\n#+END_VERBATIM | <verbatim>\n?\n</verbatim>             |
-| c | #+BEGIN_CENTER\n?\n#+END_CENTER     | <center>\n?\n</center>                 |
-| l | #+BEGIN_LaTeX\n?\n#+END_LaTeX       | <literal style="latex">\n?\n</literal> |
-| L | #+LaTeX:                            | <literal style="latex">?</literal>     |
-| h | #+BEGIN_HTML\n?\n#+END_HTML         | <literal style="html">\n?\n</literal>  |
-| H | #+HTML:                             | <literal style="html">?</literal>      |
-| a | #+BEGIN_ASCII\n?\n#+END_ASCII       |                                        |
-| A | #+ASCII:                            |                                        |
-| i | #+INDEX: ?                          | #+INDEX: ?                             |
-| I | #+INCLUDE: %file ?                  | <include file=%file markup="?">        |
 
 To use this type <B and then TAB. This comes with a session argument
 (e.g., in case you want to keep ssh connexions open).
