@@ -127,12 +127,15 @@ emacs -q --eval "(setq enable-local-eval t)" --eval "(setq enable-local-variable
 #+end_src
 and export it to pdf with the following shortcut: =C-c C-e l o=
 
-When you'll be tired of always reexecuting all the source code when
-exporting, simply add the following line in the end of the [[file:replicable/article.org][article.org]]
-document.
-#+BEGIN_EXAMPLE
-# eval:    (setq org-export-babel-evaluate nil)
-#+END_EXAMPLE
+If it still doesn't work and emacs complains about not finding ESS, it
+may be because you installed ESS in your home instead of
+system-wide. In that case, try to remove the =-q= in the previous
+command line to load your personnal emacs configuration.
+
+Finally, when you'll be tired of always reexecuting all the source
+code when exporting, simply move the last line of 
+[[file:replicable/article.org][article.org]] a few lines up.
+
 ** Reproducible research emacs configuration for maintaining your laboratory notebook
 *** Step 1: Prepare your journal
 Create an =org/= directory in the top of your home:

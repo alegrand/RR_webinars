@@ -219,15 +219,18 @@ our own experimental testbed with support of our university.
   startup. Exporting may require that you copy them in your .emacs.
 
 # Local Variables:
-# eval:    (require 'org-install)
-# eval:    (org-babel-do-load-languages 'org-babel-load-languages '((sh . t) (R . t)  (perl . t) (python . t) ))
-# eval:    (setq org-confirm-babel-evaluate nil)
-# eval:    (unless (boundp 'org-latex-classes) (setq org-latex-classes nil))
-# eval:    (add-to-list 'org-latex-classes '("IEEEtran"
+# eval:   (require 'org-install)
+# eval:   (org-babel-do-load-languages 'org-babel-load-languages '((sh . t) (R . t)  (perl . t) (python . t) ))
+# eval:   (setq org-confirm-babel-evaluate nil)
+# eval:   (unless (boundp 'org-latex-classes) (setq org-latex-classes nil))
+# eval:   (add-to-list 'org-latex-classes '("IEEEtran"
 # "\\documentclass[conference, 10pt, compsocconf]{IEEEtran}\n \[NO-DEFAULT-PACKAGES]\n \[EXTRA]\n  \\usepackage{graphicx}\n  \\usepackage{hyperref}"  ("\\section{%s}" . "\\section*{%s}") ("\\subsection{%s}" . "\\subsection*{%s}")                       ("\\subsubsection{%s}" . "\\subsubsection*{%s}")                       ("\\paragraph{%s}" . "\\paragraph*{%s}")                       ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
-# eval:    (setq org-alphabetical-lists t)
-# eval:    (setq org-src-fontify-natively t)
-# eval:    (setq ess-ask-for-ess-directory nil)
+# eval:   (setq org-alphabetical-lists t)
+# eval:   (setq org-src-fontify-natively t)
+# eval:   (setq ess-ask-for-ess-directory nil)
 # eval:   (setq ispell-local-dictionary "american")
 # eval:   (eval (flyspell-mode t))
 # End:
+# eval:   (setq org-export-babel-evaluate nil) ;;; Move this line before the "End:" to avoid running all source blocks every time you export
+
+
