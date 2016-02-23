@@ -13,5 +13,9 @@ all: article.pdf
 	pdflatex $^
 	pdflatex $^
 
+%.html: %.org
+	emacs -q -batch --eval "(setq enable-local-eval t)" --eval "(setq enable-local-variables t)" \
+	   --eval "(setq org-export-babel-evaluate t)" $^  --funcall org-html-export-to-html
+
 $(ARCHIVE).tgz: $(ARCHIVE_FILES)
 	tar --xform "s|^|$(ARCHIVE)/|" -zcf $@ $^
