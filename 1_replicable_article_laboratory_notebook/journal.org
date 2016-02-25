@@ -4,8 +4,8 @@
 #+TITLE:       Journal
 #+AUTHOR:      Put your name here
 #+LANGUAGE:    en
-#+TAGS: POLARIS(P) LIG(L) HOME(H) Europe(E) Blog(B) noexport(n) Stats(S)
-#+TAGS: Epistemology(E) Vulgarization(V) Teaching(T) R(R) OrgMode(O)
+#+TAGS: LIG(L) HOME(H) Europe(E) Blog(B) noexport(n) Stats(S)
+#+TAGS: Epistemology(E) Vulgarization(V) Teaching(T) R(R) OrgMode(O) Python(P)
 #+EXPORT_SELECT_TAGS: Blog
 #+OPTIONS:   H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
 #+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
@@ -17,8 +17,7 @@
 * 2016
 ** 2016-03 March
 *** 2016-03-07 Monday
-**** Webinar on reproducible research
-     https://github.com/alegrand/RR_webinars/blob/master/1_replicable_article_laboratory_notebook/index.org
+**** [[https://github.com/alegrand/RR_webinars/blob/master/1_replicable_article_laboratory_notebook/index.org][First webinar on reproducible research: litterate programming]]
 ***** Emacs shortcuts
 Here are a few convenient emacs shortcuts for those that have never
 used emacs. In all of the emacs shortcuts, =C=Ctrl=, =M=Alt/Esc= and
@@ -41,7 +40,7 @@ shortcuts. This can be changed from the Options menu.
     currently using (e.g., C, Lisp, org, ...)
   There are a bunch of cheatsheets also available out there (e.g.,
   [[http://www.shortcutworld.com/en/linux/Emacs_23.2.1.html][this one for emacs]] and [[http://orgmode.org/orgcard.txt][this one for org-mode]] or this [[http://sachachua.com/blog/wp-content/uploads/2013/05/How-to-Learn-Emacs-v2-Large.png][graphical one]]).
-***** Org-mode
+***** Org-mode                                                  :OrgMode:
   Many emacs shortcuts start by =C-x=. Org-mode's shortcuts generaly
   start with =C-c=.
   - =Tab= fold/unfold
@@ -56,7 +55,7 @@ shortcuts. This can be changed from the Options menu.
   - =C-c C-a= attach files
   - =C-c C-d= set a deadl1ine (use =S-arrows= to navigate in the dates)
   - =A-arrows= move subtree (add shift for the whole subtree)
-***** Org-mode Babel (for literate programming)
+***** Org-mode Babel (for literate programming)                 :OrgMode:
   - =<s + tab= template for source bloc. You can easily adapt it to get this:
       : #+BEGIN_SRC sh
       : ls
@@ -88,3 +87,38 @@ shortcuts. This can be changed from the Options menu.
     #+END_EXAMPLE
   - I have defined many such templates in my configuration. You can give
     a try to =<h,<l,<e,<p,<m,<r,<R=,...
+***** In case you want to play with ipython on a recent debian   :Python:
+Here is what you should install:
+#+begin_src sh :results output :exports both
+sudo apt-get install python3-pip ipython3 ipython3-notebook python3-numpy python3-matplotlib
+#+end_src
+
+The ipython notebook can then be run with the following command:
+#+begin_src sh :results output :exports both
+ipython3 notebook
+#+end_src
+***** In case you want to play with R/knitR/rstudio:                  :R:
+Here is what you should install on debian:
+#+BEGIN_SRC sh
+sudo apt-get install r-base r-cran-ggplot2
+#+END_SRC
+
+Rstudio and knitr are unfortunately not packaged within debian so the
+easiest is to download the corresponding debian package on the [[http://www.rstudio.com/ide/download/desktop][Rstudio
+webpage]] and then to install it manually (depending on when you do
+this, you can obviously change the version number).
+#+BEGIN_SRC sh
+wget https://download1.rstudio.org/rstudio-0.99.887-amd64.deb
+sudo dpkg -i rstudio-0.99.887-amd64.deb
+sudo apt-get -f install # to fix possibly missing dependencies
+#+END_SRC
+You will also need to install knitr. To this end, you should simply
+run R (or Rstudio) and use the following command.
+#+BEGIN_SRC R
+install.packages("knitr")
+#+END_SRC
+If =r-cran-ggplot2= could not be installed for some reason, you can also
+install it through R by doing:
+#+BEGIN_SRC R
+install.packages("ggplot2")
+#+END_SRC
