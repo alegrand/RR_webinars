@@ -39,6 +39,7 @@
    - Lyon: 
    - Bordeaux: Ada Lovelace room (Ludovic Courtès)
    - Rennes: salle visio Bréhat (Martin Quinson)
+   - Paris: salle visio Cantor (Roberto Di Cosmo)
    - ...
 * Keynote
   [[https://team.inria.fr/polaris/members/arnaud-legrand/][Arnaud Legrand]] will provide a [[https://github.com/alegrand/SMPE/raw/master/lectures/talk_16_02_03_Grenoble_G5K.pdf][general introduction on reproducible
