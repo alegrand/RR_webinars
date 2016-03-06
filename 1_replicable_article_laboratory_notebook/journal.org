@@ -85,8 +85,10 @@ shortcuts. This can be changed from the Options menu.
   : /tmp/europar2016.pdf
   : /tmp/M2-PDES-planning-examens-janvier2016.pdf
     #+END_EXAMPLE
-  - I have defined many such templates in my configuration. You can give
-    a try to =<h,<l,<e,<p,<m,<r,<R=,...
+  - I have defined many such templates in my configuration. You can
+    give a try to =<r=, =<R=, =<RR=, =<g=, =<p=, =<P=, =<m= ...
+  - Some of these templates are not specific to babel: e.g., =<h=, =<l=,
+    =<L=, =<c=, =<e=, ...
 ***** In case you want to play with ipython on a recent debian   :Python:
 Here is what you should install:
 #+begin_src sh :results output :exports both
