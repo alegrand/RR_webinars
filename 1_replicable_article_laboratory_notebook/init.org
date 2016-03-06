@@ -343,8 +343,6 @@ before runnind ant hen run the `cua--precommand-handler'"
 (org-cua-dwim-fix-cua-command "cua-set-mark")
 (org-cua-dwim-fix-cua-command "cua-paste-pop")
 
-
-
 (ad-activate 'handle-shift-selection)
 #+end_src
 * Org-mode shortcuts
@@ -418,12 +416,11 @@ Additional shortcuts for navigating through org-mode documents:
 
 ** Adding source code blocks: 					       :LUKA:
 *** With capital letters:
-To use this type <S and then TAB
+To use this type <s and then TAB
 #+begin_src emacs-lisp :tangle init.el
 (add-to-list 'org-structure-template-alist
-        '("S" "#+begin_src ?\n\n#+end_src" "<src lang=\"?\">\n\n</src>"))
+        '("s" "#+begin_src ?\n\n#+end_src" "<src lang=\"?\">\n\n</src>"))
 #+end_src
-
 *** Emacs-elisp code:
 To use this type <m and then TAB
 #+begin_src emacs-lisp :tangle init.el
@@ -432,23 +429,36 @@ To use this type <m and then TAB
 #+end_src
 
 *** R code:
-To use this type <r and then TAB
+To use this type <r and then TAB. This creates an R block for textual output.
 #+begin_src emacs-lisp :tangle init.el
 (add-to-list 'org-structure-template-alist
         '("r" "#+begin_src R :results output :session *R* :exports both\n\n#+end_src" "<src lang=\"R\">\n\n</src>"))
 #+end_src
 
-To use this type <R and then TAB
+To use this type <R and then TAB. This creates an R block for graphics
+that are stored in the =/tmp/=.
 #+begin_src emacs-lisp :tangle init.el
 (add-to-list 'org-structure-template-alist
         '("R" "#+begin_src R :results output graphics :file (org-babel-temp-file \"figure\" \".png\") :exports both :width 600 :height 400 :session *R* \n\n#+end_src" "<src lang=\"R\">\n\n</src>"))
 #+end_src
 
-*** Python code:
-   To use this type <p and then TAB
+To use this type <RR and then TAB. This creates an R block for
+graphics that are stored in the directory of the current file.
+
 #+begin_src emacs-lisp :tangle init.el
 (add-to-list 'org-structure-template-alist
-        '("p" "#+begin_src python :results output raw :exports both\n\n#+end_src" "<src lang=\"python\">\n\n</src>"))
+        '("RR" "#+begin_src R :results output graphics :file  (org-babel-temp-file (concat (file-name-directory (or load-file-name buffer-file-name)) \"figure-\") \".png\") :exports both :width 600 :height 400 :session *R* \n\n#+end_src" "<src lang=\"R\">\n\n</src>"))
+#+end_src
+*** Python code
+To use this type <p and then TAB
+#+begin_src emacs-lisp :tangle init.el
+(add-to-list 'org-structure-template-alist
+        '("p" "#+begin_src python :results output :exports both\n\n#+end_src" "<src lang=\"python\">\n\n</src>"))
+#+end_src
+
+#+begin_src emacs-lisp :tangle init.el
+(add-to-list 'org-structure-template-alist
+        '("P" "#+begin_src python :results output :session *python* :exports both\n\n#+end_src" "<src lang=\"python\">\n\n</src>"))
 #+end_src
 *** Bash "sh" code:
 To use this type <b and then TAB
@@ -463,30 +473,21 @@ To use this type <B and then TAB. This comes with a session argument
 (add-to-list 'org-structure-template-alist
         '("B" "#+begin_src sh :session foo :results output :exports both \n\n#+end_src" "<src lang=\"sh\">\n\n</src>"))
 #+end_src
-
-#+RESULTS:
-| B | #+begin_src sh\n\n#+end_src         | <src lang="sh">\n\n</src>              |
-| b | #+begin_src sh\n\n#+end_src         | <src lang="sh">\n\n</src>              |
-| R | #+BEGIN_SRC R :session\n\n#+END_SRC | <src lang="R">\n\n</src>               |
-| r | #+begin_src R :session\n\n#+end_src | <src lang="R">\n\n</src>               |
-| m | #+begin_src emacs-lisp :tangle init.el\n\n#+end_src | <src lang="emacs-lisp">\n\n</src>      |
-| S | #+BEGIN_SRC ?\n\n#+END_SRC          | <src lang="?">\n\n</src>               |
-| s | #+BEGIN_SRC ?\n\n#+END_SRC          | <src lang="?">\n\n</src>               |
-| e | #+BEGIN_EXAMPLE\n?\n#+END_EXAMPLE   | <example>\n?\n</example>               |
-| q | #+BEGIN_QUOTE\n?\n#+END_QUOTE       | <quote>\n?\n</quote>                   |
-| v | #+BEGIN_VERSE\n?\n#+END_VERSE       | <verse>\n?\n</verse>                   |
-| V | #+BEGIN_VERBATIM\n?\n#+END_VERBATIM | <verbatim>\n?\n</verbatim>             |
-| c | #+BEGIN_CENTER\n?\n#+END_CENTER     | <center>\n?\n</center>                 |
-| l | #+BEGIN_LaTeX\n?\n#+END_LaTeX       | <literal style="latex">\n?\n</literal> |
-| L | #+LaTeX:                            | <literal style="latex">?</literal>     |
-| h | #+BEGIN_HTML\n?\n#+END_HTML         | <literal style="html">\n?\n</literal>  |
-| H | #+HTML:                             | <literal style="html">?</literal>      |
-| a | #+BEGIN_ASCII\n?\n#+END_ASCII       |                                        |
-| A | #+ASCII:                            |                                        |
-| i | #+INDEX: ?                          | #+INDEX: ?                             |
-| I | #+INCLUDE: %file ?                  | <include file=%file markup="?">        |
-
-[18:23:44; 21.06.2013]
+*** Graphviz
+#+begin_src emacs-lisp :tangle init.el
+(add-to-list 'org-structure-template-alist
+        '("g" "#+begin_src dot :results output graphics :file \"/tmp/graph.pdf\" :exports both
+   digraph G {
+      node [color=black,fillcolor=white,shape=rectangle,style=filled,fontname=\"Helvetica\"];
+      A[label=\"A\"]
+      B[label=\"B\"]
+      A->B
+   }\n#+end_src" "<src lang=\"dot\">\n\n</src>"))
+#+end_src
+** Evaluating whole subtree:                                          :LUKA:
+#+begin_src emacs-lisp
+(global-set-key (kbd "C-c S-t") 'org-babel-execute-subtree)
+#+end_src
 ** Display images                                                   :ARNAUD:
 #+begin_src emacs-lisp :tangle init.el
 (add-hook 'org-babel-after-execute-hook 'org-display-inline-images) 
