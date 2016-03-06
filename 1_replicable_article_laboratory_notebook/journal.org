@@ -97,6 +97,10 @@ The ipython notebook can then be run with the following command:
 #+begin_src sh :results output :exports both
 ipython3 notebook
 #+end_src
+
+The latest version of this notebook is called [[http://jupyter.org/][Jupyter]] and is polyglot
+like babel. Playing with it is easy as it's deployed on the cloud but
+as I'm not a python expert I'm not sure to know how to deploy it locally.
 ***** In case you want to play with R/knitR/rstudio:                  :R:
 Here is what you should install on debian:
 #+BEGIN_SRC sh
@@ -122,3 +126,6 @@ install it through R by doing:
 #+BEGIN_SRC R
 install.packages("ggplot2")
 #+END_SRC
+
+As you will experience, knitr is polyglot but not Rstudio, which
+makes its use not as fluid when using other languages than R.
