@@ -34,6 +34,10 @@
    - Bordeaux: Luka Stanisic, Emmanuel Agullo, Nicolas P. Rougier,
      Ludovic Courtès
    - Rennes: Martin Quinson
+   - Paris: Roberto Di Cosmo
+   - Toulouse: Matthieu Roy
+   - TU Vienne: Louis-Claude Canon
+   - Orléans: Konrad Hinsen
 ** Locations
    - Grenoble: [[https://www.google.com/maps/d/u/0/viewer?mid=zYJixSyqUx3w.kZRnKm__28GY&hl=fr][MJK]] (Arnaud Legrand), GIANT (Frédéric Desprez), Inria A103 (Pierre Neyron), ...
    - Lyon: ENS Lyon, salle du conseil (Loris Marchal)
