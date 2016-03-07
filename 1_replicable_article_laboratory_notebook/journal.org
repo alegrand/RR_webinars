@@ -44,9 +44,9 @@ shortcuts. This can be changed from the Options menu.
   Many emacs shortcuts start by =C-x=. Org-mode's shortcuts generaly
   start with =C-c=.
   - =Tab= fold/unfold
-  - =C-c C-c= do something useful here (tag, execute, ...)
   - =C-c c= capture (finish capturing with =C-c C-c=, this is explained on
     the top of the buffer that just opened)
+  - =C-c C-c= do something useful here (tag, execute, ...)
   - =C-c C-o= open link
   - =C-c C-t= switch todo
   - =C-c C-e= export
