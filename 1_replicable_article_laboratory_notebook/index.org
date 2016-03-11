@@ -4,11 +4,12 @@
 #+STARTUP: overview indent
 
 
-*This page is under construction, so please check it regularly, especially a few days before the webinar to [[file:index.org#practical-session-requirements][install the software required in the practical session]].*
+*This seminar took place on March 7, 2016. The link to the video is below. Do not forget to check the section on [[file:index.org#practical-session-requirements][software installation]] if
+you want to test yourself the demoed tools.*
 
 * Table of Contents                                                     :TOC:
  - [[#practical-information][Practical information]]
-     - [[#webcast][Webcast]]
+     - [[#webcastvideo][Webcast/Video]]
      - [[#persons-in-charge][Persons in charge]]
      - [[#locations][Locations]]
  - [[#keynote][Keynote]]
@@ -18,17 +19,12 @@
      - [[#reproducible-research-emacs-configuration-for-maintaining-your-laboratory-notebook][Reproducible research emacs configuration for maintaining your laboratory notebook]]
 
 * Practical information
-** Webcast
-   - To follow this webinar in real time, please go to the
-     [[https://mi2s.imag.fr/pm/direct][Screencast]]. From what we know, you mostly need javascript to be
-     activated for this to work. You can check on this [[https://mi2s.imag.fr/pm/videos-en-ligne][page]] whether
-     you manage to see some other videos. If so, you should be fine. 
-   - To interact during the presentation, the easier will be to 
-     use this [[https://pad.inria.fr/p/9mSyf4BhzZ9soDE9][pad]]. Write your questions, comments here and we'll try
-     to address them during the presentation. If they cannot be
-     addressed, leave them and we'll try to answer them later in some
-     kind of FAQ section.
-   - Video archive (soon)
+** Webcast/Video
+Here is the *[[https://mi2s.imag.fr/introduction-producing-replicable-articles-and-managing-a-laboratory-notebook-with-emacsorg-mode-0][link to the video]]*. If you have any trouble with the
+flashplayer, here is a *[[http://newstream.imag.fr/2016-03-07_Reproducible-Research_Arnaud-legrand.mp4][direct link to the mpeg4 video]]*.
+
+To interact during the presentation (questions, comments), we used
+this [[https://pad.inria.fr/p/9mSyf4BhzZ9soDE9][pad]].
 ** Persons in charge
    - Grenoble: Arnaud Legrand, Frédéric Desprez
    - Bordeaux: Luka Stanisic, Emmanuel Agullo, Nicolas P. Rougier,
@@ -53,7 +49,7 @@
   articles and give advice on how to manage a laboratory notebook on a
   daily basis. 
 
-  To benefit from this presentation, we recommand the audience to
+  To benefit from this presentation, we recommend the audience to
   install the software described in each section. In particular, we
   want a recent version of emacs with ESS (for R) and AucTeX (for
   LaTeX). Finally, *you will need a working LaTeX and R environment to
@@ -135,7 +131,7 @@ and export it to pdf with the following shortcut: =C-c C-e l o=
 If it still doesn't work and emacs complains about not finding ESS, it
 may be because you installed ESS in your home instead of
 system-wide. In that case, try to remove the =-q= in the previous
-command line to load your personnal emacs configuration.
+command line to load your personal emacs configuration.
 
 Finally, when you'll be tired of always reexecuting all the source
 code when exporting, simply modify the last eval line of [[file:replicable/article.org][article.org]]
