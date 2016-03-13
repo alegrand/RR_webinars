@@ -11,9 +11,9 @@ with the support of ANR, CNRS, Inria, University of Grenoble, ...
 required in the practical session.*
 
 #+BEGIN_CENTER
-*Next event*: Monday 7 March,1:30PM-4:30PM (UTC+1), 2016. [[file:1_replicable_article_laboratory_notebook/index.org][Introduction (reproducible
-research, challenges, ethic, ...). Producing replicable articles and
-managing a laboratory notebook]] (The screencast is *[[https://mi2s.imag.fr/pm/direct][here]]* and some rooms where the audience will gather are listed [[1_replicable_article_laboratory_notebook/index.org#locations][here]]).
+*Next event*: Tuesday 5 April, 1:30PM-4:30PM (UTC+1), 2016.  [[file:2_controling_your_environment/index.org][Controling
+ your environment]] (The screencast is *[[https://mi2s.imag.fr/pm/direct][here]]* and some rooms where the
+ audience will gather are listed [[2_controling_your_environment/index.org#locations][here]]).
 #+END_CENTER
 
 * Table of Contents                                                     :TOC:
@@ -62,7 +62,7 @@ it, it's easy. Any comment and suggestion is welcome.
 1. <2016-03-07 Mon.> [[file:1_replicable_article_laboratory_notebook/index.org][Introduction (reproducible research, challenges, ethic,
    ...). Producing replicable articles and managing a laboratory
    notebook]].
-2. <2016-04-05 Tue.> Controling your environment (docker, VM, ...)
+2. <2016-04-05 Tue.> [[file:2_controling_your_environment/index.org][Controling your environment]]
 3. <2016-05-03 Tue.> Numerical reproducibility
 4. <2016-06-07 Tue.> To be announced
 
@@ -79,5 +79,8 @@ Other topics planned:
 - [[http://www-pequan.lip6.fr/~graillat/][Stef Graillat]], University Pierre et Marie Curie
 - [[http://perso.univ-perp.fr/philippe.langlois/][Philippe Langlois]], University of Perpignan, DALI
 - [[https://team.inria.fr/polaris/members/arnaud-legrand/][Arnaud Legrand]], CNRS/LIG Inria/Polaris, University of Grenoble.
+- Mickaël Mercier, LIG Inria/Datamove, University of Grenoble
 - [[http://perso.ens-lyon.fr/nathalie.revol/][Nathalie Revol]], Inria/AriC, École Normale Supérieure de Lyon
+- Pierre Neyron, CNRS/LIG , University of Grenoble
+- [[http://mescal.imag.fr/membres/olivier.richard/][Olivier Richard]], University of Grenoble/LIG, Inria/Datamove
 - ...

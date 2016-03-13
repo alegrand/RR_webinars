@@ -12,16 +12,17 @@ you want to test yourself the demoed tools.*
      - [[#webcastvideo][Webcast/Video]]
      - [[#persons-in-charge][Persons in charge]]
      - [[#locations][Locations]]
- - [[#keynote][Keynote]]
  - [[#practical-session-requirements][Practical Session Requirements]]
      - [[#installing-emacs-ess-auctex-][Installing emacs, ess, auctex, ...]]
      - [[#a-stub-of-replicable-article][A stub of replicable article]]
      - [[#reproducible-research-emacs-configuration-for-maintaining-your-laboratory-notebook][Reproducible research emacs configuration for maintaining your laboratory notebook]]
 
 * Practical information
+[[https://team.inria.fr/polaris/members/arnaud-legrand/][Arnaud Legrand]] gave a [[https://github.com/alegrand/SMPE/raw/master/lectures/talk_16_03_07_Webinar.pdf][general introduction on reproducible research]].
 ** Webcast/Video
 Here is the *[[https://mi2s.imag.fr/introduction-producing-replicable-articles-and-managing-a-laboratory-notebook-with-emacsorg-mode-0][link to the video]]*. If you have any trouble with the
-flashplayer, here is a *[[http://newstream.imag.fr/2016-03-07_Reproducible-Research_Arnaud-legrand.mp4][direct link to the mpeg4 video]]*.
+flashplayer, here is a *[[http://newstream.imag.fr/2016-03-07_Reproducible-Research_Arnaud-legrand.mp4][direct link to the mpeg4 video]]*. The slides are
+available [[https://github.com/alegrand/SMPE/raw/master/lectures/talk_16_03_07_Webinar.pdf][here]].
 
 To interact during the presentation (questions, comments), we used
 this [[https://pad.inria.fr/p/9mSyf4BhzZ9soDE9][pad]].
@@ -41,9 +42,6 @@ this [[https://pad.inria.fr/p/9mSyf4BhzZ9soDE9][pad]].
    - Rennes: salle visio Bréhat (Martin Quinson)
    - Paris: salle visio Cantor (Roberto Di Cosmo)
    - ...
-* Keynote
-  [[https://team.inria.fr/polaris/members/arnaud-legrand/][Arnaud Legrand]] will provide a [[https://github.com/alegrand/SMPE/raw/master/lectures/talk_16_03_07_Webinar.pdf][general introduction on reproducible
-  research]].
 * Practical Session Requirements
   We will explain the audience how to create and manage replicable
   articles and give advice on how to manage a laboratory notebook on a
