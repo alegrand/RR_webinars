@@ -53,13 +53,13 @@
 #+END_abstract
 * Getting the LaTeX						   :noexport:
 #+begin_src sh :results output :exports both
-wget -O IEEEtran.cls http://mirror.ibcp.fr/pub/CTAN/macros/latex/contrib/IEEEtran/IEEEtran.cls
-wget -O IEEEtran.bst http://mirrors.ctan.org/macros/latex/contrib/IEEEtran/bibtex/IEEEtran.bst
+wget --no-check-certificate -O IEEEtran.cls http://mirror.ibcp.fr/pub/CTAN/macros/latex/contrib/IEEEtran/IEEEtran.cls
+wget --no-check-certificate -O IEEEtran.bst http://mirrors.ctan.org/macros/latex/contrib/IEEEtran/bibtex/IEEEtran.bst
 #+end_src
 
 * Getting the data                                                 :noexport:
 #+begin_src sh :results output raw :exports both
-wget -O measurements.txt https://raw.githubusercontent.com/alegrand/M2R-ParallelQuicksort/master/data/sama_2014-10-13/measurements_03%3A47.txt
+wget --no-check-certificate -O measurements.txt https://raw.githubusercontent.com/alegrand/M2R-ParallelQuicksort/master/data/sama_2014-10-13/measurements_03%3A47.txt
 echo 'file:measurements.txt'
 #+end_src
 
