@@ -11,7 +11,7 @@ with the support of ANR, CNRS, Inria, University of Grenoble, ...
 required in the practical session.*
 
 #+BEGIN_CENTER
-*Next event*: Tuesday 5 April, 1:30PM-4:30PM (UTC+1), 2016.  [[file:2_controling_your_environment/index.org][Controling
+*Next event*: Tuesday 5 April, 1:30PM-4:30PM (UTC+2), 2016.  [[file:2_controling_your_environment/index.org][Controling
  your environment]] (The screencast is *[[https://mi2s.imag.fr/pm/direct][here]]* and some rooms where the
  audience will gather are listed [[2_controling_your_environment/index.org#locations][here]]).
 #+END_CENTER
