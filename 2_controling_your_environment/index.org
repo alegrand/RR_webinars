@@ -1,5 +1,5 @@
-#+TITLE:     Introduction, producing replicable articles and managing a laboratory notebook with emacs/org-mode
-#+AUTHOR:    Mickaël Mercier, Cristian Ruiz
+#+TITLE:     Controling your environment
+#+AUTHOR:    Michael Mercier, Cristian Ruiz
 #+DATE: April 5, 2016
 #+STARTUP: overview indent
 
@@ -15,19 +15,23 @@ you want to test yourself the demoed tools.*
  - [[#practical-session-requirements][Practical Session Requirements]]
 
 * Practical information
-Mickael Mercier and Cristian Ruiz will explain how to control your
+Michael Mercier and Cristian Ruiz will explain how to control your
 experimental environment.
 ** Webcast/Video
+Here are the links to the [[https://mi2s.imag.fr/pm/direct][webcast]], to the [[https://pad.inria.fr/p/9mxzIpXQDgE1gyqD][pad]], and to the [[https://github.com/camilo1729/webinar-env][slides]].
 ** Persons in charge
-   - Grenoble: Arnaud Legrand, Frédéric Desprez
+   - Grenoble: Arnaud Legrand, Frédéric Desprez, Pierre Neyron
    - Bordeaux: Luka Stanisic, Emmanuel Agullo, Nicolas P. Rougier,
-     Ludovic Courtès
+     Ludovic Courtès, ...
    - Rennes: Martin Quinson
+   - Besançon: Louis-Claude Canon
 ** Locations
-   - Grenoble: [[https://www.google.com/maps/d/u/0/viewer?mid=zYJixSyqUx3w.kZRnKm__28GY&hl=fr][MJK]] (Arnaud Legrand), GIANT (Frédéric Desprez), Inria A103 (Pierre Neyron), ...
-   - Lyon: ENS Lyon, salle du conseil (Loris Marchal)
-   - Bordeaux: Ada Lovelace room (Ludovic Courtès)
-   - Rennes: salle visio Bréhat (Martin Quinson)
-   - Paris: salle visio Cantor (Roberto Di Cosmo)
+   - Grenoble: [[https://www.google.com/maps/d/u/0/viewer?mid=zYJixSyqUx3w.kZRnKm__28GY&hl=fr][MJK]] (Arnaud Legrand)
+   - Besançon: [[https://www.google.fr/maps/place/47%C2%B014'44.7"N+5%C2%B059'15.2"E/@47.245675,5.9852553,16z/][en 404C]]
+   - Lyon: 
+   - Bordeaux: 
+   - Rennes: 
+   - Paris: 
    - ...
 * Practical Session Requirements
+Under construction
