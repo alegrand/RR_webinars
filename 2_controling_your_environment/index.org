@@ -4,7 +4,7 @@
 #+STARTUP: overview indent
 
 
-*This seminar took place on April 5, 2016. The link to the video is below. Do not forget to check the section on [[file:index.org#practical-session-requirements][software installation]] if
+*This seminar will take place on April 5, 2016 @ 1:30PM-4:30PM (UTC+2). The link to the video is below. Do not forget to check the section on [[file:index.org#practical-session-requirements][software installation]] if
 you want to test yourself the demoed tools.*
 
 * Table of Contents                                                     :TOC:
@@ -34,4 +34,4 @@ Here are the links to the [[https://mi2s.imag.fr/pm/direct][webcast]], to the [[
    - Paris: 
    - ...
 * Practical Session Requirements
-Under construction
+Soon available...
