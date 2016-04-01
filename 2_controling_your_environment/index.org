@@ -30,7 +30,7 @@ Here are the links to the [[https://mi2s.imag.fr/pm/direct][webcast]], to the [[
    - Besançon: [[https://www.google.fr/maps/place/47%C2%B014'44.7"N+5%C2%B059'15.2"E/@47.245675,5.9852553,16z/][en 404C]]
    - Lyon: 
    - Bordeaux: 
-   - Rennes: salle visio Bréhat (David Margery)
+   - Rennes: salle Sicile (David Margery)
    - Paris: 
    - ...
 * Practical Session Requirements
