@@ -11,7 +11,7 @@ with the support of ANR, CNRS, Inria, University of Grenoble, ...
 required in the practical session.*
 
 #+BEGIN_CENTER
-*Next event*: Tuesday 5 April, 1:30PM-4:30PM (UTC+1), 2016.  [[file:2_controling_your_environment/index.org][Controling
+*Next event*: Tuesday 5 April, 1:30PM-4:30PM (UTC+2), 2016.  [[file:2_controling_your_environment/index.org][Controlling
  your environment]] (The screencast is *[[https://mi2s.imag.fr/pm/direct][here]]* and some rooms where the
  audience will gather are listed [[2_controling_your_environment/index.org#locations][here]]).
 #+END_CENTER
@@ -62,7 +62,7 @@ it, it's easy. Any comment and suggestion is welcome.
 1. <2016-03-07 Mon.> [[file:1_replicable_article_laboratory_notebook/index.org][Introduction (reproducible research, challenges, ethic,
    ...). Producing replicable articles and managing a laboratory
    notebook]].
-2. <2016-04-05 Tue.> [[file:2_controling_your_environment/index.org][Controling your environment]]
+2. <2016-04-05 Tue.> [[file:2_controling_your_environment/index.org][Controlling your environment]]
 3. <2016-05-03 Tue.> Numerical reproducibility
 4. <2016-06-07 Tue.> To be announced
 

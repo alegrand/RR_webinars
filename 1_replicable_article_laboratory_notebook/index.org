@@ -114,7 +114,7 @@ Download the archive, untar it and simply make to generate the
 article. You should then be able to open the [[file:replicable/article.pdf][resulting article]].
 
 #+begin_src sh :results output :exports both
-wget -O replicable.tgz https://github.com/alegrand/RR_webinars/raw/master/1_replicable_article_laboratory_notebook/replicable/replicable.tgz
+wget --no-check-certificate -O replicable.tgz https://github.com/alegrand/RR_webinars/raw/master/1_replicable_article_laboratory_notebook/replicable/replicable.tgz
 tar zxf replicable.tgz; cd replicable; make ; evince article.pdf
 #+end_src
 
