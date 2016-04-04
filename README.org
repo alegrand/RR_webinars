@@ -79,7 +79,7 @@ Other topics planned:
 - [[http://www-pequan.lip6.fr/~graillat/][Stef Graillat]], University Pierre et Marie Curie
 - [[http://perso.univ-perp.fr/philippe.langlois/][Philippe Langlois]], University of Perpignan, DALI
 - [[https://team.inria.fr/polaris/members/arnaud-legrand/][Arnaud Legrand]], CNRS/LIG Inria/Polaris, University of Grenoble.
-- Mickaël Mercier, LIG Inria/Datamove, University of Grenoble
+- Michaël Mercier, LIG Inria/Datamove, University of Grenoble
 - [[http://perso.ens-lyon.fr/nathalie.revol/][Nathalie Revol]], Inria/AriC, École Normale Supérieure de Lyon
 - Pierre Neyron, CNRS/LIG , University of Grenoble
 - [[http://mescal.imag.fr/membres/olivier.richard/][Olivier Richard]], University of Grenoble/LIG, Inria/Datamove
