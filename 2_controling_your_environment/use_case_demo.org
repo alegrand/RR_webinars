@@ -1,0 +1,206 @@
+#+TITLE: Complete Use Case Demo
+#+AUTHOR: Michael Mercier\newline INRIA - France
+#+DATE: April 5, 2016 -- Reproducible Research Webinar \mylogos
+
+* The use case: Batsim
+
+This a description of the use case that I was facing for my last paper:
+
+We have a simulator that we built (Batsim) which is simulating job scheduling
+in a cluster. It communicates with different schedulers implemented by
+several people and in various languages. I needed an environment to
+develop my simulator and run my experiments that I could share with the
+other developers of the different components and with basically
+any other people that would like to create and evaluate a new
+scheduler. Of course the main purpose is the experiment reproducibility, but
+this highlights the fact that *improving reproducibility also improves the
+way you work with people*.
+
+** Build your base environment using Kameleon
+
+First I build my own environment using Kameleon. Here is a sample of the recipe
+that installs the scheduler of a colleague:
+#+BEGIN_SRC yaml
+
+- install dependencies:
+  - exec_in: |
+      apt-get -y --force-yes install \
+      liblog-log4perl-perl \
+      libjson-perl \
+      liblist-moreutils-perl \
+      libfile-slurp-perl \
+      2>&1
+- get_it:
+  - exec_in: |
+      cd $$simctn_dir
+      git clone https://github.com/wagnerf42/batch-simulator.git
+  - exec_in: |
+      cd $$simctn_dir/batch-simulator
+      git checkout 12df12a
+      cd ProcessorRange
+      perl Makefile.PL
+      make
+      make install
+      cd ..
+      cp log4perl.conf.template log4perl.conf
+
+#+END_SRC
+
+It is a good example of the complexity of rebuilding some research code: You
+need the right dependencies, you need to fix the git version so the next
+upgrade will not break your own code, and you need to know how to build,
+install and configure the tool. These few lines are really easy to write
+while you know your tool but it can take hours to somebody (even you in
+some months) to do it again if it was not documented like this: You can
+see this file like an executable installation documentation of your code.
+
+The whole kameleon recipes are available on the
+    [[https://github.com/oar-team/batsim-env-recipes][Github repository]].
+As this process is a bit too long for a demo we will use the generated images
+directly. But it is recommended to do it by yourself before the webinar so you
+will have the image ready for the rest of the tutorial.
+
+For the people that want to skip this step you can download the tarball or pull
+it from the Docker Hub: This will be explain on the following parts.
+
+For the brave and the curious, to build the image using Kameleon, first you
+need to install it using the [[http://kameleon.imag.fr/installation.html][official documentation]].
+
+By default, this recipe is isolating the environment that it is building
+using a ``chroot``: It comes with no dependencies but it you need to be root
+on the machine. You can also use VirtualBox using the right ``extend`` in the
+begining of the recipe.
+
+*Warning*: Depending on your system and the backend you choosed, you may have
+to install the recipe building  dependencies.
+
+Then run the build:
+#+BEGIN_SRC sh
+    kameleon build debian8_batsim.yaml
+#+END_SRC
+
+* Share reproducible experiment using reprozip
+
+For this demo we will follow these steps:
+1. We will trace an experiment and pack it
+2. We will copy the package to an other environment
+3. Re-run the experiment
+4. Check that the results are the same
+
+** Trace an experiment
+
+Just a word about how =reprozip= is working. Reprozip is twofold:
+   - =reprozip= for tracing and packing (needed for 1.)
+   - =reprounzip= for unpacking and re-running (needed for 3.)
+
+In the provided environment reprozip is already installed. The unzip stage
+will be perform locally so we will have to install it when the time come.
+
+First *if you built yourself the environment* you need to import the image in
+Docker (it is assumed that docker is already installed on your machine):
+#+BEGIN_SRC sh
+docker import build/debian8_batsim/debian8_batsim.tar.gz oarteam/batsim:latest
+#+END_SRC
+If you didn't build the image just import it from Docker Hub, the Docker image public repository:
+#+BEGIN_SRC sh
+docker pull oarteam/batsim:latest
+#+END_SRC
+
+Then look at your docker images, batsim has appeared!
+#+BEGIN_SRC sh
+docker images
+REPOSITORY                    TAG                 IMAGE ID            CREATED             SIZE
+batsim                        latest              0852ae23ac63        3 minutes ago       478.9 MB
+#+END_SRC
+
+Let's go into the container:
+#+BEGIN_SRC sh
+docker run -ti -e LANG=C.UTF-8 --name my-experiment oarteam/batsim:latest /bin/bash
+#+END_SRC
+
+*Note*: the option =-e= is added here to avoid some error with the python Click library.
+
+Now you should have a working bash in the batsim container :)
+
+As you have seen when downloading (or building) the image, it is kind of big.
+It is because it contains all the tools to modify, rebuild and run the entire
+experiment. Let say that you just want other people to re-run the experiment
+and not modify it: We will trace a minimal experiment using =reprozip= to
+capture only what is necessary to do it.
+
+#+BEGIN_SRC sh
+cd /root/expe-batsim/
+reprozip trace ./experiment.py
+#+END_SRC
+
+You can check generated config file that contains all tthe files that have been
+captured by reprozip during the execution:
+#+BEGIN_SRC sh
+less .reprozip-trace/config.yml
+#+END_SRC
+*Note*: Has the capture process is not error free this file is the place to add
+what is missing.
+
+Then you can pack the experiment environment:
+#+BEGIN_SRC sh
+reprozip pack
+#+END_SRC
+
+** Reproduce the experiment
+
+The reprozip packing process produce a =experiment.rpz= file that you can
+export from your docker container using the =docker cp= command:
+#+BEGIN_SRC sh
+mkdir $HOME/repro_expe
+docker cp my-experiment:/root/expe-batsim/experiment.rpz $HOME/repro_expe
+cd $HOME/repro_expe
+#+END_SRC
+
+Now you need to install =reprounzip= in order to rerun the experiment. It can
+be easily done using the python =pip= installer:
+#+BEGIN_SRC sh
+pip install reprounzip-docker reprounzip
+#+END_SRC
+
+Now reprozip have to setup the environment in the expe folder
+#+BEGIN_SRC sh
+reprounzip docker setup experiment.rpz expe
+#+END_SRC
+
+Then you can rerun the experiment:
+#+BEGIN_SRC sh
+reprounzip docker run expe
+#+END_SRC
+
+** Compare the results
+
+First you need to get the results from the first experiment:
+#+BEGIN_SRC sh
+docker cp my-experiment:/root/expe-batsim/result_exp0test/perl_sched_BASIC_0001000000.0_0000000000.0_000_jobs.csv ./first_run_job.csv
+#+END_SRC
+
+And from the rerun:
+#+BEGIN_SRC sh
+reprounzip docker download expe perl_sched_BASIC_0001000000.0_0000000000.0_000_jobs.csv:rerun_job.csv
+#+END_SRC
+
+Our image also contains visualisation tools, so we can see if we actually
+reproduce the same results. So, you can run the following quite complicated
+command and get an interactive view of the two results files:
+#+BEGIN_SRC sh
+docker run -ti --rm -e LANG=C.UTF-8 --name visu \
+   -v $HOME/repro_expe:/data -u kameleon \
+   -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix \
+     oarteam/batsim:latest evalys /data/first_run_job.csv /data/rerun_job.csv
+#+END_SRC
+
+OK it looks like the same but is it really?
+#+BEGIN_SRC sh
+diff -s first_run_job.csv rerun_job.csv
+Files first_run_job.csv and rerun_job.csv are identical
+#+END_SRC
+
+Great! You have reproduce the same results :)
+
+Do not hesitate to create issues/Pull requests on this repository if you had
+any trouble doing this tutorial.
