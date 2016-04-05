@@ -157,7 +157,7 @@ Let's make the changes permanent by commiting the changes and making a new image
 We need the container ID for performing a commit and save the state of the file system.
 
 #+BEGIN_SRC sh
-sudo docker commit -m "my analysis" 658342507ad4 data_processing
+sudo docker commit -m "my analysis" 658342507ad4 $CONTAINER_NAME
 #+END_SRC
 
 #+BEGIN_SRC sh
@@ -292,7 +292,7 @@ Let's add the procedure to install the needed R package into the Dockerfile
 #+BEGIN_SRC
 FROM debian:jessie
 RUN apt-get -y update && apt-get install -y r-base ruby
-RUN R -e 'chooseCRANmirror(graphics=FALSE, ind=100);install.packages("stringr")'
+RUN R -e 'chooseCRANmirror(graphics=FALSE, ind=99);install.packages("stringr")'
 #+END_SRC
 
 We can rebuild the container:
@@ -311,13 +311,13 @@ Step 0 : FROM debian:jessie
 Step 1 : RUN apt-get -y update && apt-get install -y r-base ruby
  ---> Using cache
  ---> df6b6de1c0c5
-Step 2 : RUN R -e 'chooseCRANmirror(graphics=FALSE, ind=100);install.packages("stringr")'
+Step 2 : RUN R -e 'chooseCRANmirror(graphics=FALSE, ind=99);install.packages("stringr")'
 #+END_SRC
 
 If we retry:
 
 #+BEGIN_SRC sh
-sudo docker run -it -v $PATH_TO_DATA:/data webinar
+sudo docker run -it -v $PATH_TO_DATA:/data $NAME_CONTAINER
 #+END_SRC
 
 #+BEGIN_SRC sh
@@ -338,8 +338,8 @@ Let's do that in a cleanly way using the Dockerfile
 #+BEGIN_SRC
 FROM debian:jessie
 RUN apt-get -y update && apt-get install -y r-base ruby
-RUN R -e 'chooseCRANmirror(graphics=FALSE, ind=100);install.packages("stringr")'
-RUN R -e 'chooseCRANmirror(graphics=FALSE, ind=100);install.packages("ggplot2");install.packages("lsr")'
+RUN R -e 'chooseCRANmirror(graphics=FALSE, ind=99);install.packages("stringr")'
+RUN R -e 'chooseCRANmirror(graphics=FALSE, ind=99);install.packages("ggplot2");install.packages("lsr")'
 #+END_SRC
 
 We rebuild the image:
@@ -364,8 +364,8 @@ Now, lets include the execution of the analysis into the Dockerfile.
 #+BEGIN_SRC sh
 FROM debian:jessie
 RUN apt-get -y update && apt-get install -y r-base ruby
-RUN R -e 'chooseCRANmirror(graphics=FALSE, ind=100);install.packages("stringr")'
-RUN R -e 'chooseCRANmirror(graphics=FALSE, ind=100);install.packages("ggplot2");install.packages("lsr")'
+RUN R -e 'chooseCRANmirror(graphics=FALSE, ind=99);install.packages("stringr")'
+RUN R -e 'chooseCRANmirror(graphics=FALSE, ind=99);install.packages("ggplot2");install.packages("lsr")'
 
 # Figures generation
 WORKDIR /data/
