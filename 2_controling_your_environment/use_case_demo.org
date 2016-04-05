@@ -109,9 +109,12 @@ docker pull oarteam/batsim:latest
 Then look at your docker images, batsim has appeared!
 #+BEGIN_SRC sh
 docker images
+#+END_SRC
+
+#+BEGIN_EXAMPLE
 REPOSITORY                    TAG                 IMAGE ID            CREATED             SIZE
 batsim                        latest              0852ae23ac63        3 minutes ago       478.9 MB
-#+END_SRC
+#+END_EXAMPLE
 
 Let's go into the container:
 #+BEGIN_SRC sh
