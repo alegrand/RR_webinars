@@ -12,20 +12,13 @@ you want to test yourself the demoed tools.*
      - [[#webcastvideo][Webcast/Video]]
      - [[#persons-in-charge][Persons in charge]]
      - [[#locations][Locations]]
- - [[#practical-session-docker-for-reproducible-research][Practical Session (Docker for reproducible research)]]
-     - [[#installing-docker][Installing Docker]]
-     - [[#first-steps][First steps]]
-     - [[#starting-a-workflow][Starting a workflow]]
-     - [[#sharing-data-with-the-container-through-volumes][Sharing data with the container through volumes]]
-     - [[#working-with-dockerfiles][Working with Dockerfiles]]
-     - [[#adding-the-whole-analysis][Adding the whole analysis]]
-     - [[#porting-the-analysis-to-other-machines][Porting the analysis to other machines]]
+ - [[#practical-session][Practical Session]]
 
 * Practical information
 Michael Mercier and Cristian Ruiz will explain how to control your
 experimental environment.
 ** Webcast/Video
-Here are the links to the [[https://mi2s.imag.fr/pm/direct][webcast]], to the [[https://pad.inria.fr/p/9mxzIpXQDgE1gyqD][pad]], and to the [[https://github.com/camilo1729/webinar-env][slides]].
+Here are the links to the [[https://mi2s.imag.fr/pm/direct][webcast]], to the [[https://pad.inria.fr/p/9mxzIpXQDgE1gyqD][pad]], and to the [[https://github.com/camilo1729/webinar-env/raw/master/ctl_environment.pdf][slides]].
 ** Persons in charge
    - Grenoble: Arnaud Legrand, Frédéric Desprez, Pierre Neyron
    - Bordeaux: Luka Stanisic, Emmanuel Agullo, Nicolas P. Rougier,
