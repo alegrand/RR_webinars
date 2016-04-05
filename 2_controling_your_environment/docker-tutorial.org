@@ -1,0 +1,402 @@
+#+TITLE: Docker tutorial for reproducible research
+#+AUTHOR: Cristian Ruiz, Michael Mercier\newline INRIA - France
+#+DATE: April 5, 2016 -- Reproducible Research Webinar
+
+
+** Installing Docker
+
+In order to install successfully =docker= on a Linux
+machine we should have a Linux kernel not older than 3.10 as
+well as the following requirements[fn:req_docker].
+
+For most of the GNU/Linux distributions =docker= its already packaged.
+For example if you are in Debian, you just need to type:
+
+#+BEGIN_SRC sh
+apt-get install docker.io
+#+END_SRC
+
+[fn:req_docker] https://docs.docker.com/engine/installation/binaries/
+** First steps
+Let's run our first container using an image available in Dockerhub repository.
+
+#+BEGIN_SRC sh
+sudo docker run -it debian:jessie
+#+END_SRC
+
+
+#+BEGIN_SRC sh
+Unable to find image 'debian:jessie' locally
+jessie: Pulling from debian
+d8bd0657b25f: Pull complete
+a582cd499e0f: Pull complete
+Digest: sha256:a9c958be96d7d40df920e7041608f2f017af81800ca5ad23e327bc402626b58e
+Status: Downloaded newer image for debian:jessie
+#+END_SRC
+
+The previous command will download approximately 125 MB and then it will
+drop you in a shell inside the container with a completely new file system.
+This file system is a fork of the image you've just downloaded.
+You can try several commands like =ls=, =hostname=, =cat /etc/issue=.
+You can play around as you wish, it wont have any incidence in your local machine.
+What we have just typed, is =docker run= with the options =-i= for interactive and
+=-t= to allocate a tty.
+
+If you open another shell in your host machine, you can see the containers that are running:
+
+#+BEGIN_SRC sh
+sudo docker ps
+#+END_SRC
+
+#+BEGIN_SRC
+CONTAINER ID        IMAGE               COMMAND             CREATED              STATUS              PORTS               NAMES
+ee4fd4288a14        debian:jessie       "/bin/bash"         About a minute ago   Up About a minute                       compassionate_sammet
+#+END_SRC
+
+Then you can exit as you would exit form any Linux shell =Ctrl+D= or =exit=.
+When you do it, the container will be stopped. You can list the stopped containers by typing:
+
+#+BEGIN_SRC sh
+sudo docker ps -a
+#+END_SRC
+
+#+BEGIN_SRC
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                     PORTS               NAMES
+ee4fd4288a14        debian:jessie       "/bin/bash"         2 minutes ago       Exited (0) 8 seconds ago                       compassionate_sammet
+#+END_SRC
+
+You can run commands inside containers without the need of allocating a shell by typing:
+
+#+BEGIN_SRC sh
+sudo docker run debian:jessie cat /etc/issue
+#+END_SRC
+
+This will run the command inside the container, however, it wont pull the image again because it is already cached.
+Each time you execute a command inside a container you will have a stopped container.
+You can again list your stopped containers using =docker ps -a=:
+
+#+BEGIN_SRC sh
+CONTAINER ID        IMAGE               COMMAND             CREATED              STATUS                          PORTS               NAMES
+279d632b2fc9        debian:jessie       "cat /etc/issue"    About a minute ago   Exited (0) About a minute ago                       ecstatic_thompson
+ee4fd4288a14        debian:jessie       "/bin/bash"         5 minutes ago        Exited (0) 3 minutes ago                            compassionate_sammet
+
+#+END_SRC
+
+In order to keep a clean environment, you can delete all these unnecessary containers using their ID:
+
+#+BEGIN_SRC sh
+docker rm 279d632b2fc9
+docker rm ee4fd4288a14
+#+END_SRC
+
+Let's suppose that we start to set up our experiment environment,
+for that we create a simple file.
+First lunch a container with a shell:
+
+#+BEGIN_SRC sh
+sudo docker run -it debian:jessie
+#+END_SRC
+
+Create a file and exit the container:
+
+#+BEGIN_SRC sh
+touch /root/experiment.sh
+#+END_SRC
+
+Again the container will be stopped and we can list them with =docker ps -a=:
+
+#+BEGIN_SRC
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                     PORTS               NAMES
+79249548bbfa        debian:jessie       "/bin/bash"         20 seconds ago      Exited (0) 4 seconds ago                       focused_newton
+#+END_SRC
+
+You can rerun the previous container using the ID of the previous stopped container.
+
+#+BEGIN_SRC sh
+docker start $CONTAINER_ID
+#+END_SRC
+
+If you execute =docker ps= it will show you the running containers:
+
+#+BEGIN_SRC
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+b2b3d25a6ff9        ubuntu:14.04        "/bin/bash"         About an hour ago   Up 5 seconds                            insane_archimedes
+#+END_SRC
+
+Sometimes, a useful feature of Docker its the possibility of performing a =diff= between containers.
+Let's for example find what have changed regarding the base image.
+
+#+BEGIN_SRC
+docker diff $CONTAINER_ID
+#+END_SRC
+
+You should have an output that looks like this:
+
+#+BEGIN_SRC sh
+C /root
+A /root/.bash_history
+A /root/experiment.sh
+#+END_SRC
+
+It shows us the files that have been added or modified: C for change and A for Added.
+It could be useful to know how the image has been modified.
+We can attach to the running container using:
+
+#+BEGIN_SRC sh
+docker attach $CONTAINER_ID
+#+END_SRC
+
+Press enter to log in. Let's install a package inside the container remember that this action wont have any incidence inn your local machine
+
+#+BEGIN_SRC sh
+root@658342507ad4:/# apt-get update
+root@658342507ad4:/# apt-get install wget
+#+END_SRC
+
+Let's make the changes permanent by commiting the changes and making a new image.
+We need the container ID for performing a commit and save the state of the file system.
+
+#+BEGIN_SRC sh
+sudo docker commit -m "my analysis" 658342507ad4 data_processing
+#+END_SRC
+
+#+BEGIN_SRC sh
+sudo docker images
+#+END_SRC
+
+It will show our newly created image:
+
+#+BEGIN_SRC sh
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+data_processing     latest              7cef139f54f2        13 seconds ago      541.8 MB
+debian              jessie              a582cd499e0f        4 weeks ago         125.1 MB
+#+END_SRC
+
+** Starting a workflow
+The objective of this tutorial is to use docker for automating the generation of the analysis procedure that leads to a figure in a given paper.
+
+First download the raw data and scripts:
+
+#+BEGIN_SRC sh
+wget http://serankua.net/paper/data.tar.gz
+#+END_SRC
+
+and then untar it
+
+#+BEGIN_SRC sh
+tar -xvf data.tar.gz
+#+END_SRC
+
+You will discover the directory structure:
+
+#+BEGIN_SRC sh
+$ ls data
+bin  gen_figures.sh  intra-container
+#+END_SRC
+
+** Sharing data with the container through volumes
+
+We can export the directory to the container by using docker volumes
+
+#+BEGIN_SRC sh
+sudo docker run -it -v $PATH_TO_DATA:/data $CONTAINER_NAME
+#+END_SRC
+
+We will find a directory =/data= mounted in our container.
+The contents of this directory are the following:
+
+1. =bin= directory contains a collection of ruby and R scripts
+2. =intra-container= contains profiles of execution of different parallel benchmarks for different number of processes
+3. =gen_figures.sh= carries out the generation of figures
+
+We execute the script to generate the figures:
+#+BEGIN_SRC sh
+root@1ede8ea5ba9f:/data# bash gen_figures.sh
+#+END_SRC
+
+When executing it, we got the following errors:
+
+#+BEGIN_SRC sh
+gen_figures.sh: line 4: ruby: command not found
+gen_figures.sh: line 6: Rscript: command not found
+gen_figures.sh: line 7: Rscript: command not found
+gen_figures.sh: line 8: Rscript: command not found
+gen_figures.sh: line 9: Rscript: command not found
+gen_figures.sh: line 10: Rscript: command not found
+gen_figures.sh: line 11: Rscript: command not found
+#+END_SRC
+
+Which means that we should install ruby and R in our environment but
+let's do it in a reproducible way using Dockerfiles.
+
+** Working with Dockerfiles
+
+When working with docker containers it is good to follow the following principle:
+
+#+BEGIN_QUOTE
+Immutable Containers
+
+When you run your container, never ssh into that container to update or delete something.
+The main reason for using Docker is to keep your changes in Dockerfile historically.
+If you want to change something, change Dockerfile, build the image, and run the container.
+#+END_QUOTE
+
+We put the desired commands in a text file called Dockerfile.
+
+#+BEGIN_SRC
+FROM debian:jessie
+RUN apt-get -y update && apt-get install -y r-base ruby
+#+END_SRC
+
+=FROM= keyword means the base image to use.
+=RUN= keyword means the command to execute.
+We can build an image from a Dockerfile by doing:
+
+#+BEGIN_SRC sh
+sudo docker build -t $NAME .
+#+END_SRC
+
+This will create a new image:
+
+#+BEGIN_SRC sh
+sudo docker images
+#+END_SRC
+
+#+BEGIN_SRC sh
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+webinar             latest              76b665027ad9        36 seconds ago      595.1 MB
+data_processing     latest              7cef139f54f2        46 minutes ago      541.8 MB
+debian              jessie              a582cd499e0f        4 weeks ago         125.1 MB
+#+END_SRC
+
+Let's try again to generate the figures inside the container:
+
+#+BEGIN_SRC sh
+sudo docker run -it -v $PATH_TO_DATA:/data webinar
+#+END_SRC
+
+#+BEGIN_SRC sh
+root@1ede8ea5ba9f:/data# bash gen_figures.sh
+#+END_SRC
+
+Unfortunately, we got an error telling us that the R package 'stringr' is missing.
+
+#+BEGIN_SRC sh
+Error in library(stringr) : there is no package called 'stringr'
+Calls: source -> withVisible -> eval -> eval -> library
+Execution halted
+#+END_SRC
+
+Let's add the procedure to install the needed R package into the Dockerfile
+
+#+BEGIN_SRC
+FROM debian:jessie
+RUN apt-get -y update && apt-get install -y r-base ruby
+RUN R -e 'chooseCRANmirror(graphics=FALSE, ind=100);install.packages("stringr")'
+#+END_SRC
+
+We can rebuild the container:
+
+#+BEGIN_SRC sh
+sudo docker build -t $NAME .
+#+END_SRC
+
+It wont start from the begging because it will use the cache, saving us a lot time:
+
+#+BEGIN_SRC sh
+Sending build context to Docker daemon 117.3 MB
+Sending build context to Docker daemon
+Step 0 : FROM debian:jessie
+ ---> a582cd499e0f
+Step 1 : RUN apt-get -y update && apt-get install -y r-base ruby
+ ---> Using cache
+ ---> df6b6de1c0c5
+Step 2 : RUN R -e 'chooseCRANmirror(graphics=FALSE, ind=100);install.packages("stringr")'
+#+END_SRC
+
+If we retry:
+
+#+BEGIN_SRC sh
+sudo docker run -it -v $PATH_TO_DATA:/data webinar
+#+END_SRC
+
+#+BEGIN_SRC sh
+root@1ede8ea5ba9f:/data# bash gen_figures.sh
+#+END_SRC
+
+
+#+BEGIN_SRC sh
+Error in library(lsr) : there is no package called 'lsr'
+Calls: source -> withVisible -> eval -> eval -> library
+Execution halted
+#+END_SRC
+
+We run into another error concerning a missing package.
+We need to add another package for plotting.
+Let's do that in a cleanly way using the Dockerfile
+
+#+BEGIN_SRC
+FROM debian:jessie
+RUN apt-get -y update && apt-get install -y r-base ruby
+RUN R -e 'chooseCRANmirror(graphics=FALSE, ind=100);install.packages("stringr")'
+RUN R -e 'chooseCRANmirror(graphics=FALSE, ind=100);install.packages("ggplot2");install.packages("lsr")'
+#+END_SRC
+
+We rebuild the image:
+
+#+BEGIN_SRC sh
+sudo docker build -t $NAME .
+#+END_SRC
+
+And execute again the script:
+
+#+BEGIN_SRC
+cd data
+bash gen_figures.sh
+#+END_SRC
+
+Now, it should work all fine. It will generate a set of PDF files with the desired images
+
+** Adding the whole analysis
+
+Now, lets include the execution of the analysis into the Dockerfile.
+
+#+BEGIN_SRC sh
+FROM debian:jessie
+RUN apt-get -y update && apt-get install -y r-base ruby
+RUN R -e 'chooseCRANmirror(graphics=FALSE, ind=100);install.packages("stringr")'
+RUN R -e 'chooseCRANmirror(graphics=FALSE, ind=100);install.packages("ggplot2");install.packages("lsr")'
+
+# Figures generation
+WORKDIR /data/
+CMD /bin/bash /data/gen_figures.sh
+
+#+END_SRC
+
+After building, we can run the container that will execute the command defined using the keyword =CMD=
+
+#+BEGIN_SRC sh
+ docker run -it -v /root/data/:/data $NAME
+#+END_SRC
+
+The previous command will generate all the figures.
+
+** Porting the analysis to other machines
+
+We can save the image in a tar file by doing:
+
+#+BEGIN_SRC sh
+docker save test_tmp > repro_data.tar
+#+END_SRC
+
+Then, we can load the image in another machine
+
+#+BEGIN_SRC sh
+docker load < repro_data.tar
+#+END_SRC
+
+We can check the history of the image in order to be sure that it has been imported successfully
+
+#+BEGIN_SRC sh
+docker history $NAME
+#+END_SRC
