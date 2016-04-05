@@ -36,4 +36,4 @@ Here are the links to the [[https://mi2s.imag.fr/pm/direct][webcast]], to the [[
 * Practical Session
 
 - [[file:docker-tutorial.org][Docker for reproducible research]]
-- [[file:use_case_demo.org][Comple use case demo]]
+- [[file:use_case_demo.org][Complete use case demo]]
