@@ -25,14 +25,14 @@ sudo docker run -it debian:jessie
 #+END_SRC
 
 
-#+BEGIN_SRC sh
+#+BEGIN_EXAMPLE
 Unable to find image 'debian:jessie' locally
 jessie: Pulling from debian
 d8bd0657b25f: Pull complete
 a582cd499e0f: Pull complete
 Digest: sha256:a9c958be96d7d40df920e7041608f2f017af81800ca5ad23e327bc402626b58e
 Status: Downloaded newer image for debian:jessie
-#+END_SRC
+#+END_EXAMPLE
 
 The previous command will download approximately 125 MB and then it will
 drop you in a shell inside the container with a completely new file system.
@@ -361,7 +361,7 @@ Now, it should work all fine. It will generate a set of PDF files with the desir
 
 Now, lets include the execution of the analysis into the Dockerfile.
 
-#+BEGIN_SRC sh
+#+BEGIN_EXAMPLE
 FROM debian:jessie
 RUN apt-get -y update && apt-get install -y r-base ruby
 RUN R -e 'chooseCRANmirror(graphics=FALSE, ind=99);install.packages("stringr")'
@@ -370,8 +370,7 @@ RUN R -e 'chooseCRANmirror(graphics=FALSE, ind=99);install.packages("ggplot2");i
 # Figures generation
 WORKDIR /data/
 CMD /bin/bash /data/gen_figures.sh
-
-#+END_SRC
+#+END_EXAMPLE
 
 After building, we can run the container that will execute the command defined using the keyword =CMD=
 

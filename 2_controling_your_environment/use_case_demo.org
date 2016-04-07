@@ -141,8 +141,8 @@ captured by reprozip during the execution:
 #+BEGIN_SRC sh
 less .reprozip-trace/config.yml
 #+END_SRC
-*Note*: Has the capture process is not error free this file is the place to add
-what is missing.
+*Note*: The capture process is not error free hence this file is the place to add
+what may be missing.
 
 Then you can pack the experiment environment:
 #+BEGIN_SRC sh
@@ -203,7 +203,7 @@ diff -s first_run_job.csv rerun_job.csv
 Files first_run_job.csv and rerun_job.csv are identical
 #+END_SRC
 
-Great! You have reproduce the same results :)
+Great! You have managed to reproduce the exact same results :)
 
-Do not hesitate to create issues/Pull requests on this repository if you had
+Do not hesitate to create issues/Pull requests on this repository if you encounter
 any trouble doing this tutorial.
