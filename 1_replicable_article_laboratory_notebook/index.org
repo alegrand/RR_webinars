@@ -21,11 +21,15 @@ you want to test yourself the demoed tools.*
 [[https://team.inria.fr/polaris/members/arnaud-legrand/][Arnaud Legrand]] gave a [[https://github.com/alegrand/SMPE/raw/master/lectures/talk_16_03_07_Webinar.pdf][general introduction on reproducible research]].
 ** Webcast/Video
 Here is the *[[https://mi2s.imag.fr/introduction-producing-replicable-articles-and-managing-a-laboratory-notebook-with-emacsorg-mode-0][link to the video]]*. If you have any trouble with the
-flashplayer, here is a *[[http://newstream.imag.fr/2016-03-07_Reproducible-Research_Arnaud-legrand.mp4][direct link to the mpeg4 video]]*. The slides are
+flashplayer, here is a *[[http://newstream.imag.fr/2016-03-07_Reproducible-Research_Arnaud-legrand.mp4][direct link to the mpeg4 video]]*. The *slides* are
 available [[https://github.com/alegrand/SMPE/raw/master/lectures/talk_16_03_07_Webinar.pdf][here]].
 
-To interact during the presentation (questions, comments), we used
-this [[https://pad.inria.fr/p/9mSyf4BhzZ9soDE9][pad]].
+#+BEGIN_CENTER
+[[https://mi2s.imag.fr/introduction-producing-replicable-articles-and-managing-a-laboratory-notebook-with-emacsorg-mode-0][file:video_thn.png]]
+#+END_CENTER
+
+To interact during the presentation (questions, comments), *we used
+this [[https://pad.inria.fr/p/9mSyf4BhzZ9soDE9][pad]]* that we keep for the record.
 ** Persons in charge
    - Grenoble: Arnaud Legrand, Frédéric Desprez
    - Bordeaux: Luka Stanisic, Emmanuel Agullo, Nicolas P. Rougier,
