@@ -83,4 +83,5 @@ Other topics planned:
 - [[http://perso.ens-lyon.fr/nathalie.revol/][Nathalie Revol]], Inria/AriC, École Normale Supérieure de Lyon
 - Pierre Neyron, CNRS/LIG , University of Grenoble
 - [[http://mescal.imag.fr/membres/olivier.richard/][Olivier Richard]], University of Grenoble/LIG, Inria/Datamove
+- [[http://www.serankua.net/cristianruiz/][Cristian Ruiz]], Inria/MADYNES
 - ...
