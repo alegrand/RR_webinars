@@ -7,7 +7,7 @@
 
 In order to install successfully =docker= on a Linux
 machine we should have a Linux kernel not older than 3.10 as
-well as the following requirements[fn:req_docker].
+well as the following [[https://docs.docker.com/engine/installation/binaries/][requirements]]
 
 For most of the GNU/Linux distributions =docker= its already packaged.
 For example if you are in Debian, you just need to type:
@@ -16,7 +16,7 @@ For example if you are in Debian, you just need to type:
 apt-get install docker.io
 #+END_SRC
 
-[fn:req_docker] https://docs.docker.com/engine/installation/binaries/
+[fn:req_docker]
 
 ** First steps
 Let's run our first container using an image available in Dockerhub repository:
