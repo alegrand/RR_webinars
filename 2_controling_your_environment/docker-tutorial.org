@@ -16,7 +16,6 @@ For example if you are in Debian, you just need to type:
 apt-get install docker.io
 #+END_SRC
 
-[fn:req_docker]
 
 ** First steps
 Let's run our first container using an image available in Dockerhub repository:
