@@ -156,14 +156,14 @@ Let's make the changes permanent by committing the changes and making a new imag
 We need the container ID for performing a commit and save the state of the file system.
 
 #+BEGIN_SRC sh
-sudo docker commit -m "my analysis" 658342507ad4 $CONTAINER_NAME
+sudo docker commit -m "my analysis" 658342507ad4 $IMG_NAME
 #+END_SRC
 
 #+BEGIN_SRC sh
 sudo docker images
 #+END_SRC
 
-It will show our newly created image:
+It will show our newly created image which in this case was 'data_processing':
 
 #+BEGIN_SRC sh
 REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
@@ -200,7 +200,7 @@ bin  gen_figures.sh  intra-container
 We can export the directory to the container by using docker volumes:
 
 #+BEGIN_SRC sh
-sudo docker run -it -v $PATH_TO_DATA:/data $CONTAINER_NAME
+sudo docker run -it -v $PATH_TO_DATA:/data $IMG_NAME
 #+END_SRC
 
 We will find a directory =/data= mounted in our container.
@@ -320,7 +320,7 @@ Step 2 : RUN R -e 'chooseCRANmirror(graphics=FALSE, ind=99);install.packages("st
 If we retry:
 
 #+BEGIN_SRC sh
-sudo docker run -it -v $PATH_TO_DATA:/data $NAME_CONTAINER
+sudo docker run -it -v $PATH_TO_DATA:/data $IMG_NAME
 #+END_SRC
 
 #+BEGIN_SRC sh
@@ -379,7 +379,7 @@ After building, we can run the container that will execute the command defined u
 The other keyword: =WORKDIR= sets the working directory for any instruction that follows it in the Dockerfile.
 
 #+BEGIN_SRC sh
- docker run -it -v /root/data/:/data $IMG_NAME
+ docker run -it -v $PATH_TO_DATA:/data $IMG_NAME
 #+END_SRC
 
 The previous command will generate all the figures.
