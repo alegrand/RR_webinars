@@ -21,8 +21,14 @@ reproducibility and will present recent research work on this topic.
 The screencast is *[[https://mi2s.imag.fr/pm/direct][here]]* and some rooms where the audience will gather
 are listed [[*Locations][below]].
 
-To interact during the presentation (questions, comments), *we wille
+To interact during the presentation (questions, comments), *we will
 use this [[https://pad.inria.fr/p/bjKfNEcD7SCvHjHF][pad]]* that we will keep for the record.
+
+Here are the slides:
+- [[file:revol.pdf][Nathalie Revol]]
+- [[file:graillat.pdf][Stef Graillat]]
+- [[file:langlois.pdf][Philippe Langlois]]
+
 ** Persons in charge
    - Grenoble: Arnaud Legrand, Frédéric Desprez, Pierre Neyron
    - Bordeaux: Luka Stanisic, Emmanuel Agullo, Nicolas P. Rougier,
