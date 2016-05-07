@@ -64,7 +64,7 @@ it, it's easy. Any comment and suggestion is welcome.
    notebook]].
 2. <2016-04-05 Tue.> [[file:2_controling_your_environment/index.org][Controlling your environment]]
 3. <2016-05-03 Tue.> [[file:3_numerical_reproducibility/index.org][Numerical reproducibility]]
-4. <2016-06-07 Tue.> To be announced
+4. <2016-06-07 Tue.> [[file:4_logging_and_backing_up_your_work/index.org][Logging and backing up your work]]
 
 Other topics planned:
 1. Provenance tracking of experimental data
