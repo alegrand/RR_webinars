@@ -1,0 +1,234 @@
+#+TITLE:     Reproducible Research, Open Science \newline \bgroup\bf Logging and backing up your work\egroup \newline Git Tips and Tricks, a Scientist Perspective
+#+AUTHOR:    V. Danjean, A. Legrand, L. Stanisic\newline University of Grenoble, CNRS, Inria Bordeaux
+#+DATE: June 7, 2016 -- Reproducible Research Webinar (Episode IV)
+#+STARTUP: beamer overview indent
+#+TAGS: noexport(n)
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [11pt,xcolor=dvipsnames,presentation]
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:nil -:t f:t *:t <:t
+#+LATEX_HEADER: \let\AtBeginDocumentSav=\AtBeginDocument
+#+LATEX_HEADER: \def\AtBeginDocument#1{}
+#+LATEX_HEADER: \input{org-babel-style-preembule.tex}
+#+LATEX_HEADER: \let\AtBeginDocument=\AtBeginDocumentSav
+
+#+LATEX_HEADER: %\let\tmptableofcontents=\tableofcontents
+#+LATEX_HEADER: %\def\tableofcontents{}
+#+LATEX_HEADER:  \usepackage{color,soul}
+#+LATEX_HEADER:  \definecolor{lightorange}{rgb}{1,.9,.7}
+#+LATEX_HEADER:  \sethlcolor{lightorange}
+#+LATEX_HEADER:  \definecolor{lightgreen}{rgb}{.7,.9,.7}
+#+LATEX_HEADER:  \let\hrefold=\href
+#+LATEX_HEADER:  \renewcommand{\href}[2]{\hrefold{#1}{\SoulColor{lightorange}\hl{#2}}}
+#+LATEX_HEADER: \newcommand{\muuline}[1]{\SoulColor{lightorange}\hl{#1}}
+#+LATEX_HEADER: \makeatletter
+#+LATEX_HEADER: \newcommand\SoulColor[1]{%
+#+LATEX_HEADER:   \sethlcolor{#1}
+#+LATEX_HEADER:   \let\set@color\beamerorig@set@color
+#+LATEX_HEADER:   \let\reset@color\beamerorig@reset@color}
+#+LATEX_HEADER: \makeatother
+#+LATEX_HEADER: \let\oldtexttt=\texttt
+#+LATEX_HEADER: \renewcommand\texttt[1]{\SoulColor{lightgreen}\hl{\tt #1}}
+
+*** TODO Stuff to do [2/3]                                       :noexport:
+- [ ] Update the introduction
+- [X] Scavange the pad (https://pad.inria.fr/p/fQtZqvTTERRqx9ug)
+- [X] Find a way so that =inline commands= display nicely (e.g.,
+  highlighted in green).
+** 
+#+LaTeX: \input{org-babel-document-preembule.tex}
+*** Foreword about the organization (1/2)
+There is currently a screencast of this seminar:
+#+BEGIN_CENTER
+  #+LaTeX: \href{https://mi2s.imag.fr/pm/direct}{https://mi2s.imag.fr/pm/direct}
+#+END_CENTER
+The resulting video will be edited and available from github that
+gathers all the information, slides, and resources:
+#+BEGIN_CENTER
+  #+LaTeX: \href{https://github.com/alegrand/RR_webinars/blob/master/README.org}{https://github.com/alegrand/RR\_webinars/blob/master/README.org}
+#+END_CENTER
+
+There is a few seconds delay between what we say and the
+screencast. We can have almost live interaction with other sites by
+using *pad* to comment and ask questions
+#+BEGIN_CENTER
+  #+LaTeX: \href{http://tinyurl.com/RRW-pad4}{http://tinyurl.com/RRW-pad4}
+#+END_CENTER
+*** Foreword about the organization (2/2)
+No particular preriquisites: we will use command line and demo with a
+GUI.
+- Please install =git= and =smartgit= by following the [[https://github.com/alegrand/RR_webinars/blob/master/4_logging_and_backing_up_your_work/index.org\#practical-session-requirements][instructions given
+  on github]]
+
+
+- 1. General introduction plus basic git usage :: ($\approx$ an hour) 
+     At any time, feel free to ask questions *on the pad*. Some of these
+     questions may be addressed "silently" by the other attendees but
+     do not hesitate to ask it out loudly for the remote ones.
+- 2: A short break :: 
+- 3. Slightly more advanced git usage :: the actual part that is more
+     devoted to practices favoring reproducible research.
+**** Many other tutorials on Git but with a different perspective
+- [[https://www.youtube.com/watch?v=ZDR433b0HJY][Introduction to git internals by Scott Chacon (Github)]] 
+- [[https://www.youtube.com/watch?v=o4PFDKIc2fs][Please. Stop Using Git by Matthew McCullough]] $\winkey$
+#+LaTeX: \vspace{-1em}\begin{columns}\begin{column}[t]{.42\linewidth}
+- \href{http://try.github.com/}{http://try.github.com/}
+- \href{http://gitimmersion.com/}{http://gitimmersion.com/}
+#+LaTeX: \end{column}\hspace{-1.2em}\begin{column}[t]{.59\linewidth}
+- \href{http://git-scm.com/docs/gittutorial/}{http://git-scm.com/docs/gittutorial/}
+#+LaTeX: \end{column}\end{columns}
+
+*** Outline
+\tableofcontents
+* Introduction to Git and its Eco-system
+*** Git principle
+    - nothing vs dropbox (email ?)
+    - dropbox vs. RCS (CVS, svn)
+    - git vs. svn
+        + sidenote there is git-svn for those that have to stick with svn
+
+    - side note on mercurial, bzr, darc, etc.
+    - what is gforge, github, gitlab(inria: https://gitlab.irisa.fr/), bitbucket (offers private repositories) ?
+*** Git technical glitches
+ - command line vs. GUI (recommend =smartgit=, mention =magit= for emacs
+   lovers)
+ - ssh configuration (public/private key principle to avoid typing it
+   all the time)
+   - config: example config
+   - autosetuprebase = always ou pas ?....
+*** Basic usage (/à la svn/)
+You have a complete stand-alone local history!
+
+- =git clone= / =git init= (initialize the DB)
+- =git pull= sync from the remote repos
+  - (actually =git pull= = =git fetch ; git rebase= in simple contexts)
+- =git push= sync to the remote repos
+- =git add= and =git commit= (or =git commit -a= if you really don't care)
+
+This is the basic *linear history*, very similar to an incremental
+backup.
+- If you put such commands in a =crontab -e=, you will get a
+  =timemachine/backuppc/...=
+
+But =git= is much more than this.
+
+/Maybe we should illustrate just a bit what happens beneath (sha1,
+file gobbles, ...)?/
+*** Actually there are branches... 
+- =git merge=
+- gitk or equivalent
+  - =git checkout=
+- =git pull= $=$ =git fetch; git rebase= or =git fetch; git merge=
+  - Question: What is the difference ? \winkey
+
+*** Rescue ! Advanced?
+- =git reflog= (4 emergency) generally more useful than git fsck
+- =git stash=
+- =git reset=
+- =git gc= / =git prune=
+* Git for Writing Articles
+*** Outline
+#+LaTeX: \tableofcontents[current,currentsubsection]
+*** Git 4 writing articles
+  - Ce qui fait peur, c'est aussi LaTeX (surtout pour ceux qui sont
+    habitués à faire du doc , des révisions avec word, voire du google
+    doc).
+    - Vince mentionne oodiff, qui permet de gérer ça. Est-ce que ça
+      complexifie ? À tester
+  - Linear story
+    - voir introduction, commandes de base
+  - Writing in parallel, handling conflicts (give an example/demo with
+    smartgit), finding previous version.
+    - Ne pas inclure les .aux, .toc,    -> . gitignore
+    - Ne mettre les fichiers générés qu'à la fin (et éventuellement
+      leur donner un nom particulier) ou bien uniquement si vos
+      collaborateurs risquent d'avoir des problèmes à les générer.
+    - =git config=
+    - =git wdiff=
+    - Avoid very long lines
+  - _commit offline frequently, it's safe_
+  - _Side note_: those of you who still collaborate with svn users may
+    enjoy =git svn=
+* Git for Coding
+*** Outline
+#+LaTeX: \tableofcontents[current,currentsubsection]
+*** Git for coding (history matters!)
+- Remember: _commit often_. In this context, the =git stash= command can
+  be useful.
+  - Allows you to code/test/... with no fear
+- Region based committing (=git commit --patch= although nobody does
+  that through the CLI)
+  - Working at a fine granularity allows the next ones to better
+    understand what was done and decreases the risks of conflicts
+- Locally rewriting your history (=git rebase -i bc23b0f=) before
+  publishing it with =git push=
+- Such history can then be exploited:
+  - =git log= (=git hist=), =git blame=, =git bisect=
+*** Git for coding (branches)
+- merging branches
+  - Example from the Scott Chacon youtube video: translating some code
+    for internationalization
+  - merging ("public" branch but where you're the only developer)
+    vs. rebasing (provides a cleaner final set of patches, but the
+    backup is more complex to set up) . Depends on the meaning of the
+    history wished within the global project. The rebase can be better
+    for code review (sometimes, some part of the history are useless).
+
+Developers who do not understand this mechanism quickly end up with a
+huge plate of spaghetti $\frowny$
+- =git workflow=
+*** Access rights
+Git is a *distributed* version control system:
+- linux: Linus integrates and everyone pulls from him
+- Forge philosophy: groups
+- Github philosophy: organization possible but mainly fork and pull
+  requests
+
+* Git for Labbook: Experiments/Data/Provenance Tracking
+*** Outline
+#+LaTeX: \tableofcontents[current,currentsubsection]
+*** Git for labbook: experiments/data/provenance tracking
+- linear history
+  - Large files (=git lfs=, =git annex=, etc.), thus large repos
+  - Need to integrate several git sources (=git submodule=)
+- =git xp=
+  - for such usage, linearity can be pain. But the repo becomes huge.
+  - git xp allows to easily get the data you're interested in and to
+    track provenance (can be also done in labbook)
+  - explore and reset experiment history easily
+  - branch "article"
+* Git for Publishing
+*** Outline
+#+LaTeX: \tableofcontents[current,currentsubsection]
+*** Git for publishing
+- github/zenodo https://guides.github.com/activities/citable-code/
+- Side note on software heritage
+* Conclusion and Perspective
+** 
+*** Outline
+#+LaTeX: \tableofcontents
+*** Where do we stand now?
+*We did one such webinar per month*. We will stop during summer and
+resume in mid September with other topics (workflows, data and
+software archiving, evaluation challenges, ...).
+- I need volunteers! $\smiley$
+- Announcement on 
+  [[http://listes.univ-orleans.fr/sympa/subscribe/recherche-reproductible][\small recherche-reproductible@listes.univ-orleans.fr\normalsize]] and
+  a few others but do not hesitate to crosspost.
+
+\textbf{Next webinars:} New season in September!
+
+#+BEGIN_CENTER
+  #+LaTeX: \vspace{-.4em}
+  #+LaTeX: \href{https://github.com/alegrand/RR_webinars/blob/master/README.org}{https://github.com/alegrand/RR\_webinars}
+#+END_CENTER
+* Emacs Setup                                                      :noexport:
+This document has local variables in its postembule, which should
+allow org-mode to work seamlessly without any setup. If you're
+uncomfortable using such variables, you can safely ignore them at
+startup. Exporting may require that you copy them in your .emacs.
+
+# Local Variables:
+# eval:    (setq org-latex-listings 'minted)
+# eval:    (setq org-latex-minted-options '(("bgcolor" "Moccasin") ("style" "tango") ("numbers" "left") ("numbersep" "5pt")))
+# End:
+
