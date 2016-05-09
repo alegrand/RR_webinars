@@ -1,6 +1,7 @@
 #+TITLE:     Reproducible Research, Open Science \newline \bgroup\bf Logging and backing up your work\egroup \newline Git Tips and Tricks, a Scientist Perspective
 #+AUTHOR:    V. Danjean, A. Legrand, L. Stanisic\newline University of Grenoble, CNRS, Inria Bordeaux
 #+DATE: June 7, 2016 -- Reproducible Research Webinar (Episode IV)
+
 #+STARTUP: beamer overview indent
 #+TAGS: noexport(n)
 #+LaTeX_CLASS: beamer
