@@ -184,19 +184,42 @@ Git is a *distributed* version control system:
 - Github philosophy: organization possible but mainly fork and pull
   requests
 
-* Git for Labbook: Experiments/Data/Provenance Tracking
+* Git for Experiments/Data/Provenance Tracking
 *** Outline
 #+LaTeX: \tableofcontents[current,currentsubsection]
-*** Git for labbook: experiments/data/provenance tracking
-- linear history
-  - Large files (=git lfs=, =git annex=, etc.), thus large repos
-  - Need to integrate several git sources (=git submodule=)
-- =git xp=
-  - for such usage, linearity can be pain. But the repo becomes huge.
+*** Git for Laboratory Notebook
+- Versioning *all scripts* for running experiments, pre-processing raw data, analysis and presentation
+- Backing up *read-only* experiment results
+- *Commit often* and separate different types of commits
+- Git history helps in *understanding* and *reproducing* experiment results
+
+**** Major Challenges
+  - Large files and thus repositories (=git lfs=, =git annex=, etc.)
+  - Linear history hard to explore and thus exploit
+*** git xp (explanation)
+#+LaTeX: \includegraphics{figures/gitxp.pdf}
+
   - git xp allows to easily get the data you're interested in and to
     track provenance (can be also done in labbook)
   - explore and reset experiment history easily
   - branch "article"
+
+*** git xp (conclusion)
+- Unique branching system that unites all phases of the research process
+- Eases reproduction of the experiments and the replicability of the analysis
+
+#+BEGIN_CENTER
+maybe modified author/reader figure highlighting different parts, linking them to our different types of branches?
+#+END_CENTER
+
+*** Additional Challenge: Integrating several Git Sources
+
+- Pulling and pushing changes to both projects
+- Several solutions (=git submodule=, =git subrepo=)
+- Work well for simple Git inside Git, but not for advanced use cases (SVN, complex branches, etc.)
+
+#+LaTeX: \includegraphics{figures/submodules.pdf}
+
 * Git for Publishing
 *** Outline
 #+LaTeX: \tableofcontents[current,currentsubsection]
@@ -210,10 +233,9 @@ Git is a *distributed* version control system:
 - Comes as a natural step if the initial study was performed with a clean methodology ([[https://anonsvn:anonsvn@gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=starpu-simgrid/starpu-simgrid.git;a=tree][example]])
 - Some may have valid reasons for not doing so (copyright, company policy, implementation parts that the authors do not wish to disclose now, etc.)
 
-*** Making Repositories Citable and Durable
+*** Making Repositories Citeable and Durable
 **** GitHub + Zenodo
-- Providing DOI to the release of your GitHub
-#+LaTeX: \href{https://zenodo.org/badge/latestdoi/10971/stanisic/RR_example}{\includegraphics{zenodo.51269.svg}}
+- Providing DOI to the release of your GitHub \href{https://zenodo.org/badge/latestdoi/10971/stanisic/RR_example}{\includegraphics{figures/zenodo.51269.svg}}
 - Your code becomes citable 
 - Easy to use: [[https://guides.github.com/activities/citable-code/][follow the instructions]]
 - +[[https://github.com/arfon/fidgit][GitHub+figshare]]: similar approach from the same author+
