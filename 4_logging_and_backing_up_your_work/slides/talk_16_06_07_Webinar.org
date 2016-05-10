@@ -200,9 +200,28 @@ Git is a *distributed* version control system:
 * Git for Publishing
 *** Outline
 #+LaTeX: \tableofcontents[current,currentsubsection]
-*** Git for publishing
-- github/zenodo https://guides.github.com/activities/citable-code/
-- Side note on software heritage
+*** Making Repository Publicly Available
+- External researchers can improve or build upon your work
+- Exploring Git history allows for deeper understanding of the project evolution, not only the final results
+  $\leadsto$ *improved reproducibility*
+
+\medskip
+
+- Comes as a natural step if the initial study was performed with a clean methodology ([[https://anonsvn:anonsvn@gforge.inria.fr/plugins/scmgit/cgi-bin/gitweb.cgi?p=starpu-simgrid/starpu-simgrid.git;a=tree][example]])
+- Some may have valid reasons for not doing so (copyright, company policy, implementation parts that the authors do not wish to disclose now, etc.)
+
+*** Making Repositories Citable and Durable
+**** GitHub + Zenodo
+- Providing DOI to the release of your GitHub
+#+LaTeX: \href{https://zenodo.org/badge/latestdoi/10971/stanisic/RR_example}{\includegraphics{zenodo.51269.svg}}
+- Your code becomes citable 
+- Easy to use: [[https://guides.github.com/activities/citable-code/][follow the instructions]]
+- +[[https://github.com/arfon/fidgit][GitHub+figshare]]: similar approach from the same author+
+
+**** Software Heritage
+- Problems with DOI
+- Future presentation from Roberto Di Cosmo
+
 * Conclusion and Perspective
 ** 
 *** Outline
