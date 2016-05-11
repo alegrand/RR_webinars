@@ -3,7 +3,7 @@
 #+DATE: May 3, 2016
 #+STARTUP: overview indent
 
-*This seminar will take place on May 3, 2016 @ 1:30PM-4:30PM
+*This seminar took place on May 3, 2016 @ 1:30PM-4:30PM
 (UTC+2). The link to the video is below.*
 
 * Table of Contents                                                     :TOC:
@@ -17,18 +17,29 @@
 Nathalie Revol, Philippe Langlois and Stef Graillat will present the
 main challenges encountered when trying to achieve numerical
 reproducibility and will present recent research work on this topic.
+- Nathalie gave a general introduction and explained the kind of
+  difficulties that could be encountered even in simple sequential codes.
+- Stef presented several numerical techniques that can be used to
+  control the accuracy of the computation. He also explained how they
+  can be applied to numerical kernels.
+- Philippe explained how they managed to apply some of these
+  techniques to a real HPC parallel code with little performance loss.
 ** Webcast/Video
-The screencast is *[[https://mi2s.imag.fr/pm/direct][here]]* and some rooms where the audience will gather
-are listed [[*Locations][below]].
 
-To interact during the presentation (questions, comments), *we will
-use this [[https://pad.inria.fr/p/bjKfNEcD7SCvHjHF][pad]]* that we will keep for the record.
+Here is the *[[https://mi2s.imag.fr/numerical-reproducibility-0][link to the video]]*. If you have any trouble with the
+flashplayer, here is a *[[http://newstream.imag.fr/2016-05-03_Reproducible-Research_Revol-Langlois-Graillat.mp4][direct link to the mpeg4 video]]*. 
 
-Here are the slides:
+#+BEGIN_CENTER
+[[https://mi2s.imag.fr/numerical-reproducibility-0][file:video_thn.png]]
+#+END_CENTER
+
+Here are the *slides*:
 - [[file:revol.pdf][Nathalie Revol]]
 - [[file:graillat.pdf][Stef Graillat]]
 - [[file:langlois.pdf][Philippe Langlois]]
 
+To interact during the presentation (questions, comments), *we used
+this [[https://pad.inria.fr/p/bjKfNEcD7SCvHjHF][pad]]* that we keep for the record.
 ** Persons in charge
    - Grenoble: Arnaud Legrand, Frédéric Desprez, Pierre Neyron
    - Bordeaux: Luka Stanisic, Emmanuel Agullo, Nicolas P. Rougier,
@@ -37,7 +48,7 @@ Here are the slides:
    - Besançon: Louis-Claude Canon
 ** Locations
    - Grenoble: [[https://goo.gl/maps/ndus7ukqfEM2][Inria]] in the large amphitheater (Arnaud Legrand)
-   - Besançon:
+   - Besançon: [[https://goo.gl/maps/3b4XCZtNLiJ2][en 404C]]
    - Lyon:
    - Bordeaux:
    - Rennes: 
