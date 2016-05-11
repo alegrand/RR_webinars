@@ -129,26 +129,87 @@ file gobbles, ...)?/
 * Git for Writing Articles
 *** Outline
 #+LaTeX: \tableofcontents[current,currentsubsection]
-*** Git 4 writing articles
-  - Ce qui fait peur, c'est aussi LaTeX (surtout pour ceux qui sont
-    habitués à faire du doc , des révisions avec word, voire du google
-    doc).
-    - Vince mentionne oodiff, qui permet de gérer ça. Est-ce que ça
-      complexifie ? À tester
-  - Linear story
-    - voir introduction, commandes de base
-  - Writing in parallel, handling conflicts (give an example/demo with
-    smartgit), finding previous version.
-    - Ne pas inclure les .aux, .toc,    -> . gitignore
-    - Ne mettre les fichiers générés qu'à la fin (et éventuellement
-      leur donner un nom particulier) ou bien uniquement si vos
-      collaborateurs risquent d'avoir des problèmes à les générer.
-    - =git config=
-    - =git wdiff=
-    - Avoid very long lines
-  - _commit offline frequently, it's safe_
-  - _Side note_: those of you who still collaborate with svn users may
-    enjoy =git svn=
+*** Problems with the Standard Approaches
+#+LaTeX: \vspace{-.3cm}
+****                                                     :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+***** 							      :BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.5
+     :END:
+
+- doc+email+revisions: 
+  + Many versions of the file
+  + Never sure what is the latest version
+  + Not aware of the corrections from the others
+  + No clear history
+  + No real parallelism
+\medskip
+- doc+Dropbox or google-doc:
+  + Limited history through autosaves
+  + Limited parallelism
+
+***** 							      :BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.5
+     :END:
+
+#+BEGIN_CENTER
+\includegraphics[scale=.25]{figures/phd_comics.png}
+#+END_CENTER
+
+****                                                     :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+
+\medskip
+#+BEGIN_CENTER
+Git allows for a truly parallel asynchronous approach
+#+END_CENTER
+
+
+*** Collaborative Writing using Git
+- Multiple people editing the same file simulataneously
+- Everyone commits locally, occasionally merging to remote
+- If editing different paragraphs
+  $\leadsto$ merging is automatic
+- If editing same paragraphs
+  $\leadsto$ need to handle conflicts
+- At the end clean history of the article writing, with all intermediary versions
+
+*** Working with Textual Files
+- Necessary so Git can make differences for commits
+- Common solutions: LaTeX, markdown, Org-mode, etc.
+- Many user-friendly environments that make LaTeX usage today much easier
+- No dependencies on (proprietary) software tools
+- Alternative is to convert binaries into text files:
+  + =git oodiff= (based on odt2txt conversion) for OpenOffice files (.odt, .odp, etc.)
+  + [[http://blog.martinfenner.org/2014/08/18/introducing-rakali/][rakali]] (based on pandoc conversion) for Office files (.doc, .docx, etc.) 
+
+*** Typical Workflow (demo)
+- Basic commands:
+  1. Setup repository (=git config=)
+  2. Update to the latest version (=git pull=, =git fetch=)
+  3. Contribute with your changes (=git commit -a=, =git push=)
+- Commands for handling conflicts:
+  1. Compare two versions (=git diff=)
+  2. Use conflict solvers
+  3. Merge or rebase (=git merge=, =git rebase=)
+- Commands for finding the previous version:
+  1. Going for a particular version (=git checkout SHA1=)
+
+*** Useful Tips and Tricks
+- Don't version temporary LaTeX files (.aux, .toc, etc.), use .gitignore list
+- Don't version the article .pdf file, unless your collaborators have problems generating it
+- Add only the final version of the .pdf, possibly with a unique name
+- Avoid very long lines
+- Compare versions by words not lines (=git wdiff=)
+- Do frequent local commits - it's safe \smiley
+- Side note: those of you who still collaborate with SVN users may enjoy =git svn=
+
 * Git for Coding
 *** Outline
 #+LaTeX: \tableofcontents[current,currentsubsection]
@@ -196,7 +257,7 @@ Git is a *distributed* version control system:
 **** Major Challenges
   - Large files and thus repositories (=git lfs=, =git annex=, etc.)
   - Linear history hard to explore and thus exploit
-*** git xp (explanation)
+*** git xp (demo)
 #+BEGIN_CENTER
 \includegraphics[width=.6\linewidth]{figures/gitxp.pdf}
 #+END_CENTER
