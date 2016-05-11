@@ -11,14 +11,32 @@ with the support of ANR, CNRS, Inria, University of Grenoble, ...
 required in the practical session.*
 
 #+BEGIN_CENTER
-*Next event*: Tuesday 3 May, 1:30PM-4:30PM (UTC+2), 2016. [[file:3_numerical_reproducibility/index.org][Numerical
-Reproducibility]] (The screencast is *[[https://mi2s.imag.fr/pm/direct][here]]* and some rooms where the
-audience will gather are listed [[3_numerical_reproducibility/index.org#locations][here]]).
+*Next event*: Tuesday 7 June, 1:30PM-4:30PM (UTC+2), 2016.  *[[file:4_logging_and_backing_up_your_work/index.org][Logging and
+backing up your work]]* (The screencast is *[[https://mi2s.imag.fr/pm/direct][here]]* and some rooms where the
+audience will gather are listed [[4_logging_and_backing_up_your_work/index.org#locations][here]]).
 #+END_CENTER
 
+* Agenda
+1. <2016-03-07 Mon.> [[file:1_replicable_article_laboratory_notebook/index.org][Introduction (reproducible research, challenges, ethic,
+   ...). Producing replicable articles and managing a laboratory
+   notebook]].
+2. <2016-04-05 Tue.> [[file:2_controling_your_environment/index.org][Controlling your environment]]
+3. <2016-05-03 Tue.> [[file:3_numerical_reproducibility/index.org][Numerical reproducibility]]
+4. <2016-06-07 Tue.> *[[file:4_logging_and_backing_up_your_work/index.org][Logging and backing up your work]]*
+
+Other topics planned:
+1. Provenance tracking of experimental data
+2. Large scale experimental platforms
+3. Code and Data archiving
+4. Workflows
+5. Online journals, companion websites
+6. Evaluation campaign/challenges/benchmarks
+7. ...
+
+
 * Table of Contents                                                     :TOC:
- - [[#general-information][General information]]
  - [[#agenda][Agenda]]
+ - [[#general-information][General information]]
  - [[#speakerscontributors][Speakers/contributors]]
 
 * General information
@@ -58,23 +76,6 @@ written in org-mode and benefits from github's pretty printing
 capability. If you're logged on github, you can edit all files (like
 in a wiki) and send me the modifications via a pull request. Just try
 it, it's easy. Any comment and suggestion is welcome.
-* Agenda
-1. <2016-03-07 Mon.> [[file:1_replicable_article_laboratory_notebook/index.org][Introduction (reproducible research, challenges, ethic,
-   ...). Producing replicable articles and managing a laboratory
-   notebook]].
-2. <2016-04-05 Tue.> [[file:2_controling_your_environment/index.org][Controlling your environment]]
-3. <2016-05-03 Tue.> [[file:3_numerical_reproducibility/index.org][Numerical reproducibility]]
-4. <2016-06-07 Tue.> [[file:4_logging_and_backing_up_your_work/index.org][Logging and backing up your work]]
-
-Other topics planned:
-1. Provenance tracking of experimental data
-2. Large scale experimental platforms
-3. Code and Data archiving
-4. Workflows
-5. Online journals, companion websites
-6. Evaluation campaign/challenges/benchmarks
-7. ...
-
 * Speakers/contributors
 - [[http://www-pequan.lip6.fr/~graillat/][Stef Graillat]], University Pierre et Marie Curie
 - [[http://perso.univ-perp.fr/philippe.langlois/][Philippe Langlois]], University of Perpignan, DALI
@@ -84,4 +85,5 @@ Other topics planned:
 - Pierre Neyron, CNRS/LIG , University of Grenoble
 - [[http://mescal.imag.fr/membres/olivier.richard/][Olivier Richard]], University of Grenoble/LIG, Inria/Datamove
 - [[http://www.serankua.net/cristianruiz/][Cristian Ruiz]], Inria/MADYNES
-- ...
+- [[http://mescal.imag.fr/membres/luka.stanisic/][Luka Stanisic]], Labri Inria Storm/Hiepacs, Bordeaux
+- [[https://team.inria.fr/polaris/members/vincent-danjean/][Vincent Danjean]], LIG INRIA/Polaris, University of Grenoble/LIG
