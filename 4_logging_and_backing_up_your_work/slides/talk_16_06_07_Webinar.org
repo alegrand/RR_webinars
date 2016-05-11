@@ -197,7 +197,9 @@ Git is a *distributed* version control system:
   - Large files and thus repositories (=git lfs=, =git annex=, etc.)
   - Linear history hard to explore and thus exploit
 *** git xp (explanation)
-#+LaTeX: \includegraphics{figures/gitxp.pdf}
+#+BEGIN_CENTER
+\includegraphics[width=.6\linewidth]{figures/gitxp.pdf}
+#+END_CENTER
 
   - git xp allows to easily get the data you're interested in and to
     track provenance (can be also done in labbook)
@@ -218,7 +220,12 @@ maybe modified author/reader figure highlighting different parts, linking them t
 - Several solutions (=git submodule=, =git subrepo=)
 - Work well for simple Git inside Git, but not for advanced use cases (SVN, complex branches, etc.)
 
-#+LaTeX: \includegraphics{figures/submodules.pdf}
+#+BEGIN_LaTeX
+\begin{center}
+\fbox{\includegraphics[width=.6\linewidth]{figures/submodules.pdf}}
+\end{center}
+#+END_LaTeX
+
 
 * Git for Publishing
 *** Outline
@@ -235,10 +242,14 @@ maybe modified author/reader figure highlighting different parts, linking them t
 
 *** Making Repositories Citeable and Durable
 **** GitHub + Zenodo
-- Providing DOI to the release of your GitHub \href{https://zenodo.org/badge/latestdoi/10971/stanisic/RR_example}{\includegraphics{figures/zenodo.51269.svg}}
+- Providing DOI to the release of your GitHub 
+#+BEGIN_LaTeX
+\centering
+\hrefold{https://zenodo.org/badge/latestdoi/10971/stanisic/RR\_example}{\includegraphics[scale=.5]{figures/zenodo_51269.png}}
+#+END_LaTeX
 - Your code becomes citable 
 - Easy to use: [[https://guides.github.com/activities/citable-code/][follow the instructions]]
-- +[[https://github.com/arfon/fidgit][GitHub+figshare]]: similar approach from the same author+
+- [[https://github.com/arfon/fidgit][GitHub+figshare]]: similar approach from the same author
 
 **** Software Heritage
 - Problems with DOI
