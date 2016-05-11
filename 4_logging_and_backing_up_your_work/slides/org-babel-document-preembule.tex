@@ -1,0 +1,79 @@
+
+\let\alert=\structure % to make sure the org * * works
+\def\n{\\\hline}             
+\def\eg{e.g.,\xspace}
+\def\Eg{E.g.,\xspace}
+\def\ie{i.e.,\xspace}
+\let\alert=\structure
+\let\epsilon=\varepsilon
+%\let\leq=\leqslant
+%\let\geq=\geqslant
+\def\R{\ensuremath{\mathbb{R}}\xspace}
+\def\F{\ensuremath{\mathcal{F}}\xspace}
+\def\N{\ensuremath{\mathcal{N}}\xspace}
+\def\L{\ensuremath{\mathcal{L}}\xspace}
+\newcommand{\M}[1][\rv{X}]{\ensuremath{\operatorname{M}_{#1}(t)}\xspace}
+\newcommand{\MM}[1][\rv{X}]{\ensuremath{\operatorname{M}_{#1}}\xspace}
+\def\P{\ensuremath{\operatorname{P}}\xspace}
+\def\E{\ensuremath{\operatorname{E}}\xspace}
+\def\Var{\ensuremath{\operatorname{Var}}\xspace}
+\def\rv#1{\ensuremath{\textcolor{blue}{#1}}\xspace} % DarkBlue
+\newcommand{\widesim}[2][1.5]{\mathrel{\underset{#2}{\scalebox{#1}[1]{$\sim$}}}}
+\def\equi#1{\mathrel{\mathop{\kern 0pt\widesim}\limits_{#1}}} 
+\def\RR{\ensuremath{R^2}\xspace}
+
+
+\makeatletter
+\gdef\fsvtpage{\ps@navigation\refstepcounter{framenumber}}%
+\makeatother
+\setbeamercolor{background canvas}{bg=}
+
+\definecolor{keywords}{RGB}{255,0,90}
+\definecolor{comments}{RGB}{60,179,113}
+\definecolor{fore}{RGB}{249,242,215}
+\definecolor{back}{RGB}{51,51,51}
+\newcommand{\accolade}[1]{$\left\{\begin{array}{c}\vspace{#1}\end{array}\right.$}
+%\lstset{
+%  basicstyle=\color{fore},
+%  keywordstyle=\color{keywords},
+%  commentstyle=\color{comments},
+%  backgroundcolor=\color{back}
+%}
+
+\newcommand{\restorefootline}{\setbeamertemplate{navigation symbols}{}}
+\newcommand{\setfootline}[1]{\setbeamertemplate{navigation symbols}{\textcolor{black}{\textbf{#1}}}}
+\newcommand{\includeslides}[3]{%
+  \setfootline{#1}%
+  \includepdf[pages={#2},pagecommand={\fsvtpage},turn=false,noautoscale=false,column=false,columnstrict=false,openright=false]{pdf_sources/#3}%
+%  \includepdf[pages={#2},pagecommand={\fsvtpage},scale=.8,offset=20
+%  -23,turn=false,noautoscale=false,column=false,columnstrict=false,openright=false]{pdf_sources/#3}%
+  \restorefootline%
+}
+\newcommand{\includeslidesJF}[1]{%
+  \includeslides{Courtesy of Juliana Freire (AMP Workshop on
+    Reproducible research)}{#1}{2011-amp-reproducible-research.pdf}
+}
+
+\newcommand{\includeslidesAD}[1]{%
+  \includeslides{Courtesy of Andrew Davison (AMP Workshop on
+    Reproducible research)}{#1}{sumatra_amp2011.pdf}
+}
+
+% \frame<handout:0>
+% {
+%   \frametitle{Outline}
+%   \tableofcontents
+% }
+
+\makeatletter
+\AtBeginSubsection[]
+{
+  \frame<handout:0>
+  {
+    \frametitle{Outline}
+    \tableofcontents[current,currentsubsection]
+  }
+}
+\makeatother
+
+\newcommand{\bottomcite}[1]{\fbox{\vbox{\footnotesize #1}}}

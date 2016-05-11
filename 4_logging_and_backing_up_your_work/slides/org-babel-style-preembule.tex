@@ -1,0 +1,31 @@
+\usedescriptionitemofwidthas{bl}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{ifthen,figlatex,amsmath,amstext,gensymb,amssymb}
+\usepackage{boxedminipage,xspace,multicol}
+\usetheme{Madrid}
+\usecolortheme[named=BrickRed]{structure}
+\useinnertheme{circles}
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{navigation symbols}{}
+\usepackage{verbments}
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{url} \urlstyle{sf}
+\usepackage[american]{babel}
+\usepackage{pdfpages}
+\usepackage{relsize}
+\usepackage{tikzsymbols}
+\def\smiley{\Smiley[1][green!80!white]}
+\def\frowny{\Sadey[1][red!80!white]}
+\def\winkey{\Winkey[1][yellow]}
+\usepackage{stackengine}
+\usepackage{scalerel}
+\newcommand\dangersign[1][2ex]{%
+  \renewcommand\stacktype{L}%
+    \scaleto{\stackon[1.3pt]{\color{red}$\triangle$}{\tiny !}}{#1}%
+}
+%\AtBeginDocument{\date{\today}}
+\AtBeginDocument{\date{Scientific Methodology and Performance
+    Evaluation\\M2R MOSIG, Grenoble, September-December
+    2015}\author{Arnaud Legrand and Jean-Marc Vincent}}
