@@ -305,7 +305,7 @@ Git is a *distributed* version control system:
   - Get the data you're interested in
   - Track provenance (can also be done in labbook)
   - Explore and reset experiment conditions
-  - Fork to an article
+  - Fork to write an article
 
 *** Benefits from Proposed Branching System
 #+BEGIN_LaTeX
