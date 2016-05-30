@@ -121,12 +121,12 @@ file gobbles, ...)?/
 - gitk or equivalent
   - =git checkout=
 - =git pull= $=$ =git fetch; git rebase= or =git fetch; git merge=
-  - Question: What is the difference ? \winkey
+  - Question: What is the difference ? $\winkey$
 
 *** Rescue ! Advanced?
 - =git reflog= (4 emergency) generally more useful than git fsck
 - =git stash=
-- =git reset=
+- =git reset= / =git revert=
 - =git gc= / =git prune=
 * Git for Writing Articles
 *** Outline
@@ -216,7 +216,7 @@ Alternatively convert binaries into text files:
 - Add only the final version of the .pdf, possibly with a unique name
 - Avoid very long lines
 - Compare versions by words not lines (=git wdiff=)
-- Do frequent local commits - it's safe \smiley
+- Do frequent local commits - it's safe $\smiley$
 
 \medskip
 **** Advanced usage
@@ -275,7 +275,7 @@ Git is a *distributed* version control system:
 *** Integrating Multiple Git Sources
 
 - Pulling and pushing changes to both projects
-- Several solutions (=git lfs=, =git annex=)
+- Several solutions (=git submodule=, =git subrepo=)
 - Work well for simple Git inside Git, but not for advanced use cases (SVN, complex branches, etc.)
 
 #+BEGIN_LaTeX
@@ -286,7 +286,7 @@ Git is a *distributed* version control system:
 
 *** Handling Large Files
 
-- Cloning takes forever \frowny
+- Cloning takes forever $\frowny$
 - Occupies a lot of disk space (especially for multiple projects)
 - Several solutions (=git lfs=, =git annex=)
 - Probably soon becoming part of the standard (similar to Mercurial)
@@ -305,7 +305,7 @@ Git is a *distributed* version control system:
   - Get the data you're interested in
   - Track provenance (can also be done in labbook)
   - Explore and reset experiment conditions
-  - Fork to write an article
+  - Expand to write an article
 
 *** Benefits from Proposed Branching System
 #+BEGIN_LaTeX
