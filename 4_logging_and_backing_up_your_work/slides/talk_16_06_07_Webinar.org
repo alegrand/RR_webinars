@@ -291,24 +291,41 @@ Git is a *distributed* version control system:
 - Several solutions (=git lfs=, =git annex=)
 - Probably soon becoming part of the standard (similar to Mercurial)
 
-*** Improving Git History: git xp
-#+BEGIN_CENTER
-\includegraphics[width=.6\linewidth]{figures/gitxp.pdf}
-#+END_CENTER
+*** Improving Git History: git xp (demo)
+#+BEGIN_LaTeX
+\begin{figure}
+  \centering
+
+  \includegraphics<1>[width=.6\linewidth]{figures/gitxp.pdf}
+  \includegraphics<2>[width=.6\linewidth]{figures/gitxp2.pdf}
+
+\end{figure}
+#+END_LaTeX
 
   - Get the data you're interested in
   - Track provenance (can also be done in labbook)
   - Explore and reset experiment conditions
-  - Fork to "article" branch
+  - Fork to an article
 
-*** git xp (conclusion)
-- Unique branching system that unites all phases of the research process
-- Eases reproduction of the experiments and the replicability of the analysis
+*** Benefits from Proposed Branching System
+#+BEGIN_LaTeX
+\begin{figure}
+  \centering
 
-#+BEGIN_CENTER
-maybe modified author/reader figure highlighting different parts, linking them to our different types of branches?
-#+END_CENTER
+  \includegraphics<1>[width=.8\linewidth]{figures/author_reader_br_1.fig}
+  \includegraphics<2>[width=.8\linewidth]{figures/author_reader_br_2.fig}
+  \includegraphics<3>[width=.8\linewidth]{figures/author_reader_br_3.fig}
 
+\end{figure}
+#+END_LaTeX
+
+#+BEGIN_LaTeX
+\begin{itemize}
+   \item<1->Keeps data and code that generated it together, yet isolated
+   \item<2->Facilitates experiment reproduction and analysis replication
+   \item<3>Unites all phases of typical research study
+\end{itemize}
+#+END_LaTeX
 
 * Git for Publishing
 *** Outline
