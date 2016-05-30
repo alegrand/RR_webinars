@@ -7,6 +7,8 @@
 #+LaTeX_CLASS: beamer
 #+LaTeX_CLASS_OPTIONS: [11pt,xcolor=dvipsnames,presentation]
 #+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:nil -:t f:t *:t <:t
+#+TAGS: Vincent(V) Arnaud(A) Luka(L)
+
 #+LATEX_HEADER: \let\AtBeginDocumentSav=\AtBeginDocument
 #+LATEX_HEADER: \def\AtBeginDocument#1{}
 #+LATEX_HEADER: \input{org-babel-style-preembule.tex}
@@ -42,7 +44,7 @@ There is currently a screencast of this seminar:
 #+BEGIN_CENTER
   #+LaTeX: \href{https://mi2s.imag.fr/pm/direct}{https://mi2s.imag.fr/pm/direct}
 #+END_CENTER
-The resulting video will be edited and available from github that
+The resulting video will be edited and available from GitHub that
 gathers all the information, slides, and resources:
 #+BEGIN_CENTER
   #+LaTeX: \href{https://github.com/alegrand/RR_webinars/blob/master/README.org}{https://github.com/alegrand/RR\_webinars/blob/master/README.org}
@@ -55,21 +57,21 @@ using *pad* to comment and ask questions
   #+LaTeX: \href{http://tinyurl.com/RRW-pad4}{http://tinyurl.com/RRW-pad4}
 #+END_CENTER
 *** Foreword about the organization (2/2)
-No particular preriquisites: we will use command line and demo with a
+No particular prerequisites: we will use command line and demo with a
 GUI.
-- Please install =git= and =smartgit= by following the [[https://github.com/alegrand/RR_webinars/blob/master/4_logging_and_backing_up_your_work/index.org\#practical-session-requirements][instructions given
-  on github]]
+- Please install =Git= and =SmartGit= by following the instructions given
+  on [[https://github.com/alegrand/RR_webinars/blob/master/4_logging_and_backing_up_your_work/index.org\#practical-session-requirements][RR_webinars GitHub page]]
 
 
-- 1. General introduction plus basic git usage :: ($\approx$ an hour) 
+- 1. General introduction plus basic Git usage :: ($\approx$ an hour) 
      At any time, feel free to ask questions *on the pad*. Some of these
-     questions may be addressed "silently" by the other attendees but
-     do not hesitate to ask it out loudly for the remote ones.
+     questions may be addressed "silently" by the other attendees, but
+     do not hesitate to ask it out loudly for the remote ones
 - 2: A short break :: 
-- 3. Slightly more advanced git usage :: the actual part that is more
-     devoted to practices favoring reproducible research.
+- 3. Slightly more advanced Git usage :: the actual part that is more
+     devoted to practices favoring reproducible research
 **** Many other tutorials on Git but with a different perspective
-- [[https://www.youtube.com/watch?v=ZDR433b0HJY][Introduction to git internals by Scott Chacon (Github)]] 
+- [[https://www.youtube.com/watch?v=ZDR433b0HJY][Introduction to git internals by Scott Chacon (GitHub)]] 
 - [[https://www.youtube.com/watch?v=o4PFDKIc2fs][Please. Stop Using Git by Matthew McCullough]] $\winkey$
 #+LaTeX: \vspace{-1em}\begin{columns}\begin{column}[t]{.42\linewidth}
 - \href{http://try.github.com/}{http://try.github.com/}
@@ -96,7 +98,7 @@ GUI.
    all the time)
    - config: example config
    - autosetuprebase = always ou pas ?....
-*** Basic usage (/à la svn/)
+*** Basic usage (/a la svn/)
 You have a complete stand-alone local history!
 
 - =git clone= / =git init= (initialize the DB)
@@ -129,7 +131,7 @@ file gobbles, ...)?/
 * Git for Writing Articles
 *** Outline
 #+LaTeX: \tableofcontents[current,currentsubsection]
-*** Problems with the Standard Approaches
+*** Problems with Standard Approaches
 #+LaTeX: \vspace{-.3cm}
 ****                                                     :B_ignoreheading:
 :PROPERTIES:
@@ -142,7 +144,7 @@ file gobbles, ...)?/
 
 - doc+email+revisions: 
   + Many versions of the file
-  + Never sure what is the latest version
+  + Never sure which one is the latest
   + Not aware of the corrections from the others
   + No clear history
   + No real parallelism
@@ -170,22 +172,29 @@ file gobbles, ...)?/
 Git allows for a truly parallel asynchronous approach
 #+END_CENTER
 
-
 *** Collaborative Writing using Git
-- Multiple people editing the same file simulataneously
-- Everyone commits locally, occasionally merging to remote
+- Multiple collaborators editing the same file *simultaneously*
+- Everyone *commits locally*, occasionally merging to remote
 - If editing different paragraphs
-  $\leadsto$ merging is automatic
+  $\leadsto$ *automatic merge*
 - If editing same paragraphs
-  $\leadsto$ need to handle conflicts
-- At the end clean history of the article writing, with all intermediary versions
+  $\leadsto$ need to *handle conflicts*
+
+\medskip 
+#+BEGIN_CENTER
+Clean history of the whole article writing process,\\ with all intermediary versions
+#+END_CENTER
+
 
 *** Working with Textual Files
-- Necessary so Git can make differences for commits
+- Necessary so Git can make difference between commits
 - Common solutions: LaTeX, markdown, Org-mode, etc.
-- Many user-friendly environments that make LaTeX usage today much easier
+- Nowadays many user-friendly environments for LaTeX
 - No dependencies on (proprietary) software tools
-- Alternative is to convert binaries into text files:
+
+\medskip
+**** Advanced usage
+Alternatively convert binaries into text files:
   + =git oodiff= (based on odt2txt conversion) for OpenOffice files (.odt, .odp, etc.)
   + [[http://blog.martinfenner.org/2014/08/18/introducing-rakali/][rakali]] (based on pandoc conversion) for Office files (.doc, .docx, etc.) 
 
@@ -208,7 +217,10 @@ Git allows for a truly parallel asynchronous approach
 - Avoid very long lines
 - Compare versions by words not lines (=git wdiff=)
 - Do frequent local commits - it's safe \smiley
-- Side note: those of you who still collaborate with SVN users may enjoy =git svn=
+
+\medskip
+**** Advanced usage
+If you collaborate with SVN users, you may enjoy =git svn=
 
 * Git for Coding
 *** Outline
@@ -240,9 +252,9 @@ huge plate of spaghetti $\frowny$
 - =git workflow=
 *** Access rights
 Git is a *distributed* version control system:
-- linux: Linus integrates and everyone pulls from him
+- Linux: Linus integrates and everyone pulls from him
 - Forge philosophy: groups
-- Github philosophy: organization possible but mainly fork and pull
+- GitHub philosophy: organization possible but mainly fork and pull
   requests
 
 * Git for Experiments/Data/Provenance Tracking
@@ -254,18 +266,40 @@ Git is a *distributed* version control system:
 - *Commit often* and separate different types of commits
 - Git history helps in *understanding* and *reproducing* experiment results
 
+\medskip
 **** Major Challenges
-  - Large files and thus repositories (=git lfs=, =git annex=, etc.)
+  - May depend on other projects
+  - Large files and thus repositories
   - Linear history hard to explore and thus exploit
-*** git xp (demo)
+
+*** Integrating Multiple Git Sources
+
+- Pulling and pushing changes to both projects
+- Several solutions (=git lfs=, =git annex=)
+- Work well for simple Git inside Git, but not for advanced use cases (SVN, complex branches, etc.)
+
+#+BEGIN_LaTeX
+\begin{center}
+\fbox{\includegraphics[width=.6\linewidth]{figures/submodules.pdf}}
+\end{center}
+#+END_LaTeX
+
+*** Handling Large Files
+
+- Cloning takes forever \frowny
+- Occupies a lot of disk space (especially for multiple projects)
+- Several solutions (=git lfs=, =git annex=)
+- Probably soon becoming part of the standard (similar to Mercurial)
+
+*** Improving Git History: git xp
 #+BEGIN_CENTER
 \includegraphics[width=.6\linewidth]{figures/gitxp.pdf}
 #+END_CENTER
 
-  - git xp allows to easily get the data you're interested in and to
-    track provenance (can be also done in labbook)
-  - explore and reset experiment history easily
-  - branch "article"
+  - Get the data you're interested in
+  - Track provenance (can also be done in labbook)
+  - Explore and reset experiment conditions
+  - Fork to "article" branch
 
 *** git xp (conclusion)
 - Unique branching system that unites all phases of the research process
@@ -274,18 +308,6 @@ Git is a *distributed* version control system:
 #+BEGIN_CENTER
 maybe modified author/reader figure highlighting different parts, linking them to our different types of branches?
 #+END_CENTER
-
-*** Additional Challenge: Integrating several Git Sources
-
-- Pulling and pushing changes to both projects
-- Several solutions (=git submodule=, =git subrepo=)
-- Work well for simple Git inside Git, but not for advanced use cases (SVN, complex branches, etc.)
-
-#+BEGIN_LaTeX
-\begin{center}
-\fbox{\includegraphics[width=.6\linewidth]{figures/submodules.pdf}}
-\end{center}
-#+END_LaTeX
 
 
 * Git for Publishing
@@ -310,7 +332,7 @@ maybe modified author/reader figure highlighting different parts, linking them t
 #+END_LaTeX
 - Your code becomes citable 
 - Easy to use: [[https://guides.github.com/activities/citable-code/][follow the instructions]]
-- [[https://github.com/arfon/fidgit][GitHub+figshare]]: similar approach from the same author
+- [[https://github.com/arfon/fidgit][GitHub+figshare]]: similar approach for figshare
 
 **** Software Heritage
 - Problems with DOI
