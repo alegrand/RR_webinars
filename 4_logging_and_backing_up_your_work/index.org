@@ -38,5 +38,39 @@ use this [[https://pad.inria.fr/p/bjKfNEcD7SCvHjHF][pad]]* (FIXME) that we will 
    - Rennes: 
    - Paris:
    - ...
-* Practical Session
-To be announced. 
+* Practical Session Requirements
+Basic Git installation and your favorite GUI (unless you are really hardcore and prefer doing everything in command line). 
+
+** Gitting Started (courtesy of [[https://github.com/HackBerkeley/intro-git][HackBerkeley]])
+
+| Operating System | Download/Install                                                                                                                                                                                                                                                                                                               |
+|------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| OS X             | Download from [http://git-scm.com/download/mac](http://git-scm.com/download/mac)                                                                                                                                                                                                                                               |
+| Windows          | Download from [http://git-scm.com/download/win](http://git-scm.com/download/win) - Two programs will install: Git BASH and Git GUI. Use Git BASH! Although the GUI can perform almost all the same functions as BASH, it's great to get experience working from the command line. You can use unix/linux commands within BASH. |
+| Linux            | Ubuntu, Debian, and Mint users can run from their terminal: `sudo apt-get install git`. Fedora Users: `sudo yum install git`                                                                                                                                                                                                   |
+
+
+** Installing GUI: [[http://www.syntevo.com/smartgit/][SmartGit]]
+There are many graphical interfaces for Git and we recommend using
+SmartGit, for the following reasons:
+
+ - It is nice and shiny \smiley
+ - It has smart default configurations for Git commands
+ - It can contain multiple projects
+ - It works with Mercurial and SVN as well
+ - It is portable to any operating system (Linux, Windows, OS X)
+ - It is free (for non-commercial use)
+ - It is up-to-date, supporting advanced Git features
+ - It is well integrated with popular platforms (GitHub, BitBucket, etc.)
+
+ Unfortunately, SmartGit is not open source and it is written in Java,
+ but there is no free lunch.
+
+ To install SmartGit, download it from the following page:
+ http://www.syntevo.com/smartgit/download and follow the
+ instructions. First time you launch the application, in the first
+ step you will be asked to choose your license type. Be sure to change
+ it for "Non-commercial use only" if you are not working on a
+ commercial code. For the rest of the installation, unless you know
+ exactly what you are doing, we suggest to you to keep the default
+ options.
