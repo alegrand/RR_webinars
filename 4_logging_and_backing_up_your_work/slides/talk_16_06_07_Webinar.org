@@ -267,6 +267,12 @@ If you collaborate with SVN users, you may enjoy =git svn=
 Developers who do not understand this mechanism quickly end up with a
 huge plate of spaghetti $\frowny$
 - =git workflow=
+*** Git Workflow
+
+#+BEGIN_CENTER
+\includegraphics[scale=.15]{figures/git_workflow.png}\\%
+#+END_CENTER
+
 *** Access rights
 Git is a *distributed* version control system:
 - Linux: Linus integrates and everyone pulls from him
