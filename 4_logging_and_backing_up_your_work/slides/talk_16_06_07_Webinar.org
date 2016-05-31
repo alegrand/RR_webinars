@@ -67,11 +67,11 @@ GUI.
      At any time, feel free to ask questions *on the pad*. Some of these
      questions may be addressed "silently" by the other attendees, but
      do not hesitate to ask it out loudly for the remote ones
-- 2: A short break :: 
+- 2. A short break :: 
 - 3. Slightly more advanced Git usage :: the actual part that is more
      devoted to practices favoring reproducible research
 **** Many other tutorials on Git but with a different perspective
-- [[https://www.youtube.com/watch?v=ZDR433b0HJY][Introduction to git internals by Scott Chacon (GitHub)]] 
+- [[https://www.youtube.com/watch?v=ZDR433b0HJY][Introduction to Git internals by Scott Chacon (GitHub)]] 
 - [[https://www.youtube.com/watch?v=o4PFDKIc2fs][Please. Stop Using Git by Matthew McCullough]] $\winkey$
 #+LaTeX: \vspace{-1em}\begin{columns}\begin{column}[t]{.42\linewidth}
 - \href{http://try.github.com/}{http://try.github.com/}
@@ -92,7 +92,7 @@ GUI.
     - side note on mercurial, bzr, darc, etc.
     - what is gforge, github, gitlab(inria: https://gitlab.irisa.fr/), bitbucket (offers private repositories) ?
 *** Git technical glitches
- - command line vs. GUI (recommend =smartgit=, mention =magit= for emacs
+ - command line vs. GUI (recommend =SmartGit=, mention =magit= for emacs
    lovers)
  - ssh configuration (public/private key principle to avoid typing it
    all the time)
@@ -131,7 +131,7 @@ file gobbles, ...)?/
 * Git for Writing Articles
 *** Outline
 #+LaTeX: \tableofcontents[current,currentsubsection]
-*** Problems with Standard Approaches
+*** Challenges: History and Parallelism
 #+LaTeX: \vspace{-.3cm}
 ****                                                     :B_ignoreheading:
 :PROPERTIES:
@@ -139,23 +139,27 @@ file gobbles, ...)?/
 :END:
 ***** 							      :BMCOL:
      :PROPERTIES:
-     :BEAMER_col: 0.5
+     :BEAMER_col: 0.55
      :END:
 
-- doc+email+revisions: 
+- Printed doc+handwritten revisions:
+  + Many versions of the file
+  + One writer, multiple reviewers
+\smallskip
+- Doc+email+contributions: 
   + Many versions of the file
   + Never sure which one is the latest
-  + Not aware of the corrections from the others
+  + Not aware of others corrections
   + No clear history
-  + No real parallelism
-\medskip
-- doc+Dropbox or google-doc:
+  + Problems editing same paragraphs
+\smallskip
+- Doc+Dropbox or google-doc:
   + Limited history through autosaves
   + Limited parallelism
 
 ***** 							      :BMCOL:
      :PROPERTIES:
-     :BEAMER_col: 0.5
+     :BEAMER_col: 0.45
      :END:
 
 #+BEGIN_CENTER
@@ -169,11 +173,11 @@ file gobbles, ...)?/
 
 \medskip
 #+BEGIN_CENTER
-Git allows for a truly parallel asynchronous approach
+Git allows for a truly *parallel asynchronous* approach
 #+END_CENTER
 
 *** Collaborative Writing using Git
-- Multiple collaborators editing the same file *simultaneously*
+- Multiple collaborators editing the same file *simultaneously offline*
 - Everyone *commits locally*, occasionally merging to remote
 - If editing different paragraphs
   $\leadsto$ *automatic merge*
@@ -182,7 +186,7 @@ Git allows for a truly parallel asynchronous approach
 
 \medskip 
 #+BEGIN_CENTER
-Clean history of the whole article writing process,\\ with all intermediary versions
+Everyone has a clean history of the whole article writing process,\\ with all intermediary versions
 #+END_CENTER
 
 
@@ -274,15 +278,15 @@ Git is a *distributed* version control system:
 
 *** Integrating Multiple Git Sources
 
-- Pulling and pushing changes to both projects
-- Several solutions (=git submodule=, =git subrepo=)
-- Work well for simple Git inside Git, but not for advanced use cases (SVN, complex branches, etc.)
-
 #+BEGIN_LaTeX
 \begin{center}
 \fbox{\includegraphics[width=.6\linewidth]{figures/submodules.pdf}}
 \end{center}
 #+END_LaTeX
+
+- Pulling and pushing changes to both projects
+- Several solutions (=git submodule=, =git subrepo=)
+- Work well for simple Git inside Git, but not for advanced use cases (SVN, complex branches, etc.)
 
 *** Handling Large Files
 
