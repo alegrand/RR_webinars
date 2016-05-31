@@ -116,6 +116,9 @@ But =git= is much more than this.
 file gobbles, ...)?/
 *** Basic Git commands
 
+Would you put =clone= with on a =fetch= or on a =pull= line?
+\medskip
+
 #+BEGIN_LaTeX
     \centering
     \includegraphics[width=\linewidth]{figures/git_basic.pdf}\\%
@@ -264,7 +267,7 @@ If you collaborate with SVN users, you may enjoy =git svn=
 
 Developers who do not understand this mechanism quickly end up with a
 huge plate of spaghetti $\frowny$
-- =git workflow=
+- =git workflow= (supported by SmartGit)
 *** Git Workflow
 
 #+BEGIN_CENTER
