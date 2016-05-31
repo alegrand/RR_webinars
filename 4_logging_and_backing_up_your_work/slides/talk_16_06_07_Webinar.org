@@ -32,11 +32,14 @@
 #+LATEX_HEADER: \let\oldtexttt=\texttt
 #+LATEX_HEADER: \renewcommand\texttt[1]{\SoulColor{lightgreen}\hl{\tt #1}}
 
-*** TODO Stuff to do [1/3]                                       :noexport:
-- [ ] Update the introduction
+*** TODO Stuff to do [1/7]                                       :noexport:
+- [ ] Update the Introduction
+- [ ] Update Git for Coding
 - [ ] Scavange the pad (https://pad.inria.fr/p/fQtZqvTTERRqx9ug)
 - [X] Find a way so that =inline commands= display nicely (e.g.,
   highlighted in green).
+- [ ] Strange space sometimes before links and green git commands (e.g., after left parenthesis)
+- [ ] Include sharelatex
 ** 
 #+LaTeX: \input{org-babel-document-preembule.tex}
 *** Foreword about the organization (1/2)
