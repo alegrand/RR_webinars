@@ -117,6 +117,7 @@ But =git= is much more than this.
 /Maybe we should illustrate just a bit what happens beneath (sha1,
 file gobbles, ...)?/
 *** Basic Git commands
+
 #+BEGIN_LaTeX
     \centering
     \includegraphics[width=\linewidth]{figures/git_basic.pdf}\\%
@@ -273,6 +274,56 @@ Git is a *distributed* version control system:
 - GitHub philosophy: organization possible but mainly fork and pull
   requests
 
+*** Pull request: Choose you favorite illustration
+
+****                                                            :B_column:
+:PROPERTIES:
+:BEAMER_env: column
+:END:
+***** 								      :BMCOL:
+      :PROPERTIES:
+      :BEAMER_col: .5
+      :END:
+
+#+BEGIN_CENTER
+\includegraphics[scale=.15]{figures/pullrequest.png}
+#+END_CENTER
+# http://acrl.ala.org/techconnect/post/2013/05
+***** 								      :BMCOL:
+      :PROPERTIES:
+      :BEAMER_col: .5
+      :END:
+
+#+BEGIN_CENTER
+\includegraphics[scale=.22]{figures/pullrequest2.jpg}      
+#+END_CENTER
+# http://www.slideshare.net/psquy/git-collaboration
+
+****                                                            :B_column:
+:PROPERTIES:
+:BEAMER_env: column
+:END:
+
+***** 								      :BMCOL:
+      :PROPERTIES:
+      :BEAMER_col: .5
+      :END:
+
+#+BEGIN_CENTER
+\includegraphics[scale=.2]{figures/pullrequest3.png}
+#+END_CENTER
+
+# http://www.gulistanboylu.com/how-to-send-pull-request-on-github/
+***** 								      :BMCOL:
+      :PROPERTIES:
+      :BEAMER_col: .5
+      :END:
+
+#+BEGIN_CENTER
+\includegraphics[scale=.2]{figures/pullrequest4.jpg}      
+#+END_CENTER
+
+# http://www.slideshare.net/lemonlatte/git-tutorial-ii
 * Git for Experiments/Data/Provenance Tracking
 *** Outline
 #+LaTeX: \tableofcontents[current,currentsubsection]
