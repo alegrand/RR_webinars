@@ -116,6 +116,18 @@ But =git= is much more than this.
 
 /Maybe we should illustrate just a bit what happens beneath (sha1,
 file gobbles, ...)?/
+*** Basic Git commands
+#+BEGIN_LaTeX
+    \centering
+    \includegraphics[width=\linewidth]{figures/git_basic.pdf}\\%
+
+    %\vspace{-.8em}
+    \begin{flushright}
+      \tiny
+      \emph{Inspired by \href{https://github.com/HackBerkeley/intro-git}{HackBerkeley}}
+    \end{flushright}
+#+END_LaTeX
+
 *** Actually there are branches... 
 - =git merge=
 - gitk or equivalent
@@ -204,7 +216,7 @@ Alternatively convert binaries into text files:
 
 *** Typical Workflow (demo)
 - Basic commands:
-  1. Setup repository (=git config=)
+  1. Setup repository (=git config=, =git clone=)
   2. Update to the latest version (=git pull=, =git fetch=)
   3. Contribute with your changes (=git commit -a=, =git push=)
 - Commands for handling conflicts:
