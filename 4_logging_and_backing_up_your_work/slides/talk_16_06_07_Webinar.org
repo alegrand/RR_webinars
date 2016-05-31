@@ -32,9 +32,9 @@
 #+LATEX_HEADER: \let\oldtexttt=\texttt
 #+LATEX_HEADER: \renewcommand\texttt[1]{\SoulColor{lightgreen}\hl{\tt #1}}
 
-*** TODO Stuff to do [2/3]                                       :noexport:
+*** TODO Stuff to do [1/3]                                       :noexport:
 - [ ] Update the introduction
-- [X] Scavange the pad (https://pad.inria.fr/p/fQtZqvTTERRqx9ug)
+- [ ] Scavange the pad (https://pad.inria.fr/p/fQtZqvTTERRqx9ug)
 - [X] Find a way so that =inline commands= display nicely (e.g.,
   highlighted in green).
 ** 
@@ -448,6 +448,116 @@ software archiving, evaluation challenges, ...).
   #+LaTeX: \vspace{-.4em}
   #+LaTeX: \href{https://github.com/alegrand/RR_webinars/blob/master/README.org}{https://github.com/alegrand/RR\_webinars}
 #+END_CENTER
+* Git demo                                                         :noexport:
+** Basic operations
+
+Alice clones the project.
+#+begin_src sh :results output :session Alice
+cd /tmp/
+# Download the project
+git clone "out mini project"
+cd "out mini project"
+# Update to the latest version
+git pull
+#+end_src
+
+Bob clones the same project.
+#+begin_src sh :results output :session Bob
+cd /tmp/
+# Download the project
+git clone "out mini project"
+cd "out mini project"
+# Update to the latest version
+git pull
+#+end_src
+
+Alice makes a change to an existing file and adds a new one.
+#+begin_src sh :results output :session Alice
+# Edit existing file
+# editor file1
+# Check the current changes in Working directory
+git status
+# Adding the modifications to the Index
+git add file1
+# Check the current changes in Working directory
+git status
+# Create a new file and write something inside
+# editor file2
+# Check the current changes in Working directory
+git status
+# Add the file to the Index
+git add file2
+# Check the current changes in Working directory
+git status
+# Commiting indexed changes to the Local Repository
+git commit -m "explain type of changes"
+# Check the current changes in Working directory
+git status
+# Pushing changes to the Remote Repository
+git push
+#+end_src
+
+Bob gets the modifications.
+#+begin_src sh :results output :session Bob
+# Check the current changes in Working directory
+git status
+# Update to the latest version
+git pull
+#+end_src 
+
+** Create and solve conflict
+
+Bob is working on two files.
+#+begin_src sh :results output :session Bob
+# Edit file1 on a separate part
+# editor file1
+# Edit file2 on a common part
+# editor file2
+git commit -am "explain type of changes"
+git push
+#+end_src 
+
+Alice is working on the same files. When she tried to push, she
+realized that she first need to integrate Bob's changes as well.
+#+begin_src sh :results output :session Bob
+# Edit file1 on a separate part
+# editor file1
+# Edit file2 on a common part
+# editor file2
+git commit -am "explain type of changes"
+git push
+# Problem cannot push before pulling the latest version
+git pull
+# One file was merged without a problem, conflict for the other
+# launch conflict resolver, resolve the problem
+# Commiting a merged version to the Repository
+git add file2
+git commit -m "solving a conflict with Bob"
+git push
+#+end_src 
+
+Bob gets the changes from Alice.
+#+begin_src sh :results output :session Bob
+git pull
+#+end_src 
+
+** Show and explain SmartGit
+- Explain the windows and main buttons
+- Open Log and explain windows and main buttons
+- Show what the previous Alice-Bob mini example generated in history for Alice
+- Show what the previous Alice-Bob mini example generated in history for Bob (new Log frame)
+** Create and solve conflict using SmartGit
+- Repeat a conflict situation in Alice and Bob terminals, and do add, commit, push, pull in the SmartGit
+- Resolve the conflict situation in SmartGit using conflict solver
+- Do not push anything, just resolve locally
+** Explain merge/rebase
+- Explain the difference between the two
+- Explain what is SmartGit doing by default and why (it is a configurable option)
+** TODO Branches
+** TODO Rescue
+** TODO git wdiff
+** TODO Many Git for Coding examples
+** TODO Some kind of git xp demo (with or without special commands)
 * Emacs Setup                                                      :noexport:
 This document has local variables in its postembule, which should
 allow org-mode to work seamlessly without any setup. If you're
