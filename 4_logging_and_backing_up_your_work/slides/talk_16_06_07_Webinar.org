@@ -33,13 +33,14 @@
 #+LATEX_HEADER: \renewcommand\texttt[1]{\SoulColor{lightgreen}\hl{\tt #1}}
 
 *** TODO Stuff to do [1/7]                                       :noexport:
+- [ ] Slide 3 items are strange
 - [ ] Update the Introduction
 - [ ] Update Git for Coding
 - [ ] Scavange the pad (https://pad.inria.fr/p/fQtZqvTTERRqx9ug)
 - [X] Find a way so that =inline commands= display nicely (e.g.,
   highlighted in green).
 - [ ] Strange space sometimes before links and green git commands (e.g., after left parenthesis)
-- [ ] Include sharelatex
+- [ ] Include sharelatex into presentation
 ** 
 #+LaTeX: \input{org-babel-document-preembule.tex}
 *** Foreword about the organization (1/2)
@@ -556,8 +557,19 @@ git pull
 ** Explain merge/rebase
 - Explain the difference between the two
 - Explain what is SmartGit doing by default and why (it is a configurable option)
-** TODO Branches
-** TODO Rescue
+** Branches
+- Create and checkout a new branch in SmartGit for Alice
+- Add two commits in a new branch
+- Bob adds one commit in a master branch
+- Alice does checkout of the master branch and then merge with her development branch
+- Explain how possible conflicts can be resolved in the same way as before
+** Rescue
+- Add some changes to a file
+- Stash them
+- Apply stash
+- Commit changes
+- Reset them
+- Revert one the older commits
 ** TODO git wdiff
 ** TODO Many Git for Coding examples
 ** TODO Some kind of git xp demo (with or without special commands)
