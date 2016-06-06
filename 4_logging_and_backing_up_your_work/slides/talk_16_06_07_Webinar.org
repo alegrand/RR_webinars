@@ -252,9 +252,19 @@ If you collaborate with SVN users, you may enjoy =git svn=
   publishing it with =git push=
 - Such history can then be exploited:
   - =git log= (=git hist=), =git blame=, =git bisect=
+  - git config --global alias.hist 'log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
 *** Rescue ! Advanced?
-- =git reflog= (4 emergency) generally more useful than git fsck
-- =git gc= / =git prune=
+- all is stored in git backend and identified by a SHA1
+- all is saved as soon as it is in the backend (=git add=)
+- several ways to recover objects/files/project states that cannot be
+  reached by the classical history:
+  - =git fsck= to find unreachable files/commits/...
+  - =git reflog= (for emergency) generally more useful than =git fsck= for
+    recovering a previous repository state (i.e. a previous commit)
+- a few dangerous commands:
+  - =git gc= can remove unreachable old objects (> 2 weeks)
+  - =git prune= can remove unreachable objects...
+  - =rm -rf= without pushing (or cloning elsewhere) before
 *** Git for coding (branches)
 - merging branches
   - Example from the Scott Chacon youtube video: translating some code
@@ -276,9 +286,11 @@ huge plate of spaghetti $\frowny$
 
 *** Access rights
 Git is a *distributed* version control system:
-- Linux: Linus integrates and everyone pulls from him
-- Forge philosophy: groups
-- GitHub philosophy: organization possible but mainly fork and pull
+- Linux model: Linus integrates and everyone pulls from him
+  - improvement with official maintainers that integrate sub-systems
+  - other specific official repo (=linux-next=, \ldots)
+- Forge philosophy: one group
+- GitHub philosophy: organization/group possible but mainly fork and pull
   requests
 
 *** Pull request: Choose you favorite illustration
