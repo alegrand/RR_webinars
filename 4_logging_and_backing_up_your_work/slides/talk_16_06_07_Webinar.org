@@ -212,7 +212,7 @@ Alternatively convert binaries into text files:
   + =git oodiff= (based on odt2txt conversion) for OpenOffice files (.odt, .odp, etc.)
   + [[http://blog.martinfenner.org/2014/08/18/introducing-rakali/][rakali]] (based on pandoc conversion) for Office files (.doc, .docx, etc.) 
 
-*** Typical Workflow (demo)
+*** Typical Workflow
 - Basic commands:
   1. Setup repository (=git config=, =git clone=)
   2. Update to the latest version (=git pull=, =git fetch=)
@@ -243,6 +243,7 @@ If you collaborate with SVN users, you may enjoy =git svn=
 - Remember: _commit often_. In this context, the =git stash= command can
   be useful.
   - Allows you to code/test/... with no fear
+  - =git reset= / =git revert=
 - Region based committing (=git commit --patch= although nobody does
   that through the CLI)
   - Working at a fine granularity allows the next ones to better
@@ -251,6 +252,9 @@ If you collaborate with SVN users, you may enjoy =git svn=
   publishing it with =git push=
 - Such history can then be exploited:
   - =git log= (=git hist=), =git blame=, =git bisect=
+*** Rescue ! Advanced?
+- =git reflog= (4 emergency) generally more useful than git fsck
+- =git gc= / =git prune=
 *** Git for coding (branches)
 - merging branches
   - Example from the Scott Chacon youtube video: translating some code
