@@ -102,8 +102,22 @@ GUI.
    all the time)
    - config: example config
    - autosetuprebase = always ou pas ?....
-*** Basic usage (/a la svn/)
-You have a complete stand-alone local history!
+*** Basic usage (demo)
+#+BEGIN_LaTeX
+    \vspace{-.8em}
+    \begin{center}
+    \includegraphics[width=.9\linewidth]{figures/git_basic.pdf}\\%
+    \end{center}
+    %
+    \vspace{-.8em}
+    \begin{flushright}
+      \tiny
+      \emph{Inspired by \href{https://github.com/HackBerkeley/intro-git}{HackBerkeley}}
+    \end{flushright}
+    \vspace{-.8em}
+#+END_LaTeX
+
+You have a complete stand-alone local history!\dots
 
 - =git clone= / =git init= (initialize the DB)
 - =git pull= sync from the remote repos
@@ -117,33 +131,13 @@ backup.
   =timemachine/backuppc/...=
 
 But =git= is much more than this.
-
-/Maybe we should illustrate just a bit what happens beneath (sha1,
-file gobbles, ...)?/
-*** Basic Git commands
-#+BEGIN_LaTeX
-    \centering
-    \includegraphics[width=\linewidth]{figures/git_basic.pdf}\\%
-
-    %\vspace{-.8em}
-    \begin{flushright}
-      \tiny
-      \emph{Inspired by \href{https://github.com/HackBerkeley/intro-git}{HackBerkeley}}
-    \end{flushright}
-#+END_LaTeX
-
-*** Actually there are branches... 
+*** Actually there are branches... (demo)
 - =git merge=
 - gitk or equivalent
   - =git checkout=
 - =git pull= $=$ =git fetch; git rebase= or =git fetch; git merge=
   - Question: What is the difference ? $\winkey$
 
-*** Rescue ! Advanced?
-- =git reflog= (4 emergency) generally more useful than git fsck
-- =git stash=
-- =git reset= / =git revert=
-- =git gc= / =git prune=
 * Git for Writing Articles
 *** Outline
 #+LaTeX: \tableofcontents[current,currentsubsection]

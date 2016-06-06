@@ -7,9 +7,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="31cm"
-   height="9cm"
-   viewBox="143 97 618 180"
+   width="32.336693cm"
+   height="9.1258736cm"
+   viewBox="143 97 644.64762 182.51747"
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
@@ -22,7 +22,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -41,26 +41,40 @@
      inkscape:window-height="1114"
      id="namedview150"
      showgrid="false"
-     inkscape:zoom="1.0815484"
-     inkscape:cx="367.77672"
-     inkscape:cy="188.1614"
+     inkscape:zoom="0.76477021"
+     inkscape:cx="433.03621"
+     inkscape:cy="160.82388"
      inkscape:window-x="0"
      inkscape:window-y="26"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg2" />
+     inkscape:current-layer="svg2"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <rect
+     style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:1;fill:#51ff43;fill-opacity:0.23404254;fill-rule:nonzero;stroke:#334abc;stroke-width:0.81215227;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate"
+     id="rect4271-7"
+     width="401.25558"
+     height="181.31445"
+     x="387.0722"
+     y="97.796951" />
   <g
-     id="g4">
+     id="g4"
+     transform="translate(15.043386,0.36827958)">
     <path
-       style="fill: #eded61"
-       d="M 680 160 L 760,160 L 760,228.571 C 744,217.143 736,217.143 720,228.571 C 704,240 696,240 680,228.571 L 680,160z"
-       id="path6" />
+       style="fill:#eded61"
+       d="m 680,160 80,0 0,68.571 c -16,-11.428 -24,-11.428 -40,0 -16,11.429 -24,11.429 -40,0 L 680,160 Z"
+       id="path6"
+       inkscape:connector-curvature="0" />
     <path
-       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
-       d="M 680 160 L 760,160 L 760,228.571 C 744,217.143 736,217.143 720,228.571 C 704,240 696,240 680,228.571 L 680,160"
-       id="path8" />
+       style="fill:none;fill-opacity:0;stroke:#000000;stroke-width:2"
+       d="m 680,160 80,0 0,68.571 c -16,-11.428 -24,-11.428 -40,0 -16,11.429 -24,11.429 -40,0 L 680,160"
+       id="path8"
+       inkscape:connector-curvature="0" />
     <text
        font-size="12.8"
-       style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal"
+       style="font-style:normal;font-weight:normal;font-size:12.80000019px;font-family:sans-serif;text-anchor:middle;fill:#000000"
        x="720"
        y="192.571"
        id="text10">
@@ -70,39 +84,50 @@
          id="tspan12" />
     </text>
   </g>
+  <rect
+     style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:1;fill:#fa3333;fill-opacity:0.23404254;fill-rule:nonzero;stroke:#334abc;stroke-width:0.51196504;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate"
+     id="rect4271"
+     width="132.16478"
+     height="180.13855"
+     x="142.25601"
+     y="97.255981" />
   <g
-     id="g18">
+     id="g18"
+     transform="translate(15.043386,0.36827958)">
     <path
-       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
-       d="M 237.364 193.801 C 294.614,179.051 304.256,171.549 387.143,187.373"
-       id="path20" />
+       style="fill:none;fill-opacity:0;stroke:#000000;stroke-width:2"
+       d="m 237.364,193.801 c 57.25,-14.75 66.892,-22.252 149.779,-6.428"
+       id="path20"
+       inkscape:connector-curvature="0" />
     <polygon
-       style="fill: #000000"
-       points="394.51,188.779 383.749,191.815 387.143,187.373 385.625,181.993 "
+       style="fill:#000000"
+       points="385.625,181.993 394.51,188.779 383.749,191.815 387.143,187.373 "
        id="polygon22" />
     <polygon
-       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
-       points="394.51,188.779 383.749,191.815 387.143,187.373 385.625,181.993 "
+       style="fill:none;fill-opacity:0;stroke:#000000;stroke-width:2"
+       points="385.625,181.993 394.51,188.779 383.749,191.815 387.143,187.373 "
        id="polygon24" />
   </g>
   <g
-     id="g26">
+     id="g26"
+     transform="translate(15.043386,0.36827958)">
     <path
-       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
-       d="M 490.079 188.061 C 570.079,164.061 596.997,163.999 669.653,185.264"
-       id="path28" />
+       style="fill:none;fill-opacity:0;stroke:#000000;stroke-width:2"
+       d="m 490.079,188.061 c 80,-24 106.918,-24.062 179.574,-2.797"
+       id="path28"
+       inkscape:connector-curvature="0" />
     <polygon
-       style="fill: #000000"
-       points="676.851,187.371 665.849,189.361 669.653,185.264 668.658,179.763 "
+       style="fill:#000000"
+       points="668.658,179.763 676.851,187.371 665.849,189.361 669.653,185.264 "
        id="polygon30" />
     <polygon
-       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
-       points="676.851,187.371 665.849,189.361 669.653,185.264 668.658,179.763 "
+       style="fill:none;fill-opacity:0;stroke:#000000;stroke-width:2"
+       points="668.658,179.763 676.851,187.371 665.849,189.361 669.653,185.264 "
        id="polygon32" />
   </g>
   <g
      id="g34"
-     transform="matrix(0.83154265,0,0,0.75717391,103.92178,39.17611)">
+     transform="matrix(0.83154265,0,0,0.75717391,118.96517,39.54439)">
     <path
        style="fill:none;fill-opacity:0;stroke:#000000;stroke-width:2"
        d="m 692.54,236.247 c -25,33 -37.467,22.16 -66.837,6.262"
@@ -110,137 +135,142 @@
        inkscape:connector-curvature="0" />
     <polygon
        style="fill:#000000"
-       points="625.703,242.509 625.522,248.096 619.107,238.939 630.282,239.302 "
+       points="630.282,239.302 625.703,242.509 625.522,248.096 619.107,238.939 "
        id="polygon38" />
     <polygon
        style="fill:none;fill-opacity:0;stroke:#000000;stroke-width:2"
-       points="625.703,242.509 625.522,248.096 619.107,238.939 630.282,239.302 "
+       points="630.282,239.302 625.703,242.509 625.522,248.096 619.107,238.939 "
        id="polygon40" />
   </g>
   <g
-     id="g42">
+     id="g42"
+     transform="translate(15.043386,0.36827958)">
     <path
-       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
-       d="M 396.747 213.11 C 330.297,229.46 315.607,236.978 246.722,217.391"
-       id="path44" />
+       style="fill:none;fill-opacity:0;stroke:#000000;stroke-width:2"
+       d="m 396.747,213.11 c -66.45,16.35 -81.14,23.868 -150.025,4.281"
+       id="path44"
+       inkscape:connector-curvature="0" />
     <polygon
-       style="fill: #000000"
-       points="239.508,215.339 250.494,213.265 246.722,217.391 247.759,222.884 "
+       style="fill:#000000"
+       points="247.759,222.884 239.508,215.339 250.494,213.265 246.722,217.391 "
        id="polygon46" />
     <polygon
-       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
-       points="239.508,215.339 250.494,213.265 246.722,217.391 247.759,222.884 "
+       style="fill:none;fill-opacity:0;stroke:#000000;stroke-width:2"
+       points="247.759,222.884 239.508,215.339 250.494,213.265 246.722,217.391 "
        id="polygon48" />
   </g>
   <g
-     id="g50">
+     id="g50"
+     transform="translate(15.043386,0.36827958)">
     <path
        style="fill:none;fill-opacity:0;stroke:#000000;stroke-width:2"
-       d="m 237.381,172.678 c 38.85126,-31.2501 50.97689,-51.89452 124.78476,-54.0392 36.34359,-1.05606 62.31483,27.4667 83.06056,27.20329 24.74031,-0.31413 31.1992,-26.0922 87.13448,-26.71208 79.30951,-0.87892 105.36522,20.40346 139.5962,45.56099"
+       d="m 237.381,172.678 c 41.06543,-13.53672 13.33596,-53.37064 87.14383,-55.51532 36.34359,-1.05606 66.00511,30.41894 120.70149,28.67941 24.7298,-0.78649 31.1992,-26.0922 87.13448,-26.71208 79.30951,-0.87892 105.36522,20.40346 139.5962,45.56099"
        id="path52"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="csssc" />
     <polygon
-       style="fill: #000000"
-       points="678,169.133 666.981,167.24 671.957,164.691 672.903,159.182 "
+       style="fill:#000000"
+       points="672.903,159.182 678,169.133 666.981,167.24 671.957,164.691 "
        id="polygon54" />
     <polygon
-       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
-       points="678,169.133 666.981,167.24 671.957,164.691 672.903,159.182 "
+       style="fill:none;fill-opacity:0;stroke:#000000;stroke-width:2"
+       points="672.903,159.182 678,169.133 666.981,167.24 671.957,164.691 "
        id="polygon56" />
   </g>
   <text
      font-size="12.8"
      style="font-style:normal;font-weight:700;font-size:12.80000019px;font-family:sans-serif;text-anchor:middle;fill:#000000"
-     x="447.19574"
-     y="112.69028"
+     x="336.93259"
+     y="113.05856"
      id="text58">
     <tspan
-       x="447.19574"
-       y="112.69028"
+       x="336.93259"
+       y="113.05856"
        id="tspan60">clone/pull</tspan>
   </text>
   <text
      font-size="12.8"
      style="font-style:normal;font-weight:700;font-size:12.80000019px;font-family:sans-serif;text-anchor:middle;fill:#000000"
-     x="317"
-     y="171"
+     x="332.0434"
+     y="171.36829"
      id="text62">
     <tspan
-       x="317"
-       y="171"
+       x="332.0434"
+       y="171.36829"
        id="tspan64">fetch</tspan>
   </text>
   <text
      font-size="12.8"
-     style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700"
-     x="318"
-     y="245"
+     style="font-style:normal;font-weight:700;font-size:12.80000019px;font-family:sans-serif;text-anchor:middle;fill:#000000"
+     x="333.0434"
+     y="245.36829"
      id="text66">
     <tspan
-       x="318"
-       y="245"
+       x="333.0434"
+       y="245.36829"
        id="tspan68">push</tspan>
   </text>
   <text
      font-size="12.8"
      style="font-style:normal;font-weight:700;font-size:12.80000019px;font-family:sans-serif;text-anchor:middle;fill:#000000"
-     x="589.90448"
-     y="162.47612"
+     x="604.94788"
+     y="162.84441"
      id="text70">
     <tspan
-       x="589.90448"
-       y="162.47612"
+       x="604.94788"
+       y="162.84441"
        id="tspan72">merge/rebase</tspan>
   </text>
   <text
      font-size="12.8"
      style="font-style:normal;font-weight:700;font-size:12.80000019px;font-family:sans-serif;text-anchor:middle;fill:#000000"
-     x="652.45306"
-     y="248.537"
+     x="667.49646"
+     y="248.90529"
      id="text74">
     <tspan
-       x="652.45306"
-       y="248.537"
+       x="667.49646"
+       y="248.90529"
        id="tspan76">add</tspan>
   </text>
   <g
-     id="g78">
+     id="g78"
+     transform="translate(15.043386,0.36827958)">
     <rect
-       style="fill: #add8e6"
+       style="fill:#add8e6"
        x="145"
        y="163.437"
        width="91.375"
        height="80.625"
        id="rect80" />
     <ellipse
-       style="fill: #add8e6"
+       style="fill:#add8e6"
        cx="190.687"
        cy="244.062"
        rx="45.6875"
        ry="13.4375"
        id="ellipse82" />
     <ellipse
-       style="fill: #add8e6"
+       style="fill:#add8e6"
        cx="190.687"
        cy="163.437"
        rx="45.6875"
        ry="13.4375"
        id="ellipse84" />
     <ellipse
-       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       style="fill:none;fill-opacity:0;stroke:#000000;stroke-width:2"
        cx="190.687"
        cy="163.437"
        rx="45.6875"
        ry="13.4375"
        id="ellipse86" />
     <path
-       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
-       d="M 236.375 163.437 L 236.375,244.062 C 236.375,251.484 215.92,257.5 190.687,257.5 C 165.455,257.5 145,251.484 145,244.062 L 145,163.437"
-       id="path88" />
+       style="fill:none;fill-opacity:0;stroke:#000000;stroke-width:2"
+       d="m 236.375,163.437 0,80.625 c 0,7.422 -20.455,13.438 -45.688,13.438 C 165.455,257.5 145,251.484 145,244.062 l 0,-80.625"
+       id="path88"
+       inkscape:connector-curvature="0" />
     <text
        font-size="12.7998"
-       style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal"
+       style="font-style:normal;font-weight:normal;font-size:12.79979992px;font-family:sans-serif;text-anchor:middle;fill:#000000"
        x="190.687"
        y="269.5"
        id="text90">
@@ -251,123 +281,115 @@
     </text>
   </g>
   <g
-     id="g98">
+     id="g98"
+     transform="translate(15.043386,0.36827958)">
     <rect
-       style="fill: #add8e6"
-       x="397.7"
+       style="fill:#add8e6"
+       x="397.70001"
        y="159.338"
        width="91.375"
        height="80.625"
        id="rect100" />
     <ellipse
-       style="fill: #add8e6"
+       style="fill:#add8e6"
        cx="443.388"
        cy="239.963"
        rx="45.6875"
        ry="13.4375"
        id="ellipse102" />
     <ellipse
-       style="fill: #add8e6"
+       style="fill:#add8e6"
        cx="443.388"
        cy="159.338"
        rx="45.6875"
        ry="13.4375"
        id="ellipse104" />
     <ellipse
-       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
+       style="fill:none;fill-opacity:0;stroke:#000000;stroke-width:2"
        cx="443.388"
        cy="159.338"
        rx="45.6875"
        ry="13.4375"
        id="ellipse106" />
     <path
-       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
-       d="M 489.075 159.338 L 489.075,239.963 C 489.075,247.384 468.62,253.4 443.388,253.4 C 418.155,253.4 397.7,247.384 397.7,239.963 L 397.7,159.338"
-       id="path108" />
+       style="fill:none;fill-opacity:0;stroke:#000000;stroke-width:2"
+       d="m 489.075,159.338 0,80.625 c 0,7.421 -20.455,13.437 -45.687,13.437 -25.233,0 -45.688,-6.016 -45.688,-13.437 l 0,-80.625"
+       id="path108"
+       inkscape:connector-curvature="0" />
     <text
        font-size="12.7998"
-       style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal"
+       style="font-style:normal;font-weight:normal;font-size:12.79979992px;font-family:sans-serif;text-anchor:middle;fill:#000000"
        x="443.388"
-       y="265.4"
+       y="265.39999"
        id="text110">
       <tspan
          x="443.388"
-         y="265.4"
+         y="265.39999"
          id="tspan112" />
     </text>
   </g>
   <g
-     id="g118">
+     id="g118"
+     transform="translate(15.043386,0.36827958)">
     <rect
-       style="fill: #add8e6"
-       x="567.4"
+       style="fill:#add8e6"
+       x="567.40002"
        y="204.967"
-       width="48.735"
-       height="43.0015"
+       width="48.735001"
+       height="43.001499"
        id="rect120" />
     <ellipse
-       style="fill: #add8e6"
-       cx="591.768"
+       style="fill:#add8e6"
+       cx="591.76801"
        cy="247.968"
        rx="24.3675"
-       ry="7.16691"
+       ry="7.1669102"
        id="ellipse122" />
     <ellipse
-       style="fill: #add8e6"
-       cx="591.768"
+       style="fill:#add8e6"
+       cx="591.76801"
        cy="204.967"
        rx="24.3675"
-       ry="7.16691"
+       ry="7.1669102"
        id="ellipse124" />
     <ellipse
-       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
-       cx="591.768"
+       style="fill:none;fill-opacity:0;stroke:#000000;stroke-width:2"
+       cx="591.76801"
        cy="204.967"
        rx="24.3675"
-       ry="7.16691"
+       ry="7.1669102"
        id="ellipse126" />
     <path
-       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
-       d="M 616.135 204.967 L 616.135,247.968 C 616.135,251.927 605.225,255.135 591.768,255.135 C 578.31,255.135 567.4,251.927 567.4,247.968 L 567.4,204.967"
-       id="path128" />
+       style="fill:none;fill-opacity:0;stroke:#000000;stroke-width:2"
+       d="m 616.135,204.967 0,43.001 c 0,3.959 -10.91,7.167 -24.367,7.167 -13.458,0 -24.368,-3.208 -24.368,-7.167 l 0,-43.001"
+       id="path128"
+       inkscape:connector-curvature="0" />
     <text
        font-size="12.7998"
-       style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal"
-       x="591.768"
-       y="267.135"
+       style="font-style:normal;font-weight:normal;font-size:12.79979992px;font-family:sans-serif;text-anchor:middle;fill:#000000"
+       x="591.76801"
+       y="267.13501"
        id="text130">
       <tspan
-         x="591.768"
-         y="267.135"
+         x="591.76801"
+         y="267.13501"
          id="tspan132" />
     </text>
   </g>
   <text
-     font-size="12.7998"
-     style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal"
-     x="593.068"
-     y="235.893"
-     id="text134">
-    <tspan
-       x="593.068"
-       y="235.893"
-       id="tspan136"
-       style="font-size:12.69999965px">Index</tspan>
-  </text>
-  <text
      font-size="12.8"
      style="font-style:normal;font-weight:700;font-size:12.80000019px;font-family:sans-serif;text-anchor:middle;fill:#000000"
-     x="528.52386"
-     y="248.16798"
+     x="543.56726"
+     y="248.53627"
      id="text138">
     <tspan
-       x="528.52386"
-       y="248.16798"
+       x="543.56726"
+       y="248.53627"
        id="tspan140">commit</tspan>
   </text>
   <g
      id="g142"
-     transform="matrix(1.0041987,0,0,0.73896097,-1.4806208,47.795918)">
+     transform="matrix(1.0041987,0,0,0.73896097,13.562765,48.164198)">
     <path
        style="fill:none;fill-opacity:0;stroke:#000000;stroke-width:2"
        d="m 566.02751,233.84411 c -18.067,7.532 -32.41151,28.72789 -68.23151,1.29689"
@@ -376,16 +398,16 @@
        sodipodi:nodetypes="cc" />
     <polygon
        style="fill:#000000"
-       points="491.842,230.581 502.821,232.692 497.796,235.141 496.741,240.631 "
+       points="496.741,240.631 491.842,230.581 502.821,232.692 497.796,235.141 "
        id="polygon146" />
     <polygon
        style="fill:none;fill-opacity:0;stroke:#000000;stroke-width:2"
-       points="491.842,230.581 502.821,232.692 497.796,235.141 496.741,240.631 "
+       points="496.741,240.631 491.842,230.581 502.821,232.692 497.796,235.141 "
        id="polygon148" />
   </g>
   <g
      id="g142-3"
-     transform="matrix(1.0041987,0,0,0.73896096,56.222256,91.906907)">
+     transform="matrix(1.0041987,0,0,0.73896096,71.265642,92.275187)">
     <path
        style="fill:none;fill-opacity:0;stroke:#000000;stroke-width:2"
        d="m 657.89896,187.90034 c -8.63229,26.32975 -35.40502,47.37857 -82.94255,45.38353 -31.28857,-1.31311 -23.71208,-11.56976 -42.61502,-11.85994 -19.14881,-0.29396 -12.27435,11.50687 -42.09162,14.77185 -40.31676,4.41466 -57.47166,-10.9853 -67.05339,-22.5285"
@@ -397,55 +419,61 @@
        transform="translate(-68.35236,-17.478606)">
       <polygon
          id="polygon146-7"
-         points="496.741,240.631 491.842,230.581 502.821,232.692 497.796,235.141 "
+         points="497.796,235.141 496.741,240.631 491.842,230.581 502.821,232.692 "
          style="fill:#000000" />
       <polygon
          id="polygon148-7"
-         points="496.741,240.631 491.842,230.581 502.821,232.692 497.796,235.141 "
+         points="497.796,235.141 496.741,240.631 491.842,230.581 502.821,232.692 "
          style="fill:none;fill-opacity:0;stroke:#000000;stroke-width:2" />
     </g>
   </g>
   <text
      font-size="12.8"
      style="font-style:normal;font-weight:700;font-size:12.80000019px;font-family:sans-serif;text-anchor:middle;fill:#000000"
-     x="593.81006"
-     y="275.99484"
+     x="608.85345"
+     y="276.36313"
      id="text58-2">
     <tspan
-       x="593.81006"
-       y="275.99484"
+       x="608.85345"
+       y="276.36313"
        id="tspan60-9">commit -a</tspan>
   </text>
   <flowRoot
      xml:space="preserve"
      id="flowRoot4540"
      style="font-style:normal;font-weight:normal;font-size:12.69999981px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     transform="translate(0.50023607,1.0437711)"><flowRegion
+     transform="translate(15.543622,1.4120507)"><flowRegion
        id="flowRegion4542"><rect
          id="rect4544"
-         width="84.545448"
-         height="35.488216"
+         width="84.545441"
+         height="56.891891"
          x="147.47983"
          y="190.88889" /></flowRegion><flowPara
        id="flowPara4546"
        style="text-align:center;text-anchor:middle">Remote</flowPara><flowPara
        id="flowPara4548"
-       style="text-align:center;text-anchor:middle">Repository</flowPara></flowRoot>  <flowRoot
-     transform="translate(253.20074,1.0437711)"
+       style="text-align:center;text-anchor:middle">Repository</flowPara><flowPara
+       style="text-align:center;text-anchor:middle"
+       id="flowPara4225">(github, …)</flowPara></flowRoot>  <flowRoot
+     transform="translate(268.24413,1.4120507)"
      xml:space="preserve"
      id="flowRoot4540-2"
      style="font-style:normal;font-weight:normal;font-size:12.69999981px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"><flowRegion
        id="flowRegion4542-6"><rect
          id="rect4544-7"
-         width="84.545448"
-         height="35.488216"
+         width="84.545441"
+         height="59.84412"
          x="147.47983"
          y="190.88889" /></flowRegion><flowPara
        id="flowPara4546-9"
        style="text-align:center;text-anchor:middle">Local</flowPara><flowPara
        id="flowPara4548-2"
-       style="text-align:center;text-anchor:middle">Repository</flowPara></flowRoot>  <flowRoot
-     transform="translate(529.81299,-13.112585)"
+       style="text-align:center;text-anchor:middle">Repository</flowPara><flowPara
+       style="text-align:center;text-anchor:middle"
+       id="flowPara4221">(<flowSpan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Courier;-inkscape-font-specification:Courier"
+   id="flowSpan4223">.git/</flowSpan>)</flowPara></flowRoot>  <flowRoot
+     transform="translate(544.85638,-12.744305)"
      xml:space="preserve"
      id="flowRoot4540-8"
      style="font-style:normal;font-weight:normal;font-size:12.69999981px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"><flowRegion
@@ -458,4 +486,20 @@
        id="flowPara4546-3"
        style="text-align:center;text-anchor:middle">Working</flowPara><flowPara
        id="flowPara4548-1"
-       style="text-align:center;text-anchor:middle">Directory</flowPara></flowRoot></svg>
+       style="text-align:center;text-anchor:middle">Directory</flowPara></flowRoot>  <flowRoot
+     xml:space="preserve"
+     id="flowRoot4540-2-4"
+     style="font-style:normal;font-weight:normal;font-size:22.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     transform="matrix(0.56444441,0,0,0.56444445,573.90859,219.15971)"><flowRegion
+       id="flowRegion4542-6-1"><rect
+         id="rect4544-7-6"
+         width="149.78525"
+         height="106.02305"
+         x="-17.270002"
+         y="-5.3317509" /></flowRegion><flowPara
+       style="text-align:center;text-anchor:middle"
+       id="flowPara4221-5">Index</flowPara><flowPara
+       style="font-size:15px;text-align:center;text-anchor:middle"
+       id="flowPara4268">(<flowSpan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:15px;font-family:Courier;-inkscape-font-specification:Courier"
+   id="flowSpan4223-1">.git/…</flowSpan>)</flowPara></flowRoot></svg>
