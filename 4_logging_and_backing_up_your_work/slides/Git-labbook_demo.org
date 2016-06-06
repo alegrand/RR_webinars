@@ -1,0 +1,198 @@
+#+TITLE: Demonstrating Git-labook Prototype in Action
+#+AUTHOR:    V. Danjean, A. Legrand, L. Stanisic\newline University of Grenoble, CNRS, Inria Bordeaux
+#+DATE: June 7, 2016 -- Reproducible Research Webinar (Episode IV)
+
+
+* Installation of Git-labbook
+
+  You can clone git-labbook from GitHub and install it using
+  Makefiles.
+
+#+begin_src sh :results none :session org-sh :dir /tmp/
+git clone git@github.com:Git-labbook/git-labbook.git git-labbook
+cd git-labbook
+
+make Makefile.PL
+make
+#+end_src
+
+  At this point, there are certain perl package requirements and the
+  list is available on the project [[https://github.com/Git-labbook/git-labbook][homepage]]. Please indicate if some
+  packages are missing for you and if you have any problems installing
+  the software.
+  
+* Simple Use Case: Parallel Quicksort study
+
+  To demonstate git-labbook commands, we are going to use an already
+  performed reproducible research example [[https://github.com/stanisic/RR_example][RR_example]]. Commits of
+  RR_example have been transformed into patches, that we will simply
+  apply in the following demo. This way, the main focus stays on Git
+  branching system and git-labbook commands. However, we still
+  encourage readers to explore the content of the study (especially
+  LabBook.org) as it contains many interesting feature about
+  laboratory notebook.
+
+* Demo
+** Initialization
+
+  Cleanup and environment preparation.
+
+#+begin_src sh :results output :session org-sh
+set -ex
+
+cd scenario.d 
+
+mkdir -p repo
+rm -rvf repo/* 
+rm -rf repo/.??* 
+rm -rvf repoMachine2/*
+rm -rf repoMachine2/.??*
+
+DATADIR="$(pwd)/data"
+export PATH="$(pwd)/../blib/script:$(pwd)/../bin:/home/vdanjean/debian/mainteneur/org-merge-driver/upstream/org-merge-driver/build/src:$PATH"
+export PERL5LIB="$(pwd)/../blib/lib:$(pwd)/../lib:$PATH"
+#+end_src
+
+  Check that options are correctly connected to config variables.
+
+#+begin_src sh :results output :session org-sh
+git-labbook help
+#+end_src
+
+  Initialize Git repository, add few commits.
+
+#+begin_src sh :results output :session org-sh
+mkdir -p repo
+cd repo
+
+git init
+git am $DATADIR/000[1234]-*
+#+end_src
+
+  Initialize Git-labbook. This will create the whole directory
+  structure, laboratory notebook file and do the initial commit.
+
+#+begin_src sh :results output :session org-sh
+git-labbook init
+#+end_src
+
+  Adding some scripts into data branch
+
+#+begin_src sh :results output :session org-sh
+git checkout data
+git am $DATADIR/001[0]-*
+#+end_src
+
+** Doing first experiments
+
+   We start first experimental campaign by creating a new experimental
+   branch.
+
+#+begin_src sh :results output :session org-sh
+git checkout master
+git-labbook xp start xp1 --branch xp1 --no-labbook-entry
+#+end_src
+
+   Then, we do some modifications, execute the experiments and add the measured data.
+
+#+begin_src sh :results output :session org-sh
+git am $DATADIR/000[56]-*
+#+end_src
+
+   After that, we continue doing some modifications inside the master
+   branch. We also realized that some code in the experimental branch
+   is useful for the whole project, so we cherry-pick it into the
+   source branch.
+   
+#+begin_src sh :results output :session org-sh
+git checkout master
+git am $DATADIR/000[78]-*
+
+git am $DATADIR/001[12345]-*
+#+end_src
+
+   Then we go back to the experiment branch and improve laboratory
+   notebook.
+
+#+begin_src sh :results output :session org-sh
+git checkout xp1
+git am $DATADIR/000[9]-*
+#+end_src
+
+   Finally, we conclude that the experiments are finished and we merge
+   the experimental branch into data branch.
+
+#+begin_src sh :results output :session org-sh
+git checkout xp1
+git-labbook xp finish
+#+end_src
+
+   We repeat a similar process for another experimental campaign.
+
+#+begin_src sh :results output :session org-sh
+git-labbook xp start xp2
+git am $DATADIR/001[6]-*
+
+git checkout data
+git am $DATADIR/001[7]-*
+
+git checkout xp/xp2
+git-labbook xp finish
+#+end_src
+
+   Additionally, when a certain important source code developments are
+   performed, one can add a Git tag.
+
+#+begin_src sh :results output :session org-sh
+git checkout master
+git am $DATADIR/001[9]-*
+git tag stable0.9
+#+end_src
+
+** Performing experiments on another machine
+
+   One might want to perform experiments on another machine. For that,
+   first the project needs to be cloned. In this example we will
+   simply do this in another folder, but it can be done in the same
+   way from a different machine.
+
+#+begin_src sh :results output :session org-sh
+cd ..
+git-labbook clone repo repoMachine2
+cd repoMachine2
+#+end_src
+
+   Then we can start experiments on that machine.
+
+#+begin_src sh :results output :session org-sh
+git-labbook xp start xp3 -b xp3 --no-labbook-entry
+git am $DATADIR/002[01234]-*
+#+end_src
+
+   Later we push the experiments to the remote repository.
+
+#+begin_src sh :results output :session org-sh
+git-labbook xp push
+#+end_src
+
+   When the experimental campaign is finished, the experimental branch
+   can be merged into the data branch.
+
+#+begin_src sh :results output :session org-sh
+cd ..
+cd repo
+
+git checkout xp3
+git-labbook xp finish
+#+end_src
+
+   At the end, we reproduced the whole study.
+
+#+begin_src sh :results output :session org-sh
+git checkout master
+git am $DATADIR/002[6]-*
+
+echo "SUCCESS REBUILD"
+#+end_src
+
+
