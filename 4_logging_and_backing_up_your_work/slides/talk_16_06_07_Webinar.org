@@ -485,7 +485,8 @@ cd "out mini project"
 git pull
 #+end_src
 
-Alice makes a change to an existing file and adds a new one.
+Alice makes a change to an existing file and adds a new one
+(illustrate with =gitk -a=).
 #+begin_src sh :results output :session Alice
 # Edit existing file
 # editor file1
@@ -518,7 +519,8 @@ git status
 # Update to the latest version
 git pull
 #+end_src 
-
+** Basic GUI for commiting
+=git gui= + ammend ?
 ** Create and solve conflict
 
 Bob is working on two files.
