@@ -11,7 +11,9 @@
      - [[#webcastvideo][Webcast/Video]]
      - [[#persons-in-charge][Persons in charge]]
      - [[#locations][Locations]]
- - [[#practical-session][Practical Session]]
+ - [[#practical-session-requirements][Practical Session Requirements]]
+     - [[#gitting-started-courtesy-of-hackberkeley][Gitting Started (courtesy of HackBerkeley)]]
+     - [[#installing-a-gui-smartgit][Installing a GUI: SmartGit]]
 
 * Practical information
 Vincent Danjean, Arnaud Legrand and Luka Stanisic will provide a (not
@@ -31,7 +33,7 @@ use this [[https://pad.inria.fr/p/bjKfNEcD7SCvHjHF][pad]]* (FIXME) that we will 
    - Rennes: Martin Quinson
    - Besançon: Louis-Claude Canon
 ** Locations
-   - Grenoble:
+   - Grenoble: [[https://www.google.fr/maps/place/45%25C2%25B011'26.5%2522N+5%25C2%25B046'02.6%2522E/@45.1907069,5.7668488,19z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d45.190706!4d5.767396][Imag Amphitheater]] on Campus
    - Besançon:
    - Lyon:
    - Bordeaux:
@@ -43,14 +45,14 @@ Basic Git installation and your favorite GUI (unless you are really hardcore and
 
 ** Gitting Started (courtesy of [[https://github.com/HackBerkeley/intro-git][HackBerkeley]])
 
-| Operating System | Download/Install                                                                                                                                                                                                                                                                                                               |
-|------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| OS X             | Download from [http://git-scm.com/download/mac](http://git-scm.com/download/mac)                                                                                                                                                                                                                                               |
-| Windows          | Download from [http://git-scm.com/download/win](http://git-scm.com/download/win) - Two programs will install: Git BASH and Git GUI. Use Git BASH! Although the GUI can perform almost all the same functions as BASH, it's great to get experience working from the command line. You can use unix/linux commands within BASH. |
-| Linux            | Ubuntu, Debian, and Mint users can run from their terminal: `sudo apt-get install git`. Fedora Users: `sudo yum install git`                                                                                                                                                                                                   |
+| Operating System | Download/Install                                                                                                                                                                                                                                                                                 |
+|------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| OS X             | Download from http://git-scm.com/download/mac                                                                                                                                                                                                                                                    |
+| Windows          | Download from http://git-scm.com/download/win - Two programs will be installed: Git BASH and Git GUI. Use Git BASH! Although the GUI can perform almost all the same functions as BASH, it's great to get experience working from the command line. You can use unix/linux commands within BASH. |
+| Linux            | Ubuntu, Debian, and Mint users can run from their terminal: =sudo apt-get install git=. Fedora Users: =sudo yum install git=                                                                                                                                                                     |
 
 
-** Installing GUI: [[http://www.syntevo.com/smartgit/][SmartGit]]
+** Installing a GUI: [[http://www.syntevo.com/smartgit/][SmartGit]]
 There are many graphical interfaces for Git and we recommend using
 SmartGit, for the following reasons:
 
@@ -68,9 +70,9 @@ SmartGit, for the following reasons:
 
  To install SmartGit, download it from the following page:
  http://www.syntevo.com/smartgit/download and follow the
- instructions. First time you launch the application, in the first
- step you will be asked to choose your license type. Be sure to change
- it for "Non-commercial use only" if you are not working on a
- commercial code. For the rest of the installation, unless you know
- exactly what you are doing, we suggest to you to keep the default
- options.
+ instructions. The first time you launch the application, in the first
+ step, you will be asked to choose your license type. Be sure to
+ change it for "Non-commercial use only" (unless you are working on a
+ commercial code of course). For the rest of the installation, unless
+ you know exactly what you are doing, we suggest to you to keep the
+ default options.
