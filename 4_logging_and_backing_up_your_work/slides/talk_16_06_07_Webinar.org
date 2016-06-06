@@ -25,21 +25,21 @@
 #+LATEX_HEADER: \newcommand{\muuline}[1]{\SoulColor{lightorange}\hl{#1}}
 #+LATEX_HEADER: \makeatletter
 #+LATEX_HEADER: \newcommand\SoulColor[1]{%
-#+LATEX_HEADER:   \sethlcolor{#1}
-#+LATEX_HEADER:   \let\set@color\beamerorig@set@color
+#+LATEX_HEADER:   \sethlcolor{#1}%
+#+LATEX_HEADER:   \let\set@color\beamerorig@set@color%
 #+LATEX_HEADER:   \let\reset@color\beamerorig@reset@color}
 #+LATEX_HEADER: \makeatother
 #+LATEX_HEADER: \let\oldtexttt=\texttt
-#+LATEX_HEADER: \renewcommand\texttt[1]{\SoulColor{lightgreen}\hl{\tt #1}}
+#+LATEX_HEADER: \renewcommand\texttt[1]{\SoulColor{lightgreen}\hl{\tt#1}}
 
-*** TODO Stuff to do [2/7]                                       :noexport:
+*** TODO Stuff to do [3/7]                                       :noexport:
 - [X] Slide 3 items are strange
 - [ ] Update the Introduction
 - [ ] Update Git for Coding
 - [ ] Scavange the pad (https://pad.inria.fr/p/fQtZqvTTERRqx9ug)
 - [X] Find a way so that =inline commands= display nicely (e.g.,
   highlighted in green).
-- [ ] Strange space sometimes before links and green git commands (e.g., after left parenthesis)
+- [X] Strange space sometimes before links and green git commands (e.g., after left parenthesis)
 - [ ] Include sharelatex into presentation
 ** 
 #+LaTeX: \input{org-babel-document-preembule.tex}
