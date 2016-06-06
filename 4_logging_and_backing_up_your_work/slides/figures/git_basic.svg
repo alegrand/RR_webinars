@@ -22,7 +22,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -37,16 +37,16 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="738"
-     inkscape:window-height="480"
+     inkscape:window-width="1920"
+     inkscape:window-height="1114"
      id="namedview150"
      showgrid="false"
      inkscape:zoom="1.0815484"
-     inkscape:cx="554.08369"
+     inkscape:cx="367.77672"
      inkscape:cy="188.1614"
-     inkscape:window-x="561"
-     inkscape:window-y="24"
-     inkscape:window-maximized="0"
+     inkscape:window-x="0"
+     inkscape:window-y="26"
+     inkscape:window-maximized="1"
      inkscape:current-layer="svg2" />
   <g
      id="g4">
@@ -135,9 +135,11 @@
   <g
      id="g50">
     <path
-       style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000"
-       d="M 237.381 172.678 C 329.381,98.6776 596.802,109.457 671.957,164.691"
-       id="path52" />
+       style="fill:none;fill-opacity:0;stroke:#000000;stroke-width:2"
+       d="m 237.381,172.678 c 38.85126,-31.2501 50.97689,-51.89452 124.78476,-54.0392 36.34359,-1.05606 62.31483,27.4667 83.06056,27.20329 24.74031,-0.31413 31.1992,-26.0922 87.13448,-26.71208 79.30951,-0.87892 105.36522,20.40346 139.5962,45.56099"
+       id="path52"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csssc" />
     <polygon
        style="fill: #000000"
        points="678,169.133 666.981,167.24 671.957,164.691 672.903,159.182 "
@@ -150,24 +152,24 @@
   <text
      font-size="12.8"
      style="font-style:normal;font-weight:700;font-size:12.80000019px;font-family:sans-serif;text-anchor:middle;fill:#000000"
-     x="463"
+     x="447.19574"
      y="112.69028"
      id="text58">
     <tspan
-       x="463"
+       x="447.19574"
        y="112.69028"
-       id="tspan60">pull</tspan>
+       id="tspan60">clone/pull</tspan>
   </text>
   <text
      font-size="12.8"
-     style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700"
+     style="font-style:normal;font-weight:700;font-size:12.80000019px;font-family:sans-serif;text-anchor:middle;fill:#000000"
      x="317"
      y="171"
      id="text62">
     <tspan
        x="317"
        y="171"
-       id="tspan64">fetch/clone</tspan>
+       id="tspan64">fetch</tspan>
   </text>
   <text
      font-size="12.8"
@@ -386,10 +388,10 @@
      transform="matrix(1.0041987,0,0,0.73896096,56.222256,91.906907)">
     <path
        style="fill:none;fill-opacity:0;stroke:#000000;stroke-width:2"
-       d="M 657.89896,187.90034 C 638.7295,246.37 447.62432,243.09584 423.19638,213.66728"
+       d="m 657.89896,187.90034 c -8.63229,26.32975 -35.40502,47.37857 -82.94255,45.38353 -31.28857,-1.31311 -23.71208,-11.56976 -42.61502,-11.85994 -19.14881,-0.29396 -12.27435,11.50687 -42.09162,14.77185 -40.31676,4.41466 -57.47166,-10.9853 -67.05339,-22.5285"
        id="path144-6"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc" />
+       sodipodi:nodetypes="csssc" />
     <g
        id="g4346"
        transform="translate(-68.35236,-17.478606)">

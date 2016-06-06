@@ -121,10 +121,6 @@ But =git= is much more than this.
 /Maybe we should illustrate just a bit what happens beneath (sha1,
 file gobbles, ...)?/
 *** Basic Git commands
-
-Would you put =clone= with on a =fetch= or on a =pull= line?
-\medskip
-
 #+BEGIN_LaTeX
     \centering
     \includegraphics[width=\linewidth]{figures/git_basic.pdf}\\%
