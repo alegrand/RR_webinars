@@ -417,20 +417,34 @@ Git is a *distributed* version control system:
 - Some may have valid reasons for not doing so (copyright, company policy, implementation parts that the authors do not wish to disclose now, etc.)
 
 *** Making Repositories Citeable and Durable
-**** GitHub + Zenodo
+**** _Citable_: GitHub + Zenodo
 - Providing DOI to the release of your GitHub 
 #+BEGIN_LaTeX
 \centering
 \hrefold{https://zenodo.org/badge/latestdoi/10971/stanisic/RR\_example}{\includegraphics[scale=.5]{figures/zenodo_51269.png}}
 #+END_LaTeX
-- Your code becomes citable 
+- Your code becomes "citable" (\bgroup \small although not necessarily
+  easier to access \winkey\egroup)
 - Easy to use: [[https://guides.github.com/activities/citable-code/][follow the instructions]]
 - [[https://github.com/arfon/fidgit][GitHub+figshare]]: similar approach for figshare
 
-**** Software Heritage
-- Problems with DOI
-- Future presentation from Roberto Di Cosmo
-
+**** _Durable_: Software Heritage
+#+BEGIN_LaTeX
+\begin{flushright}
+  \includegraphics[width=.4\linewidth]{figures/software_heritage.png}
+\end{flushright}
+\vspace{-4.5em}
+#+END_LaTeX
+- None of this archiving is really durable\\
+  \bgroup \small (Google Code, Gitorious, Code Spaces, ...)\egroup
+- Impressive ongoing work lead by Roberto Di Cosmo
+  #+BEGIN_LaTeX
+  \begin{center}
+    \href{https://wg.softwareheritage.org/}{https://wg.softwareheritage.org/}
+  \end{center}
+  #+END_LaTeX
+  \bgroup \small Full development history of Debian, github, GNU,
+  gitorious, google code, ... \egroup
 * Conclusion and Perspective
 ** 
 *** Outline
