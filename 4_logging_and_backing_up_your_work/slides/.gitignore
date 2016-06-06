@@ -1,0 +1,13 @@
+*.vrb
+*.pdftex_t
+*.pdftex
+*.aux
+*.log
+*.nav
+*.out
+*.pdf.mk
+*.snm
+*.toc
+/talk_16_06_07_Webinar.tex
+/talk_16_06_07_Webinar.pdf
+
