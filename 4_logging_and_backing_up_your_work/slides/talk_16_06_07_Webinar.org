@@ -32,8 +32,8 @@
 #+LATEX_HEADER: \let\oldtexttt=\texttt
 #+LATEX_HEADER: \renewcommand\texttt[1]{\SoulColor{lightgreen}\hl{\tt #1}}
 
-*** TODO Stuff to do [1/7]                                       :noexport:
-- [ ] Slide 3 items are strange
+*** TODO Stuff to do [2/7]                                       :noexport:
+- [X] Slide 3 items are strange
 - [ ] Update the Introduction
 - [ ] Update Git for Coding
 - [ ] Scavange the pad (https://pad.inria.fr/p/fQtZqvTTERRqx9ug)
@@ -63,7 +63,9 @@ using *pad* to comment and ask questions
 *** Foreword about the organization (2/2)
 No particular prerequisites: we will use command line and demo with a
 GUI.
-- Please install =Git= and =SmartGit= by following the [[https://github.com/alegrand/RR_webinars/blob/master/4_logging_and_backing_up_your_work/index.org\#practical-session-requirements][instructions given on RR_webinars GitHub page]]
+- Please install =Git= and =SmartGit= by following the [[https://github.com/alegrand/RR_webinars/blob/master/4_logging_and_backing_up_your_work/index.org\#practical-session-requirements][instructions given
+  on the RR_webinars GitHub page]]
+
 
 - 1. General introduction plus basic Git usage :: ($\approx$ an hour) 
      At any time, feel free to ask questions *on the pad*. Some of these
