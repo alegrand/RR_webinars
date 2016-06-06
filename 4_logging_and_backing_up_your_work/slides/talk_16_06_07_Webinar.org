@@ -133,9 +133,9 @@ backup.
 But =git= is much more than this.
 *** Actually there are branches... (demo)
 - =git merge=
-- gitk or equivalent
-  - =git checkout=
-- =git pull= $=$ =git fetch; git rebase= or =git fetch; git merge=
+- =gitk= or equivalent
+  - =git checkout= / =git reset= 
+- =git pull= $=$ =git fetch; git merge= or =git fetch; git rebase=
   - Question: What is the difference ? $\winkey$
 
 * Git for Writing Articles
@@ -465,22 +465,30 @@ software archiving, evaluation challenges, ...).
 * Git demo                                                         :noexport:
 ** Basic operations
 
+Alice configure its initial git.
+#+begin_src sh :results output :session Alice
+# Change LOGNAME, HOME and PS1 to avoid a real new login
+source setup-alice
+# Basic git setup
+git config --global user.name Alice
+git config --global user.email alice@provider.com
+#+end_src
+
 Alice clones the project.
 #+begin_src sh :results output :session Alice
-cd /tmp/
 # Download the project
-git clone "out mini project"
-cd "out mini project"
+git clone git@github.com:vdanjean/ocl-icd.git
+cd ocl-icd
 # Update to the latest version
 git pull
 #+end_src
 
 Bob clones the same project.
 #+begin_src sh :results output :session Bob
-cd /tmp/
+source setup-alice
 # Download the project
-git clone "out mini project"
-cd "out mini project"
+git clone git@github.com:vdanjean/ocl-icd.git
+cd ocl-icd
 # Update to the latest version
 git pull
 #+end_src
@@ -489,19 +497,19 @@ Alice makes a change to an existing file and adds a new one
 (illustrate with =gitk -a=).
 #+begin_src sh :results output :session Alice
 # Edit existing file
-# editor file1
+vi README
 # Check the current changes in Working directory
 git status
 # Adding the modifications to the Index
-git add file1
+git add README
 # Check the current changes in Working directory
 git status
 # Create a new file and write something inside
-# editor file2
+vi README.alice
 # Check the current changes in Working directory
 git status
 # Add the file to the Index
-git add file2
+git add README.alice
 # Check the current changes in Working directory
 git status
 # Commiting indexed changes to the Local Repository
@@ -518,18 +526,23 @@ Bob gets the modifications.
 git status
 # Update to the latest version
 git pull
-#+end_src 
+#+end_src
+
 ** Basic GUI for commiting
-=git gui= + ammend ?
+=git gui= (with amend) and =gitk=
+
 ** Create and solve conflict
 
 Bob is working on two files.
 #+begin_src sh :results output :session Bob
 # Edit file1 on a separate part
-# editor file1
+vi README
 # Edit file2 on a common part
-# editor file2
-git commit -am "explain type of changes"
+vi README.alice
+git commit -am "this is our version"
+git config --global user.name Bob
+git config --global user.email bob@otherprovider.com
+git commit --amend --reset-author
 git push
 #+end_src 
 
@@ -537,17 +550,17 @@ Alice is working on the same files. When she tried to push, she
 realized that she first need to integrate Bob's changes as well.
 #+begin_src sh :results output :session Bob
 # Edit file1 on a separate part
-# editor file1
+vi README
 # Edit file2 on a common part
-# editor file2
-git commit -am "explain type of changes"
+vi README.alice
+git commit -am "Improve my version"
 git push
 # Problem cannot push before pulling the latest version
 git pull
 # One file was merged without a problem, conflict for the other
 # launch conflict resolver, resolve the problem
 # Commiting a merged version to the Repository
-git add file2
+git add README.alice
 git commit -m "solving a conflict with Bob"
 git push
 #+end_src 
