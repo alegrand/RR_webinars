@@ -14,7 +14,10 @@
  - [[#practical-session-requirements][Practical Session Requirements]]
      - [[#gitting-started-courtesy-of-hackberkeley][Gitting Started (courtesy of HackBerkeley)]]
      - [[#installing-a-gui-smartgit][Installing a GUI: SmartGit]]
-
+ - [[Git-labbook demo]]
+     - [[Installation of Git-labbook]]
+     - [[Simple Use Case: Parallel Quicksort Study]]
+     - [[Demo]]
 * Practical information
 Vincent Danjean, Arnaud Legrand and Luka Stanisic will provide a (not
 so short) introduction to git, a distributed version control system,
@@ -98,7 +101,7 @@ make
   packages are missing for you or if you have any problems installing
   the software.
   
-** Simple Use Case: Parallel Quicksort study
+** Simple Use Case: Parallel Quicksort Study
 
   To demonstate git-labbook commands, we are using an already
   performed reproducible research example [[https://github.com/stanisic/RR_example][RR_example]]. Commits of
