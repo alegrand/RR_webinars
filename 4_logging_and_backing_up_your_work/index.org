@@ -8,7 +8,7 @@
 
 * Table of Contents                                                     :TOC:
  - [[#practical-information][Practical information]]
-     - [[#webcastvideo][Webcast/Video]]
+     - [[#webcastvideo-][Webcast/Video ]]
      - [[#persons-in-charge][Persons in charge]]
      - [[#locations][Locations]]
  - [[#practical-session-requirements][Practical Session Requirements]]
@@ -24,9 +24,9 @@ Vincent Danjean, Arnaud Legrand and Luka Stanisic will provide a (not
 so short) introduction to git, a distributed version control system,
 that will allow you to efficiently and reliably log and back up your
 work.
-** Webcast/Video
+** Webcast/Video 
 The screencast is *[[https://mi2s.imag.fr/pm/direct][here]]* and some rooms where the audience will gather
-are listed [[*Locations][below]].
+are listed [[*Locations][below]]. Here are the [[file:slides/talk_16_06_07_Webinar.pdf][slides]].
 
 To interact during the presentation (questions, comments), *we will
 use this [[https://pad.inria.fr/p/bjKfNEcD7SCvHjHF][pad]]* (FIXME) that we will keep for the record.
@@ -276,3 +276,4 @@ git am $DATADIR/002[6]-*
 
 echo "SUCCESS REBUILD"
 #+end_src
+
