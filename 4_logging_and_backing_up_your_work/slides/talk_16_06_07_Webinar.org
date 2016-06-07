@@ -460,8 +460,17 @@ If you collaborate with SVN users, you may enjoy =git svn=
   publishing it with =git push=
 - Such history can then be exploited:
   - =git log= (=git hist=), =git blame=, =git bisect=
-  - git config --global alias.hist 'log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
+  \scriptsize
+  #+BEGIN_EXAMPLE
+  git config --global alias.hist \
+      'log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
+  #+END_EXAMPLE
 *** Rescue ! Advanced?
+#+BEGIN_QUOTE
+Git is really pretty simple, just think of branches as homeomorphic
+endofunctors mapping submanifolds of a Hilbert space \winkey
+#+END_QUOTE
+\vspace{-1em}
 ****                                                     :B_ignoreheading:
 :PROPERTIES:
 :BEAMER_env: ignoreheading
@@ -471,23 +480,21 @@ If you collaborate with SVN users, you may enjoy =git svn=
      :BEAMER_col: 0.7
      :END:
 
-#+BEGIN_QUOTE
-Git is really pretty simple, just think of branches as homeomorphic
-endofunctors mapping submanifolds of a Hilbert space\winkey
-#+END_QUOTE
-
-- Don't force it and don't panic... 
+\setlength{\leftmarginii}{12pt}
+- Don't force it and don't panic... Call a friend. 
   - Everything is stored in git backend and identified by a SHA1
   - Anything is saved as soon as it is in the backend (=git add=)
-- Call a friend. Several ways to recover objects/files/project states
+- Several ways to recover objects/files states
   that cannot be reached by the classical history:
   - =git fsck= to find unreachable files/commits/...
   - =git reflog= (for emergency) generally more useful than =git fsck= for
     recovering a previous repository state (i.e., a previous commit)
-- a few dangerous commands:
-  - =git gc= can remove unreachable old objects (> 2 weeks)
-  - =git prune= can remove unreachable objects...
-  - =rm -rf= without pushing (or cloning elsewhere) before
+- A few dangerous commands:
+  - =git gc= removes unreachable old objects
+    #+LaTeX: \hbox{\scriptsize($>$2 weeks)\hspace{-1cm}}
+  - =git prune= removes unreachable objects...
+  - =rm -rf= without pushing (or cloning 
+    #+LaTeX: \hbox{elsewhere) before\hspace{-3cm}}
 ***** 							      :BMCOL:
      :PROPERTIES:
      :BEAMER_col: 0.3
