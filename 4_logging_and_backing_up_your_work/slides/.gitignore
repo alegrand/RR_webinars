@@ -8,6 +8,8 @@
 *.pdf.mk
 *.snm
 *.toc
+*.pyg.lst
+*.pyg.sty
 /talk_16_06_07_Webinar.tex
 /talk_16_06_07_Webinar.pdf
 
