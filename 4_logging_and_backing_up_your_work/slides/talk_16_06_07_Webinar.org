@@ -426,7 +426,17 @@ Alternatively convert binaries into text files:
 \setlength{\leftmarginii}{12pt}
 
 - Use a *descriptive commit* message
-  #+LaTeX: \only<1>{\newline}{\includegraphics<1>[width=.7\linewidth]{figures/git_commit.png}}\pause
+  #+BEGIN_LaTeX
+  \only<1>{%
+    \newline
+    \includegraphics<1>[width=.6\linewidth]{figures/git_commit.png}\\
+    Seriously... don't fake it \winkey}
+  \begin{onlyenv}<1>\small
+    \begin{verbatim}
+git commit -m"`curl -s http://whatthecommit.com/index.txt`"
+  \end{verbatim}
+  \end{onlyenv} \pause
+  #+END_LaTeX
 - Make each commit a *logical unit*: =git add file1 file2 ; git commit=
 - Avoid indiscriminate commits
   - =git status=, =git diff= and _do not_ =git commit -a=!!!
