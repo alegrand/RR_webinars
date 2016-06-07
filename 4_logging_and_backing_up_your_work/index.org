@@ -19,7 +19,7 @@
      - [[#parallel-quicksort-study][Parallel Quicksort Study]]
      - [[#demo][Demo]]
 
-* Practical information
+* Practical Information
 Vincent Danjean, Arnaud Legrand and Luka Stanisic will provide a (not
 so short) introduction to git, a distributed version control system,
 that will allow you to efficiently and reliably log and back up your
@@ -92,6 +92,8 @@ research. More information can be found on the project [[https://github.com/Git-
 #+begin_src sh :results none :session org-sh :dir /tmp/
 git clone git@github.com:Git-labbook/git-labbook.git git-labbook
 cd git-labbook
+
+dzil build
 
 make Makefile.PL
 make
@@ -212,6 +214,8 @@ git-labbook xp finish
    Repeat a similar process for another experimental campaign.
 
 #+begin_src sh :results output :session org-sh
+git checkout master
+
 git-labbook xp start xp2
 git am $DATADIR/001[6]-*
 
@@ -276,4 +280,4 @@ git am $DATADIR/002[6]-*
 
 echo "SUCCESS REBUILD"
 #+end_src
-
+   
