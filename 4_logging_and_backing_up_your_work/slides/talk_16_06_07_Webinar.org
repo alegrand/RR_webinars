@@ -62,7 +62,7 @@ using *pad* to comment and ask questions
 #+END_CENTER
 *** Foreword about the organization (2/2)
 No particular prerequisites: we will use command line and demo with a
-GUI.
+GUI
 - Please install =Git= and =SmartGit= by following the [[https://github.com/alegrand/RR_webinars/blob/master/4_logging_and_backing_up_your_work/index.org\#practical-session-requirements][instructions given
   on the RR_webinars GitHub page]]
 
