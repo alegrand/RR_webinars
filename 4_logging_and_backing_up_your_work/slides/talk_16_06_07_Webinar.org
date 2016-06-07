@@ -588,7 +588,7 @@ huge plate of spaghetti $\frowny$
 - Several solutions (=git lfs=, =git annex=)
 - Probably soon becoming part of the standard (similar to Mercurial)
 
-*** Improving Git History: git xp (demo)
+*** Improving Git History: git-labbook (demo)
 #+BEGIN_LaTeX
 \begin{figure}
   \centering
@@ -664,8 +664,8 @@ huge plate of spaghetti $\frowny$
     \href{https://wg.softwareheritage.org/}{https://wg.softwareheritage.org/}
   \end{center}
   #+END_LaTeX
-  \bgroup \small Full development history of Debian, github, GNU,
-  gitorious, google code, ... \egroup
+  \bgroup \small Full development history of Debian, GitHub, GNU,
+  Gitorious, google code, ... \egroup
 * Conclusion and Perspective
 ** 
 *** Outline
