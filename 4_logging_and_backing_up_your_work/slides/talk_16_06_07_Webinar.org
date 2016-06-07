@@ -794,6 +794,23 @@ Bob gets the changes from Alice.
 git pull
 #+end_src 
 
+** Advanced example
+#+begin_src sh :results output :session Bob
+git checkout master
+git reset --hard top
+git push -f
+git bisect start master v2.2.0
+./bootstrap
+rm -rf build
+mkdir build
+cd build
+../configure --prefix=$(pwd)/../install
+make
+make test
+grep "cl_icdl_ocl_version.*OpenCL 1.2" ocl_icd_loader.c
+git bisect run ../../build-and-test
+#+end_src 
+
 ** Show and explain SmartGit
 - Explain the windows and main buttons
 - Open Log and explain windows and main buttons
