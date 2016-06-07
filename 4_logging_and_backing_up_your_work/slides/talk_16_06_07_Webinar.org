@@ -567,7 +567,13 @@ huge plate of spaghetti $\frowny$
 * Git for Experiments/Data/Provenance Tracking
 *** Outline
 #+LaTeX: \tableofcontents[current,currentsubsection]
-*** Git for Managing a Laboratory Notebook
+*** General Reproducible Research Workflow
+#+BEGIN_LaTeX
+\begin{center}
+  \includegraphics[width=\linewidth]{figures/author_reader_br.fig}
+\end{center}
+#+END_LaTeX
+*** Git as a Complement to a Laboratory Notebook
 - Versioning *all scripts* for running experiments, pre-processing raw data, analysis and presentation
 - Backing up *read-only* experiment results
 - *Commit often* and separate different types of commits
@@ -583,7 +589,7 @@ huge plate of spaghetti $\frowny$
 
 #+BEGIN_LaTeX
 \begin{center}
-\fbox{\includegraphics[width=.6\linewidth]{figures/submodules.pdf}}
+\fbox{\includegraphics[width=.4\linewidth]{figures/submodules.pdf}}
 \end{center}
 #+END_LaTeX
 
@@ -599,12 +605,16 @@ huge plate of spaghetti $\frowny$
 - Probably soon becoming part of the standard (similar to Mercurial)
 
 *** Improving Git History: git-labbook (demo)
+#+BEGIN_CENTER
+  \href{https://github.com/Git-labbook/git-labbook}{https://github.com/Git-labbook/git-labbook}
+#+END_CENTER
+
 #+BEGIN_LaTeX
 \begin{figure}
   \centering
 
-  \includegraphics<1>[width=.6\linewidth]{figures/gitxp.pdf}
-  \includegraphics<2>[width=.6\linewidth]{figures/gitxp2.pdf}
+  \includegraphics<1>[width=.5\linewidth]{figures/gitxp.pdf}
+  \includegraphics<2>[width=.5\linewidth]{figures/gitxp2.pdf}
 
 \end{figure}
 #+END_LaTeX
@@ -614,16 +624,14 @@ huge plate of spaghetti $\frowny$
   - Explore and reset experiment conditions
   - Expand to write an article
 
-*** Benefits from Proposed Branching System
+*** Benefits from this Branching System
 #+BEGIN_LaTeX
-\begin{figure}
-  \centering
-
-  \includegraphics<1>[width=.8\linewidth]{figures/author_reader_br_1.fig}
-  \includegraphics<2>[width=.8\linewidth]{figures/author_reader_br_2.fig}
-  \includegraphics<3>[width=.8\linewidth]{figures/author_reader_br_3.fig}
-
-\end{figure}
+\vspace{-.2cm}
+\begin{center}
+  \includegraphics<1>[width=.9\linewidth]{figures/author_reader_br_1.fig}
+  \includegraphics<2>[width=.9\linewidth]{figures/author_reader_br_2.fig}
+  \includegraphics<3>[width=.9\linewidth]{figures/author_reader_br_3.fig}
+\end{center}\vspace{-.6cm}
 #+END_LaTeX
 
 #+BEGIN_LaTeX
