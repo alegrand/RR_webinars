@@ -32,15 +32,16 @@
 #+LATEX_HEADER: \let\oldtexttt=\texttt
 #+LATEX_HEADER: \renewcommand\texttt[1]{\SoulColor{lightgreen}\hl{\tt#1}}
 
-*** TODO Stuff to do [3/7]                                       :noexport:
+*** TODO Stuff to do [6/8]                                       :noexport:
 - [X] Slide 3 items are strange
-- [ ] Update the Introduction
-- [ ] Update Git for Coding
-- [ ] Scavange the pad (https://pad.inria.fr/p/fQtZqvTTERRqx9ug)
+- [X] Update the Introduction
+- [X] Update Git for Coding
+- [X] Scavange the pad (https://pad.inria.fr/p/fQtZqvTTERRqx9ug)
 - [X] Find a way so that =inline commands= display nicely (e.g.,
   highlighted in green).
 - [X] Strange space sometimes before links and green git commands (e.g., after left parenthesis)
 - [ ] Include sharelatex into presentation
+- [ ] Fix tiny URL for the pad
 ** 
 #+LaTeX: \input{org-babel-document-preembule.tex}
 *** Foreword about the organization (1/2)
@@ -72,7 +73,7 @@ GUI
      questions may be addressed "silently" by the other attendees, but
      do not hesitate to ask it out loudly for the remote ones
 - 2. A short break :: 
-- 3. Slightly more advanced Git usage :: the actual part that is more
+- 3. Slightly more advanced Git usage :: The actual part that is more
      devoted to practices favoring reproducible research
 **** Many other tutorials on Git but with a different perspective
 - [[https://www.youtube.com/watch?v=ZDR433b0HJY][Introduction to Git internals by Scott Chacon (GitHub)]] 
@@ -110,7 +111,7 @@ GUI
   + Problems editing same paragraphs\smallskip
 - _Doc+Dropbox or google-doc_:
   + Limited history through autosaves\\
-    (30 days on dropbox)
+    (30 days on Dropbox)
   + Limited parallelism
   + Coworker deletes everything\dots
 ***** 							      :BMCOL:
@@ -231,10 +232,11 @@ that allows for a truly *parallel asynchronous* edition
 
 #+LaTeX: \item Managing Access (Read/Write)
 #+LaTeX:    \setlength{\leftmarginii}{0pt}
-  - =UNIX= groups and =ssh=. *forge* make your life so much easier
+  - =UNIX= groups and =ssh=. *Forge* makes your life so much easier
     - Web management and easy access to files and history
     - Bug Tracking System, Mailing Lists, Wikis, ...
-  - This does not scale (socially): $\leadsto$ send series of =patch= 
+  - This does not scale (socially)\\
+    $\leadsto$ send series of =patch= 
     #+LaTeX: \!\!es $\frowny$
 #+LaTeX: \end{enumerate}
 
@@ -271,21 +273,21 @@ that allows for a truly *parallel asynchronous* edition
 :END:
 
 #+LaTeX:    \bgroup\setlength{\leftmargini}{9pt}\small
-- Torvalds needed performance. He coded git in 2 weeks and used
+- Torvalds needed performance. He coded Git in 2 weeks and used
   it for releasing the next kernel 2 weeks after $\smiley$ \vspace{-.5em}
 #+LaTeX: \egroup
 
 *Pros:*
 - Allows local commit without any access on the server
 - Allows large scale collaboration (everyone pulls from Linus)
-- Many web/cloud deployments: gitorious, github, bitbucket, gitlab
+- Many web/cloud deployments: Gitorious, GitHub, BitBucket, GitLab
 \null\vspace{5cm}
 
 *** Setting up Git
-- Tools :: =git= originates from linux so it is *command line* oriented.
+- Tools :: =git= originates from Linux so it is *command line* oriented
      #+LaTeX:    \setlength{\leftmarginii}{0pt}
 
-  - There are many convenient GUIS. E.g., =SmartGit= or even =magit= \winkey
+  - There are many convenient GUIs. E.g., =SmartGit= or even =magit= \winkey
   - See the [[https://github.com/alegrand/RR_webinars/blob/master/4_logging_and_backing_up_your_work/index.org\#practical-session-requirements][instructions given on the RR_webinars GitHub page]]
 - Accessing servers :: setup your SSH public/private key to avoid
      typing passwords all the time (see [[http://siteadmin.gforge.inria.fr/FAQ.html\#Q6][How do I setup ssh (even on windows?)]])
@@ -324,7 +326,7 @@ that allows for a truly *parallel asynchronous* edition
     \vspace{-.8em}
 #+END_LaTeX
 
-You have a complete stand-alone local history!\dots
+You have a complete stand-alone local history!
 
 - =git clone= / =git init= (initialize the DB)
 - =git pull= sync from the remote repos
@@ -337,7 +339,7 @@ backup.
 - If you put such commands in a =crontab -e=, you will get a
   =timemachine/backuppc/...=
 
-But =git= is much more than this.
+But =git= is much more than this
 *** Actually there are branches... (demo)
 ****                                                     :B_ignoreheading:
 :PROPERTIES:
@@ -353,7 +355,7 @@ But =git= is much more than this.
   - You can easily create a (local) branch to mess around. You're
     safe! \winkey
 - =git pull= $=$ =git fetch; git rebase= or =git fetch; git merge=
-  - Question: What is the difference ? $\winkey$
+  - Question: What is the difference? $\winkey$
 ***** 							      :BMCOL:
      :PROPERTIES:
      :BEAMER_col: 0.3
@@ -427,14 +429,14 @@ Alternatively convert binaries into text files:
   #+LaTeX: \only<1>{\newline}{\includegraphics<1>[width=.7\linewidth]{figures/git_commit.png}}\pause
 - Make each commit a *logical unit*: =git add file1 file2 ; git commit=
 - Avoid indiscriminate commits
-  - =git status=, =git diff= and _do not_   =git commit -a=!!!
+  - =git status=, =git diff= and _do not_ =git commit -a=!!!
   - =git wdiff=\pause
 - Do *frequent local commits* (it's safe $\smiley$)
 - Incorporate others' changes frequently (=git pull=)
 - Share your changes frequently (=git push=)\pause
 - Remember that the tools are *line-based*
   - _Never_ refill/rejustify paragraphs
-  - Do not write excessively looooong lines (<80 characters)\pause
+  - Do not write excessively looooong lines (>80 characters)\pause
 - Don't commit generated files
   - Don't version temporary LaTeX files (.aux, .toc, etc.), use
     =.gitignore=
@@ -447,7 +449,7 @@ If you collaborate with SVN users, you may enjoy =git svn=
 * Git for Coding
 *** Outline
 #+LaTeX: \tableofcontents[current,currentsubsection]
-*** Git for coding (history matters!)
+*** Git for Coding: History Matters!
 - Remember: _commit often_. In this context, the =git stash= command can
   be useful.
   - Allows you to code/test/... with no fear
@@ -465,7 +467,7 @@ If you collaborate with SVN users, you may enjoy =git svn=
   git config --global alias.hist \
       'log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
   #+END_EXAMPLE
-*** Rescue ! Advanced?
+*** Rescue!
 #+BEGIN_QUOTE
 Git is really pretty simple, just think of branches as homeomorphic
 endofunctors mapping submanifolds of a Hilbert space \winkey
@@ -482,7 +484,7 @@ endofunctors mapping submanifolds of a Hilbert space \winkey
 
 \setlength{\leftmarginii}{12pt}
 - Don't force it and don't panic... Call a friend. 
-  - Everything is stored in git backend and identified by a SHA1
+  - Everything is stored in Git backend and identified by a SHA1
   - Anything is saved as soon as it is in the backend (=git add=)
 - Several ways to recover objects/files states
   that cannot be reached by the classical history:
@@ -500,14 +502,13 @@ endofunctors mapping submanifolds of a Hilbert space \winkey
      :BEAMER_col: 0.3
      :END:
 \includegraphics[width=\linewidth]{figures/git_xkcd.png}
-*** Git for coding (branches)
-\vspace{-1em}
-- Merging branches :: \quad
+*** Merging Branches
+
   - *Why?* Long term work to keep in sync with the rest of the world (e.g.,
     translating some code for internationalization)
   - *Merging* ("public" branch but where you're the only developer)
     vs. *rebasing* (cleaner final set of patches, but the backup is more
-    complex to set up) .
+    complex to set up)
     #+BEGIN_CENTER
     \includegraphics[width=.8\linewidth]{figures/loopy_vs_nice.png}\vspace{-1.4em}
     #+END_CENTER
@@ -541,7 +542,7 @@ huge plate of spaghetti $\frowny$
 
 \includegraphics[scale=.14]{figures/git_workflow.png}
 #+END_CENTER
-*** Access rights 
+*** Access Rights 
 - _Forge_ :: the UNIX groups philosophy still works
 - _Linux_ :: \quad
   - Linus Torvalds integrates from a few trusted developpers who
@@ -599,7 +600,7 @@ huge plate of spaghetti $\frowny$
 \end{figure}
 #+END_LaTeX
 
-  - Get the data you're interested in
+  - Get the data you are interested in
   - Track provenance (can also be done in labbook)
   - Explore and reset experiment conditions
   - Expand to write an article
@@ -665,7 +666,7 @@ huge plate of spaghetti $\frowny$
   \end{center}
   #+END_LaTeX
   \bgroup \small Full development history of Debian, GitHub, GNU,
-  Gitorious, google code, ... \egroup
+  Gitorious, ... \egroup
 * Conclusion and Perspective
 ** 
 *** Outline
@@ -818,9 +819,6 @@ git pull
 - Commit changes
 - Reset them
 - Revert one the older commits
-** TODO git wdiff
-** TODO Many Git for Coding examples
-** TODO Some kind of git xp demo (with or without special commands)
 * Emacs Setup                                                      :noexport:
 This document has local variables in its postembule, which should
 allow org-mode to work seamlessly without any setup. If you're
