@@ -557,7 +557,7 @@ huge plate of spaghetti $\frowny$
 * Git for Experiments/Data/Provenance Tracking
 *** Outline
 #+LaTeX: \tableofcontents[current,currentsubsection]
-*** Git for Laboratory Notebook
+*** Git for Managing a Laboratory Notebook
 - Versioning *all scripts* for running experiments, pre-processing raw data, analysis and presentation
 - Backing up *read-only* experiment results
 - *Commit often* and separate different types of commits
@@ -565,9 +565,9 @@ huge plate of spaghetti $\frowny$
 
 \medskip
 **** Major Challenges
-  - May depend on other projects
-  - Large files and thus repositories
-  - Linear history hard to explore and thus exploit
+  1. May depend on other projects
+  2. Large files and thus repositories
+  3. Linear history hard to explore and thus exploit
 
 *** Integrating Multiple Git Sources
 
