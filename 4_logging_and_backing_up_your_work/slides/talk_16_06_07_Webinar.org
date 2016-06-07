@@ -417,17 +417,33 @@ Alternatively convert binaries into text files:
   1. Going for a particular version (=git checkout SHA1=)
 
 *** Useful Tips and Tricks
-- Don't version temporary LaTeX files (.aux, .toc, etc.), use .gitignore list
-- Don't version the article .pdf file, unless your collaborators have problems generating it
-- Add only the final version of the .pdf, possibly with a unique name
-- Avoid very long lines
-- Compare versions by words not lines (=git wdiff=)
-- Do frequent local commits - it's safe $\smiley$
+#+LaTeX: \begin{flushright}\scriptsize 
+  Inspired by [[https://homes.cs.washington.edu/~mernst/advice/version-control.html][Michael Ernst]]
+#+LaTeX: \end{flushright}\vspace{-.8cm}
 
-\medskip
+\setlength{\leftmarginii}{12pt}
+
+- Use a *descriptive commit* message
+  #+LaTeX: {\includegraphics<1>[width=.7\linewidth]{figures/git_commit.png}}\pause
+- Make each commit a *logical unit*: =git add file1 file2 ; git commit=
+- Avoid indiscriminate commits
+  - =git status=, =git diff= and _do not_   =git commit -a=!!!
+  - =git wdiff=\pause
+- Do *frequent local commits* (it's safe $\smiley$)
+- Incorporate others' changes frequently (=git pull=)
+- Share your changes frequently (=git push=)\pause
+- Remember that the tools are *line-based*
+  - _Never_ refill/rejustify paragraphs
+  - Do not write excessively looooong lines (<80 characters)\pause
+- Don't commit generated files
+  - Don't version temporary LaTeX files (.aux, .toc, etc.), use
+    =.gitignore=
+  - Don't version the result .pdf (\bgroup \scriptsize unless your
+    collaborators have problems generating it\egroup). Add only the
+    final version of the .pdf, possibly with a unique name
+
 **** Advanced usage
 If you collaborate with SVN users, you may enjoy =git svn=
-
 * Git for Coding
 *** Outline
 #+LaTeX: \tableofcontents[current,currentsubsection]
