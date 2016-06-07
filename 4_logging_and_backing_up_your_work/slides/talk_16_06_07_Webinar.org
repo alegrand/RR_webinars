@@ -829,13 +829,6 @@ git pull
 - Bob adds one commit in a master branch
 - Alice does checkout of the master branch and then merge with her development branch
 - Explain how possible conflicts can be resolved in the same way as before
-** Rescue
-- Add some changes to a file
-- Stash them
-- Apply stash
-- Commit changes
-- Reset them
-- Revert one the older commits
 * Emacs Setup                                                      :noexport:
 This document has local variables in its postembule, which should
 allow org-mode to work seamlessly without any setup. If you're
