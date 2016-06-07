@@ -424,7 +424,7 @@ Alternatively convert binaries into text files:
 \setlength{\leftmarginii}{12pt}
 
 - Use a *descriptive commit* message
-  #+LaTeX: {\includegraphics<1>[width=.7\linewidth]{figures/git_commit.png}}\pause
+  #+LaTeX: \only<1>{\newline}{\includegraphics<1>[width=.7\linewidth]{figures/git_commit.png}}\pause
 - Make each commit a *logical unit*: =git add file1 file2 ; git commit=
 - Avoid indiscriminate commits
   - =git status=, =git diff= and _do not_   =git commit -a=!!!
