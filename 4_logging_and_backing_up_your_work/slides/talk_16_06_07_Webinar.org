@@ -570,7 +570,7 @@ huge plate of spaghetti $\frowny$
 *** General Reproducible Research Workflow
 #+BEGIN_LaTeX
 \begin{center}
-  \includegraphics[width=\linewidth]{figures/author_reader_br.fig}
+  \includegraphics[width=\linewidth]{figures/author_reader_rr.fig}
 \end{center}
 #+END_LaTeX
 *** Git as a Complement to a Laboratory Notebook
