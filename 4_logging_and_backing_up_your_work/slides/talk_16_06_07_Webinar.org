@@ -497,10 +497,10 @@ git pull
 
 Bob clones the same project.
 #+begin_src sh :results output :session Bob
-source setup-alice
+source setup-bob
 # Download the project
-git clone git@github.com:vdanjean/ocl-icd.git
-cd ocl-icd
+git clone git@github.com:vdanjean/ocl-icd.git ocl-icd-bob
+cd ocl-icd-bob
 # Update to the latest version
 git pull
 #+end_src
