@@ -462,95 +462,91 @@ If you collaborate with SVN users, you may enjoy =git svn=
   - =git log= (=git hist=), =git blame=, =git bisect=
   - git config --global alias.hist 'log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
 *** Rescue ! Advanced?
-- all is stored in git backend and identified by a SHA1
-- all is saved as soon as it is in the backend (=git add=)
-- several ways to recover objects/files/project states that cannot be
-  reached by the classical history:
+****                                                     :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+***** 							      :BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.7
+     :END:
+
+#+BEGIN_QUOTE
+Git is really pretty simple, just think of branches as homeomorphic
+endofunctors mapping submanifolds of a Hilbert space\winkey
+#+END_QUOTE
+
+- Don't force it and don't panic... 
+  - Everything is stored in git backend and identified by a SHA1
+  - Anything is saved as soon as it is in the backend (=git add=)
+- Call a friend. Several ways to recover objects/files/project states
+  that cannot be reached by the classical history:
   - =git fsck= to find unreachable files/commits/...
   - =git reflog= (for emergency) generally more useful than =git fsck= for
-    recovering a previous repository state (i.e. a previous commit)
+    recovering a previous repository state (i.e., a previous commit)
 - a few dangerous commands:
   - =git gc= can remove unreachable old objects (> 2 weeks)
   - =git prune= can remove unreachable objects...
   - =rm -rf= without pushing (or cloning elsewhere) before
+***** 							      :BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.3
+     :END:
+\includegraphics[width=\linewidth]{figures/git_xkcd.png}
 *** Git for coding (branches)
-- merging branches
-  - Example from the Scott Chacon youtube video: translating some code
-    for internationalization
-  - merging ("public" branch but where you're the only developer)
-    vs. rebasing (provides a cleaner final set of patches, but the
-    backup is more complex to set up) . Depends on the meaning of the
-    history wished within the global project. The rebase can be better
-    for code review (sometimes, some part of the history are useless).
+\vspace{-1em}
+- Merging branches :: \quad
+  - *Why?* Long term work to keep in sync with the rest of the world (e.g.,
+    translating some code for internationalization)
+  - *Merging* ("public" branch but where you're the only developer)
+    vs. *rebasing* (cleaner final set of patches, but the backup is more
+    complex to set up) .
+    #+BEGIN_CENTER
+    \includegraphics[width=.8\linewidth]{figures/loopy_vs_nice.png}\vspace{-1.4em}
+    #+END_CENTER
+  - Depends on the meaning of the history wished within the
+    project. Rebasing can be better for code review (sometimes, some
+    part of the history are useless).
+\pause
+****                                                     :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+***** 							      :BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.7
+     :END:
 
 Developers who do not understand this mechanism quickly end up with a
 huge plate of spaghetti $\frowny$
 - =git workflow= (supported by SmartGit)
+***** 							      :BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.3
+     :END:
+
+\vspace{-.8cm}
+\includegraphics[width=\linewidth]{figures/bikesoup-history.png}
+\vspace{-2cm}
 *** Git Workflow
-
 #+BEGIN_CENTER
-\includegraphics[scale=.15]{figures/git_workflow.png}\\%
+\href{http://nvie.com/posts/a-successful-git-branching-model/}{http://nvie.com/posts/a-successful-git-branching-model/}
+
+\includegraphics[scale=.14]{figures/git_workflow.png}
 #+END_CENTER
+*** Access rights 
+- _Forge_ :: the UNIX groups philosophy still works
+- _Linux_ :: \quad
+  - Linus Torvalds integrates from a few trusted developpers who
+    themselves turn integrate from various developpers
+  - Everyone pulls from Linus Torvalds
+- _GitHub_ :: organization (similar to UNIX groups) are
+     possible but encourages *fork* and *pull requests* done through their
+     interface
+  #+BEGIN_CENTER
+  \includegraphics[width=.7\linewidth]{figures/centralized-github-4.png}  
+  #+END_CENTER
 
-*** Access rights
-Git is a *distributed* version control system:
-- Linux model: Linus integrates and everyone pulls from him
-  - improvement with official maintainers that integrate sub-systems
-  - other specific official repo (=linux-next=, \ldots)
-- Forge philosophy: one group
-- GitHub philosophy: organization/group possible but mainly fork and pull
-  requests
-
-*** Pull request: Choose you favorite illustration
-
-****                                                            :B_column:
-:PROPERTIES:
-:BEAMER_env: column
-:END:
-***** 								      :BMCOL:
-      :PROPERTIES:
-      :BEAMER_col: .5
-      :END:
-
-#+BEGIN_CENTER
-\includegraphics[scale=.15]{figures/pullrequest.png}
-#+END_CENTER
-# http://acrl.ala.org/techconnect/post/2013/05
-***** 								      :BMCOL:
-      :PROPERTIES:
-      :BEAMER_col: .5
-      :END:
-
-#+BEGIN_CENTER
-\includegraphics[scale=.22]{figures/pullrequest2.jpg}      
-#+END_CENTER
-# http://www.slideshare.net/psquy/git-collaboration
-
-****                                                            :B_column:
-:PROPERTIES:
-:BEAMER_env: column
-:END:
-
-***** 								      :BMCOL:
-      :PROPERTIES:
-      :BEAMER_col: .5
-      :END:
-
-#+BEGIN_CENTER
-\includegraphics[scale=.2]{figures/pullrequest3.png}
-#+END_CENTER
-
-# http://www.gulistanboylu.com/how-to-send-pull-request-on-github/
-***** 								      :BMCOL:
-      :PROPERTIES:
-      :BEAMER_col: .5
-      :END:
-
-#+BEGIN_CENTER
-\includegraphics[scale=.2]{figures/pullrequest4.jpg}      
-#+END_CENTER
-
-# http://www.slideshare.net/lemonlatte/git-tutorial-ii
 * Git for Experiments/Data/Provenance Tracking
 *** Outline
 #+LaTeX: \tableofcontents[current,currentsubsection]
