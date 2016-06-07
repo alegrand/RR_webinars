@@ -822,6 +822,6 @@ startup. Exporting may require that you copy them in your .emacs.
 
 # Local Variables:
 # eval:    (setq org-latex-listings 'minted)
-# eval:    (setq org-latex-minted-options '(("bgcolor" "Moccasin") ("style" "tango") ("numbers" "left") ("numbersep" "5pt")))
+# eval:    (setq org-latex-minted-options '(("bgcolor" "DarkSeaGreen2") ("style" "tango") ("numbers" "left") ("numbersep" "5pt")))
 # End:
 
