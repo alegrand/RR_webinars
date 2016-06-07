@@ -29,7 +29,7 @@ include LaTeX.mk
 	mv $@ $@.bak
 	echo '\\def\\raggedright{}' > $@
 	echo "\PassOptionsToPackage{svgnames}{xcolor}" >> $@
-	sed -e 's/\\begin{verbatim}/\\begin{pyglist}[language=r,style=tango,bgcolor=Moccasin,numbers=left,numbersep=5pt]/' -e 's/\\end{verbatim}/\\end{pyglist}/' \
+	sed -e 's/\\begin{verbatim}/\\begin{pyglist}[language=r,style=tango,bgcolor=lightgreen,numbers=left,numbersep=5pt]/' -e 's/\\end{verbatim}/\\end{pyglist}/' \
 	    -e "s/^Signif. codes:.*$$/Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1/g"   $@.bak >> $@
 	rm $@.bak
 

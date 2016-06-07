@@ -62,7 +62,7 @@ using *pad* to comment and ask questions
 #+END_CENTER
 *** Foreword about the organization (2/2)
 No particular prerequisites: we will use command line and demo with a
-GUI.
+GUI
 - Please install =Git= and =SmartGit= by following the [[https://github.com/alegrand/RR_webinars/blob/master/4_logging_and_backing_up_your_work/index.org\#practical-session-requirements][instructions given
   on the RR_webinars GitHub page]]
 
@@ -87,21 +87,228 @@ GUI.
 *** Outline
 \tableofcontents
 * Introduction to Git and its Eco-system
-*** Git principle
-    - nothing vs dropbox (email ?)
-    - dropbox vs. RCS (CVS, svn)
-    - git vs. svn
-        + sidenote there is git-svn for those that have to stick with svn
+*** Challenges: History and Parallelism
+#+LaTeX: \vspace{-.3cm}
+****                                                     :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+***** 							      :BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.55
+     :END:
 
-    - side note on mercurial, bzr, darc, etc.
-    - what is gforge, github, gitlab(inria: https://gitlab.irisa.fr/), bitbucket (offers private repositories) ?
-*** Git technical glitches
- - command line vs. GUI (recommend =SmartGit=, mention =magit= for emacs
-   lovers)
- - ssh configuration (public/private key principle to avoid typing it
-   all the time)
-   - config: example config
-   - autosetuprebase = always ou pas ?....
+- _Printed doc+handwritten revisions_:
+  + Many versions of the file
+  + One writer, multiple reviewers\smallskip
+- _Doc+email+contributions_: 
+  + Many versions of the file
+  + Never sure which one is the latest
+  + Not aware of others corrections
+  + No clear history
+  + Merging contributions
+  + Problems editing same paragraphs\smallskip
+- _Doc+Dropbox or google-doc_:
+  + Limited history through autosaves\\
+    (30 days on dropbox)
+  + Limited parallelism
+  + Coworker deletes everything\dots
+***** 							      :BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.45
+     :END:
+
+#+BEGIN_CENTER
+\includegraphics[scale=.25]{figures/phd_comics.png}
+#+END_CENTER
+
+****                                                     :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+
+\medskip
+#+BEGIN_CENTER
+You need a *real version control system*
+
+that allows for a truly *parallel asynchronous* edition
+#+END_CENTER
+*** Remember "/The Dog Ate my Homework !!!/"
+#+BEGIN_LaTeX
+  \bottomcite{Collberg, Christian \textit{et Al.}, 
+     \href{http://reproducibility.cs.arizona.edu/v2/RepeatabilityTR.pdf}{\textit{Measuring Reproducibility in Computer Systems Research}},
+    \url{http://reproducibility.cs.arizona.edu/}\qquad 2014,2015} 
+
+  \begin{columns}
+    \begin{column}{.5\linewidth}
+      ~\includegraphics[height=3.5cm]{figures/repeatability_arizona.pdf}
+    \end{column}
+    \begin{column}{.5\linewidth}
+      \small
+      \begin{itemize}
+      \item 8 ACM conferences ({\scriptsize ASPLOS'12, CCS'12, OOPSLA'12, OSDI'12,
+        PLDI'12, SIGMOD'12, SOSP'11, VLDB'12}) and 5 journals
+      \item More than 80\% of non reproducible work
+      \end{itemize}
+    \end{column}
+  \end{columns}
+#+END_LaTeX
+#+BEGIN_LaTeX
+  \begin{center}
+    \ul{Common issues:} \alert<1-2>{Versioning Problems} and \alert<3>{Bad Backup Practices}
+  \end{center}
+  \vspace{-.2cm}
+
+  \begin{block}{}
+  \vspace{-.4cm}
+  \begin{overlayarea}{\linewidth}{2.8cm}
+      \small
+      \only<1>{
+        \begin{quote}
+          Thanks for your interest in the implementation of our
+          paper. The good news is that I was able to find some code. I
+          am just \alert{hoping} that \alert{it} is a stable working
+          version of the code, and \alert{matches the implementation we
+            finally used for the paper}. Unfortunately, I have
+          \alert{lost some data} when \alert{my laptop was stolen} last
+          year. The bad news is that the code is not commented and/or
+          clean.
+        \end{quote}
+      }
+      \only<2>{
+        \begin{quote}
+          Attached is the $\langle$system$\rangle$ source code of our
+          algorithm. I’m \alert{not} very \alert{sure whether it is the
+            final version of the code used in our paper}, but it should
+          be at least 99\% close. Hope it will help.
+        \end{quote}}%
+      \only<3>{
+        \begin{quote}
+          Unfortunately, the server in which my implementation was
+          stored had a \alert{disk crash in April and three disks
+            crashed simultaneously}. While the help desk made
+          significant effort to save the data, my entire implementation
+          for this paper was not found.
+        \end{quote}}
+    \end{overlayarea}
+  \end{block}
+  \null\vspace{-.4cm}
+#+END_LaTeX
+*** History: Centralized Version Control System
+****                                                     :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+***** 							      :BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.6
+     :END:
+- RCS (1982), CVS (1986), SVN (2000)
+- Client/Server interactions
+- Local copies of files/remote history
+
+*Main issues:*
+1. No local history
+   #+LaTeX: \setlength{\leftmarginii}{0pt}
+  - requires a permanent network connection
+  - commits are immediately visible to everyone\\
+    $\leadsto$ few (and large) commits, conflicts $\frowny$
+
+***** 							      :BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.4
+     :END:
+#+LaTeX: \hbox{%
+\hspace{-.6em}\includegraphics[scale=.24]{figures/centralized_vcs.pdf}\hspace{-4em}
+#+LaTeX: }
+****                                                        :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+
+
+#+LaTeX: \begin{enumerate}\setcounter{enumi}{1}
+
+#+LaTeX: \item Managing Access (Read/Write)
+#+LaTeX:    \setlength{\leftmarginii}{0pt}
+  - =UNIX= groups and =ssh=. *forge* make your life so much easier
+    - Web management and easy access to files and history
+    - Bug Tracking System, Mailing Lists, Wikis, ...
+  - This does not scale (socially): $\leadsto$ send series of =patch= 
+    #+LaTeX: \!\!es $\frowny$
+#+LaTeX: \end{enumerate}
+
+\null\vspace{5cm}
+*** History: Decentralized Version Control System
+****                                                     :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+***** 							      :BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.6
+     :END:
+- BitKeeper (1998), Arch (2001), Darcs (2003), Bazaar/Git/Mercurial
+  (2005)
+- Peer-to-peer and/or Client/Server
+- Full local history
+
+*Git birth:*  \vspace{-.5em}
+#+LaTeX: \setlength{\leftmargini}{12pt}\small
+- BitKeeper was used by the Linux kernel dev. community\vspace{-.5em}
+- BK. withdrawn gratis use of the product for reverse-engineering
+  reasons\vspace{-.5em}
+***** 							      :BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.4
+     :END:
+#+LaTeX: \hbox{%
+\hspace{-.6em}\includegraphics[scale=.24]{figures/decentralized_vcs.pdf}\hspace{-4em}
+#+LaTeX: }
+****                                                        :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+
+#+LaTeX:    \bgroup\setlength{\leftmargini}{9pt}\small
+- Torvalds needed performance. He coded git in 2 weeks and used
+  it for releasing the next kernel 2 weeks after $\smiley$ \vspace{-.5em}
+#+LaTeX: \egroup
+
+*Pros:*
+- Allows local commit without any access on the server
+- Allows large scale collaboration (everyone pulls from Linus)
+- Many web/cloud deployments: gitorious, github, bitbucket, gitlab
+\null\vspace{5cm}
+
+*** Setting up Git
+- Tools :: =git= originates from linux so it is *command line* oriented.
+     #+LaTeX:    \setlength{\leftmarginii}{0pt}
+
+  - There are many convenient GUIS. E.g., =SmartGit= or even =magit= \winkey
+  - See the [[https://github.com/alegrand/RR_webinars/blob/master/4_logging_and_backing_up_your_work/index.org\#practical-session-requirements][instructions given on the RR_webinars GitHub page]]
+- Accessing servers :: setup your SSH public/private key to avoid
+     typing passwords all the time (see [[http://siteadmin.gforge.inria.fr/FAQ.html\#Q6][How do I setup ssh (even on windows?)]])
+- Provide your name :: All this will go in your =~/.gitconfig= \small
+     #+BEGIN_EXAMPLE
+     git config --global user.name "Your Name Comes Here"
+     git config --global user.email you@yourdomain.example.com     
+     #+END_EXAMPLE
+- Customize even more :: \scriptsize\quad
+
+     #+BEGIN_EXAMPLE
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[alias]
+	wdiff = diff --color-words
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+[branch]
+	autosetuprebase = always        # you may not want this... 
+[push]
+	default = simple                # you may not want this... 
+     #+END_EXAMPLE
 *** Basic usage (demo)
 #+BEGIN_LaTeX
     \vspace{-.8em}
@@ -132,60 +339,43 @@ backup.
 
 But =git= is much more than this.
 *** Actually there are branches... (demo)
+****                                                     :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+***** 							      :BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.7
+     :END:
 - =git merge=
 - =gitk= or equivalent
-  - =git checkout= / =git reset= 
-- =git pull= $=$ =git fetch; git merge= or =git fetch; git rebase=
+  - =git checkout= allows to switch from a branch to an other
+  - You can easily create a (local) branch to mess around. You're
+    safe! \winkey
+- =git pull= $=$ =git fetch; git rebase= or =git fetch; git merge=
   - Question: What is the difference ? $\winkey$
+***** 							      :BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.3
+     :END:
+#+LaTeX: \hbox{%
+\includegraphics[width=\linewidth]{figures/TypicalMerge.png}
+#+LaTeX: }
+****                                                        :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+
+\pause
+#+BEGIN_CENTER
+  \includegraphics[width=.8\linewidth]{figures/loopy_vs_nice.png}
+
+  It's is a matter of taste... \winkey
+#+END_CENTER
 
 * Git for Writing Articles
 *** Outline
 #+LaTeX: \tableofcontents[current,currentsubsection]
-*** Challenges: History and Parallelism
-#+LaTeX: \vspace{-.3cm}
-****                                                     :B_ignoreheading:
-:PROPERTIES:
-:BEAMER_env: ignoreheading
-:END:
-***** 							      :BMCOL:
-     :PROPERTIES:
-     :BEAMER_col: 0.55
-     :END:
-
-- Printed doc+handwritten revisions:
-  + Many versions of the file
-  + One writer, multiple reviewers
-\smallskip
-- Doc+email+contributions: 
-  + Many versions of the file
-  + Never sure which one is the latest
-  + Not aware of others corrections
-  + No clear history
-  + Problems editing same paragraphs
-\smallskip
-- Doc+Dropbox or google-doc:
-  + Limited history through autosaves
-  + Limited parallelism
-
-***** 							      :BMCOL:
-     :PROPERTIES:
-     :BEAMER_col: 0.45
-     :END:
-
-#+BEGIN_CENTER
-\includegraphics[scale=.25]{figures/phd_comics.png}
-#+END_CENTER
-
-****                                                     :B_ignoreheading:
-:PROPERTIES:
-:BEAMER_env: ignoreheading
-:END:
-
-\medskip
-#+BEGIN_CENTER
-Git allows for a truly *parallel asynchronous* approach
-#+END_CENTER
-
 *** Collaborative Writing using Git
 - Multiple collaborators editing the same file *simultaneously offline*
 - Everyone *commits locally*, occasionally merging to remote
@@ -196,7 +386,9 @@ Git allows for a truly *parallel asynchronous* approach
 
 \medskip 
 #+BEGIN_CENTER
-Everyone has a clean history of the whole article writing process,\\ with all intermediary versions
+Everyone has a clean history of the whole article writing process,
+
+with all intermediary versions
 #+END_CENTER
 
 
@@ -225,17 +417,33 @@ Alternatively convert binaries into text files:
   1. Going for a particular version (=git checkout SHA1=)
 
 *** Useful Tips and Tricks
-- Don't version temporary LaTeX files (.aux, .toc, etc.), use .gitignore list
-- Don't version the article .pdf file, unless your collaborators have problems generating it
-- Add only the final version of the .pdf, possibly with a unique name
-- Avoid very long lines
-- Compare versions by words not lines (=git wdiff=)
-- Do frequent local commits - it's safe $\smiley$
+#+LaTeX: \begin{flushright}\scriptsize 
+  Inspired by [[https://homes.cs.washington.edu/~mernst/advice/version-control.html][Michael Ernst]]
+#+LaTeX: \end{flushright}\vspace{-.8cm}
 
-\medskip
+\setlength{\leftmarginii}{12pt}
+
+- Use a *descriptive commit* message
+  #+LaTeX: \only<1>{\newline}{\includegraphics<1>[width=.7\linewidth]{figures/git_commit.png}}\pause
+- Make each commit a *logical unit*: =git add file1 file2 ; git commit=
+- Avoid indiscriminate commits
+  - =git status=, =git diff= and _do not_   =git commit -a=!!!
+  - =git wdiff=\pause
+- Do *frequent local commits* (it's safe $\smiley$)
+- Incorporate others' changes frequently (=git pull=)
+- Share your changes frequently (=git push=)\pause
+- Remember that the tools are *line-based*
+  - _Never_ refill/rejustify paragraphs
+  - Do not write excessively looooong lines (<80 characters)\pause
+- Don't commit generated files
+  - Don't version temporary LaTeX files (.aux, .toc, etc.), use
+    =.gitignore=
+  - Don't version the result .pdf (\bgroup \scriptsize unless your
+    collaborators have problems generating it\egroup). Add only the
+    final version of the .pdf, possibly with a unique name
+
 **** Advanced usage
 If you collaborate with SVN users, you may enjoy =git svn=
-
 * Git for Coding
 *** Outline
 #+LaTeX: \tableofcontents[current,currentsubsection]
@@ -252,101 +460,104 @@ If you collaborate with SVN users, you may enjoy =git svn=
   publishing it with =git push=
 - Such history can then be exploited:
   - =git log= (=git hist=), =git blame=, =git bisect=
-  - git config --global alias.hist 'log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
+  \scriptsize
+  #+BEGIN_EXAMPLE
+  git config --global alias.hist \
+      'log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
+  #+END_EXAMPLE
 *** Rescue ! Advanced?
-- all is stored in git backend and identified by a SHA1
-- all is saved as soon as it is in the backend (=git add=)
-- several ways to recover objects/files/project states that cannot be
-  reached by the classical history:
+#+BEGIN_QUOTE
+Git is really pretty simple, just think of branches as homeomorphic
+endofunctors mapping submanifolds of a Hilbert space \winkey
+#+END_QUOTE
+\vspace{-1em}
+****                                                     :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+***** 							      :BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.7
+     :END:
+
+\setlength{\leftmarginii}{12pt}
+- Don't force it and don't panic... Call a friend. 
+  - Everything is stored in git backend and identified by a SHA1
+  - Anything is saved as soon as it is in the backend (=git add=)
+- Several ways to recover objects/files states
+  that cannot be reached by the classical history:
   - =git fsck= to find unreachable files/commits/...
   - =git reflog= (for emergency) generally more useful than =git fsck= for
-    recovering a previous repository state (i.e. a previous commit)
-- a few dangerous commands:
-  - =git gc= can remove unreachable old objects (> 2 weeks)
-  - =git prune= can remove unreachable objects...
-  - =rm -rf= without pushing (or cloning elsewhere) before
+    recovering a previous repository state (i.e., a previous commit)
+- A few dangerous commands:
+  - =git gc= removes unreachable old objects
+    #+LaTeX: \hbox{\scriptsize($>$2 weeks)\hspace{-1cm}}
+  - =git prune= removes unreachable objects...
+  - =rm -rf= without pushing (or cloning 
+    #+LaTeX: \hbox{elsewhere) before\hspace{-3cm}}
+***** 							      :BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.3
+     :END:
+\includegraphics[width=\linewidth]{figures/git_xkcd.png}
 *** Git for coding (branches)
-- merging branches
-  - Example from the Scott Chacon youtube video: translating some code
-    for internationalization
-  - merging ("public" branch but where you're the only developer)
-    vs. rebasing (provides a cleaner final set of patches, but the
-    backup is more complex to set up) . Depends on the meaning of the
-    history wished within the global project. The rebase can be better
-    for code review (sometimes, some part of the history are useless).
+\vspace{-1em}
+- Merging branches :: \quad
+  - *Why?* Long term work to keep in sync with the rest of the world (e.g.,
+    translating some code for internationalization)
+  - *Merging* ("public" branch but where you're the only developer)
+    vs. *rebasing* (cleaner final set of patches, but the backup is more
+    complex to set up) .
+    #+BEGIN_CENTER
+    \includegraphics[width=.8\linewidth]{figures/loopy_vs_nice.png}\vspace{-1.4em}
+    #+END_CENTER
+  - Depends on the meaning of the history wished within the
+    project. Rebasing can be better for code review (sometimes, some
+    part of the history are useless).
+\pause
+****                                                     :B_ignoreheading:
+:PROPERTIES:
+:BEAMER_env: ignoreheading
+:END:
+***** 							      :BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.7
+     :END:
 
 Developers who do not understand this mechanism quickly end up with a
 huge plate of spaghetti $\frowny$
 - =git workflow= (supported by SmartGit)
+***** 							      :BMCOL:
+     :PROPERTIES:
+     :BEAMER_col: 0.3
+     :END:
+
+\vspace{-.8cm}
+\includegraphics[width=\linewidth]{figures/bikesoup-history.png}
+\vspace{-2cm}
 *** Git Workflow
-
 #+BEGIN_CENTER
-\includegraphics[scale=.15]{figures/git_workflow.png}\\%
+\href{http://nvie.com/posts/a-successful-git-branching-model/}{http://nvie.com/posts/a-successful-git-branching-model/}
+
+\includegraphics[scale=.14]{figures/git_workflow.png}
 #+END_CENTER
+*** Access rights 
+- _Forge_ :: the UNIX groups philosophy still works
+- _Linux_ :: \quad
+  - Linus Torvalds integrates from a few trusted developpers who
+    themselves turn integrate from various developpers
+  - Everyone pulls from Linus Torvalds
+- _GitHub_ :: organization (similar to UNIX groups) are
+     possible but encourages *fork* and *pull requests* done through their
+     interface
+  #+BEGIN_CENTER
+  \includegraphics[width=.7\linewidth]{figures/centralized-github-4.png}  
+  #+END_CENTER
 
-*** Access rights
-Git is a *distributed* version control system:
-- Linux model: Linus integrates and everyone pulls from him
-  - improvement with official maintainers that integrate sub-systems
-  - other specific official repo (=linux-next=, \ldots)
-- Forge philosophy: one group
-- GitHub philosophy: organization/group possible but mainly fork and pull
-  requests
-
-*** Pull request: Choose you favorite illustration
-
-****                                                            :B_column:
-:PROPERTIES:
-:BEAMER_env: column
-:END:
-***** 								      :BMCOL:
-      :PROPERTIES:
-      :BEAMER_col: .5
-      :END:
-
-#+BEGIN_CENTER
-\includegraphics[scale=.15]{figures/pullrequest.png}
-#+END_CENTER
-# http://acrl.ala.org/techconnect/post/2013/05
-***** 								      :BMCOL:
-      :PROPERTIES:
-      :BEAMER_col: .5
-      :END:
-
-#+BEGIN_CENTER
-\includegraphics[scale=.22]{figures/pullrequest2.jpg}      
-#+END_CENTER
-# http://www.slideshare.net/psquy/git-collaboration
-
-****                                                            :B_column:
-:PROPERTIES:
-:BEAMER_env: column
-:END:
-
-***** 								      :BMCOL:
-      :PROPERTIES:
-      :BEAMER_col: .5
-      :END:
-
-#+BEGIN_CENTER
-\includegraphics[scale=.2]{figures/pullrequest3.png}
-#+END_CENTER
-
-# http://www.gulistanboylu.com/how-to-send-pull-request-on-github/
-***** 								      :BMCOL:
-      :PROPERTIES:
-      :BEAMER_col: .5
-      :END:
-
-#+BEGIN_CENTER
-\includegraphics[scale=.2]{figures/pullrequest4.jpg}      
-#+END_CENTER
-
-# http://www.slideshare.net/lemonlatte/git-tutorial-ii
 * Git for Experiments/Data/Provenance Tracking
 *** Outline
 #+LaTeX: \tableofcontents[current,currentsubsection]
-*** Git for Laboratory Notebook
+*** Git for Managing a Laboratory Notebook
 - Versioning *all scripts* for running experiments, pre-processing raw data, analysis and presentation
 - Backing up *read-only* experiment results
 - *Commit often* and separate different types of commits
@@ -354,9 +565,9 @@ Git is a *distributed* version control system:
 
 \medskip
 **** Major Challenges
-  - May depend on other projects
-  - Large files and thus repositories
-  - Linear history hard to explore and thus exploit
+  1. May depend on other projects
+  2. Large files and thus repositories
+  3. Linear history hard to explore and thus exploit
 
 *** Integrating Multiple Git Sources
 
@@ -377,7 +588,7 @@ Git is a *distributed* version control system:
 - Several solutions (=git lfs=, =git annex=)
 - Probably soon becoming part of the standard (similar to Mercurial)
 
-*** Improving Git History: git xp (demo)
+*** Improving Git History: git-labbook (demo)
 #+BEGIN_LaTeX
 \begin{figure}
   \centering
@@ -453,8 +664,8 @@ Git is a *distributed* version control system:
     \href{https://wg.softwareheritage.org/}{https://wg.softwareheritage.org/}
   \end{center}
   #+END_LaTeX
-  \bgroup \small Full development history of Debian, github, GNU,
-  gitorious, google code, ... \egroup
+  \bgroup \small Full development history of Debian, GitHub, GNU,
+  Gitorious, google code, ... \egroup
 * Conclusion and Perspective
 ** 
 *** Outline
@@ -618,6 +829,6 @@ startup. Exporting may require that you copy them in your .emacs.
 
 # Local Variables:
 # eval:    (setq org-latex-listings 'minted)
-# eval:    (setq org-latex-minted-options '(("bgcolor" "Moccasin") ("style" "tango") ("numbers" "left") ("numbersep" "5pt")))
+# eval:    (setq org-latex-minted-options '(("bgcolor" "DarkSeaGreen2") ("style" "tango") ("numbers" "left") ("numbersep" "5pt")))
 # End:
 
