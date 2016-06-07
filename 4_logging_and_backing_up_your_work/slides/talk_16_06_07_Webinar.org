@@ -438,9 +438,8 @@ git commit -m"`curl -s http://whatthecommit.com/index.txt`"
   \end{onlyenv} \pause
   #+END_LaTeX
 - Make each commit a *logical unit*: =git add file1 file2 ; git commit=
-- Avoid indiscriminate commits
-  - =git status=, =git diff= and _do not_ =git commit -a=!!!
-  - =git wdiff=\pause
+- Avoid large indiscriminate commits (e.g., with =git commit -a=)
+  - =git status=, =git diff= and  =git wdiff=\pause
 - Do *frequent local commits* (it's safe $\smiley$)
 - Incorporate others' changes frequently (=git pull=)
 - Share your changes frequently (=git push=)\pause
