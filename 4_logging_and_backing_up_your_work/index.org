@@ -29,7 +29,7 @@ The screencast is *[[https://mi2s.imag.fr/pm/direct][here]]* and some rooms wher
 are listed [[*Locations][below]]. Here are the [[file:slides/talk_16_06_07_Webinar.pdf][slides]].
 
 To interact during the presentation (questions, comments), *we will
-use this [[https://pad.inria.fr/p/bjKfNEcD7SCvHjHF][pad]]* (FIXME) that we will keep for the record.
+use this [[https://pad.inria.fr/p/sg9M7evYcdgXYWVQ][pad]]  that we will keep for the record.
 ** Persons in charge
    - Grenoble: Arnaud Legrand, Frédéric Desprez, Pierre Neyron
    - Bordeaux: Luka Stanisic, Emmanuel Agullo, Nicolas P. Rougier,
