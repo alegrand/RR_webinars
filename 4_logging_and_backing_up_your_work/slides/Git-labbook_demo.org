@@ -18,19 +18,19 @@ make
 
   At this point, there are certain perl package requirements and the
   list is available on the project [[https://github.com/Git-labbook/git-labbook][homepage]]. Please indicate if some
-  packages are missing for you and if you have any problems installing
+  packages are missing for you or if you have any problems installing
   the software.
   
 * Simple Use Case: Parallel Quicksort study
 
-  To demonstate git-labbook commands, we are going to use an already
+  To demonstate git-labbook commands, we are using an already
   performed reproducible research example [[https://github.com/stanisic/RR_example][RR_example]]. Commits of
-  RR_example have been transformed into patches, that we will simply
-  apply in the following demo. This way, the main focus stays on Git
+  RR_example have been transformed into patches, that we simply apply
+  in the following demo. This way, the main focus stays on Git
   branching system and git-labbook commands. However, we still
-  encourage readers to explore the content of the study (especially
-  LabBook.org) as it contains many interesting feature about
-  laboratory notebook.
+  encourage readers to explore the content of the RR_example study
+  (especially LabBook.org) as it contains many useful tips about
+  properly writing laboratory notebook.
 
 * Demo
 ** Initialization
@@ -69,14 +69,14 @@ git init
 git am $DATADIR/000[1234]-*
 #+end_src
 
-  Initialize Git-labbook. This will create the whole directory
-  structure, laboratory notebook file and do the initial commit.
+  Initialize Git-labbook. This creates the whole directory structure,
+  laboratory notebook file and an initial commit.
 
 #+begin_src sh :results output :session org-sh
 git-labbook init
 #+end_src
 
-  Adding some scripts into data branch
+  Adding some scripts into data branch.
 
 #+begin_src sh :results output :session org-sh
 git checkout data
@@ -85,7 +85,7 @@ git am $DATADIR/001[0]-*
 
 ** Doing first experiments
 
-   We start first experimental campaign by creating a new experimental
+   Start first experimental campaign by creating a new experimental
    branch.
 
 #+begin_src sh :results output :session org-sh
@@ -93,16 +93,17 @@ git checkout master
 git-labbook xp start xp1 --branch xp1 --no-labbook-entry
 #+end_src
 
-   Then, we do some modifications, execute the experiments and add the measured data.
+   Do some modifications, execute the experiments and add the measured
+   data.
 
 #+begin_src sh :results output :session org-sh
 git am $DATADIR/000[56]-*
 #+end_src
 
-   After that, we continue doing some modifications inside the master
-   branch. We also realized that some code in the experimental branch
-   is useful for the whole project, so we cherry-pick it into the
-   source branch.
+   Continue doing some modifications inside the master branch. One may
+   also realize that some code in the experimental branch is useful
+   for the whole project, so it can be cherry-picked into the source
+   branch.
    
 #+begin_src sh :results output :session org-sh
 git checkout master
@@ -111,23 +112,23 @@ git am $DATADIR/000[78]-*
 git am $DATADIR/001[12345]-*
 #+end_src
 
-   Then we go back to the experiment branch and improve laboratory
-   notebook.
+   Go back to the experiment branch and improve laboratory notebook
+   text.
 
 #+begin_src sh :results output :session org-sh
 git checkout xp1
 git am $DATADIR/000[9]-*
 #+end_src
 
-   Finally, we conclude that the experiments are finished and we merge
-   the experimental branch into data branch.
+   When concluded that experiments are finished, merge the
+   experimental branch into data branch.
 
 #+begin_src sh :results output :session org-sh
 git checkout xp1
 git-labbook xp finish
 #+end_src
 
-   We repeat a similar process for another experimental campaign.
+   Repeat a similar process for another experimental campaign.
 
 #+begin_src sh :results output :session org-sh
 git-labbook xp start xp2
@@ -141,7 +142,7 @@ git-labbook xp finish
 #+end_src
 
    Additionally, when a certain important source code developments are
-   performed, one can add a Git tag.
+   performed, one can add a Git tag (typically for the code releases).
 
 #+begin_src sh :results output :session org-sh
 git checkout master
@@ -152,9 +153,9 @@ git tag stable0.9
 ** Performing experiments on another machine
 
    One might want to perform experiments on another machine. For that,
-   first the project needs to be cloned. In this example we will
-   simply do this in another folder, but it can be done in the same
-   way from a different machine.
+   first the project needs to be cloned. In this example, this is
+   simply done in another folder of the same computer, but it can be
+   done similarly from a different machine.
 
 #+begin_src sh :results output :session org-sh
 cd ..
@@ -162,14 +163,14 @@ git-labbook clone repo repoMachine2
 cd repoMachine2
 #+end_src
 
-   Then we can start experiments on that machine.
+   Start experiments on that machine.
 
 #+begin_src sh :results output :session org-sh
 git-labbook xp start xp3 -b xp3 --no-labbook-entry
 git am $DATADIR/002[01234]-*
 #+end_src
 
-   Later we push the experiments to the remote repository.
+   At some point, push the experiments to the remote repository.
 
 #+begin_src sh :results output :session org-sh
 git-labbook xp push
@@ -186,7 +187,7 @@ git checkout xp3
 git-labbook xp finish
 #+end_src
 
-   At the end, we reproduced the whole study.
+   At the end, the whole study is reproduced!
 
 #+begin_src sh :results output :session org-sh
 git checkout master
