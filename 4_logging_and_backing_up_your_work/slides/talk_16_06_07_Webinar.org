@@ -491,10 +491,10 @@ endofunctors mapping submanifolds of a Hilbert space \winkey
     recovering a previous repository state (i.e., a previous commit)
 - A few dangerous commands:
   - =git gc= removes unreachable old objects
-    #+LaTeX: \hbox{\scriptsize($>$2 weeks)\hspace{-1cm}}
+    #+LaTeX: \rlap{\scriptsize($>$2 weeks)}
   - =git prune= removes unreachable objects...
   - =rm -rf= without pushing (or cloning 
-    #+LaTeX: \hbox{elsewhere) before\hspace{-3cm}}
+    #+LaTeX: \rlap{elsewhere) before}
 ***** 							      :BMCOL:
      :PROPERTIES:
      :BEAMER_col: 0.3
