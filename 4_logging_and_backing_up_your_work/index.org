@@ -3,11 +3,11 @@
 #+DATE: June 7, 2016
 #+STARTUP: overview indent
 
-*This seminar will take place on June 7, 2016 @ 1:30PM-4:30PM
-(UTC+2). The link to the video is below.*
+*This seminar took place on June 7, 2016 @ 1:30PM-4:30PM (UTC+2). The
+link to the video is below.*
 
 * Table of Contents                                                     :TOC:
- - [[#practical-information][Practical information]]
+ - [[#practical-information][Practical Information]]
      - [[#webcastvideo-][Webcast/Video ]]
      - [[#persons-in-charge][Persons in charge]]
      - [[#locations][Locations]]
@@ -20,30 +20,30 @@
      - [[#demo][Demo]]
 
 * Practical Information
-Vincent Danjean, Arnaud Legrand and Luka Stanisic will provide a (not
-so short) introduction to git, a distributed version control system,
-that will allow you to efficiently and reliably log and back up your
-work.
+Vincent Danjean, Arnaud Legrand and Luka Stanisic provided a (not so
+short) introduction to git, a distributed version control system, that
+will allow you to efficiently and reliably log and back up your work.
 ** Webcast/Video 
-The screencast is *[[https://mi2s.imag.fr/pm/direct][here]]* and some rooms where the audience will gather
-are listed [[*Locations][below]]. Here are the [[file:slides/talk_16_06_07_Webinar.pdf][slides]].
 
-To interact during the presentation (questions, comments), *we will
-use this [[https://pad.inria.fr/p/sg9M7evYcdgXYWVQ][pad]]* that we will keep for the record.
+Here is the *[[https://mi2s.imag.fr/logging-and-backing-up-your-work-0][link to the video]]*. If you have any trouble with the
+flashplayer, here is a *[[http://newstream.imag.fr/2016-06-07_Reproducible-Research_Danjean-Legrand-Stasinic.mp4][direct link to the mpeg4 video]]*. 
+
+#+BEGIN_CENTER
+[[https://mi2s.imag.fr/logging-and-backing-up-your-work-0][file:video_thn.png]]
+#+END_CENTER
+
+Here are the [[file:slides/talk_16_06_07_Webinar.pdf][slides]].
+
+To interact during the presentation (questions, comments), *we 
+used this [[https://pad.inria.fr/p/sg9M7evYcdgXYWVQ][pad]]* that we will keep for the record.
 ** Persons in charge
    - Grenoble: Arnaud Legrand, Frédéric Desprez, Pierre Neyron
-   - Bordeaux: Luka Stanisic, Emmanuel Agullo, Nicolas P. Rougier,
+   - Bordeaux: Stanisic, Emmanuel Agullo, Nicolas P. Rougier,
      Ludovic Courtès, ...
    - Rennes: Martin Quinson
    - Besançon: Louis-Claude Canon
 ** Locations
    - Grenoble: [[https://www.google.fr/maps/place/45%25C2%25B011'26.5%2522N+5%25C2%25B046'02.6%2522E/@45.1907069,5.7668488,19z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d45.190706!4d5.767396][Imag Amphitheater]] on Campus
-   - Besançon:
-   - Lyon:
-   - Bordeaux:
-   - Rennes: 
-   - Paris:
-   - ...
 * Practical Session Requirements
 Basic Git installation and your favorite GUI (unless you are really hardcore and prefer doing everything in command line). 
 
