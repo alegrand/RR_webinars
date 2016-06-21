@@ -12,7 +12,7 @@ required in the practical session.*
 
 #+BEGIN_CENTER
 *Next event*: October 2016. In the meantime, why don't you just have a
-look to the previous editions
+look to the previous editions?
 #+END_CENTER
 # The screencast is *[[https://mi2s.imag.fr/pm/direct][here]]* and some rooms where the
 # audience will gather are listed [[4_logging_and_backing_up_your_work/index.org#locations][here]]).
