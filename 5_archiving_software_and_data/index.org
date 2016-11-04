@@ -3,7 +3,7 @@
 #+DATE: November 8, 2016
 #+STARTUP: overview indent
 
-*This seminar took place on June 7, 2016 @ 1:30PM-4:30PM (UTC+2). The
+*This seminar will take place on November 8, 2016 @ 1:30PM-4:30PM (UTC+2). The
 link to the video is below.*
 
 * Table of Contents                                                     :TOC:
