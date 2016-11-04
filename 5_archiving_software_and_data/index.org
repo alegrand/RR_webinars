@@ -33,8 +33,8 @@ Here is the *[[https://mi2s.imag.fr/pm/direct][link to the video]]*.
 
 The slides will soon be available.
 
-To interact during the presentation (questions, comments), *we 
-used this [[https://pad.inria.fr/p/BQnJjEIwADQpPM1Q][pad]]* that we will keep for the record.
+To interact during the presentation (questions, comments), *we will use
+this [[https://pad.inria.fr/p/BQnJjEIwADQpPM1Q][pad]]* that we will keep for the record.
 ** Persons in charge
    - Grenoble: Arnaud Legrand
    - Bordeaux: Luka Stanisic
