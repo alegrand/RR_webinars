@@ -3,7 +3,7 @@
 #+DATE: November 8, 2016
 #+STARTUP: overview indent
 
-*This seminar will take place on November 8, 2016 @ 1:30PM-4:30PM (UTC+2). The
+*This seminar took place on November 8, 2016 @ 1:30PM-4:30PM (UTC+1). The
 link to the video is below.*
 
 * Table of Contents                                                     :TOC:
@@ -28,12 +28,16 @@ to address these issues, the [[https://www.softwareheritage.org/][Software Herit
 at Inria, and we will report here on its progress.
 
 ** Webcast/Video 
+Here is the *[[https://mi2s.imag.fr/preserving-software-ensuring-availability-and-traceability-0][link to the video]]*. If you have any trouble with the
+flashplayer, here is a *[[http://newstream.imag.fr/2016-11-08_Reproducible-Research_Roberto-Di-Cosmo.mp4][direct link to the mpeg4 video]]*. 
 
-Here is the *[[https://mi2s.imag.fr/pm/direct][link to the video]]*. 
+#+BEGIN_CENTER
+[[https://mi2s.imag.fr/preserving-software-ensuring-availability-and-traceability-0][file:video_thn.png]]
+#+END_CENTER
 
-The slides will soon be available.
+The slides can be found [[file:2016-11-09-grenoble-rdicosmo-reproductibility-preserving-software.pdf][here]] (or [[https://annex.softwareheritage.org/public/talks/2016/2016-11-09-grenoble-rdicosmo-reproductibility-preserving-software.pdf][here]]).
 
-To interact during the presentation (questions, comments), *we will use
+To interact during the presentation (questions, comments), *we used
 this [[https://pad.inria.fr/p/BQnJjEIwADQpPM1Q][pad]]* that we will keep for the record.
 ** Persons in charge
    - Grenoble: Arnaud Legrand
@@ -43,4 +47,4 @@ this [[https://pad.inria.fr/p/BQnJjEIwADQpPM1Q][pad]]* that we will keep for the
 ** Locations
    - Grenoble: [[https://www.google.fr/maps/place/45%25C2%25B011'26.5%2522N+5%25C2%25B046'02.6%2522E/@45.1907069,5.7668488,19z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d45.190706!4d5.767396][Imag Amphitheater]] on Campus
 * Practical Session Requirements
-None for the moment.
+None.
