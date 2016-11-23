@@ -1,0 +1,63 @@
+#+TITLE:     Reproducible Science in Bioinformatics:  Current Status, Solutions and Research Opportunities
+#+AUTHOR:    Sarah Cohen-Boulakia, Yvan Le Bras, Jérome Chopard
+#+DATE: December 6, 2016
+#+STARTUP: overview indent
+
+*This seminar will take place on December 6, 2016 @ 1:30PM-4:30PM (UTC+1). The
+link to the video is below.*
+
+* Table of Contents                                                     :TOC:
+ - [[#practical-information][Practical Information]]
+     - [[#webcastvideo-][Webcast/Video ]]
+     - [[#persons-in-charge][Persons in charge]]
+     - [[#locations][Locations]]
+ - [[#practical-session-requirements][Practical Session Requirements]]
+
+* Practical Information
+This talk will be given by [[https://www.lri.fr/~cohen/][Sarah Cohen Boulakia]], [[http://yvanlebras.fr/][Yvan Le Bras]] and
+Bruno Chopard.
+
+Typical analysis processes in bioinformatics and computational biology
+are complex, multi-staged, and large and may involve massive and
+highly heterogeneous data sets. Ensuring reproducible bioinformatics
+analyses is both increasingly important and highly difficult to
+achieve.
+
+In this webinar, our aim is three-folds.
+1. After a quick presentation of the current status of reproducibility
+   in bioinformatics and computational biology, we'll provide a global
+   picture of the approaches and types of solutions currently in use
+   in the bioinformatics community.
+2. We will then consider two real use cases of biological data
+   analyses, demonstrated on two very popular scientific workflow
+   systems, namely, Galaxy and OpenAlea. We'll see how complementary
+   such systems may be and how they help end-users deal with several
+   levels of reproducibility (from redoing the exact same analysis, to
+   replicate it in similar contexts, to reproduce the same results
+   considering alternative methodologies).
+3. We will wrap up the webinar by highlighting needs and draw research
+   opportunities for the computer science and bioinformatics
+   communities.
+
+In this talk, Roberto Di Cosmo will provide an overview of the issues
+we face when trying to ensure that digital content in general, and
+software in particular, is properly available and traceable.  In order
+to address these issues, the [[https://www.softwareheritage.org/][Software Heritage]] initiative was started
+at Inria, and we will report here on its progress.
+
+** Webcast/Video 
+Here is the *[[https://mi2s.imag.fr/pm/direct][link to the video]]*. 
+
+The slides will soon be available.
+
+To interact during the presentation (questions, comments), *we 
+will use this [[https://pad.inria.fr/p/q2dIbmhOZjIzEH3I][pad]]* that we will keep for the record.
+** Persons in charge
+   - Grenoble: Arnaud Legrand
+   - Bordeaux: Luka Stanisic
+   - Rennes: Martin Quinson
+   - Besançon: Louis-Claude Canon
+** Locations
+   - Grenoble: [[https://www.google.fr/maps/place/45%25C2%25B011'26.5%2522N+5%25C2%25B046'02.6%2522E/@45.1907069,5.7668488,19z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d45.190706!4d5.767396][Imag Amphitheater]] on Campus
+* Practical Session Requirements
+TBA
