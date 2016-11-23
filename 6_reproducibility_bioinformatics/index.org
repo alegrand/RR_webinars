@@ -39,12 +39,6 @@ In this webinar, our aim is three-folds.
    opportunities for the computer science and bioinformatics
    communities.
 
-In this talk, Roberto Di Cosmo will provide an overview of the issues
-we face when trying to ensure that digital content in general, and
-software in particular, is properly available and traceable.  In order
-to address these issues, the [[https://www.softwareheritage.org/][Software Heritage]] initiative was started
-at Inria, and we will report here on its progress.
-
 ** Webcast/Video 
 Here is the *[[https://mi2s.imag.fr/pm/direct][link to the video]]*. 
 
