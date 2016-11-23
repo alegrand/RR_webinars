@@ -26,9 +26,9 @@ previous editions?
 2. <2016-04-05 Tue.> [[file:2_controling_your_environment/index.org][Controlling your environment]]
 3. <2016-05-03 Tue.> [[file:3_numerical_reproducibility/index.org][Numerical reproducibility]]
 4. <2016-06-07 Tue.> [[file:4_logging_and_backing_up_your_work/index.org][Logging and backing up your work]]
-5. <2016-11-08 Tue.> *[[file:5_archiving_software_and_data/index.org][Preserving software: ensuring availability and
-   traceability]]*
-6. <2016-12-06 Tue.> [[file:6_reproducibility_bioinformatics/index.org][Reproducible Science in Bioinformatics:  Current Status, Solutions and Research Opportunities]]
+5. <2016-11-08 Tue.> [[file:5_archiving_software_and_data/index.org][Preserving software: ensuring availability and
+   traceability]]
+6. <2016-12-06 Tue.> *[[file:6_reproducibility_bioinformatics/index.org][Reproducible Science in Bioinformatics:  Current Status, Solutions and Research Opportunities]]*
 7. <2017-01-10 mar.> TBA.
 
 Other topics planned:
