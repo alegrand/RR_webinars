@@ -1,5 +1,5 @@
 #+TITLE:     Reproducible Science in Bioinformatics:  Current Status, Solutions and Research Opportunities
-#+AUTHOR:    Sarah Cohen-Boulakia, Yvan Le Bras, Jérome Chopard
+#+AUTHOR:    Sarah Cohen-Boulakia, Yvan Le Bras, Jérôme Chopard
 #+DATE: December 6, 2016
 #+STARTUP: overview indent
 
@@ -15,7 +15,7 @@ link to the video is below.*
 
 * Practical Information
 This talk will be given by [[https://www.lri.fr/~cohen/][Sarah Cohen Boulakia]], [[http://yvanlebras.fr/][Yvan Le Bras]] and
-Bruno Chopard.
+Jérôme Chopard.
 
 Typical analysis processes in bioinformatics and computational biology
 are complex, multi-staged, and large and may involve massive and

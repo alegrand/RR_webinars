@@ -85,7 +85,7 @@ it, it's easy. Any comment and suggestion is welcome.
 * Speakers/contributors
 - [[https://www.lri.fr/~cohen/][Sarah Cohen Boulakia]], LRI, University Paris-Sud
 - [[http://yvanlebras.fr/][Yvan Le Bras]], Museum national d'Histoire naturelle
-- Bruno Chopard
+- Jérôme Chopard, Inria/INRA
 - [[http://www.dicosmo.org/][Roberto Di Cosmo]], University Paris Diderot
 - [[https://team.inria.fr/polaris/members/vincent-danjean/][Vincent Danjean]], LIG INRIA/Polaris, University of Grenoble/LIG
 - [[http://www-pequan.lip6.fr/~graillat/][Stef Graillat]], University Pierre et Marie Curie
