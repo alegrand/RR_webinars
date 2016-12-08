@@ -3,7 +3,7 @@
 #+DATE: December 6, 2016
 #+STARTUP: overview indent
 
-*This seminar will take place on December 6, 2016 @ 1:30PM-4:30PM (UTC+1). The
+*This seminar took place on December 6, 2016 @ 1:30PM-4:30PM (UTC+1). The
 link to the video is below.*
 
 * Table of Contents                                                     :TOC:
@@ -42,10 +42,11 @@ In this webinar, our aim is three-folds.
 ** Webcast/Video 
 Here is the *[[https://mi2s.imag.fr/pm/direct][link to the video]]*. 
 
-The slides will soon be available.
+Here are the slides (by order of appearance on the screen ;) of [[file:SarahCohenBoulakia.pdf][Sarah
+Cohen Boulakia]], Jérôme Chopard, and Yvan Le Bras.
 
 To interact during the presentation (questions, comments), *we 
-will use this [[https://pad.inria.fr/p/q2dIbmhOZjIzEH3I][pad]]* that we will keep for the record.
+used this [[https://pad.inria.fr/p/q2dIbmhOZjIzEH3I][pad]]* that we will keep for the record.
 ** Persons in charge
    - Grenoble: Arnaud Legrand
    - Bordeaux: Luka Stanisic
