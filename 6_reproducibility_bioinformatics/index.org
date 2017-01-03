@@ -43,7 +43,7 @@ In this webinar, our aim is three-folds.
 Here is the *[[https://mi2s.imag.fr/pm/direct][link to the video]]*. 
 
 Here are the slides (by order of appearance on the screen ;) of [[file:SarahCohenBoulakia.pdf][Sarah
-Cohen Boulakia]], Jérôme Chopard, and Yvan Le Bras.
+Cohen Boulakia]], Jérôme Chopard, and [[file:YvanLebras.pdf][Yvan Le Bras]].
 
 To interact during the presentation (questions, comments), *we 
 used this [[https://pad.inria.fr/p/q2dIbmhOZjIzEH3I][pad]]* that we will keep for the record.
