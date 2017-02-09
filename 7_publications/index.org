@@ -1,4 +1,4 @@
-#+TITLE:     Publication Schemes Favoring Reproducible Research
+#+TITLE:     Publication Modes Favoring Reproducible Research
 #+AUTHOR:    Konrad Hinsen, Nicolas Rougier
 #+DATE: December 14, 2017
 #+STARTUP: overview indent
@@ -16,16 +16,17 @@ link to the video is below.*
 * Practical Information
 This talk will be given by [[http://khinsen.net/][Konrad Hinsen]] and [[http://www.labri.fr/perso/nrougier/][Nicolas Rougier]].
 
-Conducting research in a reproducible way is difficult and the
-incentive for doing so is not always clear for many persons. Several
-conferences and journals have started strongly encouraging such
-practice (artifact evaluations, companion websites, dissemination
-platforms, ...) and some are actually pioneering toward a different
-publication model. Konrad Hinsen and Nicolas Rougier are both behind
-the [[http://rescience.github.io/][ReScience]] journal initiative that targets computational research and
-encourages the explicit replication of already published research,
-promoting new and open-source implementations in order to ensure that
-the original research is reproducible.
+Conducting research in a reproducible way is often perceived as an
+additional difficulty. If such effort is not recognized, the incentive
+for doing so is not clear for most persons. Several conferences and
+journals have thus started strongly encouraging such practice (artifact
+evaluations, companion websites, dissemination platforms, ...) and
+some are actually pioneering toward an alternative publication
+model. Konrad Hinsen and Nicolas Rougier are both behind the [[http://rescience.github.io/][ReScience]]
+journal initiative that targets computational research and encourages
+the explicit replication of already published research, promoting new
+and open-source implementations in order to ensure that the original
+research is reproducible.
 
 In this webinar, we will give an overview of the connections between
 reproducible research and publication and of the main social and

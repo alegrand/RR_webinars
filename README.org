@@ -11,7 +11,7 @@ with the support of ANR, CNRS, Inria, University of Grenoble, ...
 required in the practical session.*
 
 #+BEGIN_CENTER
-*Next event*: February 14th 2017 on [[file:7_publications/index.org][Publication Schemes Favoring
+*Next event*: February 14th 2017 on [[file:7_publications/index.org][Publication Modes Favoring
 Reproducible Research]]. In the meantime, why don't you just have a look
 to the previous editions?
 #+END_CENTER
@@ -26,7 +26,7 @@ to the previous editions?
 5. <2016-11-08 Tue.> [[file:5_archiving_software_and_data/index.org][Preserving software: ensuring availability and
    traceability]]
 6. <2016-12-06 Tue.> [[file:6_reproducibility_bioinformatics/index.org][Reproducible Science in Bioinformatics:  Current Status, Solutions and Research Opportunities]]
-7. <2017-02-14 Tue.> *[[file:7_publications/index.org][Publication Schemes Favoring Reproducible Research]]*
+7. <2017-02-14 Tue.> *[[file:7_publications/index.org][Publication Modes Favoring Reproducible Research]]*
 
 Other topics planned:
 1. Provenance tracking of experimental data
