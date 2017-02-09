@@ -1,0 +1,50 @@
+#+TITLE:     Publication Schemes Favoring Reproducible Research
+#+AUTHOR:    Konrad Hinsen, Nicolas Rougier
+#+DATE: December 14, 2017
+#+STARTUP: overview indent
+
+*This seminar will take place on February 14, 2017 @ 1:30PM-4:30PM (UTC+1). The
+link to the video is below.*
+
+* Table of Contents                                                     :TOC:
+ - [[#practical-information][Practical Information]]
+     - [[#webcastvideo-][Webcast/Video ]]
+     - [[#persons-in-charge][Persons in charge]]
+     - [[#locations][Locations]]
+ - [[#practical-session-requirements][Practical Session Requirements]]
+
+* Practical Information
+This talk will be given by [[http://khinsen.net/][Konrad Hinsen]] and [[http://www.labri.fr/perso/nrougier/][Nicolas Rougier]].
+
+Conducting research in a reproducible way is difficult and the
+incentive for doing so is not always clear for many persons. Several
+conferences and journals have started strongly encouraging such
+practice (artifact evaluations, companion websites, dissemination
+platforms, ...) and some are actually pioneering toward a different
+publication model. Konrad Hinsen and Nicolas Rougier are both behind
+the [[http://rescience.github.io/][ReScience]] journal initiative that targets computational research and
+encourages the explicit replication of already published research,
+promoting new and open-source implementations in order to ensure that
+the original research is reproducible.
+
+In this webinar, we will give an overview of the connections between
+reproducible research and publication and of the main social and
+technical challenges that should be taken into consideration. We will
+then present the [[http://rescience.github.io/][ReScience]] initiative and make a demo of [[http://www.activepapers.org/][ActivePapers]]
+a possible solution for making computations reproducible and
+publishable.
+
+** Webcast/Video 
+Here is the *[[https://mi2s.imag.fr/pm/direct][link to the video]]*.
+
+To interact during the presentation (questions, comments), *we 
+will use this [[https://pad.inria.fr/p/nvT4rpWi5gHjO4NH][pad]]* that we will keep for the record.
+** Persons in charge
+   - Grenoble: Arnaud Legrand
+   - Bordeaux: Luka Stanisic
+   - Rennes: Martin Quinson
+   - Besançon: Louis-Claude Canon
+** Locations
+   - Grenoble: [[https://www.google.fr/maps/place/45%25C2%25B011'26.5%2522N+5%25C2%25B046'02.6%2522E/@45.1907069,5.7668488,19z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d45.190706!4d5.767396][Imag Amphitheater]] on Campus
+* Practical Session Requirements
+TBA

@@ -1,6 +1,6 @@
 #+TITLE:     Series of Webinars on Reproducible Research
 #+AUTHOR:    Arnaud Legrand
-#+DATE: 2016
+#+DATE: 2017
 #+STARTUP: overview indent
 
 This website gather documents and information related to the series of
@@ -11,13 +11,10 @@ with the support of ANR, CNRS, Inria, University of Grenoble, ...
 required in the practical session.*
 
 #+BEGIN_CENTER
-*Next event*: December 6th 2016 on [[file:6_reproducibility_bioinformatics/index.org][Reproducible Science in
-Bioinformatics: Current Status, Solutions and Research
-Opportunities]]. In the meantime, why don't you just have a look to the
-previous editions?
+*Next event*: February 14th 2017 on [[file:7_publications/index.org][Publication Schemes Favoring
+Reproducible Research]]. In the meantime, why don't you just have a look
+to the previous editions?
 #+END_CENTER
-# The screencast is *[[https://mi2s.imag.fr/pm/direct][here]]* and some rooms where the
-# audience will gather are listed [[4_logging_and_backing_up_your_work/index.org#locations][here]]).
 
 * Agenda
 1. <2016-03-07 Mon.> [[file:1_replicable_article_laboratory_notebook/index.org][Introduction (reproducible research, challenges, ethic,
@@ -28,8 +25,8 @@ previous editions?
 4. <2016-06-07 Tue.> [[file:4_logging_and_backing_up_your_work/index.org][Logging and backing up your work]]
 5. <2016-11-08 Tue.> [[file:5_archiving_software_and_data/index.org][Preserving software: ensuring availability and
    traceability]]
-6. <2016-12-06 Tue.> *[[file:6_reproducibility_bioinformatics/index.org][Reproducible Science in Bioinformatics:  Current Status, Solutions and Research Opportunities]]*
-7. <2017-01-10 mar.> TBA.
+6. <2016-12-06 Tue.> [[file:6_reproducibility_bioinformatics/index.org][Reproducible Science in Bioinformatics:  Current Status, Solutions and Research Opportunities]]
+7. <2017-02-14 Tue.> *[[file:7_publications/index.org][Publication Schemes Favoring Reproducible Research]]*
 
 Other topics planned:
 1. Provenance tracking of experimental data
@@ -89,6 +86,7 @@ it, it's easy. Any comment and suggestion is welcome.
 - [[http://www.dicosmo.org/][Roberto Di Cosmo]], University Paris Diderot
 - [[https://team.inria.fr/polaris/members/vincent-danjean/][Vincent Danjean]], LIG INRIA/Polaris, University of Grenoble/LIG
 - [[http://www-pequan.lip6.fr/~graillat/][Stef Graillat]], University Pierre et Marie Curie
+- [[http://khinsen.net/][Konrad Hinsen]], CNRS/Molecular Biophysics Center, Orleans.
 - [[http://perso.univ-perp.fr/philippe.langlois/][Philippe Langlois]], University of Perpignan, DALI
 - [[http://yvanlebras.fr/][Yvan Le Bras]], Museum national d'Histoire naturelle
 - [[https://team.inria.fr/polaris/members/arnaud-legrand/][Arnaud Legrand]], CNRS/LIG Inria/Polaris, University of Grenoble.
@@ -96,5 +94,6 @@ it, it's easy. Any comment and suggestion is welcome.
 - Pierre Neyron, CNRS/LIG , University of Grenoble
 - [[http://perso.ens-lyon.fr/nathalie.revol/][Nathalie Revol]], Inria/AriC, École Normale Supérieure de Lyon
 - [[http://mescal.imag.fr/membres/olivier.richard/][Olivier Richard]], University of Grenoble/LIG, Inria/Datamove
+- [[http://www.labri.fr/perso/nrougier/][Nicolas Rougier]], Inria/LaBRI, University of Bordeaux.
 - [[http://www.serankua.net/cristianruiz/][Cristian Ruiz]], Inria/MADYNES
 - [[http://mescal.imag.fr/membres/luka.stanisic/][Luka Stanisic]], Labri Inria Storm/Hiepacs, Bordeaux
