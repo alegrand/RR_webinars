@@ -36,7 +36,11 @@ a possible solution for making computations reproducible and
 publishable.
 
 ** Webcast/Video 
-The video will be available soon.
+The video will be available soon. In the mean time, here are the
+slides used by the speakers:
+- [[file:introduction.pdf][General introduction]] (Konrad Hinsen)
+- [[file:activepapers.pdf][Active Papers]] (Konrad Hinsen)
+- [[file:rescience.pdf][Rescience]] (Nicolas Rougier)
 
 To interact during the presentation (questions, comments), *we 
 will use this [[https://pad.inria.fr/p/nvT4rpWi5gHjO4NH][pad]]* that we will keep for the record.
