@@ -1,6 +1,6 @@
 #+TITLE:     Publication Modes Favoring Reproducible Research
 #+AUTHOR:    Konrad Hinsen, Nicolas Rougier
-#+DATE: December 14, 2017
+#+DATE: February 14, 2017
 #+STARTUP: overview indent
 
 *This seminar will take place on February 14, 2017 @ 1:30PM-4:30PM (UTC+1). The
@@ -36,7 +36,7 @@ a possible solution for making computations reproducible and
 publishable.
 
 ** Webcast/Video 
-Here is the *[[https://mi2s.imag.fr/pm/direct][link to the video]]*.
+The video will be available soon.
 
 To interact during the presentation (questions, comments), *we 
 will use this [[https://pad.inria.fr/p/nvT4rpWi5gHjO4NH][pad]]* that we will keep for the record.
