@@ -11,8 +11,8 @@ with the support of ANR, CNRS, Inria, University of Grenoble, ...
 required in the practical session.*
 
 #+BEGIN_CENTER
-*Next event*: February 14th 2017 on [[file:7_publications/index.org][Publication Modes Favoring
-Reproducible Research]]. In the meantime, why don't you just have a look
+*Next event*: March 14th 2017 on [[file:8_artifact_evaluation/index.org][Artifact evaluation in computer
+systems' conferences]]. In the meantime, why don't you just have a look
 to the previous editions?
 #+END_CENTER
 
@@ -27,6 +27,7 @@ to the previous editions?
    traceability]]
 6. <2016-12-06 Tue.> [[file:6_reproducibility_bioinformatics/index.org][Reproducible Science in Bioinformatics:  Current Status, Solutions and Research Opportunities]]
 7. <2017-02-14 Tue.> *[[file:7_publications/index.org][Publication Modes Favoring Reproducible Research]]*
+8. <2017-03-14 Tue.> *[[file:8_artifact_evaluation/index.org][Artifact evaluation in computer systems' conferences]]*
 
 Other topics planned:
 1. Provenance tracking of experimental data
@@ -85,6 +86,7 @@ it, it's easy. Any comment and suggestion is welcome.
 - Jérôme Chopard, Inria/INRA
 - [[http://www.dicosmo.org/][Roberto Di Cosmo]], University Paris Diderot
 - [[https://team.inria.fr/polaris/members/vincent-danjean/][Vincent Danjean]], LIG INRIA/Polaris, University of Grenoble/LIG
+- [[http://fursin.net/research.html][Grigori Fursin]], Dividiti, cTuning Foundation
 - [[http://www-pequan.lip6.fr/~graillat/][Stef Graillat]], University Pierre et Marie Curie
 - [[http://khinsen.net/][Konrad Hinsen]], CNRS/Molecular Biophysics Center, Orleans.
 - [[http://perso.univ-perp.fr/philippe.langlois/][Philippe Langlois]], University of Perpignan, DALI
