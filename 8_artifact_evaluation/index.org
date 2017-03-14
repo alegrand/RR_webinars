@@ -29,10 +29,10 @@ encountered problems, solutions, future initiatives and supporting
 frameworks.
 
 ** Webcast/Video 
-Here is the *[[https://mi2s.imag.fr/pm/direct][link to the video]]*.
+Here is the *[[https://mi2s.imag.fr/pm/direct][link to the video]]* (soon updated) and here are the *[[file:presentation.pdf][slides]]*.
 
 To interact during the presentation (questions, comments), *we 
-will use this [[https://pad.inria.fr/p/3NkV4zwignZjRmwq][pad]]* that we will keep for the record.
+used this [[https://pad.inria.fr/p/3NkV4zwignZjRmwq][pad]]* that we will keep for the record.
 ** Persons in charge
    - Grenoble: Arnaud Legrand
    - Bordeaux: Luka Stanisic

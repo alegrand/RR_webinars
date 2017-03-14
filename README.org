@@ -26,7 +26,7 @@ to the previous editions?
 5. <2016-11-08 Tue.> [[file:5_archiving_software_and_data/index.org][Preserving software: ensuring availability and
    traceability]]
 6. <2016-12-06 Tue.> [[file:6_reproducibility_bioinformatics/index.org][Reproducible Science in Bioinformatics:  Current Status, Solutions and Research Opportunities]]
-7. <2017-02-14 Tue.> *[[file:7_publications/index.org][Publication Modes Favoring Reproducible Research]]*
+7. <2017-02-14 Tue.> [[file:7_publications/index.org][Publication Modes Favoring Reproducible Research]]
 8. <2017-03-14 Tue.> *[[file:8_artifact_evaluation/index.org][Artifact evaluation in computer systems' conferences]]*
 
 Other topics planned:
