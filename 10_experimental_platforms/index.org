@@ -1,0 +1,32 @@
+#+TITLE:     Experimental Platforms in Computer Science
+#+AUTHOR:    Lucas Nussbaum
+#+DATE: June 6, 2017
+#+STARTUP: overview indent
+
+*This seminar will take place on June 6, 2017 @ 1:30PM-4:30PM (UTC+1). The
+link to the video is below.*
+
+* Table of Contents                                                     :TOC:
+ - [[#practical-information][Practical Information]]
+     - [[#webcastvideo-][Webcast/Video ]]
+     - [[#persons-in-charge][Persons in charge]]
+     - [[#locations][Locations]]
+ - [[#practical-session-requirements][Practical Session Requirements]]
+
+* Practical Information
+This talk will be given by Lucas Nussbaum.
+
+** Webcast/Video 
+Here is the *[[https://mi2s.imag.fr/pm/direct][link to the video]]*.
+
+To interact during the presentation (questions, comments), *we will use
+this [[https://pad.inria.fr/p/4vJaMLfYNCPhzxQw][pad]]* that we will keep for the record.
+** Persons in charge
+   - Grenoble: Arnaud Legrand
+   - Bordeaux: Luka Stanisic
+   - Rennes: Martin Quinson
+   - Besançon: Louis-Claude Canon
+** Locations
+   - Grenoble: [[https://www.google.fr/maps/place/45%25C2%25B011'26.5%2522N+5%25C2%25B046'02.6%2522E/@45.1907069,5.7668488,19z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d45.190706!4d5.767396][Imag Amphitheater]] on Campus
+* Practical Session Requirements
+None

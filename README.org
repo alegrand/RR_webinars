@@ -11,9 +11,8 @@ with the support of ANR, CNRS, Inria, University of Grenoble, ...
 required in the practical session.*
 
 #+BEGIN_CENTER
-*Next event*: March 14th 2017 on [[file:8_artifact_evaluation/index.org][Artifact evaluation in computer
-systems' conferences]]. In the meantime, why don't you just have a look
-to the previous editions?
+*Next event*: To be announced. In the meantime, why don't you just have a look
+at the previous editions?
 #+END_CENTER
 
 * Agenda
@@ -27,9 +26,11 @@ to the previous editions?
    traceability]]
 6. <2016-12-06 Tue.> [[file:6_reproducibility_bioinformatics/index.org][Reproducible Science in Bioinformatics:  Current Status, Solutions and Research Opportunities]]
 7. <2017-02-14 Tue.> [[file:7_publications/index.org][Publication Modes Favoring Reproducible Research]]
-8. <2017-03-14 Tue.> *[[file:8_artifact_evaluation/index.org][Artifact evaluation in computer systems' conferences]]*
+8. <2017-03-14 Tue.> [[file:8_artifact_evaluation/index.org][Artifact evaluation in computer systems' conferences]]
+9. <2017-04-00 ven.> TBA
+10. <2017-06-06 Tue.> [[file:10_experimental_platforms/index.org][Experimental platforms in Computer Science]]
 
-Other topics planned:
+Typical topics planned:
 1. Provenance tracking of experimental data
 2. Large scale experimental platforms
 3. Code and Data archiving
