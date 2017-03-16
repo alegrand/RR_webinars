@@ -42,8 +42,17 @@ slides used by the speakers:
 - [[file:activepapers.pdf][Active Papers]] (Konrad Hinsen)
 - [[file:rescience.pdf][Rescience]] (Nicolas Rougier)
 
+Here is the *[[https://gricad.univ-grenoble-alpes.fr/video/publication-modes-favoring-reproducible-research][link to the video]]*. If you have any trouble with the
+flashplayer, here is a *[[http://newstream.imag.fr/2017-02-14_Reproducible-Research_Konrad-Hinsen_Nicolas-Rougier.mp4][direct link to the mpeg4 video]]*. 
+
+http://newstream.imag.fr/2017-02-14_Reproducible-Research_Konrad-Hinsen_Nicolas-Rougier.mp4
+
+#+BEGIN_CENTER
+[[https://gricad.univ-grenoble-alpes.fr/video/publication-modes-favoring-reproducible-research][file:video_thn.png]]
+#+END_CENTER
+
 To interact during the presentation (questions, comments), *we 
-will use this [[https://pad.inria.fr/p/nvT4rpWi5gHjO4NH][pad]]* that we will keep for the record.
+used this [[https://pad.inria.fr/p/nvT4rpWi5gHjO4NH][pad]]* that we [[file:pad.org][keep for the record]].
 ** Persons in charge
    - Grenoble: Arnaud Legrand
    - Bordeaux: Luka Stanisic
