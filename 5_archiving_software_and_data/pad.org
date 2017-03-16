@@ -1,0 +1,137 @@
+#+TITLE: Preserving software: ensuring availability and traceability
+
+Please identify yourself on the right/
+
+
+Feel free to use this area to take notes about any topic you may want to discussi with Roberto in the end
+
+* Some notes taken during the talk
+** Things needed for reproducibility in the digital age:
+    - open access (article)
+    - open data sets
+    - source code
+    - environment
+    - stable (does not change over time) references between these
+Open Access + Open Datasets is mainstream
+** Nature top 100 papers
+- Software is essential for reproducibility
+** Software and reproducibility
+*** Christine Collberg's report (on 613 papers; reproducibility check)
+- Precise workflow
+- Question: can we get the code to build and run 
+*** Carlo Ghezzi 2009 study (20% installable of 60% papers) 
+** Pressure to make code available (stamps from main SE conferences)
+*** Some people still do not think this is necessary
+- Chris Drummond, ICML 2009
+  - Software is the "proof" of the paper
+** "Source code provides a view into the minds of the designer"
+** URL decay: URL half life is about 4 years.... :)
+
+
+
+* A few questions for the discussion in the end
+   Feel free to comment them and provide your thoughts about possible answers.
+   
+** Are DOI sensible to business decisions ? Like URL shortener.
+- DOI are very popular and publisher pay a fee proportional to the traffic. For institutions, it's related to the size/budget of the database
+- If you buy the right to create DOIs, you are responsible to manage the corresponding database.
+- Serious publishers make sure it's stable so it depends on who's behind the DOI.
+
+** Does a single organization mean a single point of failure ? Even if the system is mirrored ...
+- SWH would like to have mirrors everywhere to be "disaster" resilient
+- also be resistant to "decision-makers": make sure the project does not depend on one institution or entity
+
+** What are the current partners of SWH ?
+https://www.softwareheritage.org/support/sponsors/
+
+
+** Capacity: 3billions files today. How many TB? Out of curiosity, how much does it cost ?
+   - 150 TB compressed. + 5 TB of metadata.
+   - 150K Euros of hardware  for the current infrastructure (not designed to allow big processing of the data)
+     - nothing compared to the price of telescopes, other lab infrastructures, ...
+** Can I use the swh:rev:014913219371283138123 identifier ?
+  - Private interface to download the file corresponding to this identifier
+  - Lack people to put in production
+
+** Is software heritage archiving the blogs/webpages/slides I put on github ?
+  - Only source code is collected, not github issues, mailing list posts, bug reports, etc (do one thing, do it well)
+  - Other places do a good job (Internet Archive for HTML files)
+  - Slides? Mailing list? Bug tracking systems?
+    - They are different, hard to do this; we do not do, happy to collaborate with someone that will do
+
+** Experiments (and software) is not only about  source code. How do we make this durable ?
+   - Storing the environment (VM, docker, ...)  needed to study this or this is  sometimes important
+      - KEEP i.e. Keeping Emulation Environment Portable (european project)
+        http://cordis.europa.eu/project/rcn/89496_fr.html
+   - This is much larger than the original source code and raises storage problems 
+   Solutions:
+       - Github releases ?
+       - Figshare ?
+       - Zenodo ? Accepts up to 50GB in a single file.
+       - ... ?
+
+** Reproducible research: two approaches with different consequences
+   - Preserve later : work, and store/make data available at the end. Risk = miss something...
+   - Preserve first : log and store, just in case. You will want to delete junk at some point.
+   No tool really allow to do this at the moment.
+   - Should we preserve everything? Nobody ever preserves everything.
+     - Librarians are extremely skeptical with self-sponsored books (editor works as a filter)
+   - Should SWH filter? Numbers are increasing, up to 1PB is okay. So no filter technically needed until now (until, people start storing VMs...). 
+     - So we prefer to keep everything, success will emerge anyway....
+
+** What is your opinion about the durability of these platform?
+    - github, bitbucket, ... ? which are companies
+    - inria gforge, Inria gitlab ? which are institution deployments
+    - figshare, zenodo (will exist until CERN does) ?
+    - They are single points of failure. Wide consortium is the answer (difficult to setup, but has more change to survive).
+
+** Git makes code backup and migration easy. Isn't this an argument for switching ?
+
+** It seems there are solutions for software and solutions for data. Can we get the best of the two (three) worlds ?
+   - Collaborative code platforms: Github, bitbucket, gitlab (from an institution), ...
+   - Data archiving platforms: figshare, zenodo, others (???, from an institution?)
+   - Articles: ArXiv, HAL, ...
+   
+   There are connections between github and zenodo (https://guides.github.com/activities/citable-code/) or with figshare (https://github.com/arfon/fidgit) but it is mostly about getting the code archived and cited. The connection is mostly one-directional. Any thoughts about this ?
+        - We need standards. Not just beers between pals.
+        - solutions like the github/zenodo connection are opt-in. We need automation.
+
+** How is Software Heritage funded?
+  - Okay, INRIA pays four full-time engineers. But maybe in the future that would change?
+     - The answer is that you might create a federation of SWH in different geographical locations/industries (Debian-like mirroring structure?)
+   - Can it be shutdown?
+       - Sure, the bus factor is about four for the moment... ;)
+   - How do you manage that Software Heritage will survive political decisions?
+       - The same question could be put forward for Zenodo/Github/...
+
+** How about HardwareHeritage ? Do you think it is interesting and possible despite its higher cost (something distributed like BOINC) ? 
+  - Building emulators looks more reasonable.
+
+** Do you know about IPFS?  The data model (Merkle DAG) looks similar.
+- Sure, Inter Planetary File System. The data model is the same with some huge DHT beneath
+- The main issue with such a peer-to-peer system is to ensure reliability of data (ensure there exist at least X copies).
+
+
+** Offline: what was the fun anecdote you wanted to tell us about Google ?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+There is a little echo and a constant buzz in the video stream
+
+OK. There is a small buzz within the room but for once, it is not my laptop. I'm going to tell this to the tech and see if he can do something about this. Well, I've told him but he does not really know where it comes from at the moment and experimenting right now is a bit complicated. He will try to investivgate this for the next time...
+
+Is it still bad ? 
+
+Looks better but the general volume is a bit low, if it can be increased in the video stream

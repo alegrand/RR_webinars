@@ -27,7 +27,7 @@ available [[https://github.com/camilo1729/webinar-env/raw/master/ctl_environment
 #+END_CENTER
 
 To interact during the presentation (questions, comments), *we used
-this [[https://pad.inria.fr/p/9mxzIpXQDgE1gyqD][pad]]* that we keep for the record.
+this [[https://pad.inria.fr/p/9mxzIpXQDgE1gyqD][pad]]* that we [[file:pad.org][keep for the record]].
 ** Persons in charge
    - Grenoble: Arnaud Legrand, Frédéric Desprez, Pierre Neyron
    - Bordeaux: Luka Stanisic, Emmanuel Agullo, Nicolas P. Rougier,

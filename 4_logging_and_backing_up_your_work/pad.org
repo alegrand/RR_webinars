@@ -1,0 +1,80 @@
+#+TITLE: Logging and Backing up your Work  
+
+Please identify yourself on the right so that we can match colors with people more easily.
+
+The slides are here: https://github.com/alegrand/RR_webinars/raw/master/4_logging_and_backing_up_your_work/slides/talk_16_06_07_Webinar.pdf
+The webinar is here: https://mi2s.imag.fr/pm/direct
+The material is here: https://github.com/alegrand/RR_webinars/blob/master/4_logging_and_backing_up_your_work/index.org
+
+If you want to ask a question, just go to the end of the pad
+
+* Comments:
+- Some people started creating a git repository within Dropbox.
+- Yes, it is better then having just a Dropbox. Still using some remote servers for Git like GForge or even GitHub has many advantages. There will be more about this later in the talk
+      - Sure, usually those that I know that uses git within dropbox use a remote and do regular pull and push, the directories are not shared, only the git is. I'd say it merges the dropbox "advantages" with git.
+** There is a problem in the vedio streaming ? Are you already started ? 
+   Yes, we are online. You may try to use this link with vlc:
+    http://newstream.imag.fr:1935/live/myStream/playlist.m3u8
+    It is working for me.
+
+   I can't watch the live with either links
+   - Me too ! 
+
+   Which OS? Player? 
+I am on https://mi2s.imag.fr/pm/direct, can't get anything (windows, IE), and VLC can't open the other link you gave
+    Normally it should work directly in the browser
+    - Debian 8 ( I follow all yours webinars on the site, but today I couldn't  )  , VLC player also shows a problem with the given URL !
+
+- For VLC:
+    - Menu "Media", then "Open Network Stream", then provide the link http://newstream.imag.fr:1935/live/myStream/playlist.m3u8 and click Play.
+    Doesn't work for me
+    
+    Restart machine? :)
+   I don't know how to help you since I have very few details about your environment. And, "doesn't work for me" may mean a lot of things. I can be a network problem, a codec problem, ... Can you give further details to help us help you?
+   I can give you the errors that VLC gives me ?
+  La lecture du fichier a échoué :
+   VLC n'a pas pu ouvrir le fichier « C:\Users\mallinger\AppData\Local\Microsoft\Windows\Temporary Internet Files\Content.IE5\TQY0JQCS\chunklist_w501972240.m3u8 » (Bad file descriptor).
+   La lecture du fichier a échoué :
+    VLC n'a pas pu ouvrir le fichier « C:\Users\mallinger\AppData\Local\Microsoft\Windows\Temporary Internet Files\Content.IE5\TQY0JQCS\chunklist_w501972240.m3u8 » (Bad file descriptor).
+    Votre média d'entrée ne peut être ouvert:
+   VLC ne peut pas ouvrir « file:///C:/Users/mallinger/AppData/Local/Microsoft/Windows/Temporary%20Internet%20Files/Content.IE5/TQY0JQCS/chunklist_w501972240.m3u8 ». Vérifiez les messages pour plus de détails.
+   Votre média d'entrée ne peut être ouvert:
+   VLC ne peut pas ouvrir « http://newstream.imag.fr:1935/live/myStream/playlist.m3u8 ». Vérifiez les messages pour plus de détails.
+   Votre média d'entrée ne peut être ouvert:
+   VLC ne peut pas ouvrir « http://newstream.imag.fr:1935/live/myStream/playlist.m3u8 ». Vérifiez les messages pour plus de détails.
+
+-- My VLC output : 
+    Your input can't be opened:
+    VLC is unable to open the MRL 'http://newstream.imag.fr:1935/live/myStream/playlist.m3u8'. Check the log for details.
+
+    And if you launch it in the browser?
+    Via https://mi2s.imag.fr/pm/direct, it seems like it is loading indefinitely... Maybe my network is too slow ?
+    I'll try on chrome... same problem
+    Well, sorry about your video problem. It's indeed hard to help you here without watching over your shoulder. Plus i know almost nothing about windows. It's not really fun but the video will be available in a few days. I'll talk about all this with the technician who manages streaming.
+ - The problem is also on Debian chrome browser,  it is not just on windows, I sent the link to several freinds but it doesn't work ( Direct en cours sur un écran noir !) 
+   Where are you from ? Could it be the case that it's filtered or something ?
+   - In France, Epinal . It is strange, I always use the same machine and browser to follow you, but today, i'm not lucky !  if i'm not mistaken, it's the first time the webinar happens in this room, maybe the streaming here isn't properly setup yet (yes, maybe also it is broadcasted in private ! )  This would quite stupid... :( I'll check with the technician. Sorry about this.
+     Thank you for your help anyway, I'll keep trying a few things, and I'll watch the video when it will be available !
+     OK, this is very strange then. I'll talk about it to the technician. Please send me your email (arnaud.legrand@imag.fr) so that I can put you in contact. Maybe they'll have clues...
+     - Thanks Arnaud, and I want also to add that we are two using the same color here : )  Oh OK. :) Maybe you should slightly change yours so that we can more easily distinguish you from the other.
+
+* Questions:
+-  Is there a way to does not permit to commit temporal files that are created when I do modification in my files! How can I say to github to does commit those files? For examples '*,~' these are hidden files
+  R> We will mention the .gitignore file later in the talk. This may answer your question.The trick is if if you =git status=, they will appear, which can bloat your status with useless information. For this you simply want to add a line with     *~     in your .gitignore. We will explain this later in the talk. Thanks
+   
+- What you're looking for is probably .gitignore.
+
+- Is it possible to use GUI to manage a repository in a remote machine? I mean using the ssh:User@IP:Repository_Path ??? I do experiments in different machine with the same repository, and I would like to manage all the remote machine in my local machine
+    - Is there a particular reason to not clone the repository locally to do the management and then just pull on the remote ?
+    - I do it locally over different remote machine :), 
+- I don't understand how you can do it 'locally' on 'remote' machine (remotely). You can just manage your repo on you local machine, the one that have a real screen, and the run 'git pull' on all remote machines to reflect the changes made on the local one.
+    - I never use GUI, so I can't really answer your question, but if you use SSH, the -X or -Y SSH's options will be useful to launch the GUI on the remote, Me neither I never use GUI, I will try to test your advice, thanks,  doesn't that assume the graphic libraries (e.g. tk) are installed on the remote machine?
+   - If the question is "how to use a GUI when your repos clone is on a remote machine accessed through ssh ?", then I can think of two options
+       1. ssh -X to allow xforwarding then simply launch your GUI on the remore machine and it will appear on your local machine
+       2. if the GUI is only installed on your local machine, you can simply mount the remote directory with sshfs and run the GUI on the local machine
+    I've already done both and it works well. Yes, Thanks
+- Small comment on reseting branches. Local reset is ok but propagating resets can easily lead to huge mess. So avoid the "git push --force" unless you're a git expert who really know what he's doing. Also, note that forging commits and history is not simple so as soon as it is published (e.g., on github), it is somehow "certified" and can be used to claim "property".
+
+Seems that the Makefile.PL is missing from the git-labbook repository
+just run "dzil build", that will create Makefile.PL (and other files)
+

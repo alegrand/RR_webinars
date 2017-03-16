@@ -38,7 +38,7 @@ flashplayer, here is a *[[http://newstream.imag.fr/2016-11-08_Reproducible-Resea
 The slides can be found [[file:2016-11-09-grenoble-rdicosmo-reproductibility-preserving-software.pdf][here]] (or [[https://annex.softwareheritage.org/public/talks/2016/2016-11-09-grenoble-rdicosmo-reproductibility-preserving-software.pdf][here]]).
 
 To interact during the presentation (questions, comments), *we used
-this [[https://pad.inria.fr/p/BQnJjEIwADQpPM1Q][pad]]* that we will keep for the record.
+this [[https://pad.inria.fr/p/BQnJjEIwADQpPM1Q][pad]]* that we will [[file:pad.org][keep for the record]].
 ** Persons in charge
    - Grenoble: Arnaud Legrand
    - Bordeaux: Luka Stanisic

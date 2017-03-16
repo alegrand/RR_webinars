@@ -29,7 +29,7 @@ available [[https://github.com/alegrand/SMPE/raw/master/lectures/talk_16_03_07_W
 #+END_CENTER
 
 To interact during the presentation (questions, comments), *we used
-this [[https://pad.inria.fr/p/9mSyf4BhzZ9soDE9][pad]]* that we keep for the record.
+this [[https://pad.inria.fr/p/9mSyf4BhzZ9soDE9][pad]]* that we [[file:pad.org][keep for the record]].
 ** Persons in charge
    - Grenoble: Arnaud Legrand, Frédéric Desprez
    - Bordeaux: Luka Stanisic, Emmanuel Agullo, Nicolas P. Rougier,

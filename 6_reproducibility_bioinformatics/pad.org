@@ -1,0 +1,74 @@
+#+Title: Reproducible Science in Bioinformatics:  Current Status, Solutions and Research Opportunities
+
+
+Feel free to use this area to take notes about any topic you may want to discuss with the speakers in the end
+
+* Notes
+- Elixir: European infrastructure for bioinformatics
+  + Nekrutenko & Taylor, Nature Genetics (2012): http://www.datascienceassn.org/sites/default/files/Next-generation%20Sequencing%20Data%20Interpretation%20-%20Enhancing%20Reproducibility%20and%20Accessibility.pdf
+    + Meta analysis: 62% give no information, only 14% provide all the necessary details
+  + Alsheikh-Al, Ioannidis, et al.: http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0024357
+  + These are meta-studies similar to the ones we had in CS from U. Arizona: http://reproducibility.cs.arizona.edu/
+The 4 R's of RR: Repeat, Replicate, Reproduce, Reuse
+- Ten simple rules for reproducible computational research (for those of you who would not have read it yet): http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003285
+- FAIR principles: https://www.force11.org/group/fairgroup/fairprinciples
+- Loss of analysis skills: http://www.economist.com/node/21537922
+- Carole Goble: What is Reproducibility ? The R* brouhaha http://repscience2016.research-infrastructures.eu/img/CaroleGoble-ReproScience2016v2.pdf
+- Gigascience (http://gigascience.biomedcentral.com/): similar to rescience ?
+
+Interesting tool mentioned by Sarah: snakemake.
+
+* Questions for Sarah
+- At 13:46 for Sarah, the question from the audience was: "Is it possible that data was not available for legal reasons ?"
+- Are you planning to upload a rediffusion of this seminar ? Usually they [the seminars] become available on GitHub.
+  + Yes of course. It is recorded and will be made available in a day or two. Thanks
+- I have lot of interference on audio for the direct, like robotic voice ? Is it normal, is there special parameter for my sound ?
+  + Is it a "new" problem. Did you have the problem with Sarah as well ? Yes
+  + Does anyone has a similar problem ? I'm not aware of particular configuration to do... Sorry about this. I hope the problem will not persist in the final video.
+    + It works fine for me (from Bordeaux)
+    + The sound quality is OK for me (from Nancy)
+    + Same here, good (from Paris)
+* Questions for Jérôme
+Usability questions:
+- How do you know what's inside all the workflow nodes ? 
+- How do you know about the semantic/types of objects ?
+- How do you define a new node with a totally different content from what you had before ?
+- Don't visual programming workflow become more and more complicated and difficult to understand/debug ?
+  + Composite views help.
+- Annotations look like post-its. It's convenient but how durable is this?
+- Sharing workflows ?
+- How does openalea handle the packaging/replicability part (environment, docker, ...)?
+- Difference between openAlea and other workflows ?
+  + No cloud dependancy, everything is meant to run on a single machine if needed
+  + Developping new components is made as easy as possible
+- Technology: regarding distribution (pypi, conda, github), how easy/adopted is this in the bioinformatics community? Git or new tech often scare people.
+  + So sad to read this ... If you want to obtain reproducible/quality code without any versioning system, I wish you good luck. It will be really hard for you to diffuse your work or to collaborate with other people without it. Git, Mercurial or others are an important part of the equation. Sometimes (often in bioinformatics !), you have to learn some new technologies.
+  + We have masters in data science, bioinformatics, etc. So the landscape is changing. We're getting better and better programmers in this community. totally agree ! But you can quickly learn it with MOOCs, tutorials, colleagues, ... ;)
+- Interconnection with notebooks ? 
+  + You can export a workflow execution as a notebook. This makes the loop functionnality complicated.
+  + In the infraphenogrid paper, the workflow is used inside, figures are produced and then the article is written. Then the article refers to github. This is somehow manual.
+- Let's say I am a phenology analyst with 11K images (~ 12GB of data) and I want to use the workflow with OpenAlea. What is its performance?
+  + Can you programmatically create the workflow?
+- How hard is to implement an alien-component, using another language/package (such as R+ggplot2 for plotting, C for pre-processing)?
+  + So far, with python, they've been able to embedd, C, C++, Fortran, ...
+- Could we say that this project can be used to "process images in general", not just reserved to this usage? 
+- Do you think about a web version ? Maybe it could facilitate the exchange of workflows/data and you'll bypass the installation step for the not very "info" bioinformaticians.
+
+* Questions for Yvan:
+- How do you create a new "tool"/method ?
+- The chaining of operations seems very linear. Somehow, it looks like a notebook with many already existing nodes/methods.
+- Data "persistency" (external sources could change)
+- Compared to openalea
+  + web interface
+  + more linear
+  + type checking
+  + sharing/export seems to be part of the engine
+- +What does the analysis look like. You said people should not use external tools (spreadsheets and others).+  You made a demo of the interaction with jupyter. And is the jupyter interaction shared in the same way ?
+Where is the analysis run (privacy ?...)
+- Data and workflow are made available through galaxy instances. What about storage issues ? Who pays for this ?
+  + Share workflows in MyExperiments, the galaxy ToolShed (an app store for galaxy). There may be versionning problems though. This may be addressed through galaxy flavours based on docked (as mentioned in the slides about the Björn Grüning initiative)
+- Planemo ? I'm not sure I understood what this was about... Is it some kind of "meta"-workflow engine or more of philosophy on how workflow developers should work ?
+  + The JSON (Common Workflow Language) is interesting and would allow to run a workflow with a different engine than the one it has been conceived.  It may also to benefit from the best of theses different engines (e.g., expressivity and loop construct of an engine and easy sharing of an other one...).
+
+* Questions for Sarah
+It was crystal clear! ;)

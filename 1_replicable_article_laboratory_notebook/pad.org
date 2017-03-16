@@ -1,0 +1,74 @@
+#+TITLE:  Introduction, producing replicable articles and managing an laboratory notebook
+
+
+People, please write your name on the right... :)
+
+
+The slides are here: https://github.com/alegrand/SMPE/raw/master/lectures/talk_16_03_07_Webinar.pdf
+The webinar is here: https://mi2s.imag.fr/pm/direct
+    
+* Questions (please indicate who's asking the question)
+   - It's nice but I'll never manage to convince my PhD advisor to switch to emacs/git/R/... How can I engage reproducible research if my collaborators don't ?
+   - 
+   - 
+   
+
+* Comments
+  - (slide 11) hence 'doing reproducible research' is not just about how to design experiments: we need to rethink the whole process in a way? Raphaël B.
+  - what about github open alternatives? (eg, gitlab) Raphaël B.
+  Are you talking about the platform (gitlab.com) or the software itself (using a private instance?)
+  talking about the software, the issue with github (in my sense) is that it is a private company operating it.
+Yes, I'm OK, but the problem becomes to keep your instance in the long run.
+  correct, but we are able to provide such services with hal. Why not extending hal?
+  In fact HAL can be used to store up to 1Gb per file (audio, video, sound, maps)
+  - how about 10 min break?
+      Well, people here, have gone to grab a coffee so it may be slightly longer than 5 minutes. We will see.
+  - does github provide specific features for reproducible research? Louis-Claude C.
+  - Why Elsevier is bad ?
+  - GitHub is providing a mechanism to link to your repository with a DOI: https://github.com/blog/1840-improving-github-for-science / https://guides.github.com/activities/citable-code/
+  In terms of perennity, can we rely on any online service operated by a private company to archive the 'electronic notebook' ? 
+  Github or related tools maybe great to keep track of the performed research, but shouldn't we rely on an institutional tool to store a 'freezed' version associated to an article ?
+ 
+  - for later: could you explain your git workflow with branching for experiments
+- hi, after many years using git for many projects, i found that this workflow is very good: http://nvie.com/posts/a-successful-git-branching-model/
+- it is simple and will work very well both for small and big projects (you can use a subset of the concepts proposed)
+- Git-flow that you mentioned above is more oriented for source code development, git brancing for experiments is more about how to perform, manage and analyze experimental data
+- Not sure Arnaud will have enough time to completely explain git branching for experiments, but it is explained in https://hal.inria.fr/hal-01112795
+- There is also a simple example of git branching for experiments here: https://github.com/stanisic/RR_example
+- Of couse git-flow can be combined with git branching for experiments to get good things from both worlds. However, it is probably only for advanced users of git :)
+- Great, thanks for the clarification :)
+- I'm using git branches, one for each experiment, and use Travis to check I did not break anythng
+- I see that this is a good approach. But is it scalable? When you have small variants of a main experiment. Let's say, for the sake of illustration, in the hundreds. 
+- Ouch, never got this case. I guess this method would not work then.
+- Actually, I think the better approach if you have a lot of small variants of the main experiment is to group them together into a single branch. For me, one experimental branch should correspond to one experimental campaign (in which you may perform hundreds of similar experiments).
+- Yes, I agree. Was going to make the same comment. Something can still be improved, though. I've been using numbered experiments, and that is confusing after some time. I try to tag the graphs I make with the origin experiment number, but looking for a particular one in the logs is not efficient.
+- I've tried using a small database (SQLite or MySQL-like) to store the parameters and results. It works well, searching is easy and efficient. The problem is when you need to change something structural in the experiment, the database becomes a problem. I guess in this case you have to start a new branch (w/ new database).
+- That's why I dont believe that much in database approach. Still, I never had problems finding my data results/comments in text files. Putting tags to the experimental data should help regrouping, but it is the SHA1 of the commit when you added your data which should be used to find your data. 
+- Yes, that is a very good suggestion, and in improvement to what I've been doing. Thanks :) In this case, instead of having one hundred files for one hundred instances of an experiment I should have one hundred commits and only one file? It would be more organized, but harder to navigate?
+- Hm, I wouldnt suggest to do 100 commits.
+- Yes. In my case, I've only a few number of experiment (because they need to be validated on behavioral data)
+
+ - Is the webinar being recorded ?
+- I think they will do that 
+SCREENCAST: ton shell qui a lancé ipython ? : BLANC SUR NOIR, ON NE VOIT RIEN EN NOIR SUR BLANC
+selon la version qu'on a, on lance soit ipython notebook ou jupyter notebook
+note: on a utilise notebook pour faire une formation python, c'est très bien!
+
+- Emacs: just discovered spacemacs (spacemacs.org) some weeks ago and it might be much much easier for newcomers. It's vanilla emacs but with well thought configuration and intuitive interface. This is a good news, thank you ! 
+pourrais-tu changer ton theme ? (le fond noir décidement ne passe pas bien sur le screencast)
+YES ! Its is perfect
+
+Christian is happy with your journal choice :-)
+
+How do you handle anonymity at paper submission time? For instance your repositories on Github are not anonymous, I suppose? I am talking about double blind
+- Good point. But you can always work in Github until the end and then just as a final step clone your project to another (anonymous) repository
+
+Ctril-I in evince (BLACK background is still unreadeable :-)  ) YES !!
+
+Very good talk, thank you Arnaud!
+Very interesting, thanks!
+
+BRAVO de montbonnot aussi !!
+Merci (et bravo) de GIANT ! 
+
+

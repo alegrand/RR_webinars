@@ -1,0 +1,48 @@
+#+TITLE:    Numerical Reproducibility
+
+
+Please identify yourself on the right so that we can match colors with people more easily. Feel free to ask your questions below. If we ever miss a question and forget to ask it, to not hesitate to "boost" it by moving it at the end of the pad... ;)
+
+
+https://github.com/alegrand/RR_webinars/blob/master/3_numerical_reproducibility/index.org
+
+Nathalie: https://github.com/alegrand/RR_webinars/blob/master/3_numerical_reproducibility/revol.pdf
+Stef: https://github.com/alegrand/RR_webinars/blob/master/3_numerical_reproducibility/graillat.pdf
+Philippe:+
+
+
+* Questions (Nathalie Revol):
+    - Comment: it would be fun to have minimal examples (x=a+b+c+d) in these different languages that are ready to illustrate the different possible outcomes one may get. One would obviously have to report the hardware/compiler/etc.  Most of this part comes from Florent de Dinechin, see backup slides at the end (taken from http://calcul.math.cnrs.fr/IMG/pdf/2013-Dinechin-PRCN.pdf with kind permission of Florent).
+    - Comment: the refs given in the slides are not complete enough (e.g., title is missing). Maybe we could add this information for those willing to look into it.
+     - is it possible to get a link/ref to the gcc bug? Indeed, it would be nice.
+       here is the link: https://gcc.gnu.org/bugzilla/show_bug.cgi?id=34678 great, thanks!
+        I've written a comment along that line earlier. I'll see with Nathalie for providing all these refs. All these references, including the reference to the bug are in the paper: https://hal.inria.fr/hal-00845839/. (See slides)
+
+* Questions (Stef Graillat)
+    - Are there available implementations of these different techniques (e.g. , superaccumulators presented on slides 40-48) ? Yes, cf. slide 62.
+    Cf. also http://www.math.uu.se/digitalAssets/296/296110_1nehmeier_slides.pdf but there is no link to an implementation;-(
+    - what are the condition numbers of the sums in the experiments? How does the timing depend on the condition number? What do you mean by condition here ? The order of magnitude?
+    With hand waving, this is an upper bound on the number of digits you expect to lose during the computation. Mathematically, for a sum of x(i), the condition number is sum |x(i)|| / | sum x(i) |.
+    If this number is 10 power 8 for instance, then you expect a loss of 8 decimal figures between the exact result and the computed result. The larger the condition number, the larger the loss of digits or the larger the computing time if you ensure a prescribed accuracy.
+    - For LU, this means a x20 slowdown, right ?  And is some cases, you mentioned a x79 memory usage. What are the hope of improving this ?
+        - They are aiming for a x10 slowdown.
+        - Some compressed superaccumulator could be used to save memory but at this point, it requires some coding and manpower.
+        - Such slowdown obviously depend on the input so working with real test cases is important to assess the effectiveness of such approaches.
+
+Hi there, really sorry for the delay. One of the san disk of the guy recording the video was full and there was no way to erase the obsolete files from the vcr so we had to look for the right cable in the Inria building...
+
+* Questions (Philippe Langlois)
+   - In slide 27, the largest numerical error is of the order of 10^{-15} so it does not seem too harmful (except of course for debugging/non regression testing/... purposes). Are you aware of codes where going parallel really leads to "significantly" different outcomes ? I.e., different to the point where it bothers the scientists using this code who start questionning its meaningfulness.
+        + I have an example where changing the computing precision from double to single leads to significantly different results. This is a simulation of the temperature of deep soil permafrost, in response to global warming for instance. The warming up is significantly less when the simulation is performed using single precision. Cf. http://link.springer.com/article/10.1007/s00382-015-2809-5 "The reliability of single precision computations in the simulation of deep soil heat diffusion in a land surface model" by Richard Harvey, Diana L. Verseghy, Climate Dynamics 2015, pp 1-18, DOI: 10.1007/s00382-015-2809-
+         +  In a previous talk of Philippe ( http://mescal.imag.fr/membres/arnaud.legrand/blog/2015/12/03/philippe_langlois.pdf  on slide 4), he mentioned some uncertainty  using telemac that seems quite important (x2.5) on the height of water at some point in a valley when simulating a dam breakage.
+ - Any estimation of the effort needed to make this telemac code (300K sloc of F90) numerically reproducible ? At the moment it requires real interactions with the developers.
+      - For the two modules, it's more or less one thesis of work but it was the first time such a study was done. With further experience, they should be able to evaluate how much time is required for a given module (e.g., a few weeks).
+ - Right, a point I had missed is that  such method obviously does not only incurrs additional computation and memory usage but also additional communications (e.g., on the borders when assembling). This may be why the slowdown increases with the number of processors (slide 47). Fair enough. There is a price to pay anyway and evaluating it as a whole is very interesting. The cost is quite reasonable imho.
+  - How would it compare to using "double double" for the reductions ? 
+  
+   - Question for the Bordeaux (HIEPACS) guys. Can you think of applications that may benefit from such technique ? 
+* Addtional points:
+     - http://reppar.org/
+     - Next webinar: 2016-06-07 Tue, probably on "Good practices for logging and backing up code and data".
+ 
+ 

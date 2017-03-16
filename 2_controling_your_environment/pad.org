@@ -1,0 +1,116 @@
+#+TITLE:  Controling your environment   
+
+Please identify yourself on the right so that we can match colors with people more easily.
+
+The slides are here: https://github.com/camilo1729/webinar-env/raw/master/ctl_environment.pdf
+The webinar is here: https://mi2s.imag.fr/pm/direct
+The material is here: https://github.com/alegrand/RR_webinars/blob/master/2_controling_your_environment/index.org
+
+* Questions: 
+   - Debian's package description of dmidecode states
+
+        Beware that DMI data have proven to be too unreliable to be blindly trusted.
+         Dmidecode does not scan the hardware, it only reports what the BIOS told it to.
+
+    How do you verify that the data provided by it is correct?
+    I'm not sure. I'll let the experts in the pad answer. ;)
+    My answer though, would be that it's probably better than nothing (but it's debattable) and that experts that are interested in such information will know it should be considered with care.
+  - I don't understand why this is a difficult problem. For example, strace captures system calls, which should be enough for everything that is not hardware-specific... I'll ask the question for you and ask him to look at the pad.
+I think that dependency on input parameters might be a problem on any operating system that has dlopen()... but I need to think more about this.
+
+For example, if I imagine a toy program which takes a library name and a function name as a parameter, loads the library, and executes the function, its environment is basically every single dynamic library on the system. I wonder how one can deal with this without resorting to a full VM... (might also apply to syscalls/kernels)
+Capturing a whole program(i.e. all its executions) and capturing a specific execution of a program are different tasks Yes. I would argue that the later is much more difficult, but not always necessary. As the speaker said, it's about reproducing vs extending.
+https://www.linkedin.com/comm/profile/view?id=AAsAABXJZigBO2sjA2yeatc7pG58FdKduaWMTL0&authType=name&authToken=hnm2&mBoxItemID=I6121234050146459648_500&invAcpt=402121179_I6121234050146459648_500&midToken=AQGWpPVxXk5dIw&trk=eml-inv_exp_member_04-hero-4-profile_text&trkEmail=eml-inv_exp_member_04-hero-4-profile_text-null-6neuor%7Eimn1ctwo%7Ear  => Is it intended that this URL is not visible without logging in?
+  - An other interesting tool to capture hardware/system info is sosreport: https://github.com/sosreport/sos which collects a lot of system info. On the other hand it requires sudo rights on the machine
+      But it does not capture the experiment. Only information about the system. What Michael was talking about here is a way to capture/package and reuse a complete environement. Not just information about it. I think it should be listed next to dmidecode, hwloc, etc.
+  - Regarding recipes : These also tend to unconsciously make assumptions about the OS, matching the environment they were designed for... E.g. assume that sh == bash. This is never exposed by testing until a configuration which doesn't match the assumption arises. (Had this problem at CERN where OS == Scientific Linux 6, as configured by CERN, running on x86_64 ;)). Networking (e.g. access to a specific server) is also an issue, which I'm not sure any tool can adress.
+       - Indeed. :) I actually have the problem right now. I'm trying to rerun Michael's experiment but the code builds on busybox that seems down at the moment. It was up this morning and seems to be in trouble at the moment. Let's hope it will be fixed soon.
+       - Note that if the acess to the specific server is only related to downloading a file, then a web cache may do the trick. Kameleon relies on this kind of trick among other caches. => Basically a stateless network assumption ? :)  
+       - I guess in the end, we want to define what exactly we want to reproduce. Which constraints we operate under, etc... It may simplify the problem a lot, although in an experiment-specific way. It also helps selecting the right tool. For example, reproducing raw performance numbers is very difficult (requires emulators with precise control on IOPS, etc, or identical hardware), whereas reproducing relative scalability is much easier.
+  -  I'm obviously biased ;-) but I think that by freezing images, Docker-style containers sidestep the problem, and by piling layer upon layer they make it very hard to reason about software composition.  We wrote about it at https://hal.inria.fr/hal-0 1161771/en .
+
+* Demo Time
+  - We're getting errors here  : docker run -it debian:jessie
+docker: Cannot connect to the Docker daemon. Is the docker daemon running on this host?. 
+    + Indeed, for me, I just ran it with sudo and it worked like a charm. Does the problem persist ? Yes it does. Grrr.. What is your OS ? Ah, seems to work without the sudo prefix. I'm mac os x. 10.8.
+       + Michael suggests to launch the deamon with systemctl start docker.
+    + It seems to work without the -it option? But it does not with the option. --> It will not be interactive in that case. I see thanks. Actually it does work without sudo, but not with sudo on my side. I'll check later, thanks.
+   + On Fedora I had to start the service before running the command:
+    sudo systemctl start docker
+    
+  - Note : It is enough to be in the docker group (via e.g. sudo usermod -aG docker $USER + open new session), sudo is not actually necessary
+  
+  - Fun fact : anytime I run a docker command, the video stops (Ubuntu Linux 14.04 on x86_64).
+      Eeeeeeh. OK... :) Bad luck. :) Yeah, hard to debug Flash or whatever is doing weird stuff.
+      Same on Fedora. Ah-ha... so Linux-specific. Do we have the same kernel ? uname -sr gives Linux 3.13.0-83-generic for me.
+      No. 4.3.5 Then most likely good old deprecated Flash 11.2 being stupid. Though how exactly puzzles me... Sounds like a blatant process isolation violation.
+      
+      
+      
+      
+ I'm curious.  Are you managing to build your images as fast as him? I'm reading the tutorial ahead of him but his download on renater is so fast that I can't catch up! :) Damn and it's still compiling! Compiling....  ggplot2 now... Yeepeee! Now, regeneratig the figure! The Grid'5000 server he is using is recent server class hardware....
+ Nope. Still downloading.
+
+YEAH!!! I MADE IT! I've finally managed to regenerate the figures. Works for me (TM).
+
+No break to catch up on the first demo ?  Thank you ;-)
+
+As a side note, for Debian users, the last (experimental) kernel (4.5.X) has a bug. Docker does not work unless you configure another storage engine (overlay does not work)
+https://github.com/docker/docker/issues/20950
+
+Where does docker put its temp files? Is there someway to prevent it from filling up the root filesystem? 
+Docker is using /var/lib
+You can use the --rm option so docker will remove the container at the end of the run or use docker rm to remove old containers manualy
+The problem is when it is building the system/image. The temporary files use all the free space.
+answer here: http://blog.stefanxo.com/2014/02/clean-up-after-docker/
+Thanks, but my problem is in runtime, while building the image. The images themselves do not use that much space.
+
+Question/debate in Rennes about the save/load process. If we understood the process, the data was not moved with the tar, but the data was already downloaded (and untared) on the target machine ?
+- Answer from Cristian: Yes. It was downloaded on the target machine.
+
+Any reason to not install ggplot2 and stringr from Debian package (as ruby) ? The lsr package must be installed manually (not packaged) but the two others are pacakged (r-cran-ggplot2 and r-cran-stringr)
+- I guess, they just wanted to illustrate a way to do it when the packaging is not up to date. Yeap, but you depend on the latest current version on cran... Right. Well, you would have to stick to specific package versions. Again, any interaction with external repro
+
+
+***** SECOND DEMO
+
+- "[REPROZIP] 15:43:46.824 CRITICAL: [64] tracee_getword() failed: Input/output error" ? Also present on the demo...
+    - Right. I got this as well but it seems harmless... In the end, I obtained the reprozip package.
+-  My turn to experience busybox issues ^^
+
+hadrien@pc-grasland:~/repro_expe$ reprounzip docker setup experiment.rpz expe
+
+Uploading usage statistics is currently disabled
+Please help us by providing anonymous usage statistics; you can enable this
+by running:
+    reprounzip usage_report --enable
+If you do not want to see this message again, you can run:
+    reprounzip usage_report --disable
+Nothing will be uploaded before you opt in.
+Traceback (most recent call last):
+  File "/usr/local/bin/reprounzip", line 9, in <module>
+    load_entry_point('reprounzip==1.0.4', 'console_scripts', 'reprounzip')()
+  File "/usr/local/lib/python2.7/dist-packages/reprounzip/main.py", line 137, in main
+    args.func(args)
+  File "/usr/local/lib/python2.7/dist-packages/reprounzip/unpackers/docker.py", line 117, in docker_setup
+    docker_setup_create(args)
+  File "/usr/local/lib/python2.7/dist-packages/reprounzip/unpackers/docker.py", line 172, in docker_setup_create
+    'busybox-%s' % arch)
+  File "/usr/local/lib/python2.7/dist-packages/reprounzip/utils.py", line 424, in download_file
+    stream=True, verify=ssl_verify)
+  File "/usr/lib/python2.7/dist-packages/requests/api.py", line 55, in get
+    return request('get', url, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/requests/api.py", line 44, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/requests/sessions.py", line 455, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/lib/python2.7/dist-packages/requests/sessions.py", line 558, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/lib/python2.7/dist-packages/requests/adapters.py", line 387, in send
+    raise Timeout(e)
+requests.exceptions.Timeout: HTTPSConnectionPool(host='www.busybox.net', port=443): Read timed out.
+
+  I have the exact same problem. :( Networking and reproducibility... :)
+   - Looks like busybox.net is not working properly.
+
+
