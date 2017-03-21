@@ -36,16 +36,13 @@ a possible solution for making computations reproducible and
 publishable.
 
 ** Webcast/Video 
-The video will be available soon. In the mean time, here are the
-slides used by the speakers:
+Here are the slides used by the speakers:
 - [[file:introduction.pdf][General introduction]] (Konrad Hinsen)
 - [[file:activepapers.pdf][Active Papers]] (Konrad Hinsen)
 - [[file:rescience.pdf][Rescience]] (Nicolas Rougier)
 
 Here is the *[[https://gricad.univ-grenoble-alpes.fr/video/publication-modes-favoring-reproducible-research][link to the video]]*. If you have any trouble with the
 flashplayer, here is a *[[http://newstream.imag.fr/2017-02-14_Reproducible-Research_Konrad-Hinsen_Nicolas-Rougier.mp4][direct link to the mpeg4 video]]*. 
-
-http://newstream.imag.fr/2017-02-14_Reproducible-Research_Konrad-Hinsen_Nicolas-Rougier.mp4
 
 #+BEGIN_CENTER
 [[https://gricad.univ-grenoble-alpes.fr/video/publication-modes-favoring-reproducible-research][file:video_thn.png]]
