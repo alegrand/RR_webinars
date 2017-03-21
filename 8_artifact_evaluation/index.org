@@ -3,7 +3,7 @@
 #+DATE: March 14, 2017
 #+STARTUP: overview indent
 
-*This seminar will take place on March 14, 2017 @ 1:30PM-4:30PM (UTC+1). The
+*This seminar took place on March 14, 2017 @ 1:30PM-4:30PM (UTC+1). The
 link to the video is below.*
 
 * Table of Contents                                                     :TOC:
@@ -29,7 +29,13 @@ encountered problems, solutions, future initiatives and supporting
 frameworks.
 
 ** Webcast/Video 
-Here is the *[[https://mi2s.imag.fr/pm/direct][link to the video]]* (soon updated) and here are the *[[file:presentation.pdf][slides]]*.
+Here is the *[[https://gricad.univ-grenoble-alpes.fr/video/enabling-open-and-reproducible-research-computer-systems-conferences-good-bad-and-ugly][link to the video]]*. If you have any trouble with the
+flashplayer, here is a *[[http://newstream.imag.fr/2017-03-14_Reproducible-Research_Grigori-Fursin.mp4][direct link to the mpeg4 video]]*. Here are the
+*[[file:presentation.pdf][slides]]* used by Grigori during his talk.
+
+#+BEGIN_CENTER
+[[https://gricad.univ-grenoble-alpes.fr/video/enabling-open-and-reproducible-research-computer-systems-conferences-good-bad-and-ugly][file:video_thn.png]]
+#+END_CENTER
 
 To interact during the presentation (questions, comments), *we 
 used this [[https://pad.inria.fr/p/3NkV4zwignZjRmwq][pad]]* that we will keep for the record.
