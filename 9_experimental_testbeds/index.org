@@ -1,4 +1,4 @@
-#+TITLE:     Experimental Platforms in Computer Science
+#+TITLE:     Experimental Testbeds in Computer Science
 #+AUTHOR:    Lucas Nussbaum
 #+DATE: June 6, 2017
 #+STARTUP: overview indent
