@@ -11,8 +11,9 @@ with the support of ANR, CNRS, Inria, University of Grenoble, ...
 required in the practical session.*
 
 #+BEGIN_CENTER
-*Next event*: To be announced. In the meantime, why don't you just have a look
-at the previous editions?
+*Next event*: June 06th 2017 on [[file:10_experimental_platforms/index.org][Experimental platforms in Computer
+Science]]. In the meantime, why don't you just have a look at the
+previous editions?
 #+END_CENTER
 
 * Agenda
@@ -27,8 +28,8 @@ at the previous editions?
 6. <2016-12-06 Tue.> [[file:6_reproducibility_bioinformatics/index.org][Reproducible Science in Bioinformatics:  Current Status, Solutions and Research Opportunities]]
 7. <2017-02-14 Tue.> [[file:7_publications/index.org][Publication Modes Favoring Reproducible Research]]
 8. <2017-03-14 Tue.> [[file:8_artifact_evaluation/index.org][Artifact evaluation in computer systems' conferences]]
-9. <2017-04-00 ven.> TBA
-10. <2017-06-06 Tue.> [[file:10_experimental_platforms/index.org][Experimental platforms in Computer Science]]
+9. <2017-06-06 Tue.> [[file:10_experimental_platforms/index.org][Experimental platforms in Computer Science]]
+10. <2017-06-22 jeu.> TBA
 
 Typical topics planned:
 1. Provenance tracking of experimental data
@@ -63,7 +64,7 @@ particular aspect of reproducible research and to illustrate how this
 aspect can be addressed with state-of-the-art tools. These webinars
 are open to anyone (PhD students, post-doc, engineers, researchers,
 ...) and are in English (probably with a strong French accent
-;-). They will take place on the first *Monday or Tuesday
+;-). They will take place generally on the first *Tuesday
 afternoon (1:30PM-4:30PM UTC+1) of each month.* They generally consist
 of two parts:
 - Part 1. A 1-hour talk followed by a short Q&A session.
@@ -93,6 +94,7 @@ it, it's easy. Any comment and suggestion is welcome.
 - [[http://perso.univ-perp.fr/philippe.langlois/][Philippe Langlois]], University of Perpignan, DALI
 - [[http://yvanlebras.fr/][Yvan Le Bras]], Museum national d'Histoire naturelle
 - [[https://team.inria.fr/polaris/members/arnaud-legrand/][Arnaud Legrand]], CNRS/LIG Inria/Polaris, University of Grenoble.
+- [[https://members.loria.fr/LNussbaum/][Lucas Nussbaum]], University of Lorraine/Loria/Inria.
 - Michaël Mercier, LIG Inria/Datamove, University of Grenoble
 - Pierre Neyron, CNRS/LIG , University of Grenoble
 - [[http://perso.ens-lyon.fr/nathalie.revol/][Nathalie Revol]], Inria/AriC, École Normale Supérieure de Lyon
