@@ -17,9 +17,15 @@ link to the video is below.*
 This talk will be given by [[https://members.loria.fr/LNussbaum/][Lucas Nussbaum]].
 
 ** Webcast/Video 
-Here is the *[[https://mi2s.imag.fr/pm/direct][link to the video]]*.
+Here is the *[[https://gricad.univ-grenoble-alpes.fr/video/experimental-testbeds-computer-science][link to the video]]*. If you have any trouble with the
+flashplayer, here is a *[[http://newstream.imag.fr/2017-06-06_Reproducible_Research-Lucas_Nussbaum.mp4][direct link to the mpeg4 video]]*. Here are the
+*[[file:slides.pdf][slides]]* used by Lucas during his talk.
 
-To interact during the presentation (questions, comments), *we will use
+#+BEGIN_CENTER
+[[https://gricad.univ-grenoble-alpes.fr/video/enabling-open-and-reproducible-research-computer-systems-conferences-good-bad-and-ugly][file:video_thn.png]]
+#+END_CENTER
+ 
+To interact during the presentation (questions, comments), *we used
 this [[https://pad.inria.fr/p/4vJaMLfYNCPhzxQw][pad]]* that we will keep for the record.
 ** Persons in charge
 ** Locations
