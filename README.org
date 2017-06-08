@@ -11,9 +11,9 @@ with the support of ANR, CNRS, Inria, University of Grenoble, ...
 required in the practical session.*
 
 #+BEGIN_CENTER
-*Next event*: June 06th 2017 on [[file:9_experimental_testbeds/index.org][Experimental testbeds in Computer
-Science]]. In the meantime, why don't you just have a look at the
-previous editions?
+*Next event*: June 22th 2017 on [[file:10_statistics_and_replication_in_HCI/index.org][Statistical and Reproducibility Issues
+in Human Computer Interactions]]. In the meantime, why don't you just
+have a look at the previous editions?
 #+END_CENTER
 
 * Agenda
@@ -29,7 +29,8 @@ previous editions?
 7. <2017-02-14 Tue.> [[file:7_publications/index.org][Publication Modes Favoring Reproducible Research]]
 8. <2017-03-14 Tue.> [[file:8_artifact_evaluation/index.org][Artifact evaluation in computer systems' conferences]]
 9. <2017-06-06 Tue.> [[file:9_experimental_testbeds/index.org][Experimental testbeds in Computer Science]]
-10. <2017-06-22 jeu.> TBA
+10. <2017-06-22 Thu.> [[file:10_statistics_and_replication_in_HCI/index.org][Statistical and Reproducibility Issues in Human Computer Interactions]]
+11. <2017-07-11 Tue.> An Approach to Practical Falsifiable Research: the Popper Convention
 
 Typical topics planned:
 1. Provenance tracking of experimental data
@@ -88,9 +89,11 @@ it, it's easy. Any comment and suggestion is welcome.
 - Jérôme Chopard, Inria/INRA
 - [[http://www.dicosmo.org/][Roberto Di Cosmo]], University Paris Diderot
 - [[https://team.inria.fr/polaris/members/vincent-danjean/][Vincent Danjean]], LIG INRIA/Polaris, University of Grenoble/LIG
+- [[https://www.lri.fr/~dragice/][Pierre Dragicevic]], Inria/Aviz, University of Paris-Sud
 - [[http://fursin.net/research.html][Grigori Fursin]], Dividiti, cTuning Foundation
 - [[http://www-pequan.lip6.fr/~graillat/][Stef Graillat]], University Pierre et Marie Curie
 - [[http://khinsen.net/][Konrad Hinsen]], CNRS/Molecular Biophysics Center, Orleans.
+- [[http://yvonnejansen.me/][Yvonne Jansen]], CNRS, University of Paris "Pierre et Marie Curie"
 - [[http://perso.univ-perp.fr/philippe.langlois/][Philippe Langlois]], University of Perpignan, DALI
 - [[http://yvanlebras.fr/][Yvan Le Bras]], Museum national d'Histoire naturelle
 - [[https://team.inria.fr/polaris/members/arnaud-legrand/][Arnaud Legrand]], CNRS/LIG Inria/Polaris, University of Grenoble.

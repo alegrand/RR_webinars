@@ -1,0 +1,78 @@
+#+TITLE:     Statistical and Reproducibility Issues in Human Computer Interactions
+#+AUTHOR:    Pierre Dragicevic and Yvonne Jansen
+#+DATE: June 6, 2017
+#+STARTUP: overview indent
+
+*This seminar will take place oan June 6, 2017 @ 1:30PM-4:30PM (UTC+1). The
+link to the video is below.*
+
+* Table of Contents                                                     :TOC:
+ - [[#practical-information][Practical Information]]
+     - [[#webcastvideo-][Webcast/Video ]]
+     - [[#abstract-of-the-talks-and-bios-of-the-speakers][Abstract of the talks and bios of the speakers]]
+     - [[#persons-in-charge][Persons in charge]]
+     - [[#locations][Locations]]
+ - [[#practical-session-requirements][Practical Session Requirements]]
+
+* Practical Information
+There will be two talks, the first one by [[https://www.lri.fr/~dragice/][Pierre Dragicevic]] and the
+second one by [[http://yvonnejansen.me/][Yvonne Jansen]].
+
+** Webcast/Video 
+Here is the *[[https://mi2s.imag.fr/pm/direct][link to the video]]*.
+
+To interact during the presentation (questions, comments), *we will use
+this [[https://pad.inria.fr/p/6ovKbsNq9Ld8juq0][pad]]* that we will keep for the record.
+
+** Abstract of the talks and bios of the speakers
+*** Statistical dances: why no statistical analysis is reliable and what to do about it (Pierre Dragicevic)
+**** Abstract: 
+We need to improve the way we do statistics in HCI, but more training
+in statistical theory is not enough. We also need good "intuition
+pumps" to develop our statistical thinking skills. In this talk I
+explore the basic concept of statistical dance. The dance analogy has
+been used by Geoff Cumming to describe the variability of p-values
+across hypothetical replications. Through visual examples, I show why
+any statistical analysis and any statistical chart actually dances
+across replications. I discuss why most attempts at stabilizing
+statistical dances are either insufficient or misguided. The solution
+is to embrace the uncertainty and messiness in our data. We need to
+develop a good intuition of this uncertainty and communicate it
+faithfully to our peers. I give a few tips for conveying and
+interpreting interval estimates in our papers in a honest and truthful
+way.
+**** Bio:
+Pierre Dragicevic is working in the Aviz team at Inria as a permanent
+research scientist (CR). He studies information visualization and
+human-computer interaction. He co-signed many research articles with
+p-values until he grew dissatisfied and banished p-values from all his
+publications. Since then, he has been promoting an approach to
+statistics based on planned analyses, interval estimation, graphical
+communication, and nuanced interpretations.
+*** Failure to replicate - a case study (Yvonne Jansen)
+**** Abstract:  
+In 2010 Dana Carney, Amy Cuddy, and Andy Yap published a study on the
+effects of "power poses" on hormone levels and risk-taking
+behavior. Their findings were widely publicized through Amy Cuddy's
+TED talk and have inspired much work building on these findings. Yet
+recent developments suggest that the effect might not actually exist
+and that instead many failed replications fell victim to a publication
+bias. In this talk I will show how we ourselves attempted to apply
+power poses to interface designs, how we failed to replicate effects
+of power poses, and the difficulties we encountered in publishing our
+negative findings. I conclude by discussing the value of sharing
+negative findings with the research community and how it conflicts
+with our current publication system.
+**** Bio: 
+Yvonne Jansen is a CNRS research scientist at the ISIR lab at UPMC
+working within information visualization and human-computer
+interaction. Her research focuses mostly on interaction with physical
+interfaces or spaces. She is also interested in research methodology,
+effective communication of statistics, and reproducible science in
+general.
+** Persons in charge
+- Grenoble: François Bérard, Renaud Blanch, Arnaud Legrand
+** Locations
+- Grenoble: [[https://www.google.fr/maps/place/45%25C2%25B011'26.5%2522N+5%25C2%25B046'02.6%2522E/@45.1907069,5.7668488,19z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d45.190706!4d5.767396][Imag Amphitheater]] on Campus
+* Practical Session Requirements
+None
