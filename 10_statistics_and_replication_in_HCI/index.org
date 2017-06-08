@@ -3,7 +3,7 @@
 #+DATE: June 6, 2017
 #+STARTUP: overview indent
 
-*This seminar will take place oan June 6, 2017 @ 1:30PM-4:30PM (UTC+1). The
+*This seminar will take place on June 22, 2017 @ 1:30PM-4:30PM (UTC+2). The
 link to the video is below.*
 
 * Table of Contents                                                     :TOC:
