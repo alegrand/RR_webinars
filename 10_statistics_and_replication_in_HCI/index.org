@@ -1,6 +1,6 @@
 #+TITLE:     Statistical and Reproducibility Issues in Human Computer Interactions
 #+AUTHOR:    Pierre Dragicevic and Yvonne Jansen
-#+DATE: June 6, 2017
+#+DATE: June 22, 2017
 #+STARTUP: overview indent
 
 *This seminar will take place on June 22, 2017 @ 1:30PM-4:30PM (UTC+2). The
