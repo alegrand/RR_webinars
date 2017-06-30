@@ -3,7 +3,7 @@
 #+DATE: June 22, 2017
 #+STARTUP: overview indent
 
-*This seminar will take place on June 22, 2017 @ 1:30PM-4:30PM (UTC+2). The
+*This seminar took place on June 22, 2017 @ 1:30PM-4:30PM (UTC+2). The
 link to the video is below.*
 
 * Table of Contents                                                     :TOC:
@@ -15,13 +15,20 @@ link to the video is below.*
  - [[#practical-session-requirements][Practical Session Requirements]]
 
 * Practical Information
-There will be two talks, the first one by [[https://www.lri.fr/~dragice/][Pierre Dragicevic]] and the
-second one by [[http://yvonnejansen.me/][Yvonne Jansen]].
+There has been two talks, the first one by [[https://www.lri.fr/~dragice/][Pierre Dragicevic]] and the
+second one by [[http://yvonnejansen.me/][Yvonne Jansen]]. Only the video of the first one is
+available at the moment but the webpage will be eventually updated.
 
 ** Webcast/Video 
-Here is the *[[https://mi2s.imag.fr/pm/direct][link to the video]]*.
+Here is the *[[https://gricad.univ-grenoble-alpes.fr/video/statistical-dances-why-no-statistical-analysis-reliable-and-what-do-about-it][link to the video]]*. If you have any trouble with the
+flashplayer, here is a *[[http://newstream.imag.fr/2017-06-22_Reproducible_Research-Pierre_Dragicevic.mp4][direct link to the mpeg4 video]]*. Here are
+additional *[[http://www.aviz.fr/dances][references]]* used by Pierre during his talk.
 
-To interact during the presentation (questions, comments), *we will use
+#+BEGIN_CENTER
+[[https://gricad.univ-grenoble-alpes.fr/video/statistical-dances-why-no-statistical-analysis-reliable-and-what-do-about-it][file:video_thn.png]]
+#+END_CENTER
+ 
+To interact during the presentation (questions, comments), *we used
 this [[https://pad.inria.fr/p/6ovKbsNq9Ld8juq0][pad]]* that we will keep for the record.
 
 ** Abstract of the talks and bios of the speakers
