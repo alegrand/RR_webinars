@@ -8,7 +8,7 @@ link to the video is below.*
 
 * Table of Contents                                                     :TOC:
  - [[#practical-information][Practical Information]]
-     - [[#webcastvideo-][Webcast/Video ]]
+     - [[#webcastvideo][Webcast/Video]]
      - [[#persons-in-charge][Persons in charge]]
      - [[#locations][Locations]]
  - [[#practical-session-requirements][Practical Session Requirements]]
@@ -35,7 +35,7 @@ then present the [[http://rescience.github.io/][ReScience]] initiative and make 
 a possible solution for making computations reproducible and
 publishable.
 
-** Webcast/Video 
+** Webcast/Video
 Here are the slides used by the speakers:
 - [[file:introduction.pdf][General introduction]] (Konrad Hinsen)
 - [[file:activepapers.pdf][Active Papers]] (Konrad Hinsen)

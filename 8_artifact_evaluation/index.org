@@ -8,7 +8,7 @@ link to the video is below.*
 
 * Table of Contents                                                     :TOC:
  - [[#practical-information][Practical Information]]
-     - [[#webcastvideo-][Webcast/Video ]]
+     - [[#webcastvideo][Webcast/Video]]
      - [[#persons-in-charge][Persons in charge]]
      - [[#locations][Locations]]
  - [[#practical-session-requirements][Practical Session Requirements]]
@@ -28,7 +28,7 @@ Evaluation at computer systems' conferences. He will expose
 encountered problems, solutions, future initiatives and supporting
 frameworks.
 
-** Webcast/Video 
+** Webcast/Video
 Here is the *[[https://gricad.univ-grenoble-alpes.fr/video/enabling-open-and-reproducible-research-computer-systems-conferences-good-bad-and-ugly][link to the video]]*. If you have any trouble with the
 flashplayer, here is a *[[http://newstream.imag.fr/2017-03-14_Reproducible-Research_Grigori-Fursin.mp4][direct link to the mpeg4 video]]*. Here are the
 *[[file:presentation.pdf][slides]]* used by Grigori during his talk.
