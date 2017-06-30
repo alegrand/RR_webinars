@@ -22,7 +22,7 @@ flashplayer, here is a *[[http://newstream.imag.fr/2017-06-06_Reproducible_Resea
 *[[file:slides.pdf][slides]]* used by Lucas during his talk.
 
 #+BEGIN_CENTER
-[[https://gricad.univ-grenoble-alpes.fr/video/enabling-open-and-reproducible-research-computer-systems-conferences-good-bad-and-ugly][file:video_thn.png]]
+[[https://gricad.univ-grenoble-alpes.fr/video/experimental-testbeds-computer-science][file:video_thn.png]]
 #+END_CENTER
  
 To interact during the presentation (questions, comments), *we used
