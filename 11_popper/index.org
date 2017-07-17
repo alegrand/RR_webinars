@@ -79,13 +79,13 @@ terms repeatability, replicability and reproducibility of results as
 defined by the [[https://www.acm.org/publications/policies/artifact-review-badging][ACM's reproducibility policy]].
 
 _Tutorial contents:_
-1. A [[*Introduction][quick introduction]] to the Popper protocol.
-2. [[*Installation][Installation]] of the CLI tool.
-3. [[*Examples][Examples]] on what can be done and how to use the CLI.
-4. A [[*Walk Through][walk through]] of how to create an experiment from scratch using
+1. A [[#introduction][quick introduction]] to the Popper protocol.
+2. [[#installation][Installation]] of the CLI tool.
+3. [[#examples][Examples]] on what can be done and how to use the CLI.
+4. A [[#alk-through][walk through]] of how to create an experiment from scratch using
    the scaffolding feature of the CLI.
-5. Re-running an [[*Re-running][existing/published experiment]].
-6. Continuous validation of experiments [[*Continous Validation][using Jenkins]].
+5. Re-running an [[#re-running][existing/published experiment]].
+6. Continuous validation of experiments [[#continous-validation][using Jenkins]].
 ** Introduction
 ** Installation
 ** Examples
