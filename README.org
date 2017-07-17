@@ -11,8 +11,8 @@ with the support of ANR, CNRS, Inria, University of Grenoble, ...
 required in the practical session.*
 
 #+BEGIN_CENTER
-*Next event*: June 22th 2017 on [[file:10_statistics_and_replication_in_HCI/index.org][Statistical and Reproducibility Issues
-in Human Computer Interactions]]. In the meantime, why don't you just
+*Next event*: July 20th 2017 on [[file:11_popper/index.org][The Popper Convention: An Approach to
+Practical Falsifiable Research]]. In the meantime, why don't you just
 have a look at the previous editions?
 #+END_CENTER
 
