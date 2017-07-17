@@ -9,7 +9,7 @@
 * Table of Contents                                                     :TOC:
  - [[#practical-information][Practical Information]]
      - [[#webcastvideo][Webcast/Video]]
-     - [[#abstract-of-the-talks-and-bios-of-the-speakers][Abstract of the talks and bios of the speakers]]
+     - [[#abstract-and-bio-of-the-speaker][Abstract and bio of the speaker]]
      - [[#persons-in-charge][Persons in charge]]
      - [[#locations][Locations]]
  - [[#practical-session][Practical Session]]
@@ -27,7 +27,7 @@ Here is the *[[https://www.youtube.com/watch?v=HmbMwoNsu8k][link to the video]]*
 To interact during the presentation (questions, comments), *we will use
 this [[https://pad.inria.fr/p/2FLYMZe3L9Gt0APh][pad]]* that we will keep for the record.
 
-** Abstract of the talks and bios of the speakers
+** Abstract and bio of the speaker
 *** Abstract: 
 Over the last decade, software engineering and systems administration
 communities have developed sophisticated techniques and strategies to
@@ -74,7 +74,7 @@ also show how to import an existing experiment and re-execute it to
 verify the replicability of results. We will lastly show how to
 continuously validate an experiment using Jenkins.
 
-*Note on terminology**: Throughout this talk and exercises, we use the
+*Note on terminology*: Throughout this talk and exercises, we use the
 terms repeatability, replicability and reproducibility of results as
 defined by the [[https://www.acm.org/publications/policies/artifact-review-badging][ACM's reproducibility policy]].
 
