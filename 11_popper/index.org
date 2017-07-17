@@ -1,0 +1,95 @@
+#+TITLE:     An Approach to Practical Falsifiable Research: the Popper Convention
+#+AUTHOR:    Ivo Pierre Dragicevic and Yvonne Jansen
+#+DATE: July 20, 2017
+#+STARTUP: overview indent
+
+*This seminar will take place on July 20, 2017 @ 1:30PM-4:30PM
+(UTC+2). The link to the video is below.*
+
+* Table of Contents                                                     :TOC:
+ - [[#practical-information][Practical Information]]
+     - [[#webcastvideo][Webcast/Video]]
+     - [[#abstract-of-the-talks-and-bios-of-the-speakers][Abstract of the talks and bios of the speakers]]
+     - [[#persons-in-charge][Persons in charge]]
+     - [[#locations][Locations]]
+ - [[#practical-session][Practical Session]]
+     - [[#introduction][Introduction]]
+     - [[#installation][Installation]]
+     - [[#examples][Examples]]
+     - [[#walk-through][Walk Through]]
+     - [[#re-running][Re-running]]
+     - [[#continous-validation][Continous Validation]]
+
+* Practical Information
+** Webcast/Video
+Here is the *[[https://www.youtube.com/watch?v=HmbMwoNsu8k][link to the video]]*. 
+ 
+To interact during the presentation (questions, comments), *we will use
+this [[https://pad.inria.fr/p/2FLYMZe3L9Gt0APh][pad]]* that we will keep for the record.
+
+** Abstract of the talks and bios of the speakers
+*** Abstract: 
+Over the last decade, software engineering and systems administration
+communities have developed sophisticated techniques and strategies to
+ensure “software reproducibility”, i.e. the reproducibility of
+software artifacts and their behavior using versioning, dependency
+management, virtualization, infrastructure automation, and
+comprehensive documentation. In this talk I will introduce and give an
+overview of the Popper Experimentation Protocol
+(http://falsifiable.us) developed at the Systems Research Lab at UC
+Santa Cruz in collaboration with SandiaNational Labs, LLNL, NCAR,
+Unidata, and the University of Wisconsin, Madison. The key idea behind
+Popper is to manage every scientific exploration in computation and
+data exploration as a software project, using tools and services that
+are readily available now and enjoy wide popularity. By doing so,
+scientific explorations become reproducible with the same convenience,
+efficiency, and scalability as software reproducibility while fully
+leveraging continuing improvements to these tools and services.  The
+Systems Research Lab has adopted (and evolved) the Popper protocol for
+a little more than a year for all its research work, including paper
+submissions to peer-reviewed systems conferences and
+workshops. Students prefer following the protocol because they find it
+makes their work for them personally more productive. We are now
+working with research groups in genomics and numerical weather
+prediction to help “popperize” their scientific explorations.
+*** Bio:
+Ivo Jimenez is a PhD candidate at the UC Santa Cruz [[http://cs.ucsc.edu/][Computer Science
+Department]] and a member of the [[http://systemslab.github.io/][Systems Research Lab]]. He is interested
+in large-scale distributed data management systems, as well as in Open
+Science and Open Data. His current work focuses on the [[http://falsifiable.us/][practical
+reproducible evaluation of systems research]]. Ivo is originally from
+Mexico, where he got his B.S. in Computer Science from [[http://www.uson.mx/][Universidad de
+Sonora]]. From 2006 to 2010 he worked as a Research Associate in the
+Database Research Lab at [[https://www.labs.hpe.com/][HP Labs]].
+** Persons in charge
+- Grenoble: Arnaud Legrand
+** Locations
+- Grenoble: [[https://www.google.fr/maps/place/45%25C2%25B011'26.5%2522N+5%25C2%25B046'02.6%2522E/@45.1907069,5.7668488,19z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d45.190706!4d5.767396][Imag Amphitheater]] on Campus
+* Practical Session
+
+In this session we will introduce the Popper experimentation protocol. 
+We will go over an exercise that makes use of the Popper CLI's
+scaffolding features to create an experiment from scratch and will
+also show how to import an existing experiment and re-execute it to
+verify the replicability of results. We will lastly show how to
+continuously validate an experiment using Jenkins.
+
+*Note on terminology**: Throughout this talk and exercises, we use the
+terms repeatability, replicability and reproducibility of results as
+defined by the [[https://www.acm.org/publications/policies/artifact-review-badging][ACM's reproducibility policy]].
+
+_Tutorial contents:_
+1. A [[*Introduction][quick introduction]] to the Popper protocol.
+2. [[*Installation][Installation]] of the CLI tool.
+3. [[*Examples][Examples]] on what can be done and how to use the CLI.
+4. A [[*Walk Through][walk through]] of how to create an experiment from scratch using
+   the scaffolding feature of the CLI.
+5. Re-running an [[*Re-running][existing/published experiment]].
+6. Continuous validation of experiments [[*Continous Validation][using Jenkins]].
+** Introduction
+** Installation
+** Examples
+** Walk Through
+See https://github.com/systemslab/popper/tree/master/templates/experiments/blis
+** Re-running
+** Continous Validation

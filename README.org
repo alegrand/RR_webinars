@@ -30,7 +30,7 @@ have a look at the previous editions?
 8. <2017-03-14 Tue.> [[file:8_artifact_evaluation/index.org][Artifact evaluation in computer systems' conferences]]
 9. <2017-06-06 Tue.> [[file:9_experimental_testbeds/index.org][Experimental testbeds in Computer Science]]
 10. <2017-06-22 Thu.> [[file:10_statistics_and_replication_in_HCI/index.org][Statistical and Reproducibility Issues in Human Computer Interactions]]
-11. <2017-07-18 Tue.> An Approach to Practical Falsifiable Research: the Popper Convention
+11. <2017-07-20 Thu.> [[file:11_popper/index.org][An Approach to Practical Falsifiable Research: the Popper Convention]]
 
 Typical topics planned:
 1. Provenance tracking of experimental data
