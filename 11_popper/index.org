@@ -16,7 +16,8 @@
 
 * Practical Information
 ** Webcast/Video
-Here is the *[[https://www.youtube.com/watch?v=HmbMwoNsu8k][link to the video]]*. 
+Here is the *[[https://www.youtube.com/watch?v=MBO1vKbNp9A][link to the video]]*. If you want to ask questions live and
+be part of the stream, rather use [[https://hangouts.google.com/hangouts/_/t77i4tv4zzfwzacqivkb5rr2iuf][this hangout link]].
  
 To interact during the presentation (questions, comments), *we will use
 this [[https://pad.inria.fr/p/2FLYMZe3L9Gt0APh][pad]]* that we will keep for the record.
