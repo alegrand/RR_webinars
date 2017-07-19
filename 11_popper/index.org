@@ -13,12 +13,6 @@
      - [[#persons-in-charge][Persons in charge]]
      - [[#locations][Locations]]
  - [[#practical-session][Practical Session]]
-     - [[#introduction][Introduction]]
-     - [[#installation][Installation]]
-     - [[#examples][Examples]]
-     - [[#walk-through][Walk Through]]
-     - [[#re-running][Re-running]]
-     - [[#continous-validation][Continous Validation]]
 
 * Practical Information
 ** Webcast/Video
@@ -79,17 +73,14 @@ terms repeatability, replicability and reproducibility of results as
 defined by the [[https://www.acm.org/publications/policies/artifact-review-badging][ACM's reproducibility policy]].
 
 _Tutorial contents:_
-1. A [[#introduction][quick introduction]] to the Popper protocol.
-2. [[#installation][Installation]] of the CLI tool.
-3. [[#examples][Examples]] on what can be done and how to use the CLI.
-4. A [[#alk-through][walk through]] of how to create an experiment from scratch using
+1. A [[http://popper.readthedocs.io/en/latest/protocol/intro_to_popper.html][quick introduction]] to the Popper protocol.
+2. [[https://github.com/systemslab/popper/tree/master/popper#install][Installation]] of the CLI tool.
+3. [[#exampleshttp://popper.readthedocs.io/en/latest/tutorial/hpc.html][Examples]] on what can [[http://popper.readthedocs.io/en/latest/tutorial/data-science.html][be done]] and how to use the CLI.
+4. A [[http://popper.readthedocs.io/en/latest/tutorial/from_scratch.html][walk through]] of how to create an experiment from scratch using
    the scaffolding feature of the CLI.
-5. Re-running an [[#re-running][existing/published experiment]].
-6. Continuous validation of experiments [[#continous-validation][using Jenkins]].
-** Introduction
-** Installation
-** Examples
-** Walk Through
-See https://github.com/systemslab/popper/tree/master/templates/experiments/blis
-** Re-running
-** Continous Validation
+5. Re-running an [[http://popper.readthedocs.io/en/latest/tutorial/math_science.html][existing/published experiment]].
+6. Continuous validation of experiments [[http://popper.readthedocs.io/en/latest/ci/popperci.html][using Jenkins]].
+
+Illustration will also use this [[https://github.com/systemslab/popper/tree/master/templates/experiments/blis][example]].
+
+
