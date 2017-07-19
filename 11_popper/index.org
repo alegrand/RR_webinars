@@ -1,5 +1,5 @@
 #+TITLE:     An Approach to Practical Falsifiable Research: the Popper Convention
-#+AUTHOR:    Ivo Pierre Dragicevic and Yvonne Jansen
+#+AUTHOR:    Ivo Gimenez
 #+DATE: July 20, 2017
 #+STARTUP: overview indent
 
