@@ -20,7 +20,7 @@ Here is the *[[https://www.youtube.com/watch?v=MBO1vKbNp9A][link to the video]]*
 be part of the stream, rather use [[https://hangouts.google.com/hangouts/_/t77i4tv4zzfwzacqivkb5rr2iuf][this hangout link]].
  
 To interact during the presentation (questions, comments), *we will use
-this [[https://pad.inria.fr/p/2FLYMZe3L9Gt0APh][pad]]* that we will keep for the record.
+this [[https://pad.inria.fr/p/2FLYMZe3L9Gt0APh][pad]]* that we will we will [[file:pad.org][keep for the record]].
 
 ** Abstract and bio of the speaker
 *** Abstract: 
@@ -83,5 +83,7 @@ _Tutorial contents:_
 6. Continuous validation of experiments [[http://popper.readthedocs.io/en/latest/ci/popperci.html][using Jenkins]].
 
 Illustration will also use this [[https://github.com/systemslab/popper/tree/master/templates/experiments/blis][example]].
+
+Hands-on exercise is here: https://gist.github.com/ivotron/84a1faa339abaf50cf00376640b9ad12
 
 

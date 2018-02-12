@@ -1,0 +1,56 @@
+#+TITLE:     An Approach to Practical Falsifiable Research: the Popper Convention
+
+Hands-on exercise: https://gist.github.com/ivotron/84a1faa339abaf50cf00376640b9ad12
+
+* Questions during the talk
+
+- I just followed the instructions of https://gist.github.com/ivotron/84a1faa339abaf50cf00376640b9ad12 and it worked like a charm. When redoing the blis experiments though, I got a:
+  #+BEGIN_EXAMPLE
+    Checking experiment myexp
+    Running stage: setup.sh .
+    Running stage: run.sh .
+    Running stage: teardown.sh .
+    Running stage: validate.sh .
+    status: SUCCESS
+
+    Checking experiment blis
+    Running stage: run.sh .
+    Stage run.sh failed. Check logs for details.
+    status: FAIL
+    Popper check finished
+  #+END_EXAMPLE
+  
+  A `cat experiments/blis/popper_logs/run.sh.*` returns:
+  #+begin_src sh :results output :exports both
+           + docker pull ivotron/blis:0.2.1-reference
+    docker: error while loading shared libraries: libapparmor.so.1: cannot open shared object file: No such file or directory  
+  #+end_src
+
+- You write "For this, we need an account at Travis CI. Once we have one. We activate the project so it is continuously validated." I don't have one to play with but can you show us one of yours.
+- When going through github's CI, their robot will run the experiment. How do you handle "credentials" and allow him to access "your" machines ? I'm thinking of running XP on Grid'5000 for examples.
+  - here are environemtne variables .e.g. MY_USER and MY_PASSWORD .. in your script you use these.
+  - When going throught the CLI to run an experiment, you're asked for such informations and jenkins will provide them to your scripts through the previous environment variables.
+- Do you support running just the run.sh portion several times to avoid the cost of multiple deployments while developing the experiment?
+  - Not really at the moment.
+  - It's really can we run multiple versions of the same experiment on the same resources? Useful while developing the experiment which might need a lot of repetitions.
+- The popper check command has a ~--skip~ argument that allows to skip stages. Where are these stages defined ?
+  - by convention: ~setup.sh~, ~run.sh~, ~validate.sh~, ~teardown.sh~
+- Is it possible to introduce new steps ? E.g., reserve machines, deploy this, deploy that, transfer this data, etc. ? Or should all this go in the setup.sh and popper will not go in the internals of this ?
+- Regarding the codified validations (expect, etc.), Where does this go ? In validate.sh ?
+  - yes: validate.sh
+  - convention:
+    - [true] checking that foo is valid
+    - [false] checking that bar is true
+  - But the code that implements this "expect" is it in a python library ? or elsewhere ? I understand it should be called by validate.sh but who provides this capability ?
+    - run.sh, validate.sh, etc. are entry-points for domain specifics scripts
+  - What if you realize after looking in more details at the data that your validation test is too simple or should be changed ? Should you then rerun the whole thing (i.e., re-run the experiments) or can you rerun only the validation test ?
+    - That's what the --skip argument is made for...
+    - you can do --skip setup.sh,run.sh,teardown.sh
+
+
+OK, people were frustrated that I did not let them applaude! :) But thanks again a lot Ivo for everything. It was awesome.
+Thanks for the great talk!
+
+* Brainstrom after the talk :
+- Linear organization. Handling minor modifications of previous XP ? It's actually Jenkins who keeps track of previous experiments. The experiments1/ experiments2/ etc. are not differous versions of the xp but several different experiments. It's jenkins who keeps tracks of the different versions of these experiments. Various questions about where the results are stored.
+- Various discussions about more complex workflows (not just setup, run, ...)
