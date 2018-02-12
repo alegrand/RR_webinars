@@ -131,12 +131,14 @@ and files that are compatible with org-mode 8.
 ** A stub of replicable article
 Remember, you need a working LaTeX and R environment. If you can't
 open a terminal and run the commands =R= and =pdflatex=, you will not be
-able to generate this document. You may still read the source
-([[file:replicable/article.org][article.org]]) and understand how it works though.
+able to generate this document. The article downloads the
+corresponding LaTeX packages so you also need to have a working =wget=
+command. You may still read the source ([[file:replicable/article.org][article.org]]) and understand
+how it works though.
 
-Download the archive, untar it and simply make to generate the
-article. You should then be able to open the [[file:replicable/article.pdf][resulting article]].
-
+Download the [[https://github.com/alegrand/RR_webinars/raw/master/1_replicable_article_laboratory_notebook/replicable/replicable.tgz][archive]], untar it and simply make to generate the
+article. You should then be able to open the [[file:replicable/article.pdf][resulting article]]. This
+is summarized in the following command:
 #+begin_src sh :results output :exports both
 wget --no-check-certificate -O replicable.tgz https://github.com/alegrand/RR_webinars/raw/master/1_replicable_article_laboratory_notebook/replicable/replicable.tgz
 tar zxf replicable.tgz; cd replicable; make ; evince article.pdf
