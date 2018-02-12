@@ -133,8 +133,8 @@ Remember, you need a working LaTeX and R environment. If you can't
 open a terminal and run the commands =R= and =pdflatex=, you will not be
 able to generate this document. The article downloads the
 corresponding LaTeX packages so you also need to have a working =wget=
-command. You may still read the source ([[file:replicable/article.org][article.org]]) and understand
-how it works though.
+command (alternatively, you can use =curl=). You may still read the
+source ([[file:replicable/article.org][article.org]]) and understand how it works though.
 
 Download the [[https://github.com/alegrand/RR_webinars/raw/master/1_replicable_article_laboratory_notebook/replicable/replicable.tgz][archive]], untar it and simply make to generate the
 article. You should then be able to open the [[file:replicable/article.pdf][resulting article]]. This
