@@ -51,10 +51,11 @@ this [[https://pad.inria.fr/p/9mSyf4BhzZ9soDE9][pad]]* that we [[file:pad.org][k
 * Practical Session Requirements
 *Edit:* This section was edited on February 2018 to keep it up-to-date
 with more recent versions of org-mode and others. Feel free to
-navigate in the history to obtain the original version.
+navigate in the history to obtain the version originally used in
+March 2016.
 
 #+BEGIN_CENTER
-This tuturial relies on *org-mode 9*
+_This tuturial relies on *org-mode 9*._
 #+END_CENTER
 
   We will explain the audience how to create and manage replicable
