@@ -54,9 +54,7 @@ with more recent versions of org-mode and others. Feel free to
 navigate in the history to obtain the version originally used in
 March 2016.
 
-#+BEGIN_CENTER
-_This tuturial relies on *org-mode 9*._
-#+END_CENTER
+*Warning:* This tuturial relies on *org-mode 9*.
 
   We will explain the audience how to create and manage replicable
   articles and give advice on how to manage a laboratory notebook on a
