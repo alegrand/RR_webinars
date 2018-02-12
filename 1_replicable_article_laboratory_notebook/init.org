@@ -7,10 +7,10 @@
 
 This is a "minimal" =.emacs= configuration file. For this configuration
 to work, you'll need:
-- emacs24 (>24.3) (this way installing through elpa will save you some
+- emacs25 (>25.2) (this way installing through elpa will save you some
   time) and emacs-goodies (e.g., for color themes)
-- org-mode > 8.2 (there has been a major compatibility breakage so
-  need to stay away from old versions)
+- org-mode > 9.0 (there has been several major compatibility breakage
+  so need to stay away from old versions)
 - ess and R
 - texlive and auctex
 
@@ -53,7 +53,16 @@ document, simply =M-x org-babel-tangle=.
 (transient-mark-mode t)
 (require 'paren)
 #+end_src
-* Shortcuts:
+** Asking for confirmation concisely: 					:WEB:
+Link: http://org.ryuslash.org/dotfiles/emacs/init.html#sec-7-1 Being
+asked to type in yes explicitly all the time gets very tedious. I
+understand that it is safer since y is much easier to type in
+accidentally than yes and so the potential to say yes to things you
+don't want is there, but I haven't had any such problems yet.
+
+#+begin_src emacs-lisp :tangle init.el
+(defalias 'yes-or-no-p 'y-or-n-p)
+#+end_src* Shortcuts:
 ** UTF 8 by default                                                 :ARNAUD:
 #+begin_src emacs-lisp :tangle init.el
 (set-terminal-coding-system 'utf-8)
@@ -147,7 +156,7 @@ my other shortcuts (e.g., the ones for spelling a region).
 #+begin_src emacs-lisp :tangle init.el
 (global-set-key [f5] '(lambda () (interactive) (revert-buffer nil t nil)))
 #+end_src
-* Small fixes:
+* Small fixes for LaTeX:
 ** PDF with LaTeX by default                                        :ARNAUD:
 #+begin_src emacs-lisp :tangle init.el
 (defun auto-fill-mode-on () (TeX-PDF-mode 1))
@@ -162,16 +171,6 @@ my other shortcuts (e.g., the ones for spelling a region).
 (add-hook 'emacs-lisp-mode 'auto-fill-mode-on)
 (add-hook 'tex-mode-hook 'auto-fill-mode-on)
 (add-hook 'latex-mode-hook 'auto-fill-mode-on)
-#+end_src
-** Asking for confirmation concisely: 					:WEB:
-Link: http://org.ryuslash.org/dotfiles/emacs/init.html#sec-7-1 Being
-asked to type in yes explicitly all the time gets very tedious. I
-understand that it is safer since y is much easier to type in
-accidentally than yes and so the potential to say yes to things you
-don't want is there, but I haven't had any such problems yet.
-
-#+begin_src emacs-lisp :tangle init.el
-(defalias 'yes-or-no-p 'y-or-n-p)
 #+end_src
 * Org-mode convenient configuration
 ** Default directory
@@ -387,8 +386,10 @@ Additional shortcuts for navigating through org-mode documents:
 * Org-mode + babel:
 ** Seamless use of babel (no confirmation, lazy export)              :ARNAUD:
 #+begin_src emacs-lisp :tangle init.el
-(setq org-export-babel-evaluate nil)
-(setq org-confirm-babel-evaluate nil)
+;; In org-mode 9 you need to have #+PROPERTY: header-args :eval never-export 
+;; in the beginning or your document to tell org-mode not to evaluate every 
+;; code block every time you export.
+(setq org-confirm-babel-evaluate nil) ;; Do not ask for confirmation all the time!!
 #+end_src
 ** Some initial languages we want org-babel to support:             :ARNAUD:
 #+begin_src emacs-lisp :tangle init.el
@@ -464,14 +465,14 @@ To use this type <p and then TAB
 To use this type <b and then TAB
 #+begin_src emacs-lisp :tangle init.el
 (add-to-list 'org-structure-template-alist
-        '("b" "#+begin_src sh :results output :exports both\n\n#+end_src" "<src lang=\"sh\">\n\n</src>"))
+        '("b" "#+begin_src shell :results output :exports both\n\n#+end_src" "<src lang=\"sh\">\n\n</src>"))
 #+end_src
 
 To use this type <B and then TAB. This comes with a session argument
 (e.g., in case you want to keep ssh connexions open).
 #+begin_src emacs-lisp :tangle init.el
 (add-to-list 'org-structure-template-alist
-        '("B" "#+begin_src sh :session foo :results output :exports both \n\n#+end_src" "<src lang=\"sh\">\n\n</src>"))
+        '("B" "#+begin_src shell :session *shell* :results output :exports both \n\n#+end_src" "<src lang=\"sh\">\n\n</src>"))
 #+end_src
 *** Graphviz
 #+begin_src emacs-lisp :tangle init.el

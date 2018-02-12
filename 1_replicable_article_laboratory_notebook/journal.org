@@ -14,9 +14,9 @@
 #+COLUMNS: %25ITEM %TODO %3PRIORITY %TAGS
 #+SEQ_TODO: TODO(t!) STARTED(s!) WAITING(w@) APPT(a!) | DONE(d!) CANCELLED(c!) DEFERRED(f!)
 
-* 2016
-** 2016-03 March
-*** 2016-03-07 Monday
+* 2018
+** 2018-02 March
+*** 2018-02-12 Monday
 **** [[https://github.com/alegrand/RR_webinars/blob/master/1_replicable_article_laboratory_notebook/index.org][First webinar on reproducible research: litterate programming]]
 ***** Emacs shortcuts
 Here are a few convenient emacs shortcuts for those that have never
@@ -56,10 +56,13 @@ shortcuts. This can be changed from the Options menu.
   - =C-c C-d= set a deadl1ine (use =S-arrows= to navigate in the dates)
   - =A-arrows= move subtree (add shift for the whole subtree)
 ***** Org-mode Babel (for literate programming)                 :OrgMode:
-  - =<s + tab= template for source bloc. You can easily adapt it to get this:
-      : #+BEGIN_SRC sh
-      : ls
-      : #+END_SRC
+  - =<s + tab= template for source bloc. You can easily adapt it to get
+    this:
+    #+BEGIN_EXAMPLE
+      #+begin_src shell
+      ls
+      #+end_src
+    #+END_EXAMPLE
     Now if you =C-c C-c=, it will execute the block.
     #+BEGIN_EXAMPLE
   #+RESULTS:
@@ -73,7 +76,7 @@ shortcuts. This can be changed from the Options menu.
     sessions,...), which is why I have my own shortcuts =<b + tab= bash
     block (or =B= for sessions).
     #+BEGIN_EXAMPLE 
-  #+begin_src sh :results output :exports both
+  #+begin_src shell :results output :exports both
   ls /tmp/*201*.pdf
   #+end_src
 

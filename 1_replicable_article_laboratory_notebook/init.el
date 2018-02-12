@@ -92,8 +92,6 @@
 (add-hook 'tex-mode-hook 'auto-fill-mode-on)
 (add-hook 'latex-mode-hook 'auto-fill-mode-on)
 
-(defalias 'yes-or-no-p 'y-or-n-p)
-
 (setq org-directory "~/org/")
 
 (setq org-hide-leading-stars t)
@@ -258,8 +256,10 @@ before runnind ant hen run the `cua--precommand-handler'"
 (global-set-key (kbd "C-c <left>") 'outline-previous-visible-heading)
 (global-set-key (kbd "C-c <right>") 'outline-next-visible-heading)
 
-(setq org-export-babel-evaluate nil)
-(setq org-confirm-babel-evaluate nil)
+;; In org-mode 9 you need to have #+PROPERTY: header-args :eval never-export 
+;; in the beginning or your document to tell org-mode not to evaluate every 
+;; code block every time you export.
+(setq org-confirm-babel-evaluate nil) ;; Do not ask for confirmation all the time!!
 
   (org-babel-do-load-languages
    'org-babel-load-languages
@@ -304,10 +304,10 @@ before runnind ant hen run the `cua--precommand-handler'"
         '("P" "#+begin_src python :results output :session *python* :exports both\n\n#+end_src" "<src lang=\"python\">\n\n</src>"))
 
 (add-to-list 'org-structure-template-alist
-        '("b" "#+begin_src sh :results output :exports both\n\n#+end_src" "<src lang=\"sh\">\n\n</src>"))
+        '("b" "#+begin_src shell :results output :exports both\n\n#+end_src" "<src lang=\"sh\">\n\n</src>"))
 
 (add-to-list 'org-structure-template-alist
-        '("B" "#+begin_src sh :session foo :results output :exports both \n\n#+end_src" "<src lang=\"sh\">\n\n</src>"))
+        '("B" "#+begin_src shell :session *shell* :results output :exports both \n\n#+end_src" "<src lang=\"sh\">\n\n</src>"))
 
 (add-to-list 'org-structure-template-alist
         '("g" "#+begin_src dot :results output graphics :file \"/tmp/graph.pdf\" :exports both

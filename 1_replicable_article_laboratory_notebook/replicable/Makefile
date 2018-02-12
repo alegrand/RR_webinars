@@ -4,8 +4,7 @@ ARCHIVE_FILES=article.org biblio.bib Makefile
 all: article.pdf
 
 %.tex: %.org
-	emacs -q -batch --eval "(setq enable-local-eval t)" --eval "(setq enable-local-variables t)" \
-	   --eval "(setq org-export-babel-evaluate t)" $^  --funcall org-latex-export-to-latex
+	emacs -q -batch --eval "(setq enable-local-eval t)" --eval "(setq enable-local-variables t)" $^  --funcall org-latex-export-to-latex
 
 %.pdf: %.tex
 	pdflatex $^
@@ -14,8 +13,7 @@ all: article.pdf
 	pdflatex $^
 
 %.html: %.org
-	emacs -q -batch --eval "(setq enable-local-eval t)" --eval "(setq enable-local-variables t)" \
-	   --eval "(setq org-export-babel-evaluate t)" $^  --funcall org-html-export-to-html
+	emacs -q -batch --eval "(setq enable-local-eval t)" --eval "(setq enable-local-variables t)" $^  --funcall org-html-export-to-html
 
 $(ARCHIVE).tgz: $(ARCHIVE_FILES)
 	tar --xform "s|^|$(ARCHIVE)/|" -zcf $@ $^

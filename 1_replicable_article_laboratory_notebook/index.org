@@ -47,6 +47,14 @@ this [[https://pad.inria.fr/p/9mSyf4BhzZ9soDE9][pad]]* that we [[file:pad.org][k
    - Paris: salle visio Cantor (Roberto Di Cosmo)
    - ...
 * Practical Session Requirements
+*Edit:* This section was edited on February 2018 to keep it up-to-date
+with more recent versions of org-mode and others. Feel free to
+navigate in the history to obtain the original version.
+
+#+BEGIN_CENTER
+This tuturial relies on *org-mode 9*
+#+END_CENTER
+
   We will explain the audience how to create and manage replicable
   articles and give advice on how to manage a laboratory notebook on a
   daily basis. 
@@ -62,7 +70,16 @@ this [[https://pad.inria.fr/p/9mSyf4BhzZ9soDE9][pad]]* that we [[file:pad.org][k
   #+END_CENTER
 ** Installing emacs, ess, auctex, ...
 *** Mac OS X
-- *Option 1*: If you already use =brew=, simply do the following
+- *Option 1*: Install the =.dmg= file from [[http://vgoulet.act.ulaval.ca/][Vincent Goulet]]:
+  https://vigou3.github.io/emacs-modified-macos/. It ships with recent
+  versions:
+  - Emacs 25.3
+  - ESS 17.11
+  - org-mode 9.1.6
+  In that case you may have several versions of emacs installed on
+  your machine and launching emacs from a terminal may not run the one
+  you just installed. If anyone know how to get rid of this...
+- *Option 2*: If you already use =brew=, simply do the following
   #+begin_src sh :results output :exports both
   brew update
   brew install emacs [--with-cocoa]
@@ -72,14 +89,13 @@ this [[https://pad.inria.fr/p/9mSyf4BhzZ9soDE9][pad]]* that we [[file:pad.org][k
   brew install auctex # The name may be slightly more complicated here
   brew install wget
   #+end_src
-- *Option 2*: Install the =.dmg= file from
-  http://vgoulet.act.ulaval.ca/en/emacs/mac/. In that case you may
-  have several versions of emacs installed on your machine and
-  launching emacs from a terminal may not run the one you just
-  installed. If anyone know how to get rid of this...
 *** Windows
-Install the =.exe= file from
-http://vgoulet.act.ulaval.ca/emacs/windows/.
+Install the =.exe= file from [[http://vgoulet.act.ulaval.ca/][Vincent Goulet]]:
+https://vigou3.github.io/emacs-modified-windows/. It ships with recent
+versions:
+- Emacs 25.3
+- ESS 17.11
+- org-mode 9.1.6
 *** Linux
 If you're running a debian system, simply do (as root):
 #+begin_src sh :results output :exports both
@@ -92,7 +108,7 @@ emacs --version 2>&1 | head -n 1
 #+end_src
 
 #+RESULTS:
-: GNU Emacs 24.5.1
+: GNU Emacs 25.2.2
 
 I'd say you want at least an emacs 24.4 (October 2014) or 24.5
 (April 2015) to be out of troubles. Emacs 24.3 was released in March
@@ -104,10 +120,12 @@ emacs -batch --funcall "org-version" 2>&1 | grep version
 #+end_src
 
 #+RESULTS:
-: Org-mode version 8.3.1 (8.3.1-dist @ /usr/share/emacs24/site-lisp/org-mode/)
+: Org mode version 9.0.3 (9.0.3-dist @ /usr/share/emacs25/site-lisp/org-mode/)
 
-The current latest version is actually 8.3.3 but you'll want at least
-a version 8.2. 
+_You really want to make sure you do not rely on org-mode 8_, which is
+becoming deprecated. If you have to stay with this particular version,
+browse the history of this repository to obtain emacs configuration
+and files that are compatible with org-mode 8.
 ** A stub of replicable article
 Remember, you need a working LaTeX and R environment. If you can't
 open a terminal and run the commands =R= and =pdflatex=, you will not be
@@ -126,7 +144,7 @@ If the =make= command fails (especially on Mac), it may be because emacs
 or something else is not correctly installed. In that case, open the
 article directly with the following command:
 #+begin_src sh :results output :exports both
-emacs -q --eval "(setq enable-local-eval t)" --eval "(setq enable-local-variables t)" --eval "(setq org-export-babel-evaluate t)" article.org
+emacs -q --eval "(setq enable-local-eval t)" --eval "(setq enable-local-variables t)"  article.org
 #+end_src
 and export it to pdf with the following shortcut: =C-c C-e l o=
 
@@ -136,9 +154,13 @@ system-wide. In that case, try to remove the =-q= in the previous
 command line to load your personal emacs configuration.
 
 Finally, when you'll be tired of always reexecuting all the source
-code when exporting, simply modify the last eval line of [[file:replicable/article.org][article.org]]
-according to the comment.
-
+code when exporting, just look for the following line in [[file:replicable/article.org][article.org]]:
+#+BEGIN_EXAMPLE
+# #+PROPERTY: header-args :eval never-export
+#+END_EXAMPLE
+If you remove the =# = in the beginning of the line, it will not be a
+comment anymore and will indicate org-mode to stop evaluating every
+chunck of code when exporting.
 ** Reproducible research emacs configuration for maintaining your laboratory notebook
 *** Step 1: Prepare your journal
 Create an =org/= directory in the top of your home:
@@ -157,11 +179,10 @@ shortcuts that I will demonstrate.
 - *Option 2* (if you only want to give a try for today): Get [[https://raw.githubusercontent.com/alegrand/RR_webinars/master/1_replicable_article_laboratory_notebook/init.el][this file]]
   and launch emacs with this specific configuration with the following
   command: =emacs -q -l init.el=
-
 *** Step 3: Check whether the installation is working or not
 Open a new instance of Emacs and open a =foo.org= file. Copy the
 following lines in this file:
-   : #+begin_src sh :session foo :results output :exports both
+   : #+begin_src shell :session foo :results output :exports both
    : ls -la
    : #+end_src
 
