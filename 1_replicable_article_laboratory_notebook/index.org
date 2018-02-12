@@ -16,6 +16,8 @@ you want to test yourself the demoed tools.*
      - [[#installing-emacs-ess-auctex-][Installing emacs, ess, auctex, ...]]
      - [[#a-stub-of-replicable-article][A stub of replicable article]]
      - [[#reproducible-research-emacs-configuration-for-maintaining-your-laboratory-notebook][Reproducible research emacs configuration for maintaining your laboratory notebook]]
+     - [[#a-few-information-on-how-to-play-with-jupyteripython][A few information on how to play with jupyter/ipython]]
+     - [[#a-few-information-on-how-to-play-with-rstudio][A few information on how to play with Rstudio]]
 
 * Practical information
 [[https://team.inria.fr/polaris/members/arnaud-legrand/][Arnaud Legrand]] gave a [[https://github.com/alegrand/SMPE/raw/master/lectures/talk_16_03_07_Webinar.pdf][general introduction on reproducible research]].
@@ -197,4 +199,8 @@ In the tutorial we will show you the main features and shortcuts of
 emacs/org-mode that will help you maintain your laboratory notebook
 (the =journal.org=) and benefit from literate programming. The list of
 features we will demonstrate is in the [[file:journal.org::*Emacs%20shortcuts][first entry of your labbook]].
+** A few information on how to play with jupyter/ipython
+[[file:journal.org::*In%20case%20you%20want%20to%20play%20with%20ipython/jupyter%20on%20a%20recent%20debian][Check this entry]].
+** A few information on how to play with Rstudio
+[[file:journal.org::*In%20case%20you%20want%20to%20play%20with%20R/knitR/rstudio:][Check this entry]].
 

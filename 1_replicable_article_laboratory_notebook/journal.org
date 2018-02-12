@@ -92,45 +92,55 @@ shortcuts. This can be changed from the Options menu.
     give a try to =<r=, =<R=, =<RR=, =<g=, =<p=, =<P=, =<m= ...
   - Some of these templates are not specific to babel: e.g., =<h=, =<l=,
     =<L=, =<c=, =<e=, ...
-***** In case you want to play with ipython on a recent debian   :Python:
+***** In case you want to play with ipython/jupyter on a recent debian :Python:
 Here is what you should install:
-#+begin_src sh :results output :exports both
-sudo apt-get install python3-pip ipython3 ipython3-notebook python3-numpy python3-matplotlib
+#+begin_src shell :results output :exports both
+sudo apt-get install jupyter-notebook python3-matplotlib python3-numpy
 #+end_src
+
+On my machine, I got the version 5.2.2:
+#+begin_src shell :results output :exports both
+jupyter-notebook --version
+#+end_src
+
+#+RESULTS:
+: 5.2.2
 
 The ipython notebook can then be run with the following command:
-#+begin_src sh :results output :exports both
-ipython3 notebook
+#+begin_src shell :results output :exports both
+jupyter-notebook
 #+end_src
 
-The latest version of this notebook is called [[http://jupyter.org/][Jupyter]] and is polyglot
-like babel. Playing with it is easy as it's deployed on the cloud but
-as I'm not a python expert I'm not sure to know how to deploy it locally.
+If you also want to use R in jupyter, follow [[https://github.com/IRkernel/IRkernel#installation][these instructions]].
 ***** In case you want to play with R/knitR/rstudio:                  :R:
 Here is what you should install on debian:
-#+BEGIN_SRC sh
-sudo apt-get install r-base r-cran-ggplot2
+#+BEGIN_SRC shell
+sudo apt-get install r-base r-cran-ggplot2 r-cran-knitr
 #+END_SRC
-
-Rstudio and knitr are unfortunately not packaged within debian so the
-easiest is to download the corresponding debian package on the [[http://www.rstudio.com/ide/download/desktop][Rstudio
-webpage]] and then to install it manually (depending on when you do
-this, you can obviously change the version number).
-#+BEGIN_SRC sh
-wget https://download1.rstudio.org/rstudio-0.99.887-amd64.deb
-sudo dpkg -i rstudio-0.99.887-amd64.deb
-sudo apt-get -f install # to fix possibly missing dependencies
-#+END_SRC
-You will also need to install knitr. To this end, you should simply
-run R (or Rstudio) and use the following command.
+Alternatively, if the installation of =r-cran-gplot2= or =r-cran-knitr=
+fails, you may want to install them locally and manually by running
+the following commands in R (or Rstudio):
 #+BEGIN_SRC R
 install.packages("knitr")
-#+END_SRC
-If =r-cran-ggplot2= could not be installed for some reason, you can also
-install it through R by doing:
-#+BEGIN_SRC R
 install.packages("ggplot2")
 #+END_SRC
 
-As you will experience, knitr is polyglot but not Rstudio, which
-makes its use not as fluid when using other languages than R.
+Rstudio is unfortunately not packaged within debian so the easiest is
+to download the corresponding debian package on the [[http://www.rstudio.com/ide/download/desktop][Rstudio webpage]]
+and then to install it manually (depending on when you do this, you
+can obviously change the version number). Here is how to install it on
+an old (stable) debian or ubuntu:
+#+BEGIN_SRC shell
+cd /tmp/
+wget https://download1.rstudio.org/rstudio-1.1.423-amd64.deb
+sudo dpkg -i rstudio-1.1.423-amd64.deb
+sudo apt-get -f install # to fix possibly missing dependencies
+#+END_SRC
+If you're running a more recent (testing or unstable) debian, you'll
+probably want to use another debian package:
+#+BEGIN_SRC shell
+cd /tmp/
+wget https://download1.rstudio.org/rstudio-xenial-1.1.423-amd64.deb
+sudo dpkg -i rstudio-xenial-1.1.423-amd64.deb
+#+END_SRC
+
