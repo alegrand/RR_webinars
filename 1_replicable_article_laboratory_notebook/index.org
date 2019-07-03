@@ -8,16 +8,16 @@
 you want to test yourself the demoed tools.*
 
 * Table of Contents                                                     :TOC:
- - [[#practical-information][Practical information]]
-     - [[#webcastvideo][Webcast/Video]]
-     - [[#persons-in-charge][Persons in charge]]
-     - [[#locations][Locations]]
- - [[#practical-session-requirements][Practical Session Requirements]]
-     - [[#installing-emacs-ess-auctex-][Installing emacs, ess, auctex, ...]]
-     - [[#a-stub-of-replicable-article][A stub of replicable article]]
-     - [[#reproducible-research-emacs-configuration-for-maintaining-your-laboratory-notebook][Reproducible research emacs configuration for maintaining your laboratory notebook]]
-     - [[#a-few-information-on-how-to-play-with-jupyteripython][A few information on how to play with jupyter/ipython]]
-     - [[#a-few-information-on-how-to-play-with-rstudio][A few information on how to play with Rstudio]]
+- [[#practical-information][Practical information]]
+  - [[#webcastvideo][Webcast/Video]]
+  - [[#persons-in-charge][Persons in charge]]
+  - [[#locations][Locations]]
+- [[#practical-session-requirements][Practical Session Requirements]]
+  - [[#installing-emacs-ess-auctex-][Installing emacs, ess, auctex, ...]]
+  - [[#a-stub-of-replicable-article][A stub of replicable article]]
+  - [[#reproducible-research-emacs-configuration-for-maintaining-your-laboratory-notebook][Reproducible research emacs configuration for maintaining your laboratory notebook]]
+  - [[#a-few-information-on-how-to-play-with-jupyteripython][A few information on how to play with jupyter/ipython]]
+  - [[#a-few-information-on-how-to-play-with-rstudio][A few information on how to play with Rstudio]]
 
 * Practical information
 [[https://team.inria.fr/polaris/members/arnaud-legrand/][Arnaud Legrand]] gave a [[https://github.com/alegrand/SMPE/raw/master/lectures/talk_16_03_07_Webinar.pdf][general introduction on reproducible research]].
@@ -49,12 +49,16 @@ this [[https://pad.inria.fr/p/9mSyf4BhzZ9soDE9][pad]]* that we [[file:pad.org][k
    - Paris: salle visio Cantor (Roberto Di Cosmo)
    - ...
 * Practical Session Requirements
-*Edit:* This section was edited on February 2018 to keep it up-to-date
-with more recent versions of org-mode and others. Feel free to
-navigate in the history to obtain the version originally used in
-March 2016.
+*Edit:* This section was edited on February 2018 and on July 2019 to
+keep it up-to-date with more recent versions of org-mode and
+others. Feel free to navigate in the history to obtain the version
+originally used in March 2016.
 
-*Warning:* This tuturial relies on *org-mode 9*.
+*Warning:* I try maintain with some colleagues an extended, up-to-date
+and somehow similar set of instructions [[https://gitlab.inria.fr/learninglab/mooc-rr/mooc-rr-ressources/blob/master/module2/ressources/emacs_orgmode.org][here]] for the [[https://learninglab.inria.fr/en/mooc-recherche-reproductible-principes-methodologiques-pour-une-science-transparente/][Reproducible
+Research MOOC]]. This is what I really recommend to follow now.
+
+*Warning':* This tuturial relies on *org-mode 9*.
 
   We will explain the audience how to create and manage replicable
   articles and give advice on how to manage a laboratory notebook on a
