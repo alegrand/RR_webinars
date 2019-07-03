@@ -7,11 +7,11 @@
 link to the video is below.*
 
 * Table of Contents                                                     :TOC:
- - [[#practical-information][Practical Information]]
-     - [[#webcastvideo][Webcast/Video]]
-     - [[#persons-in-charge][Persons in charge]]
-     - [[#locations][Locations]]
- - [[#practical-session-requirements][Practical Session Requirements]]
+- [[#practical-information][Practical Information]]
+  - [[#webcastvideo][Webcast/Video]]
+  - [[#persons-in-charge][Persons in charge]]
+  - [[#locations][Locations]]
+- [[#practical-session-requirements][Practical Session Requirements]]
 
 * Practical Information
 This talk will be given by [[https://www.lri.fr/~cohen/][Sarah Cohen Boulakia]], [[http://yvanlebras.fr/][Yvan Le Bras]] and
@@ -40,13 +40,12 @@ In this webinar, our aim is three-folds.
    communities.
 
 ** Webcast/Video
-Here is the *[[https://mi2s.imag.fr/reproducible-science-in-bioinformatics-current-status-solutions-and-research-opportunities-0][link to the video]]*. If you have any trouble with the
-flashplayer, here is a *[[http://newstream.imag.fr/2016-12-06_Reproducible-Research.mp4][direct link to the mpeg4 video]]*. 
+Here is the *[[https://gricad.univ-grenoble-alpes.fr/video/reproducible-science-bioinformatics-current-status-solutions-and-research-opportunities][link to the video]]*. If you have any trouble with the
+flashplayer, here is a *[[http://newstream.u-ga.fr/2016-12-06_Reproducible-Research.mp4][direct link to the mpeg4 video]]*. 
 
 #+BEGIN_CENTER
-[[https://mi2s.imag.fr/preserving-software-ensuring-availability-and-traceability-0][file:video_thn.png]]
+[[https://gricad.univ-grenoble-alpes.fr/video/reproducible-science-bioinformatics-current-status-solutions-and-research-opportunities][file:video_thn.png]]
 #+END_CENTER
-
 
 Here are the slides (by order of appearance on the screen ;) of [[file:SarahCohenBoulakia.pdf][Sarah
 Cohen Boulakia]], [[file:JeromeChopard.pdf][Jérôme Chopard]], and [[file:YvanLebras.pdf][Yvan Le Bras]].

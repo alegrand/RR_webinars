@@ -7,11 +7,11 @@
 link to the video is below.*
 
 * Table of Contents                                                     :TOC:
- - [[#practical-information][Practical Information]]
-     - [[#webcastvideo][Webcast/Video]]
-     - [[#persons-in-charge][Persons in charge]]
-     - [[#locations][Locations]]
- - [[#practical-session-requirements][Practical Session Requirements]]
+- [[#practical-information][Practical Information]]
+  - [[#webcastvideo][Webcast/Video]]
+  - [[#persons-in-charge][Persons in charge]]
+  - [[#locations][Locations]]
+- [[#practical-session-requirements][Practical Session Requirements]]
 
 * Practical Information
 
@@ -28,11 +28,11 @@ to address these issues, the [[https://www.softwareheritage.org/][Software Herit
 at Inria, and we will report here on its progress.
 
 ** Webcast/Video
-Here is the *[[https://mi2s.imag.fr/preserving-software-ensuring-availability-and-traceability-0][link to the video]]*. If you have any trouble with the
-flashplayer, here is a *[[http://newstream.imag.fr/2016-11-08_Reproducible-Research_Roberto-Di-Cosmo.mp4][direct link to the mpeg4 video]]*. 
+Here is the *[[https://gricad.univ-grenoble-alpes.fr/video/preserving-software-ensuring-availability-and-traceability][link to the video]]*. If you have any trouble with the
+flashplayer, here is a *[[http://newstream.u-ga.fr/2016-11-08_Reproducible-Research_Roberto-Di-Cosmo.mp4][direct link to the mpeg4 video]]*. 
 
 #+BEGIN_CENTER
-[[https://mi2s.imag.fr/preserving-software-ensuring-availability-and-traceability-0][file:video_thn.png]]
+[[https://gricad.univ-grenoble-alpes.fr/video/preserving-software-ensuring-availability-and-traceability][file:video_thn.png]]
 #+END_CENTER
 
 The slides can be found [[file:2016-11-09-grenoble-rdicosmo-reproductibility-preserving-software.pdf][here]] (or [[https://annex.softwareheritage.org/public/talks/2016/2016-11-08-grenoble-rdicosmo-reproductibility-preserving-software.pdf][here]]).

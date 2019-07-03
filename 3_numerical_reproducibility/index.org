@@ -7,11 +7,11 @@
 (UTC+2). The link to the video is below.*
 
 * Table of Contents                                                     :TOC:
- - [[#practical-information][Practical information]]
-     - [[#webcastvideo][Webcast/Video]]
-     - [[#persons-in-charge][Persons in charge]]
-     - [[#locations][Locations]]
- - [[#practical-session][Practical Session]]
+- [[#practical-information][Practical information]]
+  - [[#webcastvideo][Webcast/Video]]
+  - [[#persons-in-charge][Persons in charge]]
+  - [[#locations][Locations]]
+- [[#practical-session][Practical Session]]
 
 * Practical information
 Nathalie Revol, Philippe Langlois and Stef Graillat will present the
@@ -26,11 +26,11 @@ reproducibility and will present recent research work on this topic.
   techniques to a real HPC parallel code with little performance loss.
 ** Webcast/Video
 
-Here is the *[[https://mi2s.imag.fr/numerical-reproducibility-0][link to the video]]*. If you have any trouble with the
-flashplayer, here is a *[[http://newstream.imag.fr/2016-05-03_Reproducible-Research_Revol-Langlois-Graillat.mp4][direct link to the mpeg4 video]]*. 
+Here is the *[[https://gricad.univ-grenoble-alpes.fr/video/numerical-reproducibility][link to the video]]*. If you have any trouble with the
+flashplayer, here is a *[[http://newstream.u-ga.fr/2016-05-03_Reproducible-Research_Revol-Langlois-Graillat.mp4][direct link to the mpeg4 video]]*. 
 
 #+BEGIN_CENTER
-[[https://mi2s.imag.fr/numerical-reproducibility-0][file:video_thn.png]]
+[[https://gricad.univ-grenoble-alpes.fr/video/numerical-reproducibility][file:video_thn.png]]
 #+END_CENTER
 
 Here are the *slides*:

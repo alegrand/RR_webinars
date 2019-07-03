@@ -22,12 +22,12 @@ you want to test yourself the demoed tools.*
 * Practical information
 [[https://team.inria.fr/polaris/members/arnaud-legrand/][Arnaud Legrand]] gave a [[https://github.com/alegrand/SMPE/raw/master/lectures/talk_16_03_07_Webinar.pdf][general introduction on reproducible research]].
 ** Webcast/Video
-Here is the *[[https://mi2s.imag.fr/introduction-producing-replicable-articles-and-managing-a-laboratory-notebook-with-emacsorg-mode-0][link to the video]]*. If you have any trouble with the
-flashplayer, here is a *[[http://newstream.imag.fr/2016-03-07_Reproducible-Research_Arnaud-legrand.mp4][direct link to the mpeg4 video]]*. The *slides* are
+Here is the *[[https://gricad.univ-grenoble-alpes.fr/video/introduction-producing-replicable-articles-and-managing-laboratory-notebook-emacsorg-mode][link to the video]]*. If you have any trouble with the
+flashplayer, here is a *[[http://newstream.u-ga.fr/2016-03-07_Reproducible-Research_Arnaud-legrand.mp4][direct link to the mpeg4 video]]*. The *slides* are
 available [[https://github.com/alegrand/SMPE/raw/master/lectures/talk_16_03_07_Webinar.pdf][here]].
 
 #+BEGIN_CENTER
-[[https://mi2s.imag.fr/introduction-producing-replicable-articles-and-managing-a-laboratory-notebook-with-emacsorg-mode-0][file:video_thn.png]]
+[[https://gricad.univ-grenoble-alpes.fr/video/introduction-producing-replicable-articles-and-managing-laboratory-notebook-emacsorg-mode][file:video_thn.png]]
 #+END_CENTER
 
 To interact during the presentation (questions, comments), *we used

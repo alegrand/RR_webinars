@@ -7,12 +7,12 @@
 link to the video is below.*
 
 * Table of Contents                                                     :TOC:
- - [[#practical-information][Practical Information]]
-     - [[#webcastvideo][Webcast/Video]]
-     - [[#abstract-of-the-talks-and-bios-of-the-speakers][Abstract of the talks and bios of the speakers]]
-     - [[#persons-in-charge][Persons in charge]]
-     - [[#locations][Locations]]
- - [[#practical-session-requirements][Practical Session Requirements]]
+- [[#practical-information][Practical Information]]
+  - [[#webcastvideo][Webcast/Video]]
+  - [[#abstract-of-the-talks-and-bios-of-the-speakers][Abstract of the talks and bios of the speakers]]
+  - [[#persons-in-charge][Persons in charge]]
+  - [[#locations][Locations]]
+- [[#practical-session-requirements][Practical Session Requirements]]
 
 * Practical Information
 There has been two talks, the first one by [[https://www.lri.fr/~dragice/][Pierre Dragicevic]] and the
@@ -21,7 +21,7 @@ available at the moment but the webpage will be eventually updated.
 
 ** Webcast/Video
 Here is the *[[https://gricad.univ-grenoble-alpes.fr/video/statistical-dances-why-no-statistical-analysis-reliable-and-what-do-about-it][link to the video]]*. If you have any trouble with the
-flashplayer, here is a *[[http://newstream.imag.fr/2017-06-22_Reproducible_Research-Pierre_Dragicevic.mp4][direct link to the mpeg4 video]]*. Here are
+flashplayer, here is a *[[http://newstream.u-ga.fr/2017-06-22_Reproducible_Research-Pierre_Dragicevic.mp4][direct link to the mpeg4 video]]*. Here are
 additional *[[http://www.aviz.fr/dances][references]]* used by Pierre during his talk.
 
 #+BEGIN_CENTER

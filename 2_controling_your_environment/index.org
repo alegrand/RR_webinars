@@ -8,22 +8,22 @@
 you want to test yourself the demoed tools.*
 
 * Table of Contents                                                     :TOC:
- - [[#practical-information][Practical information]]
-     - [[#webcastvideo][Webcast/Video]]
-     - [[#persons-in-charge][Persons in charge]]
-     - [[#locations][Locations]]
- - [[#practical-session][Practical Session]]
+- [[#practical-information][Practical information]]
+  - [[#webcastvideo][Webcast/Video]]
+  - [[#persons-in-charge][Persons in charge]]
+  - [[#locations][Locations]]
+- [[#practical-session][Practical Session]]
 
 * Practical information
 Michael Mercier and Cristian Ruiz explain how to control your
 experimental environment.
 ** Webcast/Video
-Here is the *[[https://mi2s.imag.fr/controlling-your-environment-0][link to the video]]*. If you have any trouble with the
-flashplayer, here is a *[[http://newstream.imag.fr/2016-04-05_Reproducible-Research_Diaz-Mercier.mp4][direct link to the mpeg4 video]]*. The *slides* are
+Here is the *[[https://gricad.univ-grenoble-alpes.fr/video/controlling-your-environment][link to the video]]*. If you have any trouble with the
+flashplayer, here is a *[[http://newstream.u-ga.fr/2016-04-05_Reproducible-Research_Diaz-Mercier.mp4][direct link to the mpeg4 video]]*. The *slides* are
 available [[https://github.com/camilo1729/webinar-env/raw/master/ctl_environment.pdf][here]].
 
 #+BEGIN_CENTER
-[[https://mi2s.imag.fr/controlling-your-environment-0][file:video_thn.png]]
+[[https://gricad.univ-grenoble-alpes.fr/video/controlling-your-environment][file:video_thn.png]]
 #+END_CENTER
 
 To interact during the presentation (questions, comments), *we used

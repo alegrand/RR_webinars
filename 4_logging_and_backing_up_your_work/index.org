@@ -7,17 +7,17 @@
 link to the video is below.*
 
 * Table of Contents                                                     :TOC:
- - [[#practical-information][Practical Information]]
-     - [[#webcastvideo][Webcast/Video]]
-     - [[#persons-in-charge][Persons in charge]]
-     - [[#locations][Locations]]
- - [[#practical-session-requirements][Practical Session Requirements]]
-     - [[#gitting-started-courtesy-of-hackberkeley][Gitting Started (courtesy of HackBerkeley)]]
-     - [[#installing-a-gui-smartgit][Installing a GUI: SmartGit]]
- - [[#git-labbook-demo][Git-labbook Demo]]
-     - [[#installation-of-git-labbook][Installation of Git-labbook]]
-     - [[#parallel-quicksort-study][Parallel Quicksort Study]]
-     - [[#demo][Demo]]
+- [[#practical-information][Practical Information]]
+  - [[#webcastvideo][Webcast/Video]]
+  - [[#persons-in-charge][Persons in charge]]
+  - [[#locations][Locations]]
+- [[#practical-session-requirements][Practical Session Requirements]]
+  - [[#gitting-started-courtesy-of-hackberkeley][Gitting Started (courtesy of HackBerkeley)]]
+  - [[#installing-a-gui-smartgit][Installing a GUI: SmartGit]]
+- [[#git-labbook-demo][Git-labbook Demo]]
+  - [[#installation-of-git-labbook][Installation of Git-labbook]]
+  - [[#parallel-quicksort-study][Parallel Quicksort Study]]
+  - [[#demo][Demo]]
 
 * Practical Information
 Vincent Danjean, Arnaud Legrand and Luka Stanisic provided a (not so
@@ -25,11 +25,11 @@ short) introduction to git, a distributed version control system, that
 will allow you to efficiently and reliably log and back up your work.
 ** Webcast/Video
 
-Here is the *[[https://mi2s.imag.fr/logging-and-backing-up-your-work-0][link to the video]]*. If you have any trouble with the
-flashplayer, here is a *[[http://newstream.imag.fr/2016-06-07_Reproducible-Research_Danjean-Legrand-Stasinic.mp4][direct link to the mpeg4 video]]*. 
+Here is the *[[https://gricad.univ-grenoble-alpes.fr/video/logging-and-backing-your-work][link to the video]]*. If you have any trouble with the
+flashplayer, here is a *[[http://newstream.u-ga.fr/2016-06-07_Reproducible-Research_Danjean-Legrand-Stasinic.mp4][direct link to the mpeg4 video]]*. 
 
 #+BEGIN_CENTER
-[[https://mi2s.imag.fr/logging-and-backing-up-your-work-0][file:video_thn.png]]
+[[https://gricad.univ-grenoble-alpes.fr/video/logging-and-backing-your-work][file:video_thn.png]]
 #+END_CENTER
 
 Here are the [[file:slides/talk_16_06_07_Webinar.pdf][slides]].
