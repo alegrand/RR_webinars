@@ -16,6 +16,11 @@ Practical Falsifiable Research]]. In the meantime, why don't you just
 have a look at the previous editions?
 #+END_CENTER
 
+* Table of Contents                                                     :TOC:
+- [[#agenda][Agenda]]
+- [[#general-information][General information]]
+- [[#speakerscontributors][Speakers/contributors]]
+
 * Agenda
 1. <2016-03-07 Mon.> [[file:1_replicable_article_laboratory_notebook/index.org][Introduction (reproducible research, challenges, ethic,
    ...). Producing replicable articles and managing a laboratory
@@ -40,11 +45,6 @@ Typical topics planned:
 5. Online journals, companion websites
 6. Evaluation campaign/challenges/benchmarks
 7. ...
-
-* Table of Contents                                                     :TOC:
- - [[#agenda][Agenda]]
- - [[#general-information][General information]]
- - [[#speakerscontributors][Speakers/contributors]]
 
 * General information
 [[http://en.wikipedia.org/wiki/Reproducibility][Reproducibility]] of experiments and analysis by others is one of the
@@ -85,7 +85,6 @@ in a wiki) and send me the modifications via a pull request. Just try
 it, it's easy. Any comment and suggestion is welcome.
 * Speakers/contributors
 - [[https://www.lri.fr/~cohen/][Sarah Cohen Boulakia]], LRI, University Paris-Sud
-- [[http://yvanlebras.fr/][Yvan Le Bras]], Museum national d'Histoire naturelle
 - Jérôme Chopard, Inria/INRA
 - [[http://www.dicosmo.org/][Roberto Di Cosmo]], University Paris Diderot
 - [[https://team.inria.fr/polaris/members/vincent-danjean/][Vincent Danjean]], LIG INRIA/Polaris, University of Grenoble/LIG
