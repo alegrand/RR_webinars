@@ -17,7 +17,8 @@
 * 2018
 ** 2018-02 March
 *** 2018-02-12 Monday
-**** [[https://github.com/alegrand/RR_webinars/blob/master/1_replicable_article_laboratory_notebook/index.org][First webinar on reproducible research: litterate programming]]
+**** Demonstrating emacs org-mode shortcuts                      :OrgMode:
+[[https://github.com/alegrand/RR_webinars/blob/master/1_replicable_article_laboratory_notebook/index.org][First webinar on reproducible research: litterate programming]]
 ***** Emacs shortcuts
 Here are a few convenient emacs shortcuts for those that have never
 used emacs. In all of the emacs shortcuts, =C=Ctrl=, =M=Alt/Esc= and
@@ -40,7 +41,7 @@ shortcuts. This can be changed from the Options menu.
     currently using (e.g., C, Lisp, org, ...)
   There are a bunch of cheatsheets also available out there (e.g.,
   [[http://www.shortcutworld.com/en/linux/Emacs_23.2.1.html][this one for emacs]] and [[http://orgmode.org/orgcard.txt][this one for org-mode]] or this [[http://sachachua.com/blog/wp-content/uploads/2013/05/How-to-Learn-Emacs-v2-Large.png][graphical one]]).
-***** Org-mode                                                  :OrgMode:
+***** Org-mode
   Many emacs shortcuts start by =C-x=. Org-mode's shortcuts generaly
   start with =C-c=.
   - =Tab= fold/unfold
@@ -55,7 +56,7 @@ shortcuts. This can be changed from the Options menu.
   - =C-c C-a= attach files
   - =C-c C-d= set a deadl1ine (use =S-arrows= to navigate in the dates)
   - =A-arrows= move subtree (add shift for the whole subtree)
-***** Org-mode Babel (for literate programming)                 :OrgMode:
+***** Org-mode Babel (for literate programming)
   - =<s + tab= template for source bloc. You can easily adapt it to get
     this:
     #+BEGIN_EXAMPLE
@@ -92,55 +93,4 @@ shortcuts. This can be changed from the Options menu.
     give a try to =<r=, =<R=, =<RR=, =<g=, =<p=, =<P=, =<m= ...
   - Some of these templates are not specific to babel: e.g., =<h=, =<l=,
     =<L=, =<c=, =<e=, ...
-***** In case you want to play with ipython/jupyter on a recent debian :Python:
-Here is what you should install:
-#+begin_src shell :results output :exports both
-sudo apt-get install jupyter-notebook python3-matplotlib python3-numpy
-#+end_src
-
-On my machine, I got the version 5.2.2:
-#+begin_src shell :results output :exports both
-jupyter-notebook --version
-#+end_src
-
-#+RESULTS:
-: 5.2.2
-
-The ipython notebook can then be run with the following command:
-#+begin_src shell :results output :exports both
-jupyter-notebook
-#+end_src
-
-If you also want to use R in jupyter, follow [[https://github.com/IRkernel/IRkernel#installation][these instructions]].
-***** In case you want to play with R/knitR/rstudio:                  :R:
-Here is what you should install on debian:
-#+BEGIN_SRC shell
-sudo apt-get install r-base r-cran-ggplot2 r-cran-knitr
-#+END_SRC
-Alternatively, if the installation of =r-cran-gplot2= or =r-cran-knitr=
-fails, you may want to install them locally and manually by running
-the following commands in R (or Rstudio):
-#+BEGIN_SRC R
-install.packages("knitr")
-install.packages("ggplot2")
-#+END_SRC
-
-Rstudio is unfortunately not packaged within debian so the easiest is
-to download the corresponding debian package on the [[http://www.rstudio.com/ide/download/desktop][Rstudio webpage]]
-and then to install it manually (depending on when you do this, you
-can obviously change the version number). Here is how to install it on
-an old (stable) debian or ubuntu:
-#+BEGIN_SRC shell
-cd /tmp/
-wget https://download1.rstudio.org/rstudio-1.1.423-amd64.deb
-sudo dpkg -i rstudio-1.1.423-amd64.deb
-sudo apt-get -f install # to fix possibly missing dependencies
-#+END_SRC
-If you're running a more recent (testing or unstable) debian, you'll
-probably want to use another debian package:
-#+BEGIN_SRC shell
-cd /tmp/
-wget https://download1.rstudio.org/rstudio-xenial-1.1.423-amd64.deb
-sudo dpkg -i rstudio-xenial-1.1.423-amd64.deb
-#+END_SRC
-
+****

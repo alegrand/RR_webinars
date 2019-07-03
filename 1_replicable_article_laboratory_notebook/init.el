@@ -19,6 +19,8 @@
 (transient-mark-mode t)
 (require 'paren)
 
+(defalias 'yes-or-no-p 'y-or-n-p)
+
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
@@ -49,11 +51,6 @@
 (global-set-key [S-f6] 'jump-mark)		;; jump from mark to mark
 
 (global-set-key "\M-g" 'goto-line)
-
-(setq select-active-regions nil)
-(setq x-select-enable-primary t)
-(setq x-select-enable-clipboard t)
-(setq mouse-drag-copy-region t)
 
 (global-set-key (kbd "C-+") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
@@ -118,117 +115,6 @@ Entered on %U
 
 (setq org-agenda-include-all-todo t)
 (setq org-agenda-include-diary t)
-
-;; see http://thread.gmane.org/gmane.emacs.orgmode/42715
-(eval-after-load 'org-list
-  '(add-hook 'org-checkbox-statistics-hook (function ndk/checkbox-list-complete)))
-
-(defun ndk/checkbox-list-complete ()
-  (save-excursion
-    (org-back-to-heading t)
-    (let ((beg (point)) end)
-      (end-of-line)
-      (setq end (point))
-      (goto-char beg)
-      (if (re-search-forward "\\[\\([0-9]*%\\)\\]\\|\\[\\([0-9]*\\)/\\([0-9]*\\)\\]" end t)
-            (if (match-end 1)
-                (if (equal (match-string 1) "100%")
-                    ;; all done - do the state change
-                    (org-todo 'done)
-                  (org-todo 'todo))
-              (if (and (> (match-end 2) (match-beginning 2))
-                       (equal (match-string 2) (match-string 3)))
-                  (org-todo 'done)
-                (org-todo 'todo)))))))
-
-(defun org-cua-dwim-turn-on-org-cua-mode-partial-support ()
-  "This turns on org-mode cua-mode partial support; Assumes
-shift-selection-mode is available."
-  (interactive)
-  (set (make-local-variable 'org-support-shift-select) t)
-  (cua-mode 1)
-  (add-hook 'pre-command-hook 'cua--pre-command-handler nil t)
-  (add-hook 'post-command-hook 'cua--post-command-handler nil t)
-  (set (make-local-variable 'cua-mode) t)
-  (set (make-local-variable 'org-cua-dwim-was-move) nil)
-  (set (make-local-variable 'shift-select-mode) nil))
-
-;;;###autoload
-(add-hook 'org-mode-hook 'org-cua-dwim-turn-on-org-cua-mode-partial-support)
-
-(defvar org-cua-dwim-was-move nil)
-(defvar org-cua-dwim-debug nil)
-(defvar org-cua-dwim t)
-
-(defadvice handle-shift-selection (around org-cua-dwim)
-  (let ((is-org-mode (and (not (minibufferp))
-                          (eq major-mode 'org-mode)))
-        (do-it t))
-    (setq org-cua-dwim-shift-translated this-command-keys-shift-translated)
-    (when (and org-cua-dwim
-               is-org-mode this-command-keys-shift-translated
-               (not org-cua-dwim-was-move))
-      (when org-cua-dwim-debug
-        (message "Turn ON shift-select-mode & delete-selection-mode"))
-      (delete-selection-mode 1)
-      (set (make-local-variable 'org-cua-dwim-was-move) t)
-      (set (make-local-variable 'cua--last-region-shifted) t)
-      (set (make-local-variable 'cua--explicit-region-start) nil)
-      (set (make-local-variable 'shift-select-mode) t)
-      (set (make-local-variable 'cua-mode) nil))
-    (when (and org-cua-dwim
-               is-org-mode (not this-command-keys-shift-translated)
-               org-cua-dwim-was-move)
-      (when org-cua-dwim-debug
-        (message "Turn Off shift-select-mode & delete-selection-mode"))
-      (delete-selection-mode -1)
-      (set (make-local-variable 'shift-select-mode) nil)
-      (set (make-local-variable 'cua-mode) t)
-      (set (make-local-variable 'org-cua-dwim-was-move) nil))
-    (when do-it
-      ad-do-it)
-    (when (and org-cua-dwim
-               is-org-mode
-               mark-active)
-      (cua--select-keymaps))))
-
-(defmacro org-cua-dwim-fix-cua-command (cmd)
-  "Defines advice for a CUA-command that will turn on CUA mode
-before runnind ant hen run the `cua--precommand-handler'"
-  `(progn
-     (defadvice ,(intern cmd) (around org-cua-dwim)
-     "Try to fix the org copy and paste problem."
-     (when (and (not (minibufferp)) (not cua-mode)
-                (eq major-mode 'org-mode))
-       (when org-cua-dwim-debug
-         (message "Turn Off shift-select-mode & delete-selection-mode  (CUA command)"))
-       (delete-selection-mode -1)
-       (set (make-local-variable 'shift-select-mode) nil)
-       (set (make-local-variable 'cua-mode) t)
-       (set (make-local-variable 'org-cua-dwim-was-move) nil)
-       (cua--pre-command-handler))
-     ad-do-it)
-     (ad-activate ',(intern cmd))))
-
-;; Advise all CUA commands active when selection is active
-(org-cua-dwim-fix-cua-command "cua--prefix-override-handler")
-(org-cua-dwim-fix-cua-command "cua-repeat-replace-region")
-(org-cua-dwim-fix-cua-command "cua--shift-control-c-prefix")
-(org-cua-dwim-fix-cua-command "cua--shift-control-x-prefix")
-(org-cua-dwim-fix-cua-command "cua-toggle-rectangle-mark")
-(org-cua-dwim-fix-cua-command "cua-delete-region")
-(org-cua-dwim-fix-cua-command "cua-cut-region")
-(org-cua-dwim-fix-cua-command "cua-copy-region")
-(org-cua-dwim-fix-cua-command "cua-cancel")
-(org-cua-dwim-fix-cua-command "cua-toggle-global-mark")
-(org-cua-dwim-fix-cua-command "cua-paste")
-(org-cua-dwim-fix-cua-command "cua-exchange-point-and-mark")
-(org-cua-dwim-fix-cua-command "cua-scroll-down")
-(org-cua-dwim-fix-cua-command "cua-scroll-up")
-(org-cua-dwim-fix-cua-command "cua-set-mark")
-(org-cua-dwim-fix-cua-command "cua-paste-pop")
-
-(ad-activate 'handle-shift-selection)
 
 (global-set-key (kbd "C-c d") 'insert-date)
 (defun insert-date (prefix)
@@ -302,6 +188,9 @@ before runnind ant hen run the `cua--precommand-handler'"
 
 (add-to-list 'org-structure-template-alist
         '("P" "#+begin_src python :results output :session *python* :exports both\n\n#+end_src" "<src lang=\"python\">\n\n</src>"))
+
+(add-to-list 'org-structure-template-alist
+        '("PP" "#+begin_src python :results file :var matplot_lib_filename=(org-babel-temp-file \"figure\" \".png\") :exports both \nimport matplotlib.pyplot as plt\n\nimport numpy\nx=numpy.linspace(-15,15)\nplt.figure(figsize=(10,5))\nplt.plot(x,numpy.cos(x)/x)\nplt.tight_layout()\n\nplt.savefig(matplot_lib_filename)\nreturn(matplot_lib_filename)\n#+end_src" "<src lang=\"python\">\n\n</src>"))
 
 (add-to-list 'org-structure-template-alist
         '("b" "#+begin_src shell :results output :exports both\n\n#+end_src" "<src lang=\"sh\">\n\n</src>"))
